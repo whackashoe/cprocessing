@@ -30,7 +30,15 @@ else
 	fi
 	
 	cp .main.cpp $1/main.cpp
-	cp .Makefile $1/Makefile
+	
+	unamestr=`uname`
+	if [[ "$unamestr" == 'Linux' ]]; then
+		cp .Makefile.lin $1/Makefile
+	elif [[ "$unamestr" == 'Darwin' ]]; then
+		cp .Makefile.dar $1/Makefile
+	else
+		cp .Makefile.win $1/Makefile
+	fi
 	
 	cd $1
 	#make
