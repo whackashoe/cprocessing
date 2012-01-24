@@ -36,31 +36,51 @@ void draw(){
 Installation Instructions
 __________________________
 
+Linux:
 
-Please make sure you have the following dependencies installed
+	Please make sure you have the following dependencies installed
 
-	libGL
-	libGLU
-	libglut
+		libGL
+		libGLU
+		libglut
 
-libGL and libGLU should be taken care of by graphics drivers such as mesa
-freeglut can be found at http://freeglut.sourceforge.net/docs/install.php
+	libGL and libGLU should be taken care of by graphics drivers such as mesa
+	freeglut can be found at http://freeglut.sourceforge.net/docs/install.php
 
 
-Once you have these things installed clone this repository and cd into it
+	Once you have these things installed clone this repository and cd into it
 
-Type "make"
-Type "sudo cp cprocessing.hpp /usr/local/include/cprocessing.hpp"
-Type "sudo cp objects/libcprocessing.a /usr/local/lib/libcprocessing.a"
+	Type "make"
+	Type "sudo cp cprocessing.hpp /usr/local/include/cprocessing.hpp"
+	Type "sudo cp objects/libcprocessing.a /usr/local/lib/libcprocessing.a"
 
-If everything worked without errors you can now create a new sketch.
+
+Windows:
+	In order to run cprocessing you must first install MinGW, grab the gui from http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/
+	Make sure you select the C++ compiler and the MinGW Developer ToolKit, keep install path space free(default works good)
+	
+	Download freeglut from here: http://files.transmissionzero.co.uk/software/development/GLUT/freeglut-MinGW.zip and unzip it to some directory. Copy freeglut.dll to C:\Windows\System32 or C:\Windows\SystemWOW64 depending on 32 or 64 bit windows.
+	Copy the files from the include directory to MinGW's include directory(default is C:\MinGW\include)
+	Copy the files from the lib directory to MinGW's lib directory(default is C:\MinGW\lib)
+	
+	Open MinGW by Start->Programs->MinGW->MinGW shell
+	clone the repository and cd into it
+	type "make"
+	Copy cprocessing.hpp to MinGW's include directory
+	Copy libcprocessing.a to MinGW's lib directory
+	
+	cd to examples, choose an example and open its Makefile
+	change "-lcprocessing -lglut -lGL -lGLU" to "-lcprocessing -lfreeglut -lglu32 -lopengl32"
+	save the file then type "make" in that directory
+	now type "./(examplename)" without parethesis to open program
+	
 
 
 
 Creating a Sketch
 __________________________
 
-cd to sketchbook and then type "./new.sh myfirstsketch"
+cd to sketchbook and then type "./new.sh myfirstsketch" 
 This will create a new folder in your sketchbook with a main.cpp file and a Makefile
 cd to myfirstsketch and type "make"
 Now type "./myfirstsketch" and watch the magic ...?
