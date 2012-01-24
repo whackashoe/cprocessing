@@ -11,7 +11,9 @@
 #include <cmath>
 #include "cprocessing.hpp"
 
-#undef LEFT
+#undef near
+#undef far
+
 
 namespace cprocessing {
 
@@ -116,13 +118,12 @@ namespace cprocessing {
 		if (Y_DOWN & config) {
 			// invert the y axis if configuration asks for it
 			double tmp = top;
-			top = bottom; bottom = tmp;
+			top = bottom;
+			bottom = tmp;
 		}
 
-		/*
-		//need fixin
 		glOrtho(left, right, bottom, top, near, far);
-		*/
+		
 		glMatrixMode(GL_MODELVIEW);
 	}
 
