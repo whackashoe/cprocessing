@@ -10,6 +10,16 @@
 #include <cmath>
 #include <cassert>
 
+
+#undef RADIUS
+
+#undef CODED
+#undef RETURN
+#undef ENTER
+#undef TAB
+#undef ESC
+#undef DELETE
+
 namespace cprocessing {
 
 	//
@@ -17,6 +27,7 @@ namespace cprocessing {
 	//
 
 	/// Used to test keys
+	
 	enum { CODED = 255, RETURN = '\r', ENTER = '\n',
 		   ESC = 27, TAB = '\t', DELETE = 127
 	};
@@ -260,8 +271,13 @@ namespace cprocessing {
 	// Identical to map(value, low, high, 0, 1)
 	inline double norm(double value,double low,double high) { return (value-low)/(high-low); }
 	
+	/*
+	Breaks compile on windows/mingw
+	
 	// Rounds a value to the closest int
 	inline int round(double value) { return int(value+0.5); }
+	*/
+	
 	
 	// Square of a value
 	inline double sq(double value) { return value*value; }

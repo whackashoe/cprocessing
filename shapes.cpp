@@ -105,6 +105,9 @@ namespace cprocessing {
 			if (::mode == POLYGON) {
 				// Render as a simple polygon with the help of GLU's tesselation
 				// facilities
+				/*
+				//needs fixins
+				
 				GLUtesselator* tobj = gluNewTess();
 				gluTessCallback(tobj, GLU_TESS_VERTEX, (GLvoid (*) ()) &glVertex3dv);
 				gluTessCallback(tobj, GLU_TESS_BEGIN, (GLvoid (*) ()) &glBegin);
@@ -119,6 +122,7 @@ namespace cprocessing {
 				gluTessEndContour (tobj);
 				gluTessEndPolygon (tobj);
 				gluDeleteTess (tobj);
+				*/
 			}
 			else {
 				// All other types are handled straightforward using OpenGL's vertex

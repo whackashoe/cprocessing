@@ -92,8 +92,9 @@ namespace cprocessing {
         glPolygonOffset (1., -1.);
         
         // Cope with scaling transformations
-        glEnable(GL_RESCALE_NORMAL);
-        
+        //glEnable(GL_RESCALE_NORMAL);
+        glEnable(GL_NORMALIZE);
+		
         // Disable the default additional ambient component
         float ambient [] = {0, 0, 0, 1};
         glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambient);

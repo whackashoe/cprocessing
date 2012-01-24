@@ -11,6 +11,8 @@
 #include <cmath>
 #include "cprocessing.hpp"
 
+#undef LEFT
+
 namespace cprocessing {
 
 	/// Applies a translation transformation
@@ -117,7 +119,10 @@ namespace cprocessing {
 			top = bottom; bottom = tmp;
 		}
 
+		/*
+		//need fixin
 		glOrtho(left, right, bottom, top, near, far);
+		*/
 		glMatrixMode(GL_MODELVIEW);
 	}
 
