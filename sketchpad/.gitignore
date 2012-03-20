@@ -1,0 +1,8 @@
+*
+!.gitignore
+!.README.txt
+!new.sh
+!.main.cpp
+!.Makefile.win
+!.Makefile.lin
+#!.Makefile.dar	#TODO:need to create
