@@ -1,8 +1,8 @@
-Welcome to the Bright Side
-__________________________
+cprocessing::Welcome to the Bright Side
+=======================================
 
 The idea is to enable the writing of graphical applications using Processing's simple commands but levered by C++'s superior performance.
-I hope that with this project people can use a library that is easy to use yet can take advantage of c's features.
+I hope that with this project people can use a library that is easy to use yet can take advantage of c's features and library set.
 Right now there is just some of the basic drawing and input events ported, yet it is still quite usable.
 A sketch creator has been made to help people out who are new to programming.
 This project has been forked from http://code.google.com/p/cprocessing
@@ -10,8 +10,9 @@ This project has been forked from http://code.google.com/p/cprocessing
 
 
 Example
-__________________________
+-------
 
+~~~~.c
 //Draw Alien
 
 #include <cprocessing.hpp>
@@ -29,24 +30,31 @@ void draw(){
   line(90,150,80,160);
   line(110,150,120,160);
 }
+~~~~
 
 
 
 
 Installation Instructions
-__________________________
+-------------------------
 
 Linux:
 
 	Please make sure you have the following dependencies installed
+	
 
 		libGL
 		libGLU
-		libglut
+		libglut (or libfreeglut)
 
+	
 	libGL and libGLU should be taken care of by graphics drivers such as mesa
-	freeglut can be found at http://freeglut.sourceforge.net/docs/install.php
-
+	
+	On debian distributions sudo apt-get install freeglut3-dev  (as a superuser) to install the freeglut dependency
+	
+	Most distributions will have freeglut or glut in their respective repositories,
+	alternatively freeglut can be found at http://freeglut.sourceforge.net/docs/install.php and installed from source.
+	
 
 	Once you have these things installed clone this repository and cd into it
 
@@ -78,7 +86,7 @@ Windows:
 
 
 Creating a Sketch
-__________________________
+-----------------
 
 cd to sketchbook and then type "./new.sh myfirstsketch" 
 This will create a new folder in your sketchbook with a main.cpp file and a Makefile
@@ -89,7 +97,7 @@ You can edit main.cpp all you like, just type make to compile your changes
 
 
 License
-__________________________
+-------
 
 The BSD 2-Clause License
 
