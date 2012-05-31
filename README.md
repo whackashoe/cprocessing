@@ -68,7 +68,7 @@ libGL and libGLU should be taken care of by graphics drivers such as mesa
 6. Type "gcc -shared -fPIC -o lcprocessing.so.01 *.o" to build shared object
 7.Copy .so: "sudo cp lcprocessing.so.01 /usr/local/lib/lcprocessing.so.0.1"
 8.Link copy to version "cd /usr/local/lib && sudo ln lcprocessing.so.0.1 lcprocessing.so" 
-9. Yay!
+9. Type "sudo ldconfig" to update dynamic linking and you're good to go!
 
 ## Windows:
 
