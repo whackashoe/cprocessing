@@ -1,4 +1,4 @@
-CFLAGS = -g -fPIC
+CFLAGS = -Wall -g -fPIC
 
 OBJDIR= objects
 
