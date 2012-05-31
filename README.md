@@ -56,10 +56,14 @@ libGL and libGLU should be taken care of by graphics drivers such as mesa
 2. Once you have these things installed clone this repository and cd into it
 3. Type "make"
 4. Type "sudo cp cprocessing.hpp /usr/local/include/cprocessing.hpp"
-(static linking)
+
+#####Static linking#####
+
 5. Type "sudo cp objects/libcprocessing.a /usr/local/lib/libcprocessing.a"
 6. Your done! Not too bad, huh?
-(dynamic linking)
+
+#####Dynamic linking#####
+
 5. cd to objects
 6. Type "gcc -shared -fPIC -o lcprocessing.so.01 *.o" to build shared object
 7.Copy .so: "sudo cp lcprocessing.so.01 /usr/local/lib/lcprocessing.so.0.1"
