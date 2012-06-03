@@ -45,26 +45,17 @@ Please make sure you have the following dependencies installed
 
 * libGL
 * libGLU
-* libglut (or libfreeglut)
+* libglut
 
 
-libGL and libGLU should be taken care of by graphics drivers such as mesa
 
 1. On debian distributions sudo apt-get install freeglut3-dev  (as a superuser) to install the freeglut dependency
  Most distributions will have freeglut or glut in their respective repositories,
  alternatively freeglut can be found at http://freeglut.sourceforge.net/docs/install.php and installed from source.
-2. Once you have these things installed clone this repository and cd into it
-3. Type "make"
-4. Type "sudo cp cprocessing.hpp /usr/local/include/cprocessing.hpp"
+2. git clone https://github.com/whackashoe/cprocessing
+3. cd cprocessing
+4. ./install.sh
 
-#####Static linking#####
-
-1. Type "sudo cp objects/libcprocessing.a /usr/local/lib/libcprocessing.a"
-2. Your done! Not too bad, huh?
-
-#####Dynamic linking#####
-
-1. Just run ./install.sh and it will take care of it for you.
 
 ## Windows:
 
