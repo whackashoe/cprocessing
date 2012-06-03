@@ -162,6 +162,9 @@ namespace cprocessing {
     
    
     //prints text to console
+    void print(std::string s) {
+        std::cout << s;
+    }
     void println(std::string s) {
         std::cout << s << std::endl;
     }

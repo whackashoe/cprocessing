@@ -685,7 +685,9 @@ namespace cprocessing {
 
     // Turns off the lights
     void noLights();
-
+    
+    //text to console
+    void print(std::string s);
     void println(std::string s);
     //
 	// Initialization (file cprocessing.cpp)
