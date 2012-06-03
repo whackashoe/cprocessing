@@ -71,6 +71,7 @@ frustum()	N/A
 beginCamera()	N/A
 
 modelX();
+modelY();
 modelZ();
 
 

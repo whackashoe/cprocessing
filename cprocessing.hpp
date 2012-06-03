@@ -11,6 +11,7 @@
 #include <cassert>
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 #undef RADIUS
 #undef DELETE
