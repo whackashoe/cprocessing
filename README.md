@@ -59,16 +59,12 @@ libGL and libGLU should be taken care of by graphics drivers such as mesa
 
 #####Static linking#####
 
-5. Type "sudo cp objects/libcprocessing.a /usr/local/lib/libcprocessing.a"
-6. Your done! Not too bad, huh?
+1. Type "sudo cp objects/libcprocessing.a /usr/local/lib/libcprocessing.a"
+2. Your done! Not too bad, huh?
 
 #####Dynamic linking#####
 
-5. cd to objects
-6. Type "gcc -shared -fPIC -o lcprocessing.so.01 *.o" to build shared object
-7.Copy .so: "sudo cp lcprocessing.so.01 /usr/local/lib/lcprocessing.so.0.1"
-8.Link copy to version "cd /usr/local/lib && sudo ln lcprocessing.so.0.1 lcprocessing.so" 
-9. Type "sudo ldconfig" to update dynamic linking and you're good to go!
+1. Just run ./install.sh and it will take care of it for you.
 
 ## Windows:
 
