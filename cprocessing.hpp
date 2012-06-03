@@ -9,7 +9,8 @@
 #define CPROCESSING_HPP_
 #include <cmath>
 #include <cassert>
-
+#include <iostream>
+#include <string>
 
 #undef RADIUS
 #undef DELETE
@@ -685,7 +686,7 @@ namespace cprocessing {
     // Turns off the lights
     void noLights();
 
-
+    void println(std::string s);
     //
 	// Initialization (file cprocessing.cpp)
 	//

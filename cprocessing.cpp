@@ -6,7 +6,6 @@
  */
 
 #include <GL/glut.h>
-#include <iostream>
 #include <cassert>
 #include "cprocessing.hpp"
 
@@ -159,6 +158,12 @@ namespace cprocessing {
     static void refresh (int) {
     	glutPostRedisplay();
     	glutTimerFunc (1000/frameRate, refresh, 0);
+    }
+    
+   
+    //prints text to console
+    void println(std::string s) {
+        std::cout << s << std::endl;
     }
 
     /// Called whenever mouse moves
