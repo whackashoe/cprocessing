@@ -11,11 +11,22 @@
 #include <cassert>
 #include <iostream>
 #include <string>
+#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
+//guard, if these are defined they will break windows compilation
+#ifndef RADIUS
 #undef RADIUS
+#endif
+#ifndef DELETE
 #undef DELETE
+#endif
 
+//rewrite basic syntax
+#ifndef exit();
+#define exit(); exit(EXIT_SUCCESS);
+#endif
 
 namespace cprocessing {
 
@@ -690,6 +701,7 @@ namespace cprocessing {
     //text to console
     void print(std::string s);
     void println(std::string s);
+
     //
 	// Initialization (file cprocessing.cpp)
 	//
