@@ -16,7 +16,8 @@
 #include <time.h>
 #include <GL/glut.h>
 #include "color.hpp"
-
+#include "pimage.hpp"
+#include "pvector.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS
@@ -50,7 +51,7 @@ namespace cprocessing {
 	/// Other constants
 	enum { F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
 		   UP, DOWN, LEFT, RIGHT, CENTER, PAGEUP, PAGEDOWN, HOME, END, INSERT,
-		   RADIUS, CORNER, CORNERS, RGB, HSB, ARGB, ALPHA
+		   RADIUS, CORNER, CORNERS, RGB, HSB, ALPHA
 	};
 
 	/// Configuration flags
@@ -71,126 +72,9 @@ namespace cprocessing {
 	typedef enum {
 		OPEN = 0, CLOSE = 1
 	} ShapeClose;
-
-    	
-	/// Encapsulates a 2D RGBA image
-	class PImage {
-	public:
-	    color * pixels;  ///< Where the pixels are actually stored. Stored row by row
-	                     /// from top (row 0) to bottom
-	    int width;       ///< width of the image (size of row)
-	    int height;      ///< height of the image (number of rows)
-	    
-	    /// Constructor
-	    /// @arg width horizontal size
-	    /// @arg height vertical size
-	    /// @arg type ARGB, RGB or ALPHA
-	    PImage (int width, int height, int type = ARGB);
-	    
-	    /// Destructor
-	    ~PImage ();
-	    
-	    /// Returns a copy of this image
-	    PImage get(); 
-	    
-	    /// Returns a copy of a subrectangle of this image
-	    PImage get (int x, int y, int w, int h);
-    
-	    /// Returns the pixel at coordinate (x,y) 
-	    inline color get(int x, int y) {
-	        assert(x >=0 && x < width && y >= 0 && y < height && pixels!=0);
-	        return pixels[y*width+x];
-	    }	    
-	    
-	    /// Draws the image at position (x, y) of the screen
-	    void put (int x, int y);
-	    
-	    /// Draws the image at position (x, y) of the screen with the given width and height
-	    void put (int x, int y, int w, int h);	    
-	};
 	
 
-	/// Represents a vector (or, sometimes, a point) in 3D
-	class PVector {
-	public:
-		double x, y, z; ///< The coordinates
-		/// Constructor
-		PVector (double thex = 0, double they = 0, double thez = 0) : x(thex), y(they), z(thez) {}
-
-		/// Assignment from coordinates
-		void set (double thex = 0, double they = 0, double thez = 0) { x=thex; y=they; z=thez; }
-
-		/// Assignment from another PVector
-		void set (const PVector& other) { *this = other; }
-
-		/// Assignment from an array of doubles
-		void set (const double other[]) { x = other[0]; y = other[1]; z = other[2]; }
-
-		/// Copy of the vector
-		PVector get() { return *this; }
-
-		/// Add
-		PVector operator+(const PVector& other) const { return PVector(x+other.x, y+other.y, z+other.z); }
-		PVector add (const PVector& other) const { return *this+other; }
-		static PVector add (const PVector& a, const PVector& b) { return a+b; }
-
-		/// Subtract
-		PVector operator-(const PVector& other) const { return PVector(x-other.x, y-other.y, z-other.z); }
-		PVector sub (const PVector& other) const { return *this-other; }
-		static PVector sub (const PVector& a, const PVector& b) { return a-b; }
-
-		/// Multiply by scalar
-		PVector operator*(double s) const { return PVector(s*x, s*y, s*z); }
-		PVector mult(double s) const { return *this*s; }
-		static PVector mult(const PVector& v, double s)  { return v*s; }
-
-		/// Divide by scalar
-		PVector operator/(double s) const { return *this * (1/s); }
-		PVector div(double s) const { return *this/s; }
-		static PVector div(const PVector& v, double s)  { return v/s; }
-
-		/// Dot product
-		double dot (const PVector& other) const { return x*other.x + y*other.y + z*other.z; }
-		static double dot (const PVector& a, const PVector& b) { return a.dot(b); }
-
-		/// Cross product
-		static PVector cross (const PVector& v1, const PVector& v2) {
-			return PVector(v1.y * v2.z - v2.y * v1.z,
-						v1.z * v2.x - v2.z * v1.x,
-						v1.x * v2.y - v2.x * v1.y);
-		}
-		PVector cross (const PVector& other) const { return PVector::cross(*this,other); }
-
-		/// Magnitude
-		double mag () const { return sqrt(this->dot(*this)); }
-
-		/// Distance between two points
-		double dist (const PVector& other) const { return (this->sub(other)).mag(); }
-		static double dist (const PVector& a, const PVector& b) { return a.dist(b); }
-
-		/// Normalize (make unit length)
-		void normalize() {
-			double len = mag();
-			if (len>1e-10)
-			*this = *this / len;
-		}
-
-		/// Angle between two vectors
-		static double angleBetween (const PVector& a, const PVector& b) {
-			PVector acopy = a; acopy.normalize();
-			PVector bcopy = b; bcopy.normalize();
-			return acos(acopy.dot(bcopy));
-		}
-
-		/// Limit the magnitude of this vector to the value used for the max parameter
-		void limit (double max) {
-			double sz = this->mag();
-			if (sz>max) *this = *this * (max / sz);
-		}
-
-		/// Returns vector coordinates as an array
-		double* array() { return (double*) this; /* I KNOW this is unsafe! */ }
-	};
+	
 
 
 	//============================================================================

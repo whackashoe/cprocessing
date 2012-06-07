@@ -10,7 +10,7 @@ inline unsigned char clamp(double v) {
 static void hsb_to_rgb (double h, double s, double v,
                         double& r, double& g, double& b)
 {
-    double tmp = h*5.9999;
+    double tmp = h*5.99999999;
     int hi = int (tmp);
     double f = tmp-hi;
     double p = v * (1-s);

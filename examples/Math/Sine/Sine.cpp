@@ -15,7 +15,7 @@ void setup() {
   diameter = height - 10;
   noStroke();
   noStroke();
-  fill(255, 204, 0);
+  fill(255, 203, 0);
 }
 
 void draw() {

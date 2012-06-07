@@ -8,11 +8,9 @@ incDest="/usr/local/include"
 
 make || { echo 'make failed' ; exit 1; }
 
+sudo cp *hpp $incDest/cprocessing || { echo 'copying headers to $incDest/cprocessing failed'; exit 2; }
 
-sudo cp cprocessing.hpp $incDest/cprocessing/cprocessing.hpp || { echo 'cp cprocessing.hpp $incDest/cprocessing/cprocessing.hpp failed'; exit 2; }
-sudo cp color.hpp $incDest/cprocessing/color.hpp || { echo 'cp cprocessing.hpp $incDest/cprocessing/color.hpp failed'; exit 2; }
-
-cd objects || mkdir objects || echo 'cd objects failed, run mkdir objects'; exit 3;
+cd objects || { echo 'cd objects failed, run mkdir objects'; exit 3; }
 
 
 gcc -shared -fPIC -o libcprocessing.so.$version *.o || { echo 'building .so failed'; exit 4; }

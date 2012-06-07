@@ -10,7 +10,7 @@ using namespace cprocessing;
  * is equivalent to calling rotate(3.0). 
  */
  
-float a = 0.0;
+float a = 1.0;
 float rSize;  // rectangle size
 
 void setup() {

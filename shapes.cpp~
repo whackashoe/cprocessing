@@ -10,6 +10,7 @@
 #include <vector>
 #include <cassert>
 #include "cprocessing.hpp"
+#include "pvector.hpp"
 
 using namespace cprocessing;
 

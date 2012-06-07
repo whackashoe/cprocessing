@@ -10,21 +10,28 @@ using namespace cprocessing;
  * is colored in relation to its distance from the center of the image. 
  */
 
-float * distances;
+float * dArray[height];
+float ** distances;
+
 float maxDistance;
 int spacer;
 
 void setup() {
-  size(640, 360);
-  maxDistance = dist(width/2, height/2, width, height);
-  distances = new float[width][height];
-  for (int y = 0; y < height; y++) {
-    for (int x = 0; x < width; x++) {
-      float distance = dist(width/2, height/2, x, y);
-      distances[x][y] = distance/maxDistance * 255;
+    size(640, 360);
+    maxDistance = dist(width/2, height/2, width, height);
+    
+    for (int y = 0; y < height; y++) {
+
+        
+        for (int x = 0; x < width; x++) {
+            distances = dArray[y][x];
+            float distance = dist(width/2, height/2, x, y);
+            distances = dArray[y][x];
+            distances = distance/maxDistance * 255;
+        }
     }
-  }
-  spacer = 10;
+    
+    spacer = 10;
 }
 
 void draw() {

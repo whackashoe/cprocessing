@@ -6,6 +6,9 @@
  */
 
 #include "cprocessing.hpp"
+#include "color.hpp"
+#include "pimage.hpp"
+#include "pvector.hpp"
 
 /// This will link with the client's functions
 extern void draw();
