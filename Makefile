@@ -1,5 +1,7 @@
 CFLAGS = -Wall -g -fPIC
 
+LINKS= `Magick++-config --cppflags --cxxflags --ldflags --libs`
+
 OBJDIR= objects
 
 SOURCES= $(wildcard *.cpp)
@@ -16,7 +18,7 @@ clean:
 
 $(OBJDIR)/%.o: %.cpp cprocessing.hpp
 	@echo compiling $<
-	@gcc $(CFLAGS) -c $< -o $@
+	@g++ $(CFLAGS) -c $< -o $@ $(LINKS)
 
 examples:
 	$(MAKE) -C examples all

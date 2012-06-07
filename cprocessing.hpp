@@ -14,14 +14,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <GL/glut.h>
+#include "color.hpp"
+
 
 //guard, if these are defined they will break windows compilation
-#ifndef RADIUS
+#ifdef RADIUS
 #undef RADIUS
 #endif
-#ifndef DELETE
+#ifdef DELETE
 #undef DELETE
 #endif
+
+//JAVA TO C SUGAR BABY YAY
+#define boolean bool
+
 
 //rewrite basic syntax
 #ifndef exit();
@@ -56,31 +63,16 @@ namespace cprocessing {
 
 	/// Shape constants
 	typedef enum {
-		POINTS, LINES, LINE_LOOP, LINE_STRIP, TRIANGLES,  TRIANGLE_STRIP, TRIANGLE_FAN, QUADS, QUAD_STRIP, POLYGON
+		POINTS, LINES, LINE_LOOP, LINE_STRIP, TRIANGLES, TRIANGLE_STRIP, TRIANGLE_FAN, QUADS, QUAD_STRIP, POLYGON
 	} ShapeMode;
+
 
 	/// Parameter for the endShape function
 	typedef enum {
 		OPEN = 0, CLOSE = 1
 	} ShapeClose;
 
-    #define MAXCOLOR 1e10
-    
-	/// Color class
-	struct color {
-		unsigned char rgba[4];
-		/// Empty constructor
-		color () {}
-		/// Constructor
-		color (double r, double g, double b, double a = MAXCOLOR);
-		/// Constructor for gray values
-		color (double gray, double alpha = MAXCOLOR);
-		/// Fills a float array with color values scaled for the interval 0..1
-		void toFloat(float a[]);
-		/// Fills a double array with color values scaled for the interval 0..1
-		void toDouble(double a[]);
-	};
-	
+    	
 	/// Encapsulates a 2D RGBA image
 	class PImage {
 	public:
@@ -216,8 +208,10 @@ namespace cprocessing {
 	extern int keyCode; ///< Code for the last pressed key
 	extern int width; ///< window width
 	extern int height; ///< window height
+	extern bool looping;    ///< true makes display call itself
 	extern unsigned config; ///< configuration flags
-	extern int frameRate; ///< Frames per second
+	extern int framerate; ///< Frames per second
+    extern int frameCount; ///frames since start
 	extern color strokeColor;  ///< Line drawing color
 	extern color fillColor;   ///< Area drawing color
 
@@ -230,6 +224,11 @@ namespace cprocessing {
 	const double TWO_PI = 2*PI;
 	const double HALF_PI = PI/2;
 	const double QUARTER_PI = PI/4;
+	
+	/// Absolute value of a number
+	///
+	template<class C>
+	inline C abs(const C& a) { return a<0 ? a*-1 : a; }
 	
 	/// Minimum between two numbers
 	///
@@ -294,48 +293,21 @@ namespace cprocessing {
 	inline double radians(double degrees) { return degrees * PI / 180; }
 	
 
-	//============================================================================
+     //call for sleepy delay functions
+    #if defined(__WIN32__) || defined(_WIN32) || defined(WIN32) || defined(__WINDOWS__) || defined(__TOS_WIN__)
+        #include <windows.h>
+         inline void delay( unsigned long ms ) { Sleep( ms ); }
+    #else  /* presume POSIX */
+        #include <unistd.h>
+         inline void delay( unsigned long ms ) { usleep( ms * 1000 ); }
+    #endif 	
+
+    //============================================================================
 	//
 	// Drawing Attributes (file attributes.cpp)
 	//
 
 
-	/// Changes the way Processing interprets color data.
-	/// The colorMode() function is used to change the numerical range used for specifying colors and to switch color systems.
-	void colorMode(unsigned mode, double range1, double range2, double range3, double range4);
-
-	void colorMode(unsigned mode);
-
-	inline void colorMode(unsigned mode, double range){
-		colorMode(mode, range, range, range, range);
-	}
-
-	inline void colorMode(unsigned mode, double range1, double range2, double range3){
-		colorMode(mode, range1, range2, range3, MAXCOLOR);
-	}
-
-	/// Extracts the alpha value from a color, scaled to match current colorMode()
-	double alpha(const color & color);
-	
-	/// Extracts the red value from a color, scaled to match current colorMode()
-	double red(const color & color);
-	
-	/// Extracts the green value from a color, scaled to match current colorMode()
-	double green(const color & color);
-	
-	/// Extracts the blue value from a color, scaled to match current colorMode()
-	double blue(const color & color);
-	
-	/// Extracts the hue value from a color, scaled to match current colorMode()
-	double hue(const color & color);
-	
-	/// Extracts the saturation value from a color, scaled to match current colorMode()
-	double saturation(const color & color);
-	
-	/// Extracts the brightness value from a color, scaled to match current colorMode()
-	double brightness(const color & color);
-	
-	
 	/// Sets line color
 	void stroke (const color& c);
 
@@ -462,6 +434,9 @@ namespace cprocessing {
 	/// @param z The z coordinate of the point
 	void point (double x, double y, double z = 0);
 	
+	//put point on screen
+	void set (int x, int y, color c);
+	
 	/// Configures the way the 'rect' function interprets its arguments
 	/// @arg mode: either CENTER, RADIUS, CORNER or CORNERS
 	void rectMode (unsigned mode);
@@ -569,10 +544,11 @@ namespace cprocessing {
 
     /// Applies a translation transformation
     void translate (double dx, double dy, double dz);
+    void translate(double dx, double dy);
 
     /// Applies a scale transformation
     void scale (double dx, double dy, double dz);
-
+    void scale(double dx, double dy);
     /// Applies a uniform scale
     inline void scale (double factor) { scale (factor, factor, factor); }
 
@@ -698,9 +674,20 @@ namespace cprocessing {
     // Turns off the lights
     void noLights();
     
-    //text to console
-    void print(std::string s);
-    void println(std::string s);
+    //text to console    
+    template<class C>
+	inline void print(const C& a) { std::cout << a; }
+	
+    template<class C>
+	inline void println(const C& a) { std::cout << a << std::endl; }
+
+
+    //turns draw loop on or off
+    inline void noLoop() { looping = false; }
+    inline void loop() { looping = true; }
+
+    //sets framerate
+	inline void frameRate(int n) { framerate = n; }
 
     //
 	// Initialization (file cprocessing.cpp)

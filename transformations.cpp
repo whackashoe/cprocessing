@@ -21,12 +21,17 @@ namespace cprocessing {
 	void translate (double dx, double dy, double dz) {
 		glTranslatef (dx,dy,dz);
 	}
-
+        void translate (double dx, double dy) {
+		glTranslatef (dx,dy,0);
+	}
 	/// Applies a scale transformation
 	void scale (double dx, double dy, double dz) {
 		glScalef (dx,dy,dz);
 	}
-
+	/// Applies a scale transformation
+	void scale (double dx, double dy) {
+		glScalef (dx,dy,1);
+        }	
 	/// Applies a rotation transformation
 	void rotate (double radians, double axisx, double axisy, double axisz) {
 		glRotatef (degrees(radians), axisx, axisy, axisz);

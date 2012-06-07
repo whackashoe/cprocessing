@@ -144,6 +144,17 @@ namespace cprocessing {
 		}
 	}
 	
+	//sets a point on the screen 
+	//TODO: make this draw ontop of screen instead of affected by transformations
+	void set (int x, int y, color c) {
+	    if(c.rgba[3] > 0) {
+	        glColor4ubv(c.rgba);
+		    glBegin (GL_POINTS);
+		    glVertex2d (x,y);
+		    glEnd();
+		}
+	}
+	
 	/// Configures the way the 'rect' function interprets its arguments
 	/// @arg mode: either CENTER, RADIUS, CORNER or CORNERS
 	void rectMode (unsigned mode) {

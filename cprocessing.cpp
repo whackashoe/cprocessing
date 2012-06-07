@@ -5,8 +5,6 @@
  *      Author: esperanc
  */
 
-#include <GL/glut.h>
-#include <cassert>
 #include "cprocessing.hpp"
 
 /// This will link with the client's functions
@@ -65,15 +63,18 @@ namespace cprocessing {
 
 	int width;     ///< window width
 	int height;    ///< window height
+	
+	bool looping = true;   ///redisplay if true
 
 	unsigned config = HALF_PIXEL_SHIFT | Y_DOWN | BACK_BUFFER; ///< Configuration flags
 
-	int frameRate = 60; ///< Frames per second
-
+	int framerate = 60; ///< Frames per second
+    int frameCount = 0;
 	int initialized = false; 	///< Whether or not initialization of glut took place
 
 	color strokeColor (0,0,0);     ///< Line drawing color
 	color fillColor   (255,255,255);   ///< Area drawing color
+    
 
 
 	/// 
@@ -156,17 +157,36 @@ namespace cprocessing {
 
     /// The refresh function is called periodically to redisplay
     static void refresh (int) {
-    	glutPostRedisplay();
-    	glutTimerFunc (1000/frameRate, refresh, 0);
+        if(looping) {
+            frameCount++;
+        	glutPostRedisplay();
+        	glutTimerFunc (1000/framerate, refresh, 0);
+        }
     }
-    
-   
-    //prints text to console
-    void print(std::string s) {
-        std::cout << s;
-    }
-    void println(std::string s) {
-        std::cout << s << std::endl;
+
+     color blendColor(const color a, const color b, unsigned mode) {
+        assert (mode == REPLACE || mode == BLEND || mode == ADD || mode == SUBTRACT || mode == DARKEST || mode == LIGHTEST || mode == DIFFERENCE || mode == EXCLUSION || mode == MULTIPLY || mode == SCREEN || mode == OVERLAY || mode == HARD_LIGHT || mode == SOFT_LIGHT || mode == DODGE || mode == BURN);
+
+        switch(mode) {
+            case REPLACE:
+                return color(b.rgba[0], b.rgba[1], b.rgba[2], b.rgba[3]);
+                break;
+            case BLEND:
+                return color((a.rgba[0]+b.rgba[0])/2, (a.rgba[1]+b.rgba[1])/2, (a.rgba[2]+b.rgba[2])/2, (a.rgba[3]+b.rgba[3])/2);
+                break;
+            case ADD:
+                return color(min(a.rgba[0]+b.rgba[0], 255), min(a.rgba[1]+b.rgba[1], 255), min(a.rgba[2]+b.rgba[2], 255), min(a.rgba[3]+b.rgba[3], 255));
+                break;
+            /*case ADD:
+                return color((a.rgba[0]+b.rgba[0]), (a.rgba[1]+b.rgba[1]), (a.rgba[2]+b.rgba[2]), (a.rgba[3]+b.rgba[3]));
+                break;*/
+           /* case SUBTRACT:
+                return color(max(a.rgba[0]-b.rgba[0], 0), max(a.rgba[1]-b.rgba[1], 0), max(a.rgba[2]-b.rgba[2], 0), max(a.rgba[3]-b.rgba[3], 0));
+                break;*/
+            
+        }    
+
+        return color(0, 0, 10);
     }
 
     /// Called whenever mouse moves
@@ -320,9 +340,11 @@ namespace cprocessing {
     void run() {
 		int argc = 0;
 		char **argv = 0;
-		glutInit(&argc, argv);
-		glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-    	glutTimerFunc (1000/frameRate, refresh, 0);
+        glutInit(&argc, argv);
+	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+	    glutTimerFunc (1000/framerate, refresh, 0);
+        //Magick::InitializeMagick(*argv);
+
     	bezierDetail(50);
     	ellipseDetail(50);
     	sphereDetail(30,30);

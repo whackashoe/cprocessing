@@ -46,12 +46,11 @@ Please make sure you have the following dependencies installed
 * libGL
 * libGLU
 * libglut
+* libmagic++
 
 
-
-1. On debian distributions sudo apt-get install freeglut3-dev  (as a superuser) to install the freeglut dependency
- Most distributions will have freeglut or glut in their respective repositories,
- alternatively freeglut can be found at http://freeglut.sourceforge.net/docs/install.php and installed from source.
+1. On debian distributions: sudo apt-get install libglu1mesa-dev freeglut3-dev libmagic++-dev
+    
 2. git clone https://github.com/whackashoe/cprocessing
 3. cd cprocessing
 4. ./install.sh

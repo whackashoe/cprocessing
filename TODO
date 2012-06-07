@@ -1,15 +1,13 @@
-exit()	N/A	 exits the application
-loop()	N/A	 makes draw() be called periodically
-noLoop()	N/A	 stops draw() fro being called periodically
+calling noLoop at end of setup creates bugs
+not calling background in draw can cause bugs
+
+implement abs in math because it breaks in arrays.array example
 popStyle()	N/A	 restores the prior style settings
 pushStyle()	N/A	 saves the current style settings
 
 cursor()	N/A	Changes or shows the mouse cursor.
-delay()	N/A	 stops the program from running for a specified time
 day()	N/A	 returns the value of the current day
 focused	N/A	
-frameCount	N/A	Number of frames drawn so far.
-frameRate()	N/A	Sets the number of times draw() will be called per second.
 
 //change this to frameRate
 frameRate	framerate	Estimated number of frames per second for the recent past.
