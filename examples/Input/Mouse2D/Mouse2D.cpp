@@ -1,4 +1,4 @@
-#include <cprocessing.hpp>
+#include <cprocessing/cprocessing.hpp>
 using namespace cprocessing;
 
 
@@ -17,7 +17,7 @@ void setup()
 
 void draw() 
 {   
-  background(51); 
+  background(55); 
   fill(255, 204);
   rect(mouseX, height/2, mouseY/2+10, mouseY/2+10);
   fill(255, 204);

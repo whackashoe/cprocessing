@@ -1,4 +1,4 @@
-#include <cprocessing.hpp>
+#include <cprocessing/cprocessing.hpp>
 using namespace cprocessing;
 
 /**
@@ -12,7 +12,7 @@ using namespace cprocessing;
 
 void setup() {
   size(640, 360); 
-  stroke(255);
+  stroke(225);
   noFill();
 }
 

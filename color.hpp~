@@ -3,7 +3,12 @@
 #ifndef CPROCESSING_COLOR_
 #define CPROCESSING_COLOR_
 #define MAXCOLOR 1e10
-namespace cprocessing {   
+namespace cprocessing {  
+    //blend types
+    typedef enum {
+        REPLACE, BLEND, ADD, SUBTRACT, DARKEST, LIGHTEST, DIFFERENCE, EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN
+    } BlendMode;
+    
 	/// Color class
 	struct color {
 		unsigned char rgba[4];
