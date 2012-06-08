@@ -14,7 +14,7 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  background(2);
   translate(width / 2, height / 2);
   
   // Orange point light on the right

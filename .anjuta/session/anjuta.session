@@ -3,14 +3,14 @@
 Maximized=1
 Geometry=1366x718+0+0
 
+[Project Manager]
+Expand=cprocessing%%%cprocessing//cprocessing
+
 [File Loader]
-Files=../../cprocessing.cpp#301%%%../../attributes.cpp#16
+Files=../../cprocessing.cpp#170%%%../../pimage.hpp#27%%%../../cprocessing.hpp#114%%%../../primitives.cpp#146%%%../../shapes.cpp#11%%%../../examples/Math/Sine/Sine.cpp#32%%%../../ArrayList.hpp#31%%%../../pvector.hpp#1
 
 [Document Manager]
 bookmarks=<?xml version="1.0" encoding="UTF-8"?>\n<bookmarks/>\n
-
-[Project Manager]
-Expand=cprocessing%%%cprocessing//cprocessing
 
 [Execution]
 Run in terminal=2

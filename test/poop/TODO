@@ -1,0 +1,100 @@
+calling noLoop at end of setup creates bugs
+not calling background in draw can cause bugs
+
+implement abs in math because it breaks in arrays.array example
+popStyle()	N/A	 restores the prior style settings
+pushStyle()	N/A	 saves the current style settings
+
+cursor()	N/A	Changes or shows the mouse cursor.
+day()	N/A	 returns the value of the current day
+focused	N/A	
+
+//change this to frameRate
+frameRate	framerate	Estimated number of frames per second for the recent past.
+
+hour()	N/A	 returns the value of the current hour
+link()	N/A	 links to a webpage
+millis()	N/A	 returns the amount of milliseconds since starting a program
+minute()	N/A	 returns the value of the current minute
+month()	N/A	 returns the value of the current month
+noCursor()	N/A	Inhibits the display of the mouse cursor.
+online	N/A	
+screen	N/A	holds the width, height and pixels of the display.
+second()	N/A	 returns the value of the current second
+year()	N/A	 returns the value of the current year
+
+
+
+noTint()	N/A	 reverts to displaying images with their original values
+tint()	N/A	 sets the fill value for displaying images
+
+
+
+blendColor()	N/A	 returns the blending between two colors
+lerpColor()	N/A	 returns a linear interpolation between two colors
+
+
+curve()	N/A	 Draws a cubic Catmull-Rom curve
+curveDetail()	N/A	 Changes the sampling rate of Catmull-Rom curves
+curvePoint()	N/A	 Evaluates one coordinate of a point of a Catmull-Rom curve
+curveTangent()	N/A	 Evaluates one coordinate of a tangent of a Catmull-Rom curve
+curveTightness()	N/A	 Changes the tightness of Catmull-Rom curves
+
+rectMode()	N/A	 changes the semantics of the arguments of rect()
+strokeCap()	N/A	
+strokeJoin()	N/A	
+
+curveVertex()	N/A	 adds a Catmull-Rom arc to the shape
+texture()	N/A	
+textureMode()	N/A
+
+noise()	N/A	 returns the perlin noise value at specified coordinates
+binary()	N/A	 converts a value to a string in binary notation
+hex()	N/A	 converts a value to a string in hexadecimal notation
+unbinary()	N/A	 converts a string in binary notation to its decimal value
+unhex()	N/A	 converts a string in hexadecimal notation to its decimal value
+byte()	N/A	 converts a char or int to its byte representation
+
+printMatrix()	N/A	 prints the current transformation matrix
+shearX()	N/A	 shears a shape around the x axis
+shearY()	N/A	 shears a shape around the y axis
+
+normal()	N/A	 sets the normal vector for subsequent vertices
+
+printCamera()	N/A	 prints the current transformation matrix
+getProjection()	N/A	 returns the PROJECTION matrix
+printProjection()	N/A	 prints the current projection matrix
+endCamera()	N/A
+frustum()	N/A
+beginCamera()	N/A
+
+modelX();
+modelY();
+modelZ();
+
+
+Image
+Processing	cprocessing	Description
+createImage()	N/A	 creates an empty PImage object
+filter()	N/A	 applies a filter to the display window
+image()	N/A	 displays a PImage object
+imageMode()	N/A	 changes the semantics of the arguments of image()
+loadImage()	N/A	 loads an image into a PImage object
+loadPixels()	N/A	 loads the current canvas data into screen.pixels
+updatePixels()	N/A	 displays the data from screen.pixels
+get()	N/A	 returns a copy, a part of a pixel of the screen
+set()	N/A	 sets a position of the screen with data
+
+
+Text
+Processing	cprocessing	Description
+textAlign()	N/A	 changes the text alignment attributes
+createFont()	N/A	 creates a font
+textFont()	N/A	 sets the received font as current font
+htmlText()	N/A	 draws the html text at the given position
+text()	N/A	 draws the text at the given position
+textSize()	N/A	 changes the current font size
+textWidth()	N/A	 returns the width of the received string rendered in the current font
+textAscent()	N/A	 returns the ascent of the current font
+textDescent()	N/A	 returns the descent of the current font
+

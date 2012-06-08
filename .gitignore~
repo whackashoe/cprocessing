@@ -2,3 +2,5 @@
 *.a
 *.so
 *.ll
+*.db
+*.anjuta
