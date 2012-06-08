@@ -178,6 +178,10 @@ namespace cprocessing {
             case ADD:
                 return color(min(a.rgba[0]+b.rgba[0], 255), min(a.rgba[1]+b.rgba[1], 255), min(a.rgba[2]+b.rgba[2], 255), min(a.rgba[3]+b.rgba[3], 255));
                 break;
+            case SUBTRACT:
+                return color(0, 0, 0, 255);
+                break;
+                    
             /*case ADD:
                 return color((a.rgba[0]+b.rgba[0]), (a.rgba[1]+b.rgba[1]), (a.rgba[2]+b.rgba[2]), (a.rgba[3]+b.rgba[3]));
                 break;*/

@@ -6,9 +6,7 @@
  */
 
 #include "cprocessing.hpp"
-#include "color.hpp"
-#include "pimage.hpp"
-#include "pvector.hpp"
+//#include "ArrayList.hpp"
 
 /// This will link with the client's functions
 extern void draw();
@@ -169,7 +167,7 @@ namespace cprocessing {
 
      color blendColor(const color a, const color b, unsigned mode) {
         assert (mode == REPLACE || mode == BLEND || mode == ADD || mode == SUBTRACT || mode == DARKEST || mode == LIGHTEST || mode == DIFFERENCE || mode == EXCLUSION || mode == MULTIPLY || mode == SCREEN || mode == OVERLAY || mode == HARD_LIGHT || mode == SOFT_LIGHT || mode == DODGE || mode == BURN);
-
+        //TODO:: finish blend modes
         switch(mode) {
             case REPLACE:
                 return color(b.rgba[0], b.rgba[1], b.rgba[2], b.rgba[3]);
@@ -186,10 +184,10 @@ namespace cprocessing {
            /* case SUBTRACT:
                 return color(max(a.rgba[0]-b.rgba[0], 0), max(a.rgba[1]-b.rgba[1], 0), max(a.rgba[2]-b.rgba[2], 0), max(a.rgba[3]-b.rgba[3], 0));
                 break;*/
-            
-        }    
-
-        return color(0, 0, 10);
+            default:
+                return color(0, 0, 0);
+                break;
+        }
     }
 
     /// Called whenever mouse moves
@@ -388,6 +386,17 @@ namespace cprocessing {
         glDisable(GL_POINT_SMOOTH);
         glDisable(GL_POLYGON_SMOOTH);
     }
+
+    //sets a point on the screen 
+	//TODO: make this draw ontop of screen instead of affected by transformations
+	void set (int x, int y, color c) {
+	    if(c.rgba[3] > 0) {
+	        glColor4ubv(c.rgba);
+		    glBegin (GL_POINTS);
+		    glVertex2d (x,y);
+		    glEnd();
+		}
+	}
     
     /// Initializes and runs the application main event loop
     void run() {
