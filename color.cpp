@@ -130,9 +130,9 @@ namespace cprocessing {
     /// Changes the way Processing interprets color data.
     /// The colorMode() function is used to change the numerical range used for specifying colors and to switch color systems.
     void colorMode(unsigned mode, double range1, double range2, double range3, double range4){
-        if (mode == RGB || mode == HSB){
-            globColorMode = mode;
-        }
+        assert(mode == RGB || mode == HSB);
+        globColorMode = mode;
+
         max1 = range1;
         max2 = range2;
         max3 = range3;
@@ -140,10 +140,9 @@ namespace cprocessing {
     }
     
     // When changing just the color system, ranges are kept as is
-    void colorMode(unsigned mode){
-        if (mode == RGB || mode == HSB){
-            globColorMode = mode;
-        }
+    void colorMode(unsigned mode) {
+        assert(mode == RGB || mode == HSB);
+        globColorMode = mode;
      }
 	
 	/// Extracts the alpha value from a color, scaled to match current colorMode()

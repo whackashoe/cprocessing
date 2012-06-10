@@ -63,7 +63,6 @@ namespace cprocessing {
     
     /// Draws the image at position (x, y) of the screen
     void PImage::put (int x, int y) {
-    
         // invert y coordinate
         if (config&Y_DOWN) y = y + height;
 
@@ -71,7 +70,17 @@ namespace cprocessing {
         glRasterPos2i (x,y);         // set write position
         glDrawPixels(width, height, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*) pixels);
         glPopMatrix();
-            
+    }
+
+    /// Draws the image at position (x, y) of the screen
+    void PImage::put (int x, int y, int w, int h) {
+        // invert y coordinate
+        if (config&Y_DOWN) y = y + height;
+
+        glPushMatrix();
+        glRasterPos2i (x,y);         // set write position
+        glDrawPixels(w, h, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*) pixels);
+        glPopMatrix();
     }
 
     void PImage::loadImage(std::string src) {

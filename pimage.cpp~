@@ -56,7 +56,7 @@ namespace cprocessing {
     }
 
     
-    void PImage::set(int x, int y, color c) {
+    void PImage::set(int x, int y, const color& c) {
         pixels[(y*width)+x] = c;
     }
     
@@ -65,9 +65,7 @@ namespace cprocessing {
     void PImage::put (int x, int y) {
     
         // invert y coordinate
-        if (config&Y_DOWN) {
-            y = y + height;
-        }
+        if (config&Y_DOWN) y = y + height;
 
         glPushMatrix();
         glRasterPos2i (x,y);         // set write position
