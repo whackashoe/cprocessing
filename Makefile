@@ -1,14 +1,12 @@
 CFLAGS = -Wall -g -fPIC
 
-LINKS= `Magick++-config --cppflags --cxxflags --ldflags --libs`
+LINKS= `Magick++-config --cppflags --cxxflags --ldflags --libs` -lxml2
 
 OBJDIR= objects
 
 SOURCES= $(wildcard *.cpp)
 
 OBJECTS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SOURCES))
-
-all: $(OBJDIR)/libcprocessing.a
 
 $(OBJDIR)/libcprocessing.a: $(OBJECTS)
 	ar -r $@ $(OBJECTS) 

@@ -7,6 +7,7 @@
 
 #ifndef CPROCESSING_HPP_
 #define CPROCESSING_HPP_
+#include <Magick++.h>
 #include <cmath>
 #include <cassert>
 #include <iostream>
@@ -17,6 +18,7 @@
 #include <GL/glut.h>
 #include "color.hpp"
 #include "pimage.hpp"
+#include "pvector.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS
@@ -50,7 +52,7 @@ namespace cprocessing {
 	/// Other constants
 	enum { F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
 		   UP, DOWN, LEFT, RIGHT, CENTER, PAGEUP, PAGEDOWN, HOME, END, INSERT,
-		   RADIUS, CORNER, CORNERS, RGB, HSB, ALPHA
+		   RADIUS, CORNER, CORNERS
 	};
 
 	/// Configuration flags
@@ -572,6 +574,20 @@ namespace cprocessing {
     //sets framerate
 	inline void frameRate(int n) { framerate = n; }
 
+    PImage createImage(int width, int height, int type);
+
+    void image(PImage img, int x, int y);
+
+
+    int millis();
+    int second();
+    int minute();
+    int hour();
+    int day();
+    int month();
+    int year();
+
+    
     //
 	// Initialization (file cprocessing.cpp)
 	//

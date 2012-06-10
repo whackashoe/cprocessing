@@ -8,9 +8,12 @@
  */
 
 #include "cprocessing.hpp"
+#include <Magick++.h>
 
 using namespace cprocessing;
+using namespace Magick;
 
-int main () {
+int main (int argc,char **argv) {
+    Magick::InitializeMagick(*argv);
 	run();
 }

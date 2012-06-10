@@ -178,14 +178,41 @@ namespace cprocessing {
             case ADD:
                 return color(min(a.rgba[0]+b.rgba[0], 255), min(a.rgba[1]+b.rgba[1], 255), min(a.rgba[2]+b.rgba[2], 255), min(a.rgba[3]+b.rgba[3], 255));
                 break;
-            /*case ADD:
-                return color((a.rgba[0]+b.rgba[0]), (a.rgba[1]+b.rgba[1]), (a.rgba[2]+b.rgba[2]), (a.rgba[3]+b.rgba[3]));
-                break;*/
-           /* case SUBTRACT:
-                return color(max(a.rgba[0]-b.rgba[0], 0), max(a.rgba[1]-b.rgba[1], 0), max(a.rgba[2]-b.rgba[2], 0), max(a.rgba[3]-b.rgba[3], 0));
-                break;*/
-            default:
-                return color(0, 0, 0);
+            case SUBTRACT:
+                return color(0, 0, 0, 255);
+                break;
+            case DARKEST:
+                return color(0, 0, 0, 255);
+                break;
+            case LIGHTEST:
+                return color(0, 0, 0, 255);
+                break;
+            case DIFFERENCE:
+                return color(0, 0, 0, 255);
+                break;
+            case EXCLUSION:
+                return color(0, 0, 0, 255);
+                break;
+            case MULTIPLY:
+                return color(0, 0, 0, 255);
+                break;   
+            case SCREEN:
+                return color(0, 0, 0, 255);
+                break;
+            case OVERLAY:
+                return color(0, 0, 0, 255);
+                break;
+            case HARD_LIGHT:
+                return color(0, 0, 0, 255);
+                break;
+            case SOFT_LIGHT:
+                return color(0, 0, 0, 255);
+                break;
+            case DODGE:
+                return color(0, 0, 0, 255);
+                break;
+            case BURN:
+                return color(0, 0, 0, 255);
                 break;
         }
     }
@@ -391,12 +418,101 @@ namespace cprocessing {
 	//TODO: make this draw ontop of screen instead of affected by transformations
 	void set (int x, int y, color c) {
 	    if(c.rgba[3] > 0) {
-	        glColor4ubv(c.rgba);
+            if (config&Y_DOWN)  y = y + height; // invert y coordinate
+            glPushMatrix();
+            glRasterPos2i (x,y);                // set write position
+            glColor4ubv(c.rgba);
 		    glBegin (GL_POINTS);
-		    glVertex2d (x,y);
-		    glEnd();
+		    glVertex2d (0, 0);
+		    glEnd();      
+            glPopMatrix();
 		}
 	}
+
+    PImage createImage(int width, int height, int type) { 
+        return PImage(width, height, type);
+    }
+
+    void image(PImage img, int x, int y) {
+        //TODO
+       /* switch(img.type) {
+            case ARGB:  glDrawPixels(width, height, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*) img.pixels);  break;
+            case RGB:   glDrawPixels(width, height, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*) img.pixels);  break;
+            case ALPHA: glDrawPixels(width, height, GL_ALPHA, GL_UNSIGNED_BYTE, (GLvoid*) img.pixels); break;
+            //case HSB:   glDrawPixels(width, height, GL_HSB, GL_UNSIGNED_BYTE, (GLvoid*) img.pixels);   break;
+        }*/
+
+        img.put(x, y);
+    }
+
+    int millis() {
+        //TODO ... better
+
+        return frameCount*(1000/framerate);
+    }
+    
+    int second() {
+      time_t rawtime;
+      struct tm * timeinfo;
+      char buffer [3];
+      time ( &rawtime );
+      timeinfo = localtime ( &rawtime );
+      strftime (buffer,3,"%S",timeinfo);
+      return atol(buffer);
+    }
+
+
+    int minute() {
+      time_t rawtime;
+      struct tm * timeinfo;
+      char buffer [3];
+      time ( &rawtime );
+      timeinfo = localtime ( &rawtime );
+      strftime (buffer,3,"%M",timeinfo);
+      return atol(buffer);
+    }
+
+
+    int hour() {
+      time_t rawtime;
+      struct tm * timeinfo;
+      char buffer [3];
+      time ( &rawtime );
+      timeinfo = localtime ( &rawtime );
+      strftime (buffer,3,"%H",timeinfo);
+      return atol(buffer);
+    }
+
+
+    int day() {
+      time_t rawtime;
+      struct tm * timeinfo;
+      char buffer [3];
+      time ( &rawtime );
+      timeinfo = localtime ( &rawtime );
+      strftime (buffer,3,"%d",timeinfo);
+      return atol(buffer);
+    }
+
+    int month() {
+      time_t rawtime;
+      struct tm * timeinfo;
+      char buffer [3];
+      time ( &rawtime );
+      timeinfo = localtime ( &rawtime );
+      strftime (buffer,3,"%m",timeinfo);
+      return atol(buffer);
+    }
+
+    int year() {
+      time_t rawtime;
+      struct tm * timeinfo;
+      char buffer [5];
+      time ( &rawtime );
+      timeinfo = localtime ( &rawtime );
+      strftime (buffer,5,"%Y",timeinfo);
+      return atol(buffer);
+    }
     
     /// Initializes and runs the application main event loop
     void run() {

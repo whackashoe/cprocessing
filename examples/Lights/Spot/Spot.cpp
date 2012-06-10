@@ -12,7 +12,6 @@ int concentration = 600; // Try values 1 -> 10000
 
 void setup() 
 {
-  //size(200, 200, P3D);
   size(640, 360);
   noStroke();
   fill(204);

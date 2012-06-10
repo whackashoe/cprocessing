@@ -1,34 +1,34 @@
 calling noLoop at end of setup creates bugs
 not calling background in draw can cause bugs
 
-implement abs in math because it breaks in arrays.array example
+TO COMPILE:
+g++ -lcprocessing -lglut -lGLU -lGL `Magick++-config --cppflags --cxxflags --ldflags --libs` Spot.cpp -o Spot
+
+magick has broken makefiles... well I have since I am still learning about them.
+you must use the preceeding line to compile programs 
+
+images in general are fucked
+
+
+
+--------------------------------------------------------------------
+
 popStyle()	N/A	 restores the prior style settings
 pushStyle()	N/A	 saves the current style settings
 
 cursor()	N/A	Changes or shows the mouse cursor.
-day()	N/A	 returns the value of the current day
 focused	N/A	
 
 //change this to frameRate
 frameRate	framerate	Estimated number of frames per second for the recent past.
 
-hour()	N/A	 returns the value of the current hour
-link()	N/A	 links to a webpage
-millis()	N/A	 returns the amount of milliseconds since starting a program
-minute()	N/A	 returns the value of the current minute
-month()	N/A	 returns the value of the current month
+
 noCursor()	N/A	Inhibits the display of the mouse cursor.
 online	N/A	
 screen	N/A	holds the width, height and pixels of the display.
-second()	N/A	 returns the value of the current second
-year()	N/A	 returns the value of the current year
-
-
 
 noTint()	N/A	 reverts to displaying images with their original values
 tint()	N/A	 sets the fill value for displaying images
-
-
 
 blendColor()	N/A	 returns the blending between two colors
 lerpColor()	N/A	 returns a linear interpolation between two colors
@@ -40,7 +40,6 @@ curvePoint()	N/A	 Evaluates one coordinate of a point of a Catmull-Rom curve
 curveTangent()	N/A	 Evaluates one coordinate of a tangent of a Catmull-Rom curve
 curveTightness()	N/A	 Changes the tightness of Catmull-Rom curves
 
-rectMode()	N/A	 changes the semantics of the arguments of rect()
 strokeCap()	N/A	
 strokeJoin()	N/A	
 
@@ -83,7 +82,6 @@ loadImage()	N/A	 loads an image into a PImage object
 loadPixels()	N/A	 loads the current canvas data into screen.pixels
 updatePixels()	N/A	 displays the data from screen.pixels
 get()	N/A	 returns a copy, a part of a pixel of the screen
-set()	N/A	 sets a position of the screen with data
 
 
 Text
