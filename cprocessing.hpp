@@ -579,7 +579,7 @@ namespace cprocessing {
     void image(PImage img, int x, int y);
 
 
-    int millis();
+    inline long millis() { return (long) ((long double) (clock()/(CLOCKS_PER_SEC/1000))); }
     int second();
     int minute();
     int hour();

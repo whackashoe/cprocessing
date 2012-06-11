@@ -4,7 +4,7 @@ Maximized=1
 Geometry=1366x718+0+0
 
 [File Loader]
-Files=../../pimage.hpp#50%%%../../Makefile#3%%%../../examples/.Image/CreateImage/CreateImage.cpp#21%%%../../examples/.Image/CreateImage/Makefile#7%%%../../cprocessing.hpp#181%%%../../main.cpp#14%%%../../pimage.cpp#82%%%../../cprocessing.cpp#534%%%../../color.cpp#38%%%../../primitives.cpp#81
+Files=../../pimage.hpp#50%%%../../Makefile#3%%%../../examples/.Image/CreateImage/CreateImage.cpp#24%%%../../examples/.Image/CreateImage/Makefile#7%%%../../cprocessing.hpp#181%%%../../main.cpp#14%%%../../pimage.cpp#82%%%../../cprocessing.cpp#534%%%../../color.cpp#135
 
 [Document Manager]
 bookmarks=<?xml version="1.0" encoding="UTF-8"?>\n<bookmarks/>\n

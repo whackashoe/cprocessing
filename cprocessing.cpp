@@ -72,7 +72,7 @@ namespace cprocessing {
 	int framerate = 60; ///< Frames per second
     int frameCount = 0;
 	int initialized = false; 	///< Whether or not initialization of glut took place
-
+        
 	color strokeColor (0,0,0);     ///< Line drawing color
 	color fillColor   (255,255,255);   ///< Area drawing color
     
@@ -215,6 +215,8 @@ namespace cprocessing {
                 return color(0, 0, 0, 255);
                 break;
         }
+
+        return color();
     }
 
     /// Called whenever mouse moves
@@ -445,12 +447,6 @@ namespace cprocessing {
         img.put(x, y);
     }
 
-    int millis() {
-        //TODO ... better
-
-        return frameCount*(1000/framerate);
-    }
-    
     int second() {
       time_t rawtime;
       struct tm * timeinfo;
@@ -458,7 +454,7 @@ namespace cprocessing {
       time ( &rawtime );
       timeinfo = localtime ( &rawtime );
       strftime (buffer,3,"%S",timeinfo);
-      return atol(buffer);
+      return atoi(buffer);
     }
 
 
@@ -469,7 +465,7 @@ namespace cprocessing {
       time ( &rawtime );
       timeinfo = localtime ( &rawtime );
       strftime (buffer,3,"%M",timeinfo);
-      return atol(buffer);
+      return atoi(buffer);
     }
 
 
@@ -480,7 +476,7 @@ namespace cprocessing {
       time ( &rawtime );
       timeinfo = localtime ( &rawtime );
       strftime (buffer,3,"%H",timeinfo);
-      return atol(buffer);
+      return atoi(buffer);
     }
 
 
@@ -491,7 +487,7 @@ namespace cprocessing {
       time ( &rawtime );
       timeinfo = localtime ( &rawtime );
       strftime (buffer,3,"%d",timeinfo);
-      return atol(buffer);
+      return atoi(buffer);
     }
 
     int month() {
@@ -501,7 +497,7 @@ namespace cprocessing {
       time ( &rawtime );
       timeinfo = localtime ( &rawtime );
       strftime (buffer,3,"%m",timeinfo);
-      return atol(buffer);
+      return atoi(buffer);
     }
 
     int year() {
@@ -511,7 +507,7 @@ namespace cprocessing {
       time ( &rawtime );
       timeinfo = localtime ( &rawtime );
       strftime (buffer,5,"%Y",timeinfo);
-      return atol(buffer);
+      return atoi(buffer);
     }
     
     /// Initializes and runs the application main event loop
@@ -521,7 +517,6 @@ namespace cprocessing {
         glutInit(&argc, argv);
 	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	    glutTimerFunc (1000/framerate, refresh, 0);
-        //Magick::InitializeMagick(*argv);
 
     	bezierDetail(50);
     	ellipseDetail(50);

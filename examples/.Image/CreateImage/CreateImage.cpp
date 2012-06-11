@@ -18,7 +18,13 @@ void draw() {
       for(int i = 0; i < img.width*img.height; i++) {
         float a = map(i, 0, img.width*img.height, 255, 0);
         img.pixels[i] = color(0, 153, 204, a); 
+
+        
+        //println((unsigned) *&(img.pixels[i].rgba[1]));
+        //println((unsigned) (img.pixels[i].rgba[1]));
       }
-    println(img.pixels[0].rgba[2]);
+
+    println(millis());
+
    // image(img, 90, 80);
 }
