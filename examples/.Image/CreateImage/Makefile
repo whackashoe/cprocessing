@@ -15,7 +15,8 @@ all: $(TARGET)
 	@echo $(TARGET) built
 
 $(TARGET): $(OBJECTS)
-	@g++ $(CFLAGS) $(LINKS) -o $@ $(OBJECTS) `Magick++-config --cppflags --cxxflags --ldflags --libs`
+    #@echo Magick++-config --cppflags --cxxflags --ldflags --libs
+	@g++ $(CFLAGS) $(LINKS) -o $@ $(OBJECTS) $(Magick++-config --cppflags --cxxflags --ldflags --libs)
 
 clean:
 	rm -rf $(OBJECTS) $(TARGET)
