@@ -22,28 +22,28 @@ fi
 if [ -d $1 ]; then
 	echo "Sketch Already Exists" 1>&2
 	exit 1
+fi
+
+mkdir $1
+if [ $? -eq 1 ]; then
+    echo "Need to change permissions to create folder" 1>&2
+    exit 1
+fi
+	
+cp .main.cpp $1/main.cpp
+unamestr=`uname`
+if [ "$unamestr" = "Linux" ]; then
+    cp .Makefile.lin $1/Makefile
+elif [ "$unamestr" = "Darwin" ]; then
+    cp .Makefile.dar $1/Makefile
 else
-	mkdir $1
-	if [ $? -eq 1 ]; then
-		echo "Need to change permissions to create folder" 1>&2
-		exit 1
-	fi
+    cp .Makefile.win $1/Makefile
+fi
 	
-	cp .main.cpp $1/main.cpp
-	
-	unamestr=`uname`
-	if [[ "$unamestr" == 'Linux' ]]; then
-		cp .Makefile.lin $1/Makefile
-	elif [[ "$unamestr" == 'Darwin' ]]; then
-		cp .Makefile.dar $1/Makefile
-	else
-		cp .Makefile.win $1/Makefile
-	fi
-	
-	cd $1
-	#make
+cd $1
+#make
 	
 
-	echo "Sketch $1 created!"
-	ls
-fi
+echo "Sketch $1 created!"
+ls
+
