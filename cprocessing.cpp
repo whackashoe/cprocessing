@@ -70,13 +70,12 @@ namespace cprocessing {
 	unsigned config = HALF_PIXEL_SHIFT | Y_DOWN | BACK_BUFFER; ///< Configuration flags
 
 	int framerate = 60; ///< Frames per second
-    int frameCount = 0;
+  int frameCount = 0;
 	int initialized = false; 	///< Whether or not initialization of glut took place
+
         
 	color strokeColor (0,0,0);     ///< Line drawing color
 	color fillColor   (255,255,255);   ///< Area drawing color
-    
-
 
 	/// 
 	/// Global OpenGL initialization code. Should be called at least once when screen is established
@@ -512,17 +511,18 @@ namespace cprocessing {
     
     /// Initializes and runs the application main event loop
     void run() {
-		int argc = 0;
-		char **argv = 0;
-        glutInit(&argc, argv);
+		  int argc = 0;
+		  char **argv = 0;
+      glutInit(&argc, argv);
 	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	    glutTimerFunc (1000/framerate, refresh, 0);
 
     	bezierDetail(50);
     	ellipseDetail(50);
     	sphereDetail(30,30);
+
     	::setup();
-        glutMainLoop();
+      glutMainLoop();
     }
 }
 

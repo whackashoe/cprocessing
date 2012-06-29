@@ -19,6 +19,7 @@
 #include "color.hpp"
 #include "pimage.hpp"
 #include "pvector.hpp"
+#include "snoise.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS
@@ -29,7 +30,7 @@
 #endif
 
 //JAVA TO C SUGAR BABY YAY
-#define boolean bool
+typedef bool boolean;
 
 
 //rewrite basic syntax
@@ -586,8 +587,10 @@ namespace cprocessing {
     int day();
     int month();
     int year();
-
     
+    
+
+
     //
 	// Initialization (file cprocessing.cpp)
 	//
@@ -596,7 +599,7 @@ namespace cprocessing {
     /// @param width Desired window width in pixels.
     /// @param height Desired window height in pixels.
     /// @param name Desired window title.
-    void size (unsigned width, unsigned height, const char* name = "Graphics");
+    void size (unsigned width, unsigned height, const char* name = "cprocessing");
 
     /// Run the drawing application
     void run();

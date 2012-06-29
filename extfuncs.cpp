@@ -9,4 +9,4 @@ void keyPressed()       { }
 void keyReleased()      { }
 void draw()             { }
 
-void setup() { size (100,100); }
+void setup() { size (100,100, "cprocessing"); }
