@@ -515,6 +515,30 @@ namespace cprocessing {
       strftime (buffer,5,"%Y",timeinfo);
       return atoi(buffer);
     }
+
+    //TODO:: and tab, Unicode "nbsp" character. & carriage return
+    std::string trim(std::string str) {
+      std::string r = "";
+
+      //front pass
+      unsigned int i=0;
+      while(i < str.length()-1 && (str[i] == ' ' || str[i] == '\n' || str[i] == '\r\n')) i++;
+
+      //copy over
+      for(unsigned int j=i; j<str.length()-1; j++) r += str[j];
+      str = "";
+      for(unsigned int j=0; j<r.length()-1; j++) str += r[j];
+
+      //back pass
+      i = str.length()-1;
+      while(i > 0 && (str[i] == ' ' || str[i] == '\n' || str[i] == '\r\n')) i--;
+
+      //copy over
+      r = "";
+      for(unsigned int j=0; j<i; j++) r += str[j];
+
+      return r;
+    }
     
     /// Initializes and runs the application main event loop
     void run() {

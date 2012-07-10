@@ -613,8 +613,10 @@ namespace cprocessing {
 		dst = *src;
 	}
 	
+	*/
 
 	//string functions
+	/*
     std::string join(std::string str[], std::string separator) {
     	std::string r = "";
     	for(int i=0; i<str.length-1; i++) {
@@ -624,8 +626,11 @@ namespace cprocessing {
     	r += str[str.length-1];
 
     	return r;
-    }
+    }*/
 
+    std::string trim(std::string str);
+
+    /*
     std::string nf(int n) {
 
     }
