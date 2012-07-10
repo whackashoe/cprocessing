@@ -14,7 +14,7 @@
 #include "pimage.hpp"
 
 using namespace cprocessing;
-using namespace Magick;
+//using namespace Magick;
 
 namespace cprocessing {
 
@@ -44,15 +44,15 @@ namespace cprocessing {
         this->pixels = new color[width*height];
         this->type = type;
 
-        Geometry g(width, height);
-        Color c;
-        this->img = new Image(g, c);
+        //Geometry g(width, height);
+        //Color c;
+        //this->img = new Image(g, c);
     }
     
     /// Destructor
     PImage::~PImage () {
         delete pixels;
-        delete img;
+        //delete img;
     }
 
     
@@ -84,11 +84,11 @@ namespace cprocessing {
     }
 
     void PImage::loadImage(std::string src) {
-        try {
+        /*try {
             img = new Image("poop");
         } catch( Exception &error_ ) {
             std::cout << "Caught exception: " << error_.what() << std::endl;
-        }
+        }*/
     }
 }
 

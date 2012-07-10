@@ -8,14 +8,14 @@
  */
 
 #include "cprocessing.hpp"
-#include <Magick++.h>
+//#include <Magick++.h>
 
 using namespace cprocessing;
-using namespace Magick;
+//using namespace Magick;
 
 int main (int argc,char **argv) {
-	#if defined(__WIN32__) || defined(_WIN32) || defined(WIN32) || defined(__WINDOWS__) || defined(__TOS_WIN__)
+	/*#if defined(__WIN32__) || defined(_WIN32) || defined(WIN32) || defined(__WINDOWS__) || defined(__TOS_WIN__)
 		Magick::InitializeMagick(*argv);	//initialization not required in systems that can support installing to known locations
-    #endif 	
+    #endif */
 	run();
 }

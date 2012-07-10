@@ -7,7 +7,7 @@
 
 #ifndef CPROCESSING_HPP_
 #define CPROCESSING_HPP_
-#include <Magick++.h>
+//#include <Magick++.h>
 #include <cmath>
 #include <cassert>
 #include <iostream>
@@ -579,7 +579,7 @@ namespace cprocessing {
 
     void image(PImage img, int x, int y);
 
-
+    //time functions
     inline long millis() { return (long) ((long double) (clock()/(CLOCKS_PER_SEC/1000))); }
     int second();
     int minute();
@@ -587,10 +587,52 @@ namespace cprocessing {
     int day();
     int month();
     int year();
-    
-    
 
 
+
+    //array functions
+    /*
+    template <class T>
+    T * append(T & a, T b) {
+    	int sz = sizeof(a)/sizeof(b);
+
+    	T r = new T[sz+1];
+    	for(int i=0; i<sz; i++) r[i] = a[i];
+    	r[sz] = b;
+    	return r;
+    }
+
+    
+    template <class T>
+    void arrayCopy(T src, int srcPosition, T dst, int dstPosition, int length);
+    template <class T>
+	void arrayCopy(T src, T dst, int length);
+	
+	template <class T>
+	void arrayCopy(T & src, T & dst) {
+		dst = *src;
+	}
+	
+
+	//string functions
+    std::string join(std::string str[], std::string separator) {
+    	std::string r = "";
+    	for(int i=0; i<str.length-1; i++) {
+    		r += str[i];
+    		r += separator;
+    	}
+    	r += str[str.length-1];
+
+    	return r;
+    }
+
+    std::string nf(int n) {
+
+    }
+
+    std::string nf(float n) {
+
+    }*/
     //
 	// Initialization (file cprocessing.cpp)
 	//

@@ -1,12 +1,12 @@
 #include "cprocessing.hpp"
-#include <Magick++.h>
+//#include <Magick++.h>
 
 #ifndef CPROCESSING_PIMAGE_
 #define CPROCESSING_PIMAGE_
 
 
 using namespace cprocessing;
-using namespace Magick;
+//using namespace Magick;
 
 namespace cprocessing {     
     enum { ARGB, RGB, HSB, ALPHA };
@@ -16,7 +16,7 @@ namespace cprocessing {
 	public:
 	    color * pixels;  ///< Where the pixels are actually stored. Stored row by row
 	                     /// from top (row 0) to bottom
-        Image * img;
+        //Image * img;
 	    int width;       ///< width of the image (size of row)
 	    int height;      ///< height of the image (number of rows)
         unsigned type;
