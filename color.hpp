@@ -61,8 +61,10 @@ namespace cprocessing {
 	
 	/// Extracts the brightness value from a color, scaled to match current colorMode()
 	double brightness(const color & color);
-	
+
+		
     //Blends two colors together
     color blendColor(const color, const color, unsigned mode = BLEND);
+    color lerpColor(const color a, const color b, float amt);
 }
 #endif

@@ -80,7 +80,7 @@ namespace cprocessing {
 
 
     /**
-     * Computes dot product in 2D.
+     * Computes dot product in 2D.l
      * 
      * @param g
      *            2-vector (grid offset)

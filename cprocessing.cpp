@@ -218,6 +218,13 @@ namespace cprocessing {
         return color();
     }
 
+    color lerpColor(const color a, const color b, float amt) {
+      return color(lerp(a.rgba[0], b.rgba[0], amt), 
+                   lerp(a.rgba[1], b.rgba[1], amt), 
+                   lerp(a.rgba[2], b.rgba[2], amt), 
+                   lerp(a.rgba[3], b.rgba[3], amt));
+    }
+
     /// Called whenever mouse moves
     static void mousemotion (int x, int y) {
       if (mouseRecordFlag){

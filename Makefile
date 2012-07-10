@@ -1,4 +1,4 @@
-CFLAGS = -Wall -g -fPIC
+CFLAGS = -Wall -g -fPIC -O3
 
 LINKS= `Magick++-config --cppflags --cxxflags --ldflags --libs` -lxml2
 
