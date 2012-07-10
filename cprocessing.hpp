@@ -638,6 +638,16 @@ namespace cprocessing {
     std::string nf(float n) {
 
     }*/
+
+
+    void randomSeed(unsigned int randomSeed);
+    double random(double howbig);
+    float random(float howbig);
+    float random(int howbig);
+	double random(double howsmall, double howbig);
+	float random(float howsmall, float howbig);
+	float random(int howsmall, int howbig);
+
     //
 	// Initialization (file cprocessing.cpp)
 	//

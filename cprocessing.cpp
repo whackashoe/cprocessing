@@ -517,6 +517,7 @@ namespace cprocessing {
     }
 
     //TODO:: and tab, Unicode "nbsp" character. & carriage return
+    //TODO:: make this accept string arrays as well!
     std::string trim(std::string str) {
       std::string r = "";
 
@@ -538,6 +539,34 @@ namespace cprocessing {
       for(unsigned int j=0; j<i; j++) r += str[j];
 
       return r;
+    }
+
+    void randomSeed(unsigned int randomSeed) {
+      srand(randomSeed);
+    }
+
+    double random(double howbig) {
+      return (double) (((double) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
+    }
+
+    float random(float howbig) {
+      return (float) (((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
+    }
+
+    float random(int howbig) {
+      return (float) (((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
+    }
+
+    double random(double howsmall, double howbig) {
+      return (double) ((((double) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
+    }
+
+    float random(float howsmall, float howbig) {
+      return (float) ((((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
+    }
+
+    float random(int howsmall, int howbig) {
+      return (float) ((((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
     }
     
     /// Initializes and runs the application main event loop
