@@ -11,6 +11,7 @@
 #include <cmath>
 #include <cassert>
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
@@ -640,14 +641,39 @@ namespace cprocessing {
     }*/
 
 
-    void randomSeed(unsigned int randomSeed);
-    double random(double howbig);
-    float random(float howbig);
-    float random(int howbig);
-	double random(double howsmall, double howbig);
-	float random(float howsmall, float howbig);
-	float random(int howsmall, int howbig);
+    inline void randomSeed(unsigned int randomSeed) {
+      srand(randomSeed);
+    }
 
+    inline double random(double howbig) {
+      return (double) (((double) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
+    }
+
+    inline float random(float howbig) {
+      return (float) (((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
+    }
+
+    inline float random(int howbig) {
+      return (float) (((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
+    }
+
+    inline double random(double howsmall, double howbig) {
+      return (double) ((((double) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
+    }
+
+    inline float random(float howsmall, float howbig) {
+      return (float) ((((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
+    }
+
+    inline float random(int howsmall, int howbig) {
+      return (float) ((((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
+    }
+
+
+    
+    const char * loadBytes(const char * src);
+    //const char * loadStrings(const char * src);
+    
     //
 	// Initialization (file cprocessing.cpp)
 	//

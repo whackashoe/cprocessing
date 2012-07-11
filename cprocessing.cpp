@@ -519,55 +519,65 @@ namespace cprocessing {
     //TODO:: and tab, Unicode "nbsp" character. & carriage return
     //TODO:: make this accept string arrays as well!
     std::string trim(std::string str) {
-      std::string r = "";
+      unsigned int i=0;
 
       //front pass
-      unsigned int i=0;
       while(i < str.length()-1 && (str[i] == ' ' || str[i] == '\n' || str[i] == '\r\n')) i++;
+      str.erase(0, i);
 
-      //copy over
-      for(unsigned int j=i; j<str.length()-1; j++) r += str[j];
-      str = "";
-      for(unsigned int j=0; j<r.length()-1; j++) str += r[j];
+      i = str.length()-1;
 
       //back pass
-      i = str.length()-1;
       while(i > 0 && (str[i] == ' ' || str[i] == '\n' || str[i] == '\r\n')) i--;
+      str.erase(i, str.length()-i);
 
-      //copy over
-      r = "";
-      for(unsigned int j=0; j<i; j++) r += str[j];
-
-      return r;
+      return str;
     }
 
-    void randomSeed(unsigned int randomSeed) {
-      srand(randomSeed);
+
+    const char * loadBytes(const char * src) {
+      int length;
+      char * buffer;
+
+      std::ifstream is;
+      is.open(src, std::ios::binary);
+
+      // get length of file:
+      is.seekg (0, std::ios::end);
+      length = is.tellg();
+      is.seekg (0, std::ios::beg);
+
+      // allocate memory:
+      buffer = new char [length];
+
+      // read data as a block:
+      is.read (buffer,length);
+      is.close();
+
+      return buffer;
     }
 
-    double random(double howbig) {
-      return (double) (((double) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
-    }
+    /*const char * loadStrings(const char * src) {
+      int length;
+      char * buffer;
 
-    float random(float howbig) {
-      return (float) (((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
-    }
+      std::ifstream is;
+      is.open(src, std::ios::in);
 
-    float random(int howbig) {
-      return (float) (((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*howbig;
-    }
+      // get length of file:
+      is.seekg (0, std::ios::end);
+      length = is.tellg();
+      is.seekg (0, std::ios::beg);
 
-    double random(double howsmall, double howbig) {
-      return (double) ((((double) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
-    }
+      // allocate memory:
+      buffer = new char [length];
 
-    float random(float howsmall, float howbig) {
-      return (float) ((((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
-    }
+      // read data as a block:
+      is.read (buffer,length);
+      is.close();
 
-    float random(int howsmall, int howbig) {
-      return (float) ((((float) (fmod(rand(),RAND_MAX))/RAND_MAX))*(howbig - howsmall))+howsmall;
-    }
+      return buffer;
+    }*/
     
     /// Initializes and runs the application main event loop
     void run() {
