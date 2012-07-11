@@ -164,6 +164,11 @@ namespace cprocessing {
         }
     }
 
+    void redraw() {
+      frameCount++;
+      display();
+    }
+
      color blendColor(const color a, const color b, unsigned mode) {
         assert (mode == REPLACE || mode == BLEND || mode == ADD || mode == SUBTRACT || mode == DARKEST || mode == LIGHTEST || mode == DIFFERENCE || mode == EXCLUSION || mode == MULTIPLY || mode == SCREEN || mode == OVERLAY || mode == HARD_LIGHT || mode == SOFT_LIGHT || mode == DODGE || mode == BURN);
         //TODO:: finish blend modes

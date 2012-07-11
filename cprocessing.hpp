@@ -672,6 +672,9 @@ namespace cprocessing {
 
     
     const char * loadBytes(const char * src);
+
+    void redraw();
+
     //const char * loadStrings(const char * src);
     
     //
@@ -682,6 +685,7 @@ namespace cprocessing {
     /// @param width Desired window width in pixels.
     /// @param height Desired window height in pixels.
     /// @param name Desired window title.
+
     void size (unsigned width, unsigned height, const char* name = "cprocessing");
 
     /// Run the drawing application
