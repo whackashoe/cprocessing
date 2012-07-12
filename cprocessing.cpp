@@ -73,7 +73,7 @@ namespace cprocessing {
   int frameCount = 0;
 	int initialized = false; 	///< Whether or not initialization of glut took place
 
-        
+  std::vector<Style> styles;
 	color strokeColor (0,0,0);     ///< Line drawing color
 	color fillColor   (255,255,255);   ///< Area drawing color
 
@@ -584,6 +584,13 @@ namespace cprocessing {
       return buffer;
     }*/
     
+    void pushStyle() {
+      styles.push_back(Style());
+    }
+    void popStyle() {
+      styles.pop_back();
+    }
+
     /// Initializes and runs the application main event loop
     void run() {
 		  int argc = 0;

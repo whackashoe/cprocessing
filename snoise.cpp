@@ -5,8 +5,6 @@ using namespace cprocessing;
 
 namespace cprocessing {
     SimplexNoise snoiz_int; //internal simplex noise 
-
-
     double SimplexNoise::F2    = 0.5 * (sqrt(3.0) - 1.0);
     double SimplexNoise::G2    = (3.0 - sqrt(3.0)) / 6.0;
     double SimplexNoise::G22   = G2 * 2.0 - 1;

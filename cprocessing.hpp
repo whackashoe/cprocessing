@@ -12,6 +12,7 @@
 #include <cassert>
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,6 +22,7 @@
 #include "pimage.hpp"
 #include "pvector.hpp"
 #include "snoise.hpp"
+#include "style.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS
@@ -101,6 +103,7 @@ namespace cprocessing {
     extern int frameCount; ///frames since start
 	extern color strokeColor;  ///< Line drawing color
 	extern color fillColor;   ///< Area drawing color
+	extern std::vector<Style> styles;
 
 
 	//===========================================================================
@@ -675,6 +678,8 @@ namespace cprocessing {
 
     void redraw();
 
+    void pushStyle();
+    void popStyle();
     //const char * loadStrings(const char * src);
     
     //
