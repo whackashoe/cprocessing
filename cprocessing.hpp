@@ -12,7 +12,6 @@
 #include <cassert>
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,7 +21,6 @@
 #include "pimage.hpp"
 #include "pvector.hpp"
 #include "snoise.hpp"
-#include "style.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS
@@ -101,7 +99,12 @@ namespace cprocessing {
 	extern unsigned config; ///< configuration flags
 	extern int framerate; ///< Frames per second
     extern int frameCount; ///frames since start
+<<<<<<< HEAD
 	extern std::vector<Style> styles;
+=======
+	extern color strokeColor;  ///< Line drawing color
+	extern color fillColor;   ///< Area drawing color
+>>>>>>> parent of da2c76e... added Style for push/popstyle
 
 
 	//===========================================================================
@@ -676,9 +679,12 @@ namespace cprocessing {
 
     void redraw();
 
+<<<<<<< HEAD
     void pushStyle();
     void popStyle();
     Style * getStyle();
+=======
+>>>>>>> parent of da2c76e... added Style for push/popstyle
     //const char * loadStrings(const char * src);
     
     //

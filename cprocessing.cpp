@@ -76,9 +76,15 @@ namespace cprocessing {
   int frameCount = 0;
 	int initialized = false; 	///< Whether or not initialization of glut took place
 
+<<<<<<< HEAD
   std::vector<Style> styles;
 	//color strokeColor (0,0,0);     ///< Line drawing color
 	//color fillColor   (255,255,255);   ///< Area drawing color
+=======
+        
+	color strokeColor (0,0,0);     ///< Line drawing color
+	color fillColor   (255,255,255);   ///< Area drawing color
+>>>>>>> parent of da2c76e... added Style for push/popstyle
 
 	/// 
 	/// Global OpenGL initialization code. Should be called at least once when screen is established
@@ -589,6 +595,7 @@ namespace cprocessing {
       return buffer;
     }*/
     
+<<<<<<< HEAD
     void pushStyle() {
       std::cout << "fuck" << std::endl;
       styles.push_back(baseStyle);
@@ -603,6 +610,8 @@ namespace cprocessing {
       return & styles[styles.size()-1];
     }
 
+=======
+>>>>>>> parent of da2c76e... added Style for push/popstyle
     /// Initializes and runs the application main event loop
     void run() {
 		  int argc = 0;
