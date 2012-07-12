@@ -81,9 +81,8 @@ struct PPath {
 static PPath shape; ///< Data for current shape
 static ShapeMode mode; ///< Current shape type
 
-static int bezierDetail = 50; ///< Number of vertices per bezier arc
-typedef std::vector<double> BlendFactor; ///< Blending factors for a cubic bézier
-static std::vector<BlendFactor> bezierBlend; ///< bezierDetail samples of Bézier blending functions
+//typedef stdvector<double> BlendFactor; ///< Blending factors for a cubic bézier
+//static stdvector<BlendFactor> bezierBlend; ///< bezierDetail samples of Bézier blending functions
 
 namespace cprocessing {
 
@@ -91,25 +90,25 @@ namespace cprocessing {
 	void beginShape(ShapeMode mode) {
 		PPath newshape;
 		shape = newshape;
-		::mode = mode;
+		mode = mode;
 	}
 
 	/// Finishes and renders the shape
 	void endShape(ShapeClose close) {
 
 		/// First handle the filled shape
-		if (fillColor.rgba[3] > 0) {
+		if (styles[styles.size()-1].fillColor->rgba[3] > 0) {
 			// See if filled shape is required
-			glColor4ubv (fillColor.rgba);
+			glColor4ubv (styles[styles.size()-1].fillColor->rgba);
 
-			if (::mode == POLYGON) {
+			if (mode == POLYGON) {
 				// Render as a simple polygon with the help of GLU's tesselation
 				// facilities
 				
 
 #if defined(__WIN32__) || defined(_WIN32) || defined(WIN32) || defined(__WINDOWS__) || defined(__TOS_WIN__)
-                //TODO::broken on win32/mingw
-                std::cout << "GLU_TESS_VERTEX broken on mingw recompile cprocessing to enable it (in shapes.cpp)" << std::endl;
+                //TODObroken on win32/mingw
+                stdcout << "GLU_TESS_VERTEX broken on mingw recompile cprocessing to enable it (in shapes.cpp)" << stdendl;
 #else
 				GLUtesselator* tobj = gluNewTess();
 				gluTessCallback(tobj, GLU_TESS_VERTEX, (GLvoid (*) ()) &glVertex3dv);
@@ -136,7 +135,7 @@ namespace cprocessing {
 				glVertexPointer(3, GL_DOUBLE, 0, shape.vtx[0].array());
 				if (!shape.useNormal) {
 					// Normals were not specified. Compute automatically
-					switch (::mode) {
+					switch (mode) {
 					case TRIANGLES: shape.setAutoNormals (2,3); break;
 					case TRIANGLE_STRIP: shape.setAutoNormals (2,1); break;
 					case TRIANGLE_FAN: shape.setAutoNormals (2,1,true); break;
@@ -148,17 +147,17 @@ namespace cprocessing {
 				glEnableClientState (GL_NORMAL_ARRAY);
 				glNormalPointer(GL_DOUBLE, 0, shape.nrm[0].array());
 
-				glDrawArrays (::mode - POINTS + GL_POINTS, 0, shape.vtx.size());
+				glDrawArrays (mode - POINTS + GL_POINTS, 0, shape.vtx.size());
 				glDisableClientState (GL_VERTEX_ARRAY);
 				glDisableClientState (GL_NORMAL_ARRAY);
 			}
 		}
 
 		/// Now handle the outline
-		if (strokeColor.rgba[3] > 0) {
+		if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
 			// See if outline is required
-			glColor4ubv (strokeColor.rgba);
-			if (::mode == POLYGON) {
+			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+			if (mode == POLYGON) {
 				// activate and specify pointer to vertex array
 				glEnableClientState(GL_VERTEX_ARRAY);
 				glVertexPointer(3, GL_DOUBLE, 0, shape.vtx[0].array());
@@ -174,7 +173,7 @@ namespace cprocessing {
 					glEnableClientState (GL_NORMAL_ARRAY);
 					glNormalPointer(GL_DOUBLE, 0, shape.nrm[0].array());
 				}
-				glDrawArrays (::mode - POINTS + GL_POINTS, 0, shape.vtx.size());
+				glDrawArrays (mode - POINTS + GL_POINTS, 0, shape.vtx.size());
 				glDisableClientState (GL_VERTEX_ARRAY);
 				glDisableClientState (GL_NORMAL_ARRAY);
 			}
@@ -201,9 +200,9 @@ namespace cprocessing {
 	{
 		// Remember the argument
 		assert (n > 0);
-	    ::bezierDetail = n;
+	    styles[styles.size()-1].bezierDetail = n;
 	    // Precompute blending factors
-	    ::bezierBlend.clear();
+	    styles[styles.size()-1].bezierBlend.clear();
 	    double t;
 	    double u;
 	    for (int i=0; i < n+1; i++) {
@@ -214,7 +213,7 @@ namespace cprocessing {
 	    	blend.push_back (3*u*u*t);
 	    	blend.push_back (3*t*t*u);
 	    	blend.push_back (t*t*t);
-	    	::bezierBlend.push_back(blend);
+	    	styles[styles.size()-1].bezierBlend.push_back(blend);
 	    }
 	}
 
@@ -256,8 +255,8 @@ namespace cprocessing {
 	    PVector d = PVector (x, y, z);
 
 	    // Put into shape a sampling of the curve
-	    for (unsigned i = 0; i < ::bezierBlend.size(); i++) {
-	    	BlendFactor factor = ::bezierBlend[i];
+	    for (unsigned i = 0; i < styles[styles.size()-1].bezierBlend.size(); i++) {
+	    	BlendFactor factor = styles[styles.size()-1].bezierBlend[i];
 	    	PVector p = a*factor[0] + b*factor[1] + c*factor[2] + d*factor[3];
 	    	shape.addVertex (p);
 	    }

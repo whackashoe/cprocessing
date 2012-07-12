@@ -6,28 +6,40 @@
 
 using namespace cprocessing;
 
+typedef std::vector<double> BlendFactor; ///< Blending factors for a cubic bézier
+
+
 namespace cprocessing {
     class Style {
     public:
         unsigned rectMode;
         unsigned ellipseMode;
         unsigned imageMode;
-        unsigned globColorMode;
+        unsigned globColorMode; /// Tells which color space is actually used for color specification
+
+        /// Maximum range values for color components. Specified by the colorMode() function.
+        double max1; // First component
+        double max2; // Second component
+        double max3; // Third component
+        double maxA; // Alpha component
 
         int ellipseDetail;
         int sphereDetail;
-        
+        unsigned bezierDetail;
+
         std::vector<PVector> ellipseVtx;  ///< Vertices of circle centered at the origin and diameter 1
         int ures, vres; ///< number of vertices in the longitude and latitude directions of a sphere
         std::vector<PVector> sphereVtx; ///< Precomputed vertices of a sphere centered at the origin and diameter 1
         std::vector<unsigned> sphereIdx; ///< Indices of sphere vertices traversed by a quadstrip
+
+        std::vector<BlendFactor> bezierBlend; ///< bezierDetail samples of Bézier blending functions
 
         int strokeWeight;
 
         color * strokeColor;
         color * fillColor;
 
-        float specular[4];
+        float * specular;
 
         //TODO::
         /*tint(), strokeCap(), strokeJoin(), 

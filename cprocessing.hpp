@@ -101,8 +101,6 @@ namespace cprocessing {
 	extern unsigned config; ///< configuration flags
 	extern int framerate; ///< Frames per second
     extern int frameCount; ///frames since start
-	extern color strokeColor;  ///< Line drawing color
-	extern color fillColor;   ///< Area drawing color
 	extern std::vector<Style> styles;
 
 
@@ -680,6 +678,7 @@ namespace cprocessing {
 
     void pushStyle();
     void popStyle();
+    Style * getStyle();
     //const char * loadStrings(const char * src);
     
     //

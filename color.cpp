@@ -59,15 +59,6 @@ static void rgb_to_hsb (double r, double g, double b,
     v = maxval;
 }
 
-/// Tells which color space is actually used for color specification
-static unsigned globColorMode = RGB;
-
-
-/// Maximum range values for color components. Specified by the colorMode() function.
-static double max1 = 255;  // First component
-static double max2 = 255;  // Second component
-static double max3 = 255;  // Third component
-static double maxA = 255;  // Alpha component
 
 namespace cprocessing {
     //
@@ -76,13 +67,13 @@ namespace cprocessing {
     /// Constructor for the color class
     color::color(double val1, double val2, double val3, double valA) {
 		//SCale the values to a range of 255
-		val1 = val1/max1; 
-		val2 = val2/max2;
-		val3 = val3/max3;
+		val1 = val1/styles[styles.size()-1].max1; 
+		val2 = val2/styles[styles.size()-1].max2;
+		val3 = val3/styles[styles.size()-1].max3;
 		if (valA == MAXCOLOR) valA = 1.0;
-		else valA = valA/maxA;
+		else valA = valA/styles[styles.size()-1].maxA;
 		
-		if (globColorMode != RGB) {
+		if (styles[styles.size()-1].globColorMode != RGB) {
 			hsb_to_rgb(val1, val2, val3, val1, val2, val3);
 		}
 		
@@ -94,12 +85,12 @@ namespace cprocessing {
 
     // Constructor from a gray value
     color::color(double gray, double alpha){
-	    if (alpha == MAXCOLOR) { alpha = maxA;}
-	    unsigned char val = clamp(gray/max1*255);
+	    if (alpha == MAXCOLOR) { alpha = styles[styles.size()-1].maxA;}
+	    unsigned char val = clamp(gray/styles[styles.size()-1].max1*255);
 	    rgba[0] = val;
 	    rgba[1] = val;
 	    rgba[2] = val;
-	    rgba[3] = clamp(alpha/maxA*255);
+	    rgba[3] = clamp(alpha/styles[styles.size()-1].maxA*255);
     }
     
     //TODO::make this disseminate #aaaaaa or #aaa words or else throw error
@@ -107,7 +98,7 @@ namespace cprocessing {
         rgba[0] = 0;
         rgba[1] = 0;
         rgba[2] = 0;
-        rgba[3] = maxA;
+        rgba[3] = styles[styles.size()-1].maxA;
     }
 
     /// Converts color to a float array
@@ -131,58 +122,58 @@ namespace cprocessing {
     /// The colorMode() function is used to change the numerical range used for specifying colors and to switch color systems.
     void colorMode(unsigned mode, double range1, double range2, double range3, double range4){
         assert(mode == RGB || mode == HSB);
-        globColorMode = mode;
+        styles[styles.size()-1].globColorMode = mode;
 
-        max1 = range1;
-        max2 = range2;
-        max3 = range3;
-        if (range4 != MAXCOLOR) maxA = range4;
+        styles[styles.size()-1].max1 = range1;
+        styles[styles.size()-1].max2 = range2;
+        styles[styles.size()-1].max3 = range3;
+        if (range4 != MAXCOLOR) styles[styles.size()-1].maxA = range4;
     }
     
     // When changing just the color system, ranges are kept as is
     void colorMode(unsigned mode) {
         assert(mode == RGB || mode == HSB);
-        globColorMode = mode;
+        styles[styles.size()-1].globColorMode = mode;
      }
 	
 	/// Extracts the alpha value from a color, scaled to match current colorMode()
     double alpha(const color & color){
-        return double(color.rgba[3])/255*maxA;
+        return double(color.rgba[3])/255*styles[styles.size()-1].maxA;
     }
 	
 	/// Extracts the red value from a color, scaled to match current colorMode()
     double red(const color & color){
-        return double(color.rgba[0])/255*max1;
+        return double(color.rgba[0])/255*styles[styles.size()-1].max1;
     }
 
 	/// Extracts the green value from a color, scaled to match current colorMode()
     double green(const color & color){
-        return double(color.rgba[1])/255*max2;
+        return double(color.rgba[1])/255*styles[styles.size()-1].max2;
     }
 
 	/// Extracts the blue value from a color, scaled to match current colorMode()
     double blue(const color & color){
-        return double(color.rgba[2])/255*max3;
+        return double(color.rgba[2])/255*styles[styles.size()-1].max3;
     }
 
 	/// Extracts the hue value from a color, scaled to match current colorMode()
     double hue(const color & color){
         double h, s, v;
         rgb_to_hsb(color.rgba[0]/255.0,color.rgba[1]/255.0,color.rgba[2]/255.0,h,s,v);
-        return h*max1;
+        return h*styles[styles.size()-1].max1;
     }
 	
 	/// Extracts the saturation value from a color, scaled to match current colorMode()
     double saturation(const color & color){
         double h, s, v;
         rgb_to_hsb(color.rgba[0]/255.0,color.rgba[1]/255.0,color.rgba[2]/255.0,h,s,v);
-        return s*max2;
+        return s*styles[styles.size()-1].max2;
     }
 	
 	/// Extracts the brightness value from a color, scaled to match current colorMode()
     double brightness(const color & color){
         double h, s, v;
         rgb_to_hsb(color.rgba[0]/255.0,color.rgba[1]/255.0,color.rgba[2]/255.0,h,s,v);
-        return v*max3;
+        return v*styles[styles.size()-1].max3;
     }
 }

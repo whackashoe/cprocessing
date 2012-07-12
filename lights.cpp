@@ -11,7 +11,6 @@
 
 static bool lights = false; ///< Whether lighting is turned on or off
 static int lightCount = 0;  ///< How many light sources were defined
-static float specular[4] = {0,0,0,1};   ///< Specular coefficients
 static float constant = 1;    ///< Light attenuation coefficients
 static float linear = 0;
 static float quadratic = 0;
@@ -47,7 +46,7 @@ namespace cprocessing {
         float direction[] = {nx,ny,nz};
         glLightfv (n, GL_DIFFUSE, fc);
         glLightfv (n, GL_AMBIENT, ambient);
-        glLightfv (n, GL_SPECULAR, specular);
+        glLightfv (n, GL_SPECULAR, styles[styles.size()-1].specular);
         glLightfv (n, GL_POSITION, position);
         glLightfv (n, GL_SPOT_DIRECTION, direction);
         glLightf (n, GL_SPOT_EXPONENT, 0);
@@ -73,7 +72,7 @@ namespace cprocessing {
         float direction[] = {0, 0, -1};
         glLightfv(n, GL_DIFFUSE, fc);
         glLightfv(n, GL_AMBIENT, ambient);
-        glLightfv(n, GL_SPECULAR, specular);
+        glLightfv(n, GL_SPECULAR, styles[styles.size()-1].specular);
         glLightfv(n, GL_POSITION, position);
         glLightfv(n, GL_SPOT_DIRECTION, direction);
         glLightf(n, GL_SPOT_EXPONENT, 0);
@@ -96,10 +95,16 @@ namespace cprocessing {
         ::lightCount ++;
         float position[] = {x, y, z,0};
         float difuse[] = {0,0,0};
-        float specular[] = {0,0,0};
+        
+        delete styles[styles.size()-1].specular;
+        styles[styles.size()-1].specular = new float[3];
+        styles[styles.size()-1].specular[0] = 0;
+        styles[styles.size()-1].specular[1] = 0;
+        styles[styles.size()-1].specular[2] = 0;
+
         glLightfv(n, GL_DIFFUSE, difuse);
         glLightfv(n, GL_AMBIENT, fc);
-        glLightfv(n, GL_SPECULAR, specular);
+        glLightfv(n, GL_SPECULAR, styles[styles.size()-1].specular);
         glLightfv(n, GL_POSITION, position);
         glLightf(n, GL_LINEAR_ATTENUATION, linear);
         glLightf(n, GL_QUADRATIC_ATTENUATION, quadratic);
@@ -127,10 +132,16 @@ namespace cprocessing {
         float position[] = {x, y, z,1};
         float direction[] = {nx, ny, nz};
         float ambient[] = {0,0,0};
-        float specular[] = {0,0,0};
+        
+        delete styles[styles.size()-1].specular;
+        styles[styles.size()-1].specular = new float[3];
+        styles[styles.size()-1].specular[0] = 0;
+        styles[styles.size()-1].specular[1] = 0;
+        styles[styles.size()-1].specular[2] = 0;
+
         glLightfv(n, GL_DIFFUSE, fc);
         glLightfv(n, GL_AMBIENT, ambient);
-        glLightfv(n, GL_SPECULAR, specular);
+        glLightfv(n, GL_SPECULAR, styles[styles.size()-1].specular);
         glLightfv(n, GL_POSITION, position);
         glLightfv(n, GL_SPOT_DIRECTION, direction);
         glLightf(n, GL_SPOT_EXPONENT, concentration);
@@ -146,7 +157,7 @@ namespace cprocessing {
     void lightSpecular (double v1,double  v2,double  v3)
     {
     	color c (v1,v2,v3);
-    	c.toFloat(specular);
+    	c.toFloat(styles[styles.size()-1].specular);
     }
 
     /// Defines light attenuation factors
@@ -180,10 +191,10 @@ namespace cprocessing {
         ::constant = 1;
         ::linear = 0;
         ::quadratic = 0;
-        ::specular[0] = 0;
-        ::specular[1] = 0;
-        ::specular[2] = 0;
-        ::specular[3] = 1;
+        ::styles[styles.size()-1].specular[0] = 0;
+        ::styles[styles.size()-1].specular[1] = 0;
+        ::styles[styles.size()-1].specular[2] = 0;
+        ::styles[styles.size()-1].specular[3] = 1;
     }
 
 }
