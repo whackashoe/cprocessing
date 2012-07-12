@@ -51,8 +51,8 @@ namespace cprocessing {
 	/// @param y1: second vertex y coordinate
 	/// @param z1: second vertex z coordinate
 	void line (double x0, double y0, double z0, double x1, double y1, double z1) {
-		if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
-			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
+			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
 			glBegin(GL_LINES);
 			glVertex3d (x0, y0, z0);
 			glVertex3d (x1, y1, z1);
@@ -75,15 +75,15 @@ namespace cprocessing {
 		glEnableClientState(GL_VERTEX_ARRAY);
 		glVertexPointer(3, GL_DOUBLE, 0, vertices);
 
-		if (styles[styles.size()-1].fillColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].fillColor.rgba[3] > 0) {
 			// See if filled triangle is required
-			glColor4ubv (styles[styles.size()-1].fillColor->rgba);
+			glColor4ubv (styles[styles.size()-1].fillColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			glDrawArrays(GL_TRIANGLES,0,3);
 		}
-		if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
 			// See if outline triangle is required
-			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 			glDrawArrays(GL_TRIANGLES,0,3);
 		}
@@ -109,15 +109,15 @@ namespace cprocessing {
 		glEnableClientState(GL_VERTEX_ARRAY);
 		glVertexPointer(2, GL_DOUBLE, 0, vertices);
 
-		if (styles[styles.size()-1].fillColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].fillColor.rgba[3] > 0) {
 			// See if filled triangle is required
-			glColor4ubv (styles[styles.size()-1].fillColor->rgba);
+			glColor4ubv (styles[styles.size()-1].fillColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			glDrawArrays(GL_QUADS,0,4);
 		}
-		if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
 			// See if outline triangle is required
-			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 			glDrawArrays(GL_QUADS,0,4);
 		}
@@ -129,9 +129,9 @@ namespace cprocessing {
 	/// Draws a point.
 	void point (double x, double y, double z)
 	{
-		if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
 			// Draw point using the stroke color
-			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
 			glBegin (GL_POINTS);
 			glVertex3d (x,y,z);
 			glEnd();
@@ -172,6 +172,7 @@ namespace cprocessing {
 	/// @arg n: number of sides
 	void ellipseDetail (unsigned n) {
 		styles[styles.size()-1].ellipseVtx.clear();
+
 		for (unsigned i = 0; i < n; i++) {
 			double ang = M_PI * 2 * i / n;
 			double x = cos(ang)/2;
@@ -221,15 +222,15 @@ namespace cprocessing {
 	    // activate and specify pointer to vertex array
 		glEnableClientState(GL_VERTEX_ARRAY);
 		glVertexPointer(3, GL_DOUBLE, 0, styles[styles.size()-1].ellipseVtx [0].array());
-    	if (styles[styles.size()-1].fillColor->rgba[3] > 0) {
+    	if (styles[styles.size()-1].fillColor.rgba[3] > 0) {
 			// See if filled ellipse is required
-			glColor4ubv (styles[styles.size()-1].fillColor->rgba);
+			glColor4ubv (styles[styles.size()-1].fillColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			glDrawArrays(GL_POLYGON,0, styles[styles.size()-1].ellipseVtx.size());
     	}
-    	if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
+    	if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
 			// See if filled ellipse is required
-			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
 			glDrawArrays(GL_LINE_LOOP,0, styles[styles.size()-1].ellipseVtx.size());
     	}
     	// deactivate vertex arrays after drawing
@@ -250,7 +251,6 @@ namespace cprocessing {
 		styles[styles.size()-1].vres = vr;
 		
 		styles[styles.size()-1].sphereVtx.clear();
-		
 		for (int itheta = 0; itheta<vr; itheta++) {
 			double theta = TWO_PI / (vr-1) * itheta;
 			double sintheta = sin(theta);
@@ -265,7 +265,6 @@ namespace cprocessing {
 				styles[styles.size()-1].sphereVtx.push_back(PVector(x,y,z));
 			}
 		}
-		
 		styles[styles.size()-1].sphereIdx.clear();
 		for (int icol = 0; icol<vr-1; icol++) {
 			for (int irow = 0; irow<ur; irow++) {
@@ -285,9 +284,9 @@ namespace cprocessing {
 		glVertexPointer(3, GL_DOUBLE, 0, styles[styles.size()-1].sphereVtx [0].array());
 		glEnableClientState(GL_NORMAL_ARRAY);
 		glNormalPointer(GL_DOUBLE, 0, styles[styles.size()-1].sphereVtx [0].array());
-		if (styles[styles.size()-1].fillColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].fillColor.rgba[3] > 0) {
 			// See if filled sphere is required		
-			glColor4ubv (styles[styles.size()-1].fillColor->rgba);
+			glColor4ubv (styles[styles.size()-1].fillColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			glEnable(GL_POLYGON_OFFSET_FILL);
 			glDrawElements( GL_QUAD_STRIP, 
@@ -296,11 +295,11 @@ namespace cprocessing {
 							&(styles[styles.size()-1].sphereIdx[0]));
 			glDisable(GL_POLYGON_OFFSET_FILL);
 		}
-		if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
 			// See if outline  is required
 			glPushAttrib (GL_ENABLE_BIT);
 			glDisable(GL_LIGHTING); // lines are not illuminated in processing
-			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
 			glDrawElements(	GL_QUAD_STRIP, 
 							styles[styles.size()-1].ures*(styles[styles.size()-1].vres-1)*2, 
@@ -327,19 +326,19 @@ namespace cprocessing {
 		glVertexPointer(3, GL_DOUBLE, 0, boxVtx);
 		glEnableClientState(GL_NORMAL_ARRAY);
 		glNormalPointer(GL_DOUBLE, 0, boxNrm);
-		if (styles[styles.size()-1].fillColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].fillColor.rgba[3] > 0) {
 			// See if filled box is required		
-			glColor4ubv (styles[styles.size()-1].fillColor->rgba);
+			glColor4ubv (styles[styles.size()-1].fillColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			glEnable(GL_POLYGON_OFFSET_FILL);
 			glDrawArrays(GL_QUADS, 0, 24);
 			glDisable(GL_POLYGON_OFFSET_FILL);
 		}
-		if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
 			// See if outline  is required
 			glPushAttrib (GL_ENABLE_BIT);
 			glDisable(GL_LIGHTING); // lines are not illuminated in processing
-			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
 			glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
 			glDrawArrays(GL_QUADS, 0, 24);
 			glPopAttrib();

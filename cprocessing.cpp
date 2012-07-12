@@ -76,15 +76,9 @@ namespace cprocessing {
   int frameCount = 0;
 	int initialized = false; 	///< Whether or not initialization of glut took place
 
-<<<<<<< HEAD
   std::vector<Style> styles;
 	//color strokeColor (0,0,0);     ///< Line drawing color
 	//color fillColor   (255,255,255);   ///< Area drawing color
-=======
-        
-	color strokeColor (0,0,0);     ///< Line drawing color
-	color fillColor   (255,255,255);   ///< Area drawing color
->>>>>>> parent of da2c76e... added Style for push/popstyle
 
 	/// 
 	/// Global OpenGL initialization code. Should be called at least once when screen is established
@@ -390,15 +384,13 @@ namespace cprocessing {
         /// Sets line color
     /// @param color: New line color
     void stroke (const color& c) {
-        delete styles[styles.size()-1].strokeColor;
-        styles[styles.size()-1].strokeColor = new color(c);
+        styles[styles.size()-1].strokeColor = color(c);
     }
 
     /// Sets area color
     /// @param color: New area color
     void fill (const color& c) {
-      delete styles[styles.size()-1].fillColor;
-      styles[styles.size()-1].fillColor = new color(c);
+      styles[styles.size()-1].fillColor = color(c);
     }
 
     /// Sets line / point width
@@ -595,40 +587,37 @@ namespace cprocessing {
       return buffer;
     }*/
     
-<<<<<<< HEAD
     void pushStyle() {
-      std::cout << "fuck" << std::endl;
-      styles.push_back(baseStyle);
-      std::cout << "fuck" << std::endl;
+      Style * newStyle = new Style;
+      styles.push_back(*newStyle);
     }
+
     void popStyle() {
       if(styles.size() > 1) styles.pop_back();
       else                  std::cerr << "cannot have more popStyles() than pushStyles()" << std::endl;
     }
 
-    Style * getStyle() {
-      return & styles[styles.size()-1];
-    }
-
-=======
->>>>>>> parent of da2c76e... added Style for push/popstyle
     /// Initializes and runs the application main event loop
     void run() {
 		  int argc = 0;
 		  char **argv = 0;
-      std::cout << "fuckrun" << std::endl;
       glutInit(&argc, argv);
 	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	    glutTimerFunc (1000/framerate, refresh, 0);
-      std::cout << "fucktimer" << std::endl;
-      //pushStyle();
-      std::cout << "fuckstyle" << std::endl;
-    	//bezierDetail(50);
-    	//ellipseDetail(50);
-    	//sphereDetail(30,30);
+      styles.push_back(baseStyle);
+      bezierDetail(50);
+      ellipseDetail(50);
+    	sphereDetail(30,30);
+      stroke(0);
+      fill(255);
 
-    	//::setup();
-      //glutMainLoop();
+      strokeWeight(1);
+      colorMode(RGB);
+      rectMode(CORNER);
+      ellipseMode(CENTER);
+
+    	::setup();
+      glutMainLoop();
     }
 }
 

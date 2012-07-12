@@ -97,9 +97,9 @@ namespace cprocessing {
 	void endShape(ShapeClose close) {
 
 		/// First handle the filled shape
-		if (styles[styles.size()-1].fillColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].fillColor.rgba[3] > 0) {
 			// See if filled shape is required
-			glColor4ubv (styles[styles.size()-1].fillColor->rgba);
+			glColor4ubv (styles[styles.size()-1].fillColor.rgba);
 
 			if (mode == POLYGON) {
 				// Render as a simple polygon with the help of GLU's tesselation
@@ -154,9 +154,9 @@ namespace cprocessing {
 		}
 
 		/// Now handle the outline
-		if (styles[styles.size()-1].strokeColor->rgba[3] > 0) {
+		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
 			// See if outline is required
-			glColor4ubv (styles[styles.size()-1].strokeColor->rgba);
+			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
 			if (mode == POLYGON) {
 				// activate and specify pointer to vertex array
 				glEnableClientState(GL_VERTEX_ARRAY);

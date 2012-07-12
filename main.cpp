@@ -18,8 +18,6 @@ int main (int argc,char **argv) {
 	/*#if defined(__WIN32__) || defined(_WIN32) || defined(WIN32) || defined(__WINDOWS__) || defined(__TOS_WIN__)
 		Magick::InitializeMagick(*argv);	//initialization not required in systems that can support installing to known locations
     #endif */
-	std::cout << "fuck" << std::endl;
 	srand(time(NULL));
-	std::cout << "fuck2" << std::endl;
 	run();
 }

@@ -101,6 +101,7 @@ namespace cprocessing {
         rgba[3] = styles[styles.size()-1].maxA;
     }
 
+
     /// Converts color to a float array
     void color::toFloat(float a[]) {
         a [0] = rgba[0]*1.0/255;

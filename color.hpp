@@ -10,7 +10,8 @@ namespace cprocessing {
     } BlendMode;
     
 	/// Color class
-	struct color {
+	class color {
+	public:
 		unsigned char rgba[4];
 		/// Empty constructor
 		color () {}
@@ -26,6 +27,7 @@ namespace cprocessing {
 		/// Fills a double array with color values scaled for the interval 0..1
 		void toDouble(double a[]);
 	};
+
 
     	/// Changes the way Processing interprets color data.
 	/// The colorMode() function is used to change the numerical range used for specifying colors and to switch color systems.

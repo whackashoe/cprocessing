@@ -3,11 +3,18 @@
 using namespace cprocessing;
 
 Style::Style() {
+	std::cout << styles.size() << std::endl;
 	if(styles.size() > 0) {
-		delete strokeColor;
-		delete fillColor;
-		strokeColor 	= styles[styles.size()-1].strokeColor;     ///< Line drawing color
-		fillColor   	= styles[styles.size()-1].fillColor;   ///< Area drawing color
+		strokeColor.rgba[0] = styles[styles.size()-1].strokeColor.rgba[0];     ///< Line drawing color
+		strokeColor.rgba[1] = styles[styles.size()-1].strokeColor.rgba[1];
+		strokeColor.rgba[2] = styles[styles.size()-1].strokeColor.rgba[2];
+		strokeColor.rgba[3] = styles[styles.size()-1].strokeColor.rgba[3];
+		fillColor.rgba[0]   = styles[styles.size()-1].fillColor.rgba[0];   ///< Area drawing color
+		fillColor.rgba[1]   = styles[styles.size()-1].fillColor.rgba[1];
+		fillColor.rgba[2]   = styles[styles.size()-1].fillColor.rgba[2];
+		fillColor.rgba[3]   = styles[styles.size()-1].fillColor.rgba[3];
+
+
 		rectMode 		= styles[styles.size()-1].rectMode;  ///< Rectangle drawing mode
 		ellipseMode		= styles[styles.size()-1].ellipseMode; ///< Ellipse drawing mode
 		globColorMode 	= styles[styles.size()-1].globColorMode;
@@ -16,20 +23,20 @@ Style::Style() {
 		sphereDetail	= styles[styles.size()-1].sphereDetail;
 		ellipseDetail	= styles[styles.size()-1].ellipseDetail;
 		bezierDetail	= styles[styles.size()-1].bezierDetail;
-
-		delete specular;
-		specular 		= styles[styles.size()-1].specular;
-
+		
+		specular 		= new float[4];
+		specular[0]		= styles[styles.size()-1].specular[0];
+		specular[1]		= styles[styles.size()-1].specular[1];
+		specular[2]		= styles[styles.size()-1].specular[2];
+		specular[3]		= styles[styles.size()-1].specular[3];
+		
 		ellipseVtx	 	= styles[styles.size()-1].ellipseVtx; 
         ures 			= styles[styles.size()-1].ures;
         vres 			= styles[styles.size()-1].vres;
         sphereVtx 		= styles[styles.size()-1].sphereVtx;
         sphereIdx 		= styles[styles.size()-1].sphereIdx;
-
 		bezierBlend		= styles[styles.size()-1].bezierBlend; ///< bezierDetail samples of Bézier blending functions
 	} else {
-		strokeColor 	= new color(0);
-		fillColor 		= new color(255);
 		rectMode 		= CORNER;  ///< Rectangle drawing mode
 		ellipseMode		= CENTER; ///< Ellipse drawing mode
 		globColorMode 	= RGB;
@@ -52,7 +59,7 @@ Style::Style() {
 }
 
 Style::~Style() {
-	delete strokeColor;
-	delete fillColor;
-	delete specular;
+	//delete strokeColor;
+	//delete fillColor;
+	delete [] specular;
 }

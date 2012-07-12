@@ -1,6 +1,8 @@
-/*
+#ifndef CPROCESSING_STYLE
+#define CPROCESSING_STYLE
 
 #include "cprocessing.hpp"
+#include "color.hpp"
 
 using namespace cprocessing;
 
@@ -8,7 +10,6 @@ typedef std::vector<double> BlendFactor; ///< Blending factors for a cubic bézi
 
 
 namespace cprocessing {
-<<<<<<< HEAD
     class Style {
     public:
         unsigned rectMode;
@@ -30,24 +31,13 @@ namespace cprocessing {
         int ures, vres; ///< number of vertices in the longitude and latitude directions of a sphere
         std::vector<PVector> sphereVtx; ///< Precomputed vertices of a sphere centered at the origin and diameter 1
         std::vector<unsigned> sphereIdx; ///< Indices of sphere vertices traversed by a quadstrip
-=======
-    struct Style {
-        int rectMode;
-        int ellipseMode;
-        int imageMode;
-        int colorMode;
-
-        int ellipseDetail;
-        int sphereDetail;
->>>>>>> parent of da2c76e... added Style for push/popstyle
 
         std::vector<BlendFactor> bezierBlend; ///< bezierDetail samples of Bézier blending functions
 
         int strokeWeight;
 
-<<<<<<< HEAD
-        color * strokeColor;
-        color * fillColor;
+        color strokeColor;
+        color fillColor;
 
         float * specular;
 
@@ -58,25 +48,7 @@ namespace cprocessing {
 
         Style();
         ~Style();
-=======
-        color stroke;
-        color fill;
-
-        Style ( ) {
-            if(styleList.size() > 1) {
-                rectMode;
-                ellipseMode;
-                imageMode;
-                colorMode;
-                ellipseDetail;
-                sphereDetail;
-                strokeWeight;
-                stroke;
-                fill;
-            }
-        }
->>>>>>> parent of da2c76e... added Style for push/popstyle
     };
 }
 
-*/
+#endif
