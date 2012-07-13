@@ -34,7 +34,7 @@ namespace cprocessing {
 
         std::vector<BlendFactor> bezierBlend; ///< bezierDetail samples of Bézier blending functions
 
-        int strokeWeight;
+        int strokeWeight;   //TODO:: have this actually affect past generations when popstyle is called (along with other things such as details)
 
         color strokeColor;
         color fillColor;

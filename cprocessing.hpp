@@ -23,6 +23,7 @@
 #include "pvector.hpp"
 #include "snoise.hpp"
 #include "style.hpp"
+#include "ArrayList.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS

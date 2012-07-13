@@ -396,6 +396,7 @@ namespace cprocessing {
     /// Sets line / point width
     /// @param weight: New breadth of line in pixels
     void strokeWeight (int weight) {
+        //TODO:: styles[styles.size()-1].strokeWeight = weight;
         glLineWidth (weight);
         glPointSize (weight);
     }

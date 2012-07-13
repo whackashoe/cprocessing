@@ -1,4 +1,5 @@
-*.a
-*.o
-*.exe
-*.ll
+*
+!*.cpp
+!*.hpp
+!Makefile
+!.gitignore
