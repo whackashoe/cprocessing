@@ -47,7 +47,7 @@ namespace cprocessing {
         textSize(), textLeading(), emissive(), shininess(), ambient()*/
 
         Style();
-        ~Style();
+        //~Style();
     };
 }
 
