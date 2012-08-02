@@ -84,7 +84,7 @@ struct PPath {
 /// Some local module variables
 ///
 static PPath shape; ///< Data for current shape
-static ShapeMode mode; ///< Current shape type
+ShapeMode shapemode; ///< Current shape type
 
 //typedef stdvector<double> BlendFactor; ///< Blending factors for a cubic bézier
 //static stdvector<BlendFactor> bezierBlend; ///< bezierDetail samples of Bézier blending functions
@@ -95,14 +95,26 @@ namespace cprocessing {
 	void beginShape(ShapeMode mode) {
 		PPath newshape;
 		shape = newshape;
-		mode = mode;
+		shapemode = mode;
 	}
 
 	/// Finishes and renders the shape
 
 	void endShape() {
-		if(mode != NULL) glBegin(mode);
-		else 			 glBegin(GL_POLYGON);
+		switch(shapemode) {
+			case POINTS: 			glBegin(GL_POINTS);	 			break;
+			case LINES: 			glBegin(GL_LINES);				break; 
+			case LINE_LOOP: 		glBegin(GL_LINE_LOOP);			break;
+			case LINE_STRIP: 		glBegin(GL_LINE_STRIP); 		break;
+			case TRIANGLES:			glBegin(GL_TRIANGLES); 			break; 
+			case TRIANGLE_STRIP:	glBegin(GL_TRIANGLE_STRIP);		break; 
+			case TRIANGLE_FAN:		glBegin(GL_TRIANGLE_FAN);		break; 
+			case QUADS:				glBegin(GL_QUADS);				break; 
+			case QUAD_STRIP: 		glBegin(GL_QUAD_STRIP);			break; 
+			case POLYGON:			glBegin(GL_POLYGON);			break; 
+
+			default: glBegin(GL_POLYGON);	break; 
+		}
 
 		for(uint i=0; i<shape.vtx.size(); i++) {
 			if(shape.fillC[i].rgba[3] > 0) {
