@@ -99,99 +99,31 @@ namespace cprocessing {
 	}
 
 	/// Finishes and renders the shape
-	//FIXME
-	//TODO:
-	/*
-	* let fcolor and scolor be taken into consideration
-	* no coloring is done yet, just points
-	* lets have it be quick
-	*/
-	void endShape(ShapeClose close) {
 
-		/// First handle the filled shape
-		if (styles[styles.size()-1].fillColor.rgba[3] > 0) {
-			// See if filled shape is required
-			glColor4ubv (styles[styles.size()-1].fillColor.rgba);
+	void endShape() {
+		if(mode != NULL) glBegin(mode);
+		else 			 glBegin(GL_POLYGON);
 
-			if (mode == POLYGON) {
-				// Render as a simple polygon with the help of GLU's tesselation
-				// facilities
-				
-
-#if defined(__WIN32__) || defined(_WIN32) || defined(WIN32) || defined(__WINDOWS__) || defined(__TOS_WIN__)
-                //TODObroken on win32/mingw
-                stdcout << "GLU_TESS_VERTEX broken on mingw recompile cprocessing to enable it (in shapes.cpp)" << stdendl;
-#else
-				GLUtesselator* tobj = gluNewTess();
-				gluTessCallback(tobj, GLU_TESS_VERTEX, (GLvoid (*) ()) &glVertex3dv);
-				gluTessCallback(tobj, GLU_TESS_BEGIN, (GLvoid (*) ()) &glBegin);
-				gluTessCallback(tobj, GLU_TESS_END, (GLvoid (*) ()) &glEnd);
-				gluTessBeginPolygon (tobj, 0);
-				gluTessBeginContour(tobj);
-
-				for (unsigned i = 0; i < shape.vtx.size(); i++) {
-					fill(shape.fillC[i]);
-					gluTessVertex(tobj, shape.vtx[i].array(), shape.vtx[i].array());
-				}
-
-				gluTessEndContour (tobj);
-				gluTessEndPolygon (tobj);
-				gluDeleteTess (tobj);
-#endif
-                
-			} else {
-				// All other types are handled straightforward using OpenGL's vertex
-				// array
-				// activate and specify pointer to vertex array
-				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-				glEnableClientState(GL_VERTEX_ARRAY);
-				glVertexPointer(3, GL_DOUBLE, 0, shape.vtx[0].array());
-				if (!shape.useNormal) {
-					// Normals were not specified. Compute automatically
-					switch (mode) {
-					case TRIANGLES: shape.setAutoNormals (2,3); break;
-					case TRIANGLE_STRIP: shape.setAutoNormals (2,1); break;
-					case TRIANGLE_FAN: shape.setAutoNormals (2,1,true); break;
-					case QUADS: shape.setAutoNormals(3,4); break;
-					case QUAD_STRIP: shape.setAutoNormals(3,2); break;
-					default:;
-					}
-				}
-				glEnableClientState (GL_NORMAL_ARRAY);
-				glNormalPointer(GL_DOUBLE, 0, shape.nrm[0].array());
-
-				glDrawArrays (mode - POINTS + GL_POINTS, 0, shape.vtx.size());
-				glDisableClientState (GL_VERTEX_ARRAY);
-				glDisableClientState (GL_NORMAL_ARRAY);
+		for(uint i=0; i<shape.vtx.size(); i++) {
+			if(shape.fillC[i].rgba[3] > 0) {
+				glColor4ubv (shape.fillC[i].rgba);
+				glVertex3d(shape.vtx[i].x, shape.vtx[i].y, shape.vtx[i].z);
 			}
 		}
+		glEnd();
 
-		/// Now handle the outline
-		//TODO: make stroke different based on shape.strokeC[i]
-		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
-			// See if outline is required
-			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
-			if (mode == POLYGON) {
-				// activate and specify pointer to vertex array
-				glEnableClientState(GL_VERTEX_ARRAY);
-				glVertexPointer(3, GL_DOUBLE, 0, shape.vtx[0].array());
-				glDrawArrays(close == OPEN ? GL_LINE_STRIP : GL_LINE_LOOP,0,shape.vtx.size());
-				glDisableClientState(GL_VERTEX_ARRAY);
-			}
-			else {
-				// activate and specify pointer to vertex array
-				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-				glEnableClientState(GL_VERTEX_ARRAY);
-				glVertexPointer(3, GL_DOUBLE, 0, shape.vtx[0].array());
-				if (shape.useNormal) {
-					glEnableClientState (GL_NORMAL_ARRAY);
-					glNormalPointer(GL_DOUBLE, 0, shape.nrm[0].array());
-				}
-				glDrawArrays (mode - POINTS + GL_POINTS, 0, shape.vtx.size());
-				glDisableClientState (GL_VERTEX_ARRAY);
-				glDisableClientState (GL_NORMAL_ARRAY);
+		glBegin(GL_LINE_STRIP);
+		for(uint i=0; i<shape.vtx.size(); i++) {
+			if(shape.strokeC[i].rgba[3] > 0) {
+				glColor4ubv (shape.strokeC[i].rgba);
+				glVertex3d(shape.vtx[i].x, shape.vtx[i].y, shape.vtx[i].z);
 			}
 		}
+		if(shape.strokeC[shape.strokeC.size()-1].rgba[3] > 0) {
+			glColor4ubv (shape.strokeC[shape.vtx.size()-1].rgba);
+			glVertex3d(shape.vtx[0].x, shape.vtx[0].y, shape.vtx[0].z);
+		}
+		glEnd();
 	}
 
 	/// Adds a vertex to the shape

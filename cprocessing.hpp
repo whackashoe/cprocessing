@@ -383,7 +383,7 @@ namespace cprocessing {
 	void beginShape(ShapeMode mode = POLYGON);
 
 	// Finishes and renders the shape
-	void endShape(ShapeClose close = OPEN);
+	void endShape();
 
 	// Adds a vertex to the shape
 	void vertex (double x, double y, double z=0);
