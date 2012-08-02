@@ -21,6 +21,8 @@ struct PPath {
 	std::vector<PVector> vtx;  ///< An array of vertices
 	std::vector<PVector> nrm;  ///< Normals for the vertices
 	std::vector<PVector> tex;  ///< Texture coordinates for the vertices
+	std::vector<color> fillC; ///< fill color of vertice
+	std::vector<color> strokeC;///<stroke color for edge 
 
 	PVector curNormal;     ///< Default normal
 	PVector curTexCoord;   ///< Default Texture coordinates
@@ -41,6 +43,9 @@ struct PPath {
 		vtx.push_back (p);
 		nrm.push_back (curNormal);
 		tex.push_back (curTexCoord);
+
+		fillC.push_back(styles[styles.size()-1].fillColor);
+		strokeC.push_back(styles[styles.size()-1].strokeColor);
 	}
 
 	/// Changes the current normal vector
@@ -94,6 +99,13 @@ namespace cprocessing {
 	}
 
 	/// Finishes and renders the shape
+	//FIXME
+	//TODO:
+	/*
+	* let fcolor and scolor be taken into consideration
+	* no coloring is done yet, just points
+	* lets have it be quick
+	*/
 	void endShape(ShapeClose close) {
 
 		/// First handle the filled shape
@@ -118,6 +130,7 @@ namespace cprocessing {
 				gluTessBeginContour(tobj);
 
 				for (unsigned i = 0; i < shape.vtx.size(); i++) {
+					fill(shape.fillC[i]);
 					gluTessVertex(tobj, shape.vtx[i].array(), shape.vtx[i].array());
 				}
 
@@ -154,6 +167,7 @@ namespace cprocessing {
 		}
 
 		/// Now handle the outline
+		//TODO: make stroke different based on shape.strokeC[i]
 		if (styles[styles.size()-1].strokeColor.rgba[3] > 0) {
 			// See if outline is required
 			glColor4ubv (styles[styles.size()-1].strokeColor.rgba);
