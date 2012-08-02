@@ -128,7 +128,7 @@ namespace cprocessing {
         mouseRecordFlag = true;
 
 		// Refresh backing buffer if needed
-		if (config&BACK_BUFFER) readbuffer();
+		//if (config&BACK_BUFFER) readbuffer();
 
         // End by swapping front and back buffers
         glutSwapBuffers() ;
@@ -543,7 +543,8 @@ namespace cprocessing {
       return str;
     }
 
-
+    //TODO
+    //fix this beast
     const char * loadBytes(const char * src) {
       int length;
       char * buffer;
