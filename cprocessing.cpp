@@ -286,6 +286,8 @@ namespace cprocessing {
     /// Called whenever a key is released
     static void keyboardup (unsigned char ch, int x, int y) {
     	keyPressed = false;
+      key = ch;
+      keyCode = ch;
     	::keyReleased();
     }
 
