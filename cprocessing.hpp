@@ -87,75 +87,115 @@ namespace cprocessing {
 	//
 	// Global variables (defined in file cprocessing.cpp)
 	//
-	extern int mouseX;  ///< Mouse x coordinate
-	extern int mouseY;  ///< Mouse y coordinate
-	extern int pmouseX; ///< Previous mouse x coordinate
-	extern int pmouseY; ///< Previous mouse y coordinate
-	extern bool mousePressed; ///< Whether any mouse button is pressed
-	extern int mouseButton; ///< Which button is pressed
-	extern bool keyPressed; ///< Whether a key was pressed
-	extern unsigned char key; ///< Which (ASCII) key was pressed
-	extern int keyCode; ///< Code for the last pressed key
-	extern int width; ///< window width
-	extern int height; ///< window height
-	extern bool looping;    ///< true makes display call itself
-	extern unsigned config; ///< configuration flags
-	extern int framerate; ///< Frames per second
-    extern int frameCount; ///frames since start
-	extern std::vector<Style> styles;
+	extern int mouseX;  		/**< Mouse x coordinate*/
+	extern int mouseY;  		/**< Mouse y coordinate*/
+	extern int pmouseX; 		/**< Previous mouse x coordinate*/
+	extern int pmouseY; 		/**< Previous mouse y coordinate*/
+	extern bool mousePressed; 	/**< Whether any mouse button is pressed*/
+	extern int mouseButton; 	/**< Which button is pressed*/
+	extern bool keyPressed; 	/**< Whether a key was pressed*/
+	extern unsigned char key; 	/**< Which (ASCII) key was pressed*/
+	extern int keyCode; 		/**< Code for the last pressed key*/
+	extern int width;		 	/**< window width*/
+	extern int height; 			/**< window height*/
+	extern bool looping;    	/**< true makes display call itself*/
+	extern unsigned config; 	/**< configuration flags*/
+	extern int framerate; 		/**< Frames per second*/
+    extern int frameCount; 		/**< frames since start*/
+	extern std::vector<Style> styles; /**< Stack of of styles*/
 
 
 	//===========================================================================
 	//
 	// Some math utility functions and constants
 	//
-	const double PI = 3.14159265358979323846;
-	const double TWO_PI = 2*PI;
-	const double HALF_PI = PI/2;
-	const double QUARTER_PI = PI/4;
+	const double PI = 3.14159265358979323846;	/**< PI   */
+	const double TWO_PI = 2*PI;					/**< PI*2 */
+	const double HALF_PI = PI/2;				/**< PI/2 */
+	const double QUARTER_PI = PI/4;				/**< PI/4 */
 	
-	/// Absolute value of a number
-	///
+
+	/**Calculates absolute value of a number
+     * @param a any number
+     * @return positive number*/
 	template<class C>
 	inline C abs(const C& a) { return a<0 ? a*-1 : a; }
 	
-	/// Minimum between two numbers
-	///
+
+	/**Calculates minimum between two numbers
+     * @param a any number
+     * @param b any number
+     * @return smaller of the two numbers*/
 	template<class C>
 	inline C min(const C& a, const C& b) { return a<b ? a : b; }
 	
-	/// Maximum between two numbers
-	///
+	/**Calculates maximum between two numbers
+     * @param a any number
+     * @param b any number
+     * @return larger of the two numbers*/
 	template<class C>
 	inline C max(const C& a, const C& b) { return a>b ? a : b; }
 	
-	/// Minimum between three numbers
-	///
+	/**Calculates minimum between three numbers
+     * @param a any number
+     * @param b any number
+     * @param c any number
+     * @return smallest of the three numbers*/
 	template<class C>
 	inline C min(const C& a, const C& b, const C& c) { return a<b ? min(a,c) : min(b,c); }
 	
-	/// Maximum between three numbers
-	///
+	/**Calculates maximum between three numbers
+     * @param a any number
+     * @param b any number
+     * @param c any number
+     * @return largest of the three numbers*/
 	template<class C>
 	inline C max(const C& a, const C& b, const C& c) { return a>b ? max(a,c) : max(b,c); }
 	
-	// Constrain value to a certain range
+	/**Constrain value to a certain range
+     * @param a any number
+     * @param b minimum
+     * @param c maximum
+     * @return a if a < c && a > b or b if a < b or c if a > c*/
 	template<class C>
 	inline C constrain(const C& a, const C& minv, const C& maxv) { return min(maxv,max(minv,a)); }
 	
-	// Magnitude of a 2D vector
+	/**Calculates magnitude of 2d vector
+     * @param a any number
+     * @param b any number
+     * @return magnitude of vector*/
 	inline double mag (double a, double b) { return sqrt(a*a+b*b); }
 	
-	// Magnitude of a 3D vector
+	/**Calculates magnitude of 3d vector
+     * @param a any number
+     * @param b any number
+     * @param c any number
+     * @return magnitude of vector*/
 	inline double mag (double a, double b, double c) { return sqrt(a*a+b*b+c*c); }
 	
-	// Distance between 2 2D points
+	/**Calculates distance between 2 2D points
+     * @param x1 point 1 x coordinate
+     * @param y1 point 1 y coordinate
+     * @param x2 point 2 x coordinate
+     * @param y2 point 2 y coordinate
+     * @return distance between points*/
 	inline double dist (double x1, double y1, double x2, double y2) { return mag(x2-x1,y2-y1); }
 
-	// Distance between 2 3D points
+	/**Calculates distance between 2 3D points
+     * @param x1 point 1 x coordinate
+     * @param y1 point 1 y coordinate
+     * @param z1 point 1 z coordinate
+     * @param x2 point 2 x coordinate
+     * @param y2 point 2 y coordinate
+     * @param z2 point 2 z coordinate
+     * @return distance between points*/
 	inline double dist (double x1, double y1, double z1, double x2, double y2, double z2) { return mag(x2-x1,y2-y1,z2-z1); }
 	
-	// Linear interpolation
+	/**Linear interpolation
+     * @param a value 1
+     * @param b value 2
+     * @param amt amount
+     * @return interpolated result*/
 	inline double lerp (double value1, double value2, double amt) { return value1*(1-amt)+value2*amt; }
 	
 	// Maps a ratio between an interval to another interval

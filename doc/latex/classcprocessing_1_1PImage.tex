@@ -1,0 +1,100 @@
+\hypertarget{classcprocessing_1_1PImage}{\section{cprocessing\-:\-:\-P\-Image \-Class \-Reference}
+\label{classcprocessing_1_1PImage}\index{cprocessing\-::\-P\-Image@{cprocessing\-::\-P\-Image}}
+}
+
+
+\-Encapsulates a 2\-D \-R\-G\-B\-A image.  
+
+
+
+
+{\ttfamily \#include $<$pimage.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcprocessing_1_1PImage_a1f6044cb12652ef38120e8a1cd087631}{\-P\-Image} (int w, int h, unsigned type=\-A\-R\-G\-B)
+\item 
+\hypertarget{classcprocessing_1_1PImage_ab816b49726026c86174a82ed5afb4ad0}{\hyperlink{classcprocessing_1_1PImage_ab816b49726026c86174a82ed5afb4ad0}{$\sim$\-P\-Image} ()}\label{classcprocessing_1_1PImage_ab816b49726026c86174a82ed5afb4ad0}
+
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\item 
+\hypertarget{classcprocessing_1_1PImage_a2b317924f150f4afbc0b07273746abf9}{\hyperlink{classcprocessing_1_1PImage}{\-P\-Image} \hyperlink{classcprocessing_1_1PImage_a2b317924f150f4afbc0b07273746abf9}{get} ()}\label{classcprocessing_1_1PImage_a2b317924f150f4afbc0b07273746abf9}
+
+\begin{DoxyCompactList}\small\item\em \-Returns a copy of this image. \end{DoxyCompactList}\item 
+\hypertarget{classcprocessing_1_1PImage_a38c5bc861ab4999e9b71367e45ab2fc0}{\hyperlink{classcprocessing_1_1PImage}{\-P\-Image} \hyperlink{classcprocessing_1_1PImage_a38c5bc861ab4999e9b71367e45ab2fc0}{get} (int x, int y, int w, int h)}\label{classcprocessing_1_1PImage_a38c5bc861ab4999e9b71367e45ab2fc0}
+
+\begin{DoxyCompactList}\small\item\em \-Returns a copy of a subrectangle of this image. \end{DoxyCompactList}\item 
+\hypertarget{classcprocessing_1_1PImage_af890772e2644313f266f32ee322e52c2}{void {\bfseries load\-Image} (std\-::string src)}\label{classcprocessing_1_1PImage_af890772e2644313f266f32ee322e52c2}
+
+\item 
+\hypertarget{classcprocessing_1_1PImage_ab961583f0c5c97e747a14e85900548de}{\hyperlink{classcprocessing_1_1color}{color} \hyperlink{classcprocessing_1_1PImage_ab961583f0c5c97e747a14e85900548de}{get} (int x, int y)}\label{classcprocessing_1_1PImage_ab961583f0c5c97e747a14e85900548de}
+
+\begin{DoxyCompactList}\small\item\em \-Returns the pixel at coordinate (x,y) \end{DoxyCompactList}\item 
+\hypertarget{classcprocessing_1_1PImage_ab624a6c5478a9f4ba17ec985333c6a3f}{void {\bfseries set} (int x, int y, const \hyperlink{classcprocessing_1_1color}{color} \&c)}\label{classcprocessing_1_1PImage_ab624a6c5478a9f4ba17ec985333c6a3f}
+
+\item 
+\hypertarget{classcprocessing_1_1PImage_a2b3e8502a8d0dc519d867e8eed5d9c3e}{void \hyperlink{classcprocessing_1_1PImage_a2b3e8502a8d0dc519d867e8eed5d9c3e}{put} (int x, int y)}\label{classcprocessing_1_1PImage_a2b3e8502a8d0dc519d867e8eed5d9c3e}
+
+\begin{DoxyCompactList}\small\item\em \-Draws the image at position (x, y) of the screen. \end{DoxyCompactList}\item 
+void \hyperlink{classcprocessing_1_1PImage_a5270bb1a528eeeaf8fabccf9243c3feb}{put} (int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em \-Draws the image at position (x, y) of the screen with the given width and height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcprocessing_1_1color}{color} $\ast$ \hyperlink{classcprocessing_1_1PImage_a6c411ebe0b1bb92e0e17a3e5ffaf7bf0}{pixels}
+\item 
+\hypertarget{classcprocessing_1_1PImage_a784b1e16d4ccfa218e8cf430ea6ca5ea}{int \hyperlink{classcprocessing_1_1PImage_a784b1e16d4ccfa218e8cf430ea6ca5ea}{width}}\label{classcprocessing_1_1PImage_a784b1e16d4ccfa218e8cf430ea6ca5ea}
+
+\begin{DoxyCompactList}\small\item\em width of the image (size of row) \end{DoxyCompactList}\item 
+\hypertarget{classcprocessing_1_1PImage_ac39c77f516dbbe493317455f8b095603}{int \hyperlink{classcprocessing_1_1PImage_ac39c77f516dbbe493317455f8b095603}{height}}\label{classcprocessing_1_1PImage_ac39c77f516dbbe493317455f8b095603}
+
+\begin{DoxyCompactList}\small\item\em height of the image (number of rows) \end{DoxyCompactList}\item 
+\hypertarget{classcprocessing_1_1PImage_a465d1a7c776bc7735cc5bdb4dca20586}{unsigned {\bfseries type}}\label{classcprocessing_1_1PImage_a465d1a7c776bc7735cc5bdb4dca20586}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Encapsulates a 2\-D \-R\-G\-B\-A image. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcprocessing_1_1PImage_a1f6044cb12652ef38120e8a1cd087631}{\index{cprocessing\-::\-P\-Image@{cprocessing\-::\-P\-Image}!\-P\-Image@{\-P\-Image}}
+\index{\-P\-Image@{\-P\-Image}!cprocessing::PImage@{cprocessing\-::\-P\-Image}}
+\subsubsection[{\-P\-Image}]{\setlength{\rightskip}{0pt plus 5cm}cprocessing\-::\-P\-Image\-::\-P\-Image (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{unsigned}]{type = {\ttfamily \-A\-R\-G\-B}}
+\end{DoxyParamCaption}
+)}}\label{classcprocessing_1_1PImage_a1f6044cb12652ef38120e8a1cd087631}
+\-Constructor \begin{DoxyItemize}
+\item width horizontal size \item height vertical size \item type \-A\-R\-G\-B, \-R\-G\-B or \-A\-L\-P\-H\-A \end{DoxyItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcprocessing_1_1PImage_a5270bb1a528eeeaf8fabccf9243c3feb}{\index{cprocessing\-::\-P\-Image@{cprocessing\-::\-P\-Image}!put@{put}}
+\index{put@{put}!cprocessing::PImage@{cprocessing\-::\-P\-Image}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::\-P\-Image\-::put} (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}}\label{classcprocessing_1_1PImage_a5270bb1a528eeeaf8fabccf9243c3feb}
+
+
+\-Draws the image at position (x, y) of the screen with the given width and height. 
+
+\-Draws the image at position (x, y) of the screen. 
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcprocessing_1_1PImage_a6c411ebe0b1bb92e0e17a3e5ffaf7bf0}{\index{cprocessing\-::\-P\-Image@{cprocessing\-::\-P\-Image}!pixels@{pixels}}
+\index{pixels@{pixels}!cprocessing::PImage@{cprocessing\-::\-P\-Image}}
+\subsubsection[{pixels}]{\setlength{\rightskip}{0pt plus 5cm}{\bf color}$\ast$ {\bf cprocessing\-::\-P\-Image\-::pixels}}}\label{classcprocessing_1_1PImage_a6c411ebe0b1bb92e0e17a3e5ffaf7bf0}
+\-Where the pixels are actually stored. \-Stored row by row from top (row 0) to bottom 
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+pimage.\-hpp\item 
+pimage.\-cpp\end{DoxyCompactItemize}

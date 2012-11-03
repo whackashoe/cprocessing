@@ -1,6 +1,33 @@
 calling noLoop at end of setup creates bugs
 not calling background in draw can cause bugs
 
+implement general image loader
+
+hashmap, arraylist, xml loading, svg
+
+shaders
+
+make compliant w/ new 2.0 syntax
+
+create bugs folder with example of each bug
+
+port to fresher opengl version
+
+vim & sublime text 2 plugins for rapid development
+
+easy make:: modular architecture allowing for selection of which classes to load and graphical or nope
+
+test on windows
+
+fix transparency bug, i believe it was disabled due to opengl read textures shit
+
+chrome native client export?? 
+
+PSound implementation
+
+
+
+
 TO COMPILE:
 g++ -lcprocessing -lglut -lGLU -lGL `Magick++-config --cppflags --cxxflags --ldflags --libs` Spot.cpp -o Spot
 

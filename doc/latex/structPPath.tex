@@ -1,0 +1,72 @@
+\hypertarget{structPPath}{\section{\-P\-Path \-Struct \-Reference}
+\label{structPPath}\index{\-P\-Path@{\-P\-Path}}
+}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structPPath_af5405f463517c45459e647cd1f834798}{\hyperlink{structPPath_af5405f463517c45459e647cd1f834798}{\-P\-Path} ()}\label{structPPath_af5405f463517c45459e647cd1f834798}
+
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_a929f642a8a8bf341f0070643c0ff757b}{void \hyperlink{structPPath_a929f642a8a8bf341f0070643c0ff757b}{add\-Vertex} (const \hyperlink{classcprocessing_1_1PVector}{\-P\-Vector} \&p)}\label{structPPath_a929f642a8a8bf341f0070643c0ff757b}
+
+\begin{DoxyCompactList}\small\item\em \-Adds a new point to the path. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_a3cc19cb2b196178f4572f3f7f4efb90b}{void \hyperlink{structPPath_a3cc19cb2b196178f4572f3f7f4efb90b}{set\-Normal} (const \hyperlink{classcprocessing_1_1PVector}{\-P\-Vector} \&n)}\label{structPPath_a3cc19cb2b196178f4572f3f7f4efb90b}
+
+\begin{DoxyCompactList}\small\item\em \-Changes the current normal vector. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_aae2a000ee4997dd8ec357d726f3181c1}{void \hyperlink{structPPath_aae2a000ee4997dd8ec357d726f3181c1}{set\-Tex\-Coord} (const \hyperlink{classcprocessing_1_1PVector}{\-P\-Vector} \&t)}\label{structPPath_aae2a000ee4997dd8ec357d726f3181c1}
+
+\begin{DoxyCompactList}\small\item\em \-Changes the current set of texture coordinates. \end{DoxyCompactList}\item 
+void \hyperlink{structPPath_a9564ae60ad10d168e5882f12b33c0170}{set\-Auto\-Normals} (int vstart, int vstride, bool fan=false)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structPPath_a155917dd334970ab34db0d305d7d35ca}{std\-::vector$<$ \hyperlink{classcprocessing_1_1PVector}{\-P\-Vector} $>$ \hyperlink{structPPath_a155917dd334970ab34db0d305d7d35ca}{vtx}}\label{structPPath_a155917dd334970ab34db0d305d7d35ca}
+
+\begin{DoxyCompactList}\small\item\em \-An array of vertices. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_af14a5a7b4b9fa1ff51107c044b2be149}{std\-::vector$<$ \hyperlink{classcprocessing_1_1PVector}{\-P\-Vector} $>$ \hyperlink{structPPath_af14a5a7b4b9fa1ff51107c044b2be149}{nrm}}\label{structPPath_af14a5a7b4b9fa1ff51107c044b2be149}
+
+\begin{DoxyCompactList}\small\item\em \-Normals for the vertices. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_acda3dc5da7e49ceab397ba6d69190196}{std\-::vector$<$ \hyperlink{classcprocessing_1_1PVector}{\-P\-Vector} $>$ \hyperlink{structPPath_acda3dc5da7e49ceab397ba6d69190196}{tex}}\label{structPPath_acda3dc5da7e49ceab397ba6d69190196}
+
+\begin{DoxyCompactList}\small\item\em \-Texture coordinates for the vertices. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_a59d5f8999f43e0d1e439418f6f236d45}{std\-::vector$<$ \hyperlink{classcprocessing_1_1color}{color} $>$ \hyperlink{structPPath_a59d5f8999f43e0d1e439418f6f236d45}{fill\-C}}\label{structPPath_a59d5f8999f43e0d1e439418f6f236d45}
+
+\begin{DoxyCompactList}\small\item\em fill color of vertice \end{DoxyCompactList}\item 
+\hypertarget{structPPath_a9617b499180498fafdb36f206b9e4831}{std\-::vector$<$ \hyperlink{classcprocessing_1_1color}{color} $>$ \hyperlink{structPPath_a9617b499180498fafdb36f206b9e4831}{stroke\-C}}\label{structPPath_a9617b499180498fafdb36f206b9e4831}
+
+\begin{DoxyCompactList}\small\item\em stroke color for edge \end{DoxyCompactList}\item 
+\hypertarget{structPPath_ad6cdebaac653dd51a50cde8ef566a42c}{\hyperlink{classcprocessing_1_1PVector}{\-P\-Vector} \hyperlink{structPPath_ad6cdebaac653dd51a50cde8ef566a42c}{cur\-Normal}}\label{structPPath_ad6cdebaac653dd51a50cde8ef566a42c}
+
+\begin{DoxyCompactList}\small\item\em \-Default normal. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_a385b5413251b5ab55b5b8ff6da36b2c3}{\hyperlink{classcprocessing_1_1PVector}{\-P\-Vector} \hyperlink{structPPath_a385b5413251b5ab55b5b8ff6da36b2c3}{cur\-Tex\-Coord}}\label{structPPath_a385b5413251b5ab55b5b8ff6da36b2c3}
+
+\begin{DoxyCompactList}\small\item\em \-Default \-Texture coordinates. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_ac87e8c7b45a255bef6b26a8d01561d68}{bool \hyperlink{structPPath_ac87e8c7b45a255bef6b26a8d01561d68}{use\-Normal}}\label{structPPath_ac87e8c7b45a255bef6b26a8d01561d68}
+
+\begin{DoxyCompactList}\small\item\em \-Whether a normal was specified during the path construction. \end{DoxyCompactList}\item 
+\hypertarget{structPPath_aa6f1ee80b0ac2af7dd7196e5b3f65a96}{bool \hyperlink{structPPath_aa6f1ee80b0ac2af7dd7196e5b3f65a96}{use\-Tex\-Coord}}\label{structPPath_aa6f1ee80b0ac2af7dd7196e5b3f65a96}
+
+\begin{DoxyCompactList}\small\item\em \-Whether a set of texture coordinates was specified during the path construction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Represents a polyline with several attributes such as normals and texture coordinates. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structPPath_a9564ae60ad10d168e5882f12b33c0170}{\index{\-P\-Path@{\-P\-Path}!set\-Auto\-Normals@{set\-Auto\-Normals}}
+\index{set\-Auto\-Normals@{set\-Auto\-Normals}!PPath@{\-P\-Path}}
+\subsubsection[{set\-Auto\-Normals}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-Path\-::set\-Auto\-Normals} (
+\begin{DoxyParamCaption}
+\item[{int}]{vstart, }
+\item[{int}]{vstride, }
+\item[{bool}]{fan = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structPPath_a9564ae60ad10d168e5882f12b33c0170}
+\-Automatically computes normals from vertex positions. \-This is done computing triangle normals for groups of 3 vertices. \begin{DoxyItemize}
+\item vstart\-: \-First vertex to compute. \item vstride\-: \-How many vertices are skipped before computing the next normal \item fan\-: \-Whether to use vtx\mbox{[}0\mbox{]} as first vertex of triangle rather than the first in the group. \end{DoxyItemize}
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+shapes.\-cpp\end{DoxyCompactItemize}
