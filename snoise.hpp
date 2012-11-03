@@ -3,7 +3,7 @@
 
 namespace cprocessing {
         class SimplexNoise {
-        	private:
+        private:
                 static double SQRT3;
                 static double SQRT5;
 
@@ -39,7 +39,8 @@ namespace cprocessing {
                  * To remove the need for index wrapping, double the permutation table
                  * length
                  */
-                int perm[];
+                static int perm[512];
+                static int permMod12[512];
                 /**
                  * A lookup table to traverse the simplex around a given point in 4D.
                  * Details can be found where this table is used, in the 4D noise method.
@@ -47,14 +48,14 @@ namespace cprocessing {
                 static int simplex[][4];
 
                 inline double dot(int g[], double x, double y);
-        		inline double dot(int g[], double x, double y, double z);
-        		inline double dot(int g[], double x, double y, double z, double w);
-        		inline int fastfloor(double x);
-        	public:
-        		SimplexNoise();
-        		double noise(double x, double y);
-        		double noise(double x, double y, double z);
-        		double noise(double x, double y, double z, double w);
+		inline double dot(int g[], double x, double y, double z);
+		inline double dot(int g[], double x, double y, double z, double w);
+		inline int fastfloor(double x);
+        public:
+                SimplexNoise();
+        	double noise(double x, double y);
+        	double noise(double x, double y, double z);
+        	double noise(double x, double y, double z, double w);
         };
 
 
