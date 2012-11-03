@@ -30,7 +30,7 @@
    <div id="projectname">cprocessing
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   
+   <div id="projectbrief">Simpledrawing,andIOforcreativecodingandprototyping</div>
   </td>
   
   
@@ -47,7 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -69,9 +70,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><b>cprocessing</b>      </li>
+      <li class="navelem"><a class="el" href="namespacecprocessing.html">cprocessing</a>      </li>
       <li class="navelem"><a class="el" href="classcprocessing_1_1perlinNoise.html">perlinNoise</a>      </li>
     </ul>
   </div>
@@ -103,27 +104,181 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="cprocessing::perlinNoise" -->
-<p><a href="classcprocessing_1_1perlinNoise-members.html">List of all members.</a></p>
+<p><code>#include &lt;<a class="el" href="perlin_8hpp_source.html">perlin.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a882acdba45346139eb9560d911d87c50"></a><!-- doxytag: member="cprocessing::perlinNoise::reseed" ref="a882acdba45346139eb9560d911d87c50" args="()" -->
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>reseed</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1fa46303805bdada3b7f0985c24f59b"></a><!-- doxytag: member="cprocessing::perlinNoise::reseed" ref="ae1fa46303805bdada3b7f0985c24f59b" args="(unsigned int rSeed)" -->
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>reseed</b> (unsigned int rSeed)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2723ae0635c5f9d0de66d9f6c02f43de"></a><!-- doxytag: member="cprocessing::perlinNoise::noise1d" ref="a2723ae0635c5f9d0de66d9f6c02f43de" args="(double pos[1])" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>noise1d</b> (double pos[1])</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bd09b9c338bb394589dfe364765ce22"></a><!-- doxytag: member="cprocessing::perlinNoise::noise2d" ref="a1bd09b9c338bb394589dfe364765ce22" args="(double pos[2])" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>noise2d</b> (double pos[2])</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb6a6c0904b7ae25451e193209a08d4f"></a><!-- doxytag: member="cprocessing::perlinNoise::noise3d" ref="adb6a6c0904b7ae25451e193209a08d4f" args="(double pos[3])" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>noise3d</b> (double pos[3])</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a938a654df217929f8c05a5c151aac520"></a><!-- doxytag: member="cprocessing::perlinNoise::noise" ref="a938a654df217929f8c05a5c151aac520" args="(double)" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>noise</b> (double)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28950d882c1226001b7278484e9380af"></a><!-- doxytag: member="cprocessing::perlinNoise::noise" ref="a28950d882c1226001b7278484e9380af" args="(double, double)" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>noise</b> (double, double)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e5a2fc7ad57fa207ec9d01914e2ee7a"></a><!-- doxytag: member="cprocessing::perlinNoise::noise" ref="a4e5a2fc7ad57fa207ec9d01914e2ee7a" args="(double, double, double)" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>noise</b> (double, double, double)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html#a882acdba45346139eb9560d911d87c50">reseed</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html#ae1fa46303805bdada3b7f0985c24f59b">reseed</a> (unsigned int rSeed)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html#a2723ae0635c5f9d0de66d9f6c02f43de">noise1d</a> (double pos[1])</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html#a1bd09b9c338bb394589dfe364765ce22">noise2d</a> (double pos[2])</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html#adb6a6c0904b7ae25451e193209a08d4f">noise3d</a> (double pos[3])</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html#a938a654df217929f8c05a5c151aac520">noise</a> (double)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html#a28950d882c1226001b7278484e9380af">noise</a> (double, double)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html#a4e5a2fc7ad57fa207ec9d01914e2ee7a">noise</a> (double, double, double)</td></tr>
 </table>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a938a654df217929f8c05a5c151aac520"></a><!-- doxytag: member="cprocessing::perlinNoise::noise" ref="a938a654df217929f8c05a5c151aac520" args="(double)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1perlinNoise.html#a938a654df217929f8c05a5c151aac520">cprocessing::perlinNoise::noise</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a28950d882c1226001b7278484e9380af"></a><!-- doxytag: member="cprocessing::perlinNoise::noise" ref="a28950d882c1226001b7278484e9380af" args="(double, double)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1perlinNoise.html#a938a654df217929f8c05a5c151aac520">cprocessing::perlinNoise::noise</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e5a2fc7ad57fa207ec9d01914e2ee7a"></a><!-- doxytag: member="cprocessing::perlinNoise::noise" ref="a4e5a2fc7ad57fa207ec9d01914e2ee7a" args="(double, double, double)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1perlinNoise.html#a938a654df217929f8c05a5c151aac520">cprocessing::perlinNoise::noise</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2723ae0635c5f9d0de66d9f6c02f43de"></a><!-- doxytag: member="cprocessing::perlinNoise::noise1d" ref="a2723ae0635c5f9d0de66d9f6c02f43de" args="(double pos[1])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1perlinNoise.html#a2723ae0635c5f9d0de66d9f6c02f43de">cprocessing::perlinNoise::noise1d</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pos</em>[1]</td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1bd09b9c338bb394589dfe364765ce22"></a><!-- doxytag: member="cprocessing::perlinNoise::noise2d" ref="a1bd09b9c338bb394589dfe364765ce22" args="(double pos[2])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1perlinNoise.html#a1bd09b9c338bb394589dfe364765ce22">cprocessing::perlinNoise::noise2d</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pos</em>[2]</td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adb6a6c0904b7ae25451e193209a08d4f"></a><!-- doxytag: member="cprocessing::perlinNoise::noise3d" ref="adb6a6c0904b7ae25451e193209a08d4f" args="(double pos[3])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1perlinNoise.html#adb6a6c0904b7ae25451e193209a08d4f">cprocessing::perlinNoise::noise3d</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pos</em>[3]</td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a882acdba45346139eb9560d911d87c50"></a><!-- doxytag: member="cprocessing::perlinNoise::reseed" ref="a882acdba45346139eb9560d911d87c50" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classcprocessing_1_1perlinNoise.html#a882acdba45346139eb9560d911d87c50">cprocessing::perlinNoise::reseed</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae1fa46303805bdada3b7f0985c24f59b"></a><!-- doxytag: member="cprocessing::perlinNoise::reseed" ref="ae1fa46303805bdada3b7f0985c24f59b" args="(unsigned int rSeed)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classcprocessing_1_1perlinNoise.html#a882acdba45346139eb9560d911d87c50">cprocessing::perlinNoise::reseed</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>rSeed</em></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="perlin_8hpp_source.html">perlin.hpp</a></li>
 </ul>
@@ -133,7 +288,7 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><b>noise</b> (d
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -145,7 +300,7 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><b>noise</b> (d
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 2 2012 17:41:32 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 3 2012 03:01:07 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

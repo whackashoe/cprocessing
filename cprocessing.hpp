@@ -154,8 +154,8 @@ namespace cprocessing {
 	
 	/**Constrain value to a certain range
      * @param a any number
-     * @param b minimum
-     * @param c maximum
+     * @param minv minimum
+     * @param maxv maximum
      * @return a if a < c && a > b or b if a < b or c if a > c*/
 	template<class C>
 	inline C constrain(const C& a, const C& minv, const C& maxv) { return min(maxv,max(minv,a)); }
@@ -192,8 +192,8 @@ namespace cprocessing {
 	inline double dist (double x1, double y1, double z1, double x2, double y2, double z2) { return mag(x2-x1,y2-y1,z2-z1); }
 	
 	/**Linear interpolation
-     * @param a value 1
-     * @param b value 2
+     * @param value1 value 1
+     * @param value2 value 2
      * @param amt amount
      * @return interpolated result*/
 	inline double lerp (double value1, double value2, double amt) { return value1*(1-amt)+value2*amt; }
@@ -594,7 +594,7 @@ namespace cprocessing {
     void lightSpecular (double v1,double  v2,double  v3);
 
     /// Defines light attenuation factors
-    /// @args constant, linear, quadratic: coefficients of quadratic polynomial.
+    /// @arg constant, linear, quadratic: coefficients of quadratic polynomial.
     void lightFalloff(double  constant,double  linear,double  quadratic);
 
     /// Turns on the default lighting

@@ -1,0 +1,99 @@
+\hypertarget{perlin_8cpp}{\section{perlin.\-cpp \-File \-Reference}
+\label{perlin_8cpp}\index{perlin.\-cpp@{perlin.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include $<$cmath$>$}\*
+{\ttfamily \#include \char`\"{}perlin.\-hpp\char`\"{}}\*
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacecprocessing}{cprocessing}
+\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{perlin_8cpp_a49d56e28b3862c5425acf66c0583a629}{ease\-Curve}(t)~( t $\ast$ t $\ast$ (3.\-0 -\/ 2.\-0 $\ast$ t) )
+\item 
+\#define \hyperlink{perlin_8cpp_a45f87876bf7e5d0cc6ecee14bc59922f}{linear\-Interp}(t, a, b)~( a + t $\ast$ (b -\/ a) )
+\item 
+\#define \hyperlink{perlin_8cpp_a4cd3ae991149c8a7a2189117061aa1ef}{dot2}(rx, ry, q)~( rx $\ast$ q\mbox{[}0\mbox{]} + ry $\ast$ q\mbox{[}1\mbox{]} )
+\item 
+\#define \hyperlink{perlin_8cpp_a39689dbc0dd1c10a31af95c457e532dd}{dot3}(rx, ry, rz, q)~( rx $\ast$ q\mbox{[}0\mbox{]} + ry $\ast$ q\mbox{[}1\mbox{]} + rz $\ast$ q\mbox{[}2\mbox{]} )
+\item 
+\#define \hyperlink{perlin_8cpp_acbf7b88f62d4130da68d8e02761afe83}{setup\-Values}(t, axis, g0, g1, d0, d1, pos)
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacecprocessing_a4eeb81f5fead851fd3a5fa23286b8b99}{cprocessing\-::noise\-Detail} (int octaves)
+\item 
+void \hyperlink{namespacecprocessing_ac2ffd86761a271d29697d6408a125e59}{cprocessing\-::noise\-Detail} (int octaves, double falloff)
+\item 
+void \hyperlink{namespacecprocessing_a018a4f19c47283bd51f6c0004bdbaa78}{cprocessing\-::noise\-Seed} (int n)
+\item 
+double \hyperlink{namespacecprocessing_a4289b302ccbd6bee448b7756854c7baf}{cprocessing\-::noise} (double x)
+\item 
+double \hyperlink{namespacecprocessing_a94c3501dd1ee3555f5af3884b11b8a04}{cprocessing\-::noise} (double x, double y)
+\item 
+double \hyperlink{namespacecprocessing_a12c5c480ee409902975902ee93e7f6f1}{cprocessing\-::noise} (double x, double y, double z)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{perlin_8cpp_a4cd3ae991149c8a7a2189117061aa1ef}{\index{perlin.\-cpp@{perlin.\-cpp}!dot2@{dot2}}
+\index{dot2@{dot2}!perlin.cpp@{perlin.\-cpp}}
+\subsubsection[{dot2}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf dot2}(
+\begin{DoxyParamCaption}
+\item[{}]{rx, }
+\item[{}]{ry, }
+\item[{}]{q}
+\end{DoxyParamCaption}
+)~( rx $\ast$ q\mbox{[}0\mbox{]} + ry $\ast$ q\mbox{[}1\mbox{]} )}}\label{perlin_8cpp_a4cd3ae991149c8a7a2189117061aa1ef}
+\hypertarget{perlin_8cpp_a39689dbc0dd1c10a31af95c457e532dd}{\index{perlin.\-cpp@{perlin.\-cpp}!dot3@{dot3}}
+\index{dot3@{dot3}!perlin.cpp@{perlin.\-cpp}}
+\subsubsection[{dot3}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf dot3}(
+\begin{DoxyParamCaption}
+\item[{}]{rx, }
+\item[{}]{ry, }
+\item[{}]{rz, }
+\item[{}]{q}
+\end{DoxyParamCaption}
+)~( rx $\ast$ q\mbox{[}0\mbox{]} + ry $\ast$ q\mbox{[}1\mbox{]} + rz $\ast$ q\mbox{[}2\mbox{]} )}}\label{perlin_8cpp_a39689dbc0dd1c10a31af95c457e532dd}
+\hypertarget{perlin_8cpp_a49d56e28b3862c5425acf66c0583a629}{\index{perlin.\-cpp@{perlin.\-cpp}!ease\-Curve@{ease\-Curve}}
+\index{ease\-Curve@{ease\-Curve}!perlin.cpp@{perlin.\-cpp}}
+\subsubsection[{ease\-Curve}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf ease\-Curve}(
+\begin{DoxyParamCaption}
+\item[{}]{t}
+\end{DoxyParamCaption}
+)~( t $\ast$ t $\ast$ (3.\-0 -\/ 2.\-0 $\ast$ t) )}}\label{perlin_8cpp_a49d56e28b3862c5425acf66c0583a629}
+\hypertarget{perlin_8cpp_a45f87876bf7e5d0cc6ecee14bc59922f}{\index{perlin.\-cpp@{perlin.\-cpp}!linear\-Interp@{linear\-Interp}}
+\index{linear\-Interp@{linear\-Interp}!perlin.cpp@{perlin.\-cpp}}
+\subsubsection[{linear\-Interp}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf linear\-Interp}(
+\begin{DoxyParamCaption}
+\item[{}]{t, }
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~( a + t $\ast$ (b -\/ a) )}}\label{perlin_8cpp_a45f87876bf7e5d0cc6ecee14bc59922f}
+\hypertarget{perlin_8cpp_acbf7b88f62d4130da68d8e02761afe83}{\index{perlin.\-cpp@{perlin.\-cpp}!setup\-Values@{setup\-Values}}
+\index{setup\-Values@{setup\-Values}!perlin.cpp@{perlin.\-cpp}}
+\subsubsection[{setup\-Values}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf setup\-Values}(
+\begin{DoxyParamCaption}
+\item[{}]{t, }
+\item[{}]{axis, }
+\item[{}]{g0, }
+\item[{}]{g1, }
+\item[{}]{d0, }
+\item[{}]{d1, }
+\item[{}]{pos}
+\end{DoxyParamCaption}
+)}}\label{perlin_8cpp_acbf7b88f62d4130da68d8e02761afe83}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+t = pos[axis] + NOISE_LARGE_PWR2; \
+        g0 = ((int)t) & NOISE_MOD_MASK; \
+        g1 = (g0 + 1) & NOISE_MOD_MASK; \
+        d0 = t - (int)t; \
+        d1 = d0 - 1.0; \
+\end{DoxyCode}

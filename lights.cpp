@@ -161,7 +161,7 @@ namespace cprocessing {
     }
 
     /// Defines light attenuation factors
-    /// @args constant, linear, quadratic: coefficients of quadratic polynomial.
+    /// @arg constant, linear, quadratic: coefficients of quadratic polynomial.
     void lightFalloff(double  constant,double  linear,double  quadratic)
     {
         ::constant = constant;

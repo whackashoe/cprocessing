@@ -30,7 +30,7 @@
    <div id="projectname">cprocessing
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   
+   <div id="projectbrief">Simpledrawing,andIOforcreativecodingandprototyping</div>
   </td>
   
   
@@ -47,7 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 </div>
@@ -78,33 +80,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">style.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CPROCESSING_STYLE</span>
+<a href="style_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CPROCESSING_STYLE</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define CPROCESSING_STYLE</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;cprocessing.hpp&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;color.hpp&quot;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="cprocessing_8hpp.html">cprocessing.hpp</a>&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="color_8hpp.html">color.hpp</a>&quot;</span>
 <a name="l00006"></a>00006 
 <a name="l00007"></a>00007 <span class="keyword">using namespace </span>cprocessing;
 <a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="keyword">typedef</span> std::vector&lt;double&gt; BlendFactor; 
+<a name="l00009"></a><a class="code" href="style_8hpp.html#ac520a753204252020496de2d7d0a42f9">00009</a> <span class="keyword">typedef</span> std::vector&lt;double&gt; <a class="code" href="style_8hpp.html#ac520a753204252020496de2d7d0a42f9" title="Blending factors for a cubic bézier.">BlendFactor</a>; 
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 
 <a name="l00012"></a>00012 <span class="keyword">namespace </span>cprocessing {
 <a name="l00013"></a><a class="code" href="classcprocessing_1_1Style.html">00013</a>     <span class="keyword">class </span><a class="code" href="classcprocessing_1_1Style.html">Style</a> {
 <a name="l00014"></a>00014     <span class="keyword">public</span>:
-<a name="l00015"></a>00015         <span class="keywordtype">unsigned</span> rectMode;
-<a name="l00016"></a>00016         <span class="keywordtype">unsigned</span> ellipseMode;
-<a name="l00017"></a>00017         <span class="keywordtype">unsigned</span> imageMode;
-<a name="l00018"></a>00018         <span class="keywordtype">unsigned</span> globColorMode; 
+<a name="l00015"></a><a class="code" href="classcprocessing_1_1Style.html#ad6c53e0b11b150ce9b0d4cda838b21a0">00015</a>         <span class="keywordtype">unsigned</span> <a class="code" href="classcprocessing_1_1Style.html#ad6c53e0b11b150ce9b0d4cda838b21a0">rectMode</a>;
+<a name="l00016"></a><a class="code" href="classcprocessing_1_1Style.html#ac45b66048241d2ecd1cc45f3d33ee1a9">00016</a>         <span class="keywordtype">unsigned</span> <a class="code" href="classcprocessing_1_1Style.html#ac45b66048241d2ecd1cc45f3d33ee1a9">ellipseMode</a>;
+<a name="l00017"></a><a class="code" href="classcprocessing_1_1Style.html#ac8e0290066dbe7b14333e8b263d1f3b2">00017</a>         <span class="keywordtype">unsigned</span> <a class="code" href="classcprocessing_1_1Style.html#ac8e0290066dbe7b14333e8b263d1f3b2">imageMode</a>;
+<a name="l00018"></a><a class="code" href="classcprocessing_1_1Style.html#a03938147fd7720cb4e3370db07840770">00018</a>         <span class="keywordtype">unsigned</span> <a class="code" href="classcprocessing_1_1Style.html#a03938147fd7720cb4e3370db07840770">globColorMode</a>; 
 <a name="l00019"></a>00019 
 <a name="l00021"></a><a class="code" href="classcprocessing_1_1Style.html#a7eec2077d120edee546ef5c396bd76b4">00021</a>         <span class="keywordtype">double</span> <a class="code" href="classcprocessing_1_1Style.html#a7eec2077d120edee546ef5c396bd76b4" title="Tells which color space is actually used for color specification.">max1</a>; <span class="comment">// First component</span>
-<a name="l00022"></a>00022         <span class="keywordtype">double</span> max2; <span class="comment">// Second component</span>
-<a name="l00023"></a>00023         <span class="keywordtype">double</span> max3; <span class="comment">// Third component</span>
-<a name="l00024"></a>00024         <span class="keywordtype">double</span> maxA; <span class="comment">// Alpha component</span>
+<a name="l00022"></a><a class="code" href="classcprocessing_1_1Style.html#ab398d4a05ab2a554d5856f6394a3908c">00022</a>         <span class="keywordtype">double</span> <a class="code" href="classcprocessing_1_1Style.html#ab398d4a05ab2a554d5856f6394a3908c">max2</a>; <span class="comment">// Second component</span>
+<a name="l00023"></a><a class="code" href="classcprocessing_1_1Style.html#addd5a8e8c0b252f452a0a20f37db4976">00023</a>         <span class="keywordtype">double</span> <a class="code" href="classcprocessing_1_1Style.html#addd5a8e8c0b252f452a0a20f37db4976">max3</a>; <span class="comment">// Third component</span>
+<a name="l00024"></a><a class="code" href="classcprocessing_1_1Style.html#a6c84aee2964e963e5d4a398fecb6820e">00024</a>         <span class="keywordtype">double</span> <a class="code" href="classcprocessing_1_1Style.html#a6c84aee2964e963e5d4a398fecb6820e">maxA</a>; <span class="comment">// Alpha component</span>
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026         <span class="keywordtype">int</span> ellipseDetail;
-<a name="l00027"></a>00027         <span class="keywordtype">int</span> sphereDetail;
-<a name="l00028"></a>00028         <span class="keywordtype">unsigned</span> bezierDetail;
+<a name="l00026"></a><a class="code" href="classcprocessing_1_1Style.html#ab57be3369f09dda4193bd28665776155">00026</a>         <span class="keywordtype">int</span> <a class="code" href="classcprocessing_1_1Style.html#ab57be3369f09dda4193bd28665776155">ellipseDetail</a>;
+<a name="l00027"></a><a class="code" href="classcprocessing_1_1Style.html#ae4228a0d8904da20016816b72773722e">00027</a>         <span class="keywordtype">int</span> <a class="code" href="classcprocessing_1_1Style.html#ae4228a0d8904da20016816b72773722e">sphereDetail</a>;
+<a name="l00028"></a><a class="code" href="classcprocessing_1_1Style.html#af066cb110b19a792122f230f11c7cf57">00028</a>         <span class="keywordtype">unsigned</span> <a class="code" href="classcprocessing_1_1Style.html#af066cb110b19a792122f230f11c7cf57">bezierDetail</a>;
 <a name="l00029"></a>00029 
 <a name="l00030"></a><a class="code" href="classcprocessing_1_1Style.html#a42743879ae50e0d629ecb1f3adfd5326">00030</a>         std::vector&lt;PVector&gt; <a class="code" href="classcprocessing_1_1Style.html#a42743879ae50e0d629ecb1f3adfd5326" title="Vertices of circle centered at the origin and diameter 1.">ellipseVtx</a>;  
 <a name="l00031"></a><a class="code" href="classcprocessing_1_1Style.html#a84582322d95a21a724c07d9c4aea0ca9">00031</a>         <span class="keywordtype">int</span> ures, <a class="code" href="classcprocessing_1_1Style.html#a84582322d95a21a724c07d9c4aea0ca9" title="number of vertices in the longitude and latitude directions of a sphere">vres</a>; 
@@ -113,12 +115,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 
 <a name="l00035"></a><a class="code" href="classcprocessing_1_1Style.html#a0c309b04401c12d97be2d9844582311e">00035</a>         std::vector&lt;BlendFactor&gt; <a class="code" href="classcprocessing_1_1Style.html#a0c309b04401c12d97be2d9844582311e" title="bezierDetail samples of Bézier blending functions">bezierBlend</a>; 
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <span class="keywordtype">int</span> strokeWeight;   <span class="comment">//TODO:: have this actually affect past generations when popstyle is called (along with other things such as details)</span>
+<a name="l00037"></a><a class="code" href="classcprocessing_1_1Style.html#a94d3946ede16f831add95bc8b51b593c">00037</a>         <span class="keywordtype">int</span> <a class="code" href="classcprocessing_1_1Style.html#a94d3946ede16f831add95bc8b51b593c">strokeWeight</a>;   <span class="comment">//TODO:: have this actually affect past generations when popstyle is called (along with other things such as details)</span>
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> strokeColor;
-<a name="l00040"></a>00040         <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> fillColor;
+<a name="l00039"></a><a class="code" href="classcprocessing_1_1Style.html#a23b32198997fa6b8da302adf7810f79b">00039</a>         <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> <a class="code" href="classcprocessing_1_1Style.html#a23b32198997fa6b8da302adf7810f79b">strokeColor</a>;
+<a name="l00040"></a><a class="code" href="classcprocessing_1_1Style.html#a192c5df80b11b4ca13f27b7fbdb1c432">00040</a>         <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> <a class="code" href="classcprocessing_1_1Style.html#a192c5df80b11b4ca13f27b7fbdb1c432">fillColor</a>;
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042         <span class="keywordtype">float</span> * specular;
+<a name="l00042"></a><a class="code" href="classcprocessing_1_1Style.html#a87b9759761331ce9d9e6f1f1fef6943f">00042</a>         <span class="keywordtype">float</span> * <a class="code" href="classcprocessing_1_1Style.html#a87b9759761331ce9d9e6f1f1fef6943f">specular</a>;
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044         <span class="comment">//TODO::</span>
 <a name="l00045"></a>00045         <span class="comment">/*tint(), strokeCap(), strokeJoin(), </span>
@@ -137,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -149,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 2 2012 17:41:32 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 3 2012 03:01:06 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

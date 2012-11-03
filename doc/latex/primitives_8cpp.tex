@@ -1,0 +1,87 @@
+\hypertarget{primitives_8cpp}{\section{primitives.\-cpp \-File \-Reference}
+\label{primitives_8cpp}\index{primitives.\-cpp@{primitives.\-cpp}}
+}
+{\ttfamily \#include $<$\-G\-L/glut.\-h$>$}\*
+{\ttfamily \#include $<$vector$>$}\*
+{\ttfamily \#include $<$cassert$>$}\*
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include \char`\"{}cprocessing.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}pvector.\-hpp\char`\"{}}\*
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacecprocessing}{cprocessing}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacecprocessing_a22b5de4fc02daa5ad47f4f277465cc18}{cprocessing\-::line} (double x0, double y0, double z0, double x1, double y1, double z1)
+\item 
+void \hyperlink{namespacecprocessing_af3cfb92d80a8efb01c014202a10f75f6}{cprocessing\-::triangle} (double x0, double y0, double z0, double x1, double y1, double z1, double x2, double y2, double z2)
+\item 
+void \hyperlink{namespacecprocessing_a0e705161c014a71dc629afb6237076cd}{cprocessing\-::quad} (double x0, double y0, double x1, double y1, double x2, double y2, double x3, double y3)
+\begin{DoxyCompactList}\small\item\em of its vertices. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a2620e23fb7246c11aec8053b799ca391}{cprocessing\-::point} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em \-Draws a point. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_aa095baf1d8906e76226793542e9ebcc4}{cprocessing\-::rect\-Mode} (unsigned mode)
+\item 
+void \hyperlink{namespacecprocessing_ae674c2ae8ba8fdf8859addfe239c90be}{cprocessing\-::rect} (double x, double y, double a, double b)
+\item 
+void \hyperlink{namespacecprocessing_a4647a1b4d440f504e7d2b52866f58c3a}{cprocessing\-::ellipse\-Detail} (unsigned n)
+\item 
+void \hyperlink{namespacecprocessing_a8b3c72101215d89722a6fd09036c090e}{cprocessing\-::ellipse\-Mode} (unsigned mode)
+\item 
+void \hyperlink{namespacecprocessing_a9341930ee0fb1ee76a95e311b74e3065}{cprocessing\-::ellipse} (double x, double y, double width, double height)
+\item 
+void \hyperlink{namespacecprocessing_a21596477875fca056596a315117f9913}{cprocessing\-::sphere\-Detail} (int ures, int vres)
+\item 
+void \hyperlink{namespacecprocessing_ad12fe2bf0a14c6759624d8f6b66f5bd0}{cprocessing\-::sphere} (double radius)
+\item 
+void \hyperlink{namespacecprocessing_a28f122c44889d93bb070076ff6aaab9d}{cprocessing\-::box} (double width, double height, double depth)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{primitives_8cpp_aeea315052c56518e243306b0e52bdb1b}{box\-Vtx} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Vertex coordinates of faces of box with size 2 centered at the origin. \end{DoxyCompactList}\item 
+static double \hyperlink{primitives_8cpp_a11d5259cbdb63ce18ebf54844d65b779}{box\-Nrm} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Normal coordinates of faces of box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{primitives_8cpp_a11d5259cbdb63ce18ebf54844d65b779}{\index{primitives.\-cpp@{primitives.\-cpp}!box\-Nrm@{box\-Nrm}}
+\index{box\-Nrm@{box\-Nrm}!primitives.cpp@{primitives.\-cpp}}
+\subsubsection[{box\-Nrm}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf box\-Nrm}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{primitives_8cpp_a11d5259cbdb63ce18ebf54844d65b779}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+
+                                        {0,0,1,  0,0,1,  0,0,1,  0,0,1,        
+           
+                     1,0,0,  1,0,0,  1,0,0, 1,0,0,              
+                     0,1,0,  0,1,0,  0,1,0, 0,1,0,              
+                     -1,0,0,  -1,0,0, -1,0,0,  -1,0,0,          
+                     0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,         
+                     0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1}
+\end{DoxyCode}
+
+
+\-Normal coordinates of faces of box. 
+
+\hypertarget{primitives_8cpp_aeea315052c56518e243306b0e52bdb1b}{\index{primitives.\-cpp@{primitives.\-cpp}!box\-Vtx@{box\-Vtx}}
+\index{box\-Vtx@{box\-Vtx}!primitives.cpp@{primitives.\-cpp}}
+\subsubsection[{box\-Vtx}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf box\-Vtx}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{primitives_8cpp_aeea315052c56518e243306b0e52bdb1b}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+
+                                         {1,1,1,  -1,1,1,  -1,-1,1,  1,-1,1,   
+           
+                      1,1,1,  1,-1,1,  1,-1,-1,  1,1,-1,        
+                      1,1,1,  1,1,-1,  -1,1,-1,  -1,1,1,        
+                      -1,1,1,  -1,1,-1,  -1,-1,-1,  -1,-1,1,    
+                      -1,-1,-1,  1,-1,-1,  1,-1,1,  -1,-1,1,    
+                      1,-1,-1,  -1,-1,-1,  -1,1,-1,  1,1,-1}
+\end{DoxyCode}
+
+
+\-Vertex coordinates of faces of box with size 2 centered at the origin. 
+

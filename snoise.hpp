@@ -59,10 +59,27 @@ namespace cprocessing {
         };
 
 
-        //simplex noise functions
+        /*!Calculates one dimensional simplex noise
+        * @param x any number
+        * @return value between -1 and 1*/
         double snoise(double x);
+        /*!Calculates two dimensional simplex noise
+        * @param x any number
+        * @param y any number
+        * @return value between -1 and 1*/
         double snoise(double x, double y);
+        /*!Calculates three dimensional simplex noise
+        * @param x any number
+        * @param y any number
+        * @param z any number
+        * @return value between -1 and 1*/
         double snoise(double x, double y, double z);
-        double snoise(double x, double y, double z, double w);
+        /*!Calculates four dimensional simplex noise
+        * @param x any number
+        * @param y any number
+        * @param z any number
+        * @param k any number
+        * @return value between -1 and 1*/
+        double snoise(double x, double y, double z, double k);
 }
 #endif

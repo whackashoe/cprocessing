@@ -1,0 +1,48 @@
+\hypertarget{transformations_8cpp}{\section{transformations.\-cpp \-File \-Reference}
+\label{transformations_8cpp}\index{transformations.\-cpp@{transformations.\-cpp}}
+}
+{\ttfamily \#include $<$\-G\-L/glut.\-h$>$}\*
+{\ttfamily \#include $<$cmath$>$}\*
+{\ttfamily \#include \char`\"{}cprocessing.\-hpp\char`\"{}}\*
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacecprocessing}{cprocessing}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacecprocessing_a0e437a343ef6fb18eb0212c24ddbf7b2}{cprocessing\-::translate} (double dx, double dy, double dz)
+\begin{DoxyCompactList}\small\item\em \-Applies a translation transformation. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_ae482816a2ac74376fface1261abbe47e}{cprocessing\-::translate} (double dx, double dy)
+\item 
+void \hyperlink{namespacecprocessing_a57d46ddaf4025cdf290f5ccb82725530}{cprocessing\-::scale} (double dx, double dy, double dz)
+\begin{DoxyCompactList}\small\item\em \-Applies a scale transformation. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a9f393203e195c6843c3880c952432ec7}{cprocessing\-::scale} (double dx, double dy)
+\begin{DoxyCompactList}\small\item\em \-Applies a scale transformation. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_afa46f333138777dcaa09eeff125a9d39}{cprocessing\-::rotate} (double radians, double axisx, double axisy, double axisz)
+\begin{DoxyCompactList}\small\item\em \-Applies a rotation transformation. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_af2d05683bc26cdc849748dbcc4fd9633}{cprocessing\-::reset\-Matrix} ()
+\begin{DoxyCompactList}\small\item\em \-Resets the transformation to none. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a239beab716293400201d76c2b161bf94}{cprocessing\-::get\-Matrix} (double matrix\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Fills matrix with the current transformation matrix. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_ab35dca9be506b14c4b7de3ac852d5761}{cprocessing\-::apply\-Matrix} (double matrix\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Multiplies given matrix by current transformation matrix. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a0a8c81bb468438c6fd94d702738c94e7}{cprocessing\-::push\-Matrix} ()
+\begin{DoxyCompactList}\small\item\em \-Duplicates the top of the matrix stack. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a447be31257a33fb4bb0e706e97f73637}{cprocessing\-::pop\-Matrix} ()
+\begin{DoxyCompactList}\small\item\em \-Discards the top of the matrix stack. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a979315d19d15f5f9bea05e156a3e1ad6}{cprocessing\-::camera} (double eye\-X, double eye\-Y, double eye\-Z, double center\-X, double center\-Y, double center\-Z, double up\-X, double up\-Y, double up\-Z)
+\item 
+void \hyperlink{namespacecprocessing_a6c73262dc98cfd96fe88c0ad16a0453c}{cprocessing\-::camera} ()
+\item 
+void \hyperlink{namespacecprocessing_af457187b10c596fab7fe6a808a13309b}{cprocessing\-::perspective} (double fov, double aspect, double znear, double zfar)
+\item 
+void \hyperlink{namespacecprocessing_a49747e26d8bdc34c207db022abc208ab}{cprocessing\-::perspective} ()
+\item 
+void \hyperlink{namespacecprocessing_a565047eb5fbb68d456da93adabf1dcf2}{cprocessing\-::ortho} (double left, double right, double bottom, double top, double near, double far)
+\item 
+void \hyperlink{namespacecprocessing_a2f38b0b3a95c2a5a42eff8b20f337606}{cprocessing\-::ortho} ()
+\item 
+void \hyperlink{namespacecprocessing_a6240bce03ad9a42c8d943a716cac33be}{cprocessing\-::screen\-X\-Y\-Z} (double ox, double oy, double oz, double \&sx, double \&sy, double \&sz)
+\begin{DoxyCompactList}\small\item\em \-Returns the projected space coordinates of object coordinates ox,oy,oz. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -30,7 +30,7 @@
    <div id="projectname">cprocessing
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   
+   <div id="projectbrief">Simpledrawing,andIOforcreativecodingandprototyping</div>
   </td>
   
   
@@ -47,7 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 </div>
@@ -78,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">pimage.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;cprocessing.hpp&quot;</span>
+<a href="pimage_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="cprocessing_8hpp.html">cprocessing.hpp</a>&quot;</span>
 <a name="l00002"></a>00002 <span class="comment">//#include &lt;Magick++.h&gt;</span>
 <a name="l00003"></a>00003 
 <a name="l00004"></a>00004 <span class="preprocessor">#ifndef CPROCESSING_PIMAGE_</span>
@@ -89,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 <span class="comment">//using namespace Magick;</span>
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 <span class="keyword">namespace </span>cprocessing {     
-<a name="l00012"></a>00012     <span class="keyword">enum</span> { ARGB, RGB, HSB, ALPHA };
+<a name="l00012"></a><a class="code" href="namespacecprocessing.html#a9b569822741b2c00fca52ba8514a19f3a4b4eae611ef3da1c82467b67ab76d5bc">00012</a>     <span class="keyword">enum</span> { <a class="code" href="namespacecprocessing.html#a9b569822741b2c00fca52ba8514a19f3af1455f1c4fd332b7146ef56c8a64b0df">ARGB</a>, <a class="code" href="namespacecprocessing.html#a9b569822741b2c00fca52ba8514a19f3a4b4eae611ef3da1c82467b67ab76d5bc">RGB</a>, <a class="code" href="namespacecprocessing.html#a9b569822741b2c00fca52ba8514a19f3a309278d84636598ea1e50818ceef1f75">HSB</a>, <a class="code" href="namespacecprocessing.html#a9b569822741b2c00fca52ba8514a19f3a60ba0a866779bfa8235a662ff62a7915">ALPHA</a> };
 <a name="l00013"></a>00013     
 <a name="l00015"></a><a class="code" href="classcprocessing_1_1PImage.html">00015</a>         <span class="keyword">class </span><a class="code" href="classcprocessing_1_1PImage.html" title="Encapsulates a 2D RGBA image.">PImage</a> {
 <a name="l00016"></a>00016         <span class="keyword">public</span>:
@@ -98,11 +100,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019         <span class="comment">//Image * img;</span>
 <a name="l00020"></a><a class="code" href="classcprocessing_1_1PImage.html#a784b1e16d4ccfa218e8cf430ea6ca5ea">00020</a>             <span class="keywordtype">int</span> <a class="code" href="classcprocessing_1_1PImage.html#a784b1e16d4ccfa218e8cf430ea6ca5ea" title="width of the image (size of row)">width</a>;       
 <a name="l00021"></a><a class="code" href="classcprocessing_1_1PImage.html#ac39c77f516dbbe493317455f8b095603">00021</a>             <span class="keywordtype">int</span> <a class="code" href="classcprocessing_1_1PImage.html#ac39c77f516dbbe493317455f8b095603" title="height of the image (number of rows)">height</a>;      
-<a name="l00022"></a>00022         <span class="keywordtype">unsigned</span> type;
+<a name="l00022"></a><a class="code" href="classcprocessing_1_1PImage.html#a465d1a7c776bc7735cc5bdb4dca20586">00022</a>         <span class="keywordtype">unsigned</span> <a class="code" href="classcprocessing_1_1PImage.html#a465d1a7c776bc7735cc5bdb4dca20586">type</a>;
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025         <a class="code" href="classcprocessing_1_1PImage.html" title="Encapsulates a 2D RGBA image.">PImage</a>();
-<a name="l00030"></a>00030             <a class="code" href="classcprocessing_1_1PImage.html" title="Encapsulates a 2D RGBA image.">PImage</a> (<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">unsigned</span> type = ARGB);
+<a name="l00030"></a>00030             <a class="code" href="classcprocessing_1_1PImage.html" title="Encapsulates a 2D RGBA image.">PImage</a> (<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">unsigned</span> type = <a class="code" href="namespacecprocessing.html#a9b569822741b2c00fca52ba8514a19f3af1455f1c4fd332b7146ef56c8a64b0df">ARGB</a>);
 <a name="l00031"></a>00031             
 <a name="l00033"></a>00033             ~<a class="code" href="classcprocessing_1_1PImage.html" title="Encapsulates a 2D RGBA image.">PImage</a> ();
 <a name="l00034"></a>00034             
@@ -113,8 +115,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a>00041         <span class="keywordtype">void</span> loadImage(std::string src);
 <a name="l00042"></a>00042             
 <a name="l00044"></a><a class="code" href="classcprocessing_1_1PImage.html#ab961583f0c5c97e747a14e85900548de">00044</a>             <span class="keyword">inline</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> <span class="keyword">get</span>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {
-<a name="l00045"></a>00045                 assert(x &gt;=0 &amp;&amp; x &lt; width &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; height &amp;&amp; pixels!=0);
-<a name="l00046"></a>00046                 <span class="keywordflow">return</span> pixels[y*width+x];
+<a name="l00045"></a>00045                 assert(x &gt;=0 &amp;&amp; x &lt; width &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; <a class="code" href="namespacecprocessing.html#ac392753eef02e2ad4ad84f5a076919be" title="window height">height</a> &amp;&amp; pixels!=0);
+<a name="l00046"></a>00046                 <span class="keywordflow">return</span> pixels[y*<a class="code" href="namespacecprocessing.html#a7af937eb8772235def57fcadd10fc82a" title="window width">width</a>+x];
 <a name="l00047"></a>00047             }       
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049         <span class="comment">//sets a pixel to a color</span>
@@ -133,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -145,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 2 2012 17:41:32 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 3 2012 03:01:06 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

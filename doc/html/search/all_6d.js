@@ -1,5 +1,29 @@
 var searchData=
 [
-  ['mag',['mag',['../classcprocessing_1_1PVector.html#af9d951dc62610be214e933548224c191',1,'cprocessing::PVector']]],
-  ['max1',['max1',['../classcprocessing_1_1Style.html#a7eec2077d120edee546ef5c396bd76b4',1,'cprocessing::Style']]]
+  ['mag',['mag',['../classcprocessing_1_1PVector.html#af9d951dc62610be214e933548224c191',1,'cprocessing::PVector::mag()'],['../namespacecprocessing.html#a2eebc33d41a8e243dd4f5bda43af75d5',1,'cprocessing::mag(double a, double b)'],['../namespacecprocessing.html#a2ac0d97a2d0825c780ccf9d178ea2904',1,'cprocessing::mag(double a, double b, double c)']]],
+  ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['map',['map',['../namespacecprocessing.html#aff1e390b22ff2059099c0b9eadf05a51',1,'cprocessing']]],
+  ['max',['max',['../namespacecprocessing.html#ab4e75c25cbada0bb5a001658f44783e6',1,'cprocessing::max(const C &amp;a, const C &amp;b)'],['../namespacecprocessing.html#a6739cf85267bc8298c5fc87ad9a17c4e',1,'cprocessing::max(const C &amp;a, const C &amp;b, const C &amp;c)']]],
+  ['max1',['max1',['../classcprocessing_1_1Style.html#a7eec2077d120edee546ef5c396bd76b4',1,'cprocessing::Style']]],
+  ['max2',['max2',['../classcprocessing_1_1Style.html#ab398d4a05ab2a554d5856f6394a3908c',1,'cprocessing::Style']]],
+  ['max3',['max3',['../classcprocessing_1_1Style.html#addd5a8e8c0b252f452a0a20f37db4976',1,'cprocessing::Style']]],
+  ['maxa',['maxA',['../classcprocessing_1_1Style.html#a6c84aee2964e963e5d4a398fecb6820e',1,'cprocessing::Style']]],
+  ['maxcolor',['MAXCOLOR',['../color_8hpp.html#acd61a23b73083918e86cc349ed38c076',1,'color.hpp']]],
+  ['millis',['millis',['../namespacecprocessing.html#ad302883a6ce30f331258927090bf924a',1,'cprocessing']]],
+  ['min',['min',['../namespacecprocessing.html#af95e692d22ac15bcca2320380e5835fe',1,'cprocessing::min(const C &amp;a, const C &amp;b)'],['../namespacecprocessing.html#a8a241f2fab0a037ec7891f47c72a7b27',1,'cprocessing::min(const C &amp;a, const C &amp;b, const C &amp;c)']]],
+  ['minute',['minute',['../namespacecprocessing.html#a9382ebc0ea6d75f30a10c76e250363d3',1,'cprocessing']]],
+  ['month',['month',['../namespacecprocessing.html#aecf7ffcc2511c4dd27779f25c1d5d0c9',1,'cprocessing']]],
+  ['mouse',['mouse',['../namespacecprocessing.html#abac12fcdd0efbbd1491a14011c381241',1,'cprocessing']]],
+  ['mousebutton',['mouseButton',['../namespacecprocessing.html#ac291906023e7749b6351265a5a5f589e',1,'cprocessing']]],
+  ['mousedragged',['mouseDragged',['../cprocessing_8cpp.html#ac676c424b8f8d987edcdb3bcc6fc8174',1,'mouseDragged():&#160;extfuncs.cpp'],['../extfuncs_8cpp.html#ac676c424b8f8d987edcdb3bcc6fc8174',1,'mouseDragged():&#160;extfuncs.cpp']]],
+  ['mousemotion',['mousemotion',['../namespacecprocessing.html#a9fc04981955baab92e7b528b6a0c7c34',1,'cprocessing']]],
+  ['mousemoved',['mouseMoved',['../cprocessing_8cpp.html#a1c0c73fafb35f246dae6eb3d9376c71e',1,'mouseMoved():&#160;extfuncs.cpp'],['../extfuncs_8cpp.html#a1c0c73fafb35f246dae6eb3d9376c71e',1,'mouseMoved():&#160;extfuncs.cpp']]],
+  ['mousepressed',['mousePressed',['../namespacecprocessing.html#a02981e7550d1c27e3ae792450172f4b7',1,'cprocessing::mousePressed()'],['../cprocessing_8cpp.html#aa4a4c06267a1858937e7f65611bf4fcf',1,'mousePressed():&#160;extfuncs.cpp'],['../extfuncs_8cpp.html#aa4a4c06267a1858937e7f65611bf4fcf',1,'mousePressed():&#160;extfuncs.cpp']]],
+  ['mouserecordflag',['mouseRecordFlag',['../cprocessing_8cpp.html#a50499f2973fad7a44597599d26a88365',1,'cprocessing.cpp']]],
+  ['mousereleased',['mouseReleased',['../cprocessing_8cpp.html#a7bac7e3cc11e1946c2e5e27511f04edd',1,'mouseReleased():&#160;extfuncs.cpp'],['../extfuncs_8cpp.html#a7bac7e3cc11e1946c2e5e27511f04edd',1,'mouseReleased():&#160;extfuncs.cpp']]],
+  ['mousex',['mouseX',['../namespacecprocessing.html#aca55645dc8d20d72de21bc8cf2c5bcd0',1,'cprocessing']]],
+  ['mousey',['mouseY',['../namespacecprocessing.html#ac81e2d0a39a3d606e9e6d870e31534ee',1,'cprocessing']]],
+  ['mult',['mult',['../classcprocessing_1_1PVector.html#a46d50c68b25c2d61f82533047d165019',1,'cprocessing::PVector::mult(double s) const '],['../classcprocessing_1_1PVector.html#a624022e09cbc418b621f11896ed3b85f',1,'cprocessing::PVector::mult(const PVector &amp;v, double s)']]],
+  ['multiply',['MULTIPLY',['../namespacecprocessing.html#aa210740653d5e2431db0bdc726242fb0a025f2753608f2aec53d4b881d261e94b',1,'cprocessing']]]
 ];

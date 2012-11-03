@@ -356,10 +356,10 @@ namespace cprocessing {
     }
 
     /// Sets up a window of the given size
-    /// @param wid Desired window width in pixels.
-    /// @param hgt Desired window height in pixels.
+    /// @param width Desired window width in pixels.
+    /// @param height Desired window height in pixels.
     /// @param name Desired window title.
-    void size (unsigned wid, unsigned hgt, const char* name) {
+    void size (unsigned width, unsigned height, const char* name) {
     	if (initialized) {
     		glutReshapeWindow (wid, hgt);
     		glutSetWindowTitle (name);
@@ -383,14 +383,14 @@ namespace cprocessing {
     }
 
 
-        /// Sets line color
-    /// @param color: New line color
+    /// Sets line color
+    /// @param c New line color
     void stroke (const color& c) {
         styles[styles.size()-1].strokeColor = color(c);
     }
 
     /// Sets area color
-    /// @param color: New area color
+    /// @param c New area color
     void fill (const color& c) {
       styles[styles.size()-1].fillColor = color(c);
     }
@@ -405,7 +405,7 @@ namespace cprocessing {
 
 
     /// Clear the window with a background color
-    /// @param color: background color
+    /// @param c: background color
     void background (const color& c) {
         glClearColor (c.rgba[0] * (1.0/255),
                       c.rgba[1] * (1.0/255),

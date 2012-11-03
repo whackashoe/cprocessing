@@ -1,0 +1,363 @@
+\hypertarget{cprocessing_8hpp}{\section{cprocessing.\-hpp \-File \-Reference}
+\label{cprocessing_8hpp}\index{cprocessing.\-hpp@{cprocessing.\-hpp}}
+}
+{\ttfamily \#include $<$cmath$>$}\*
+{\ttfamily \#include $<$cassert$>$}\*
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include $<$fstream$>$}\*
+{\ttfamily \#include $<$vector$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include $<$\-G\-L/glut.\-h$>$}\*
+{\ttfamily \#include \char`\"{}color.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}pimage.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}pvector.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}snoise.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}style.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Array\-List.\-hpp\char`\"{}}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacecprocessing}{cprocessing}
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool \hyperlink{cprocessing_8hpp_af29b166bf5fea7f0bbc07f7014a8c6b5}{boolean}
+\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \*
+\hyperlink{namespacecprocessing_accea6f128c16246ebc5d97249bef2798a0f5721f9d61c9226b31b92c578128295}{cprocessing\-::\-C\-O\-D\-E\-D} =  255, 
+\hyperlink{namespacecprocessing_accea6f128c16246ebc5d97249bef2798a6a68963b29cd9e0a434bdba83f718948}{cprocessing\-::\-R\-E\-T\-U\-R\-N} =  '$\backslash$r', 
+\hyperlink{namespacecprocessing_accea6f128c16246ebc5d97249bef2798a1cefebcfa29cdbfd94239a48311a33c9}{cprocessing\-::\-E\-N\-T\-E\-R} =  '$\backslash$n', 
+\hyperlink{namespacecprocessing_accea6f128c16246ebc5d97249bef2798aa395f8aa3c92c862494cc2d38aca09aa}{cprocessing\-::\-E\-S\-C} =  27, 
+\*
+\hyperlink{namespacecprocessing_accea6f128c16246ebc5d97249bef2798ae51c5a0b089d96a1036524b0876f2897}{cprocessing\-::\-T\-A\-B} =  '$\backslash$t', 
+\hyperlink{namespacecprocessing_accea6f128c16246ebc5d97249bef2798a543dbc8ac6586eb2d714b5ae682001b8}{cprocessing\-::\-D\-E\-L\-E\-T\-E} =  127
+ \}
+\begin{DoxyCompactList}\small\item\em \-Used to test keys. \end{DoxyCompactList}\item 
+enum \{ \*
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089ad46a9cca771b8d72291e64b27fd88e1b}{cprocessing\-::\-F1}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089ac9b07efbc7a076e346d500791487587a}{cprocessing\-::\-F2}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089ab89a3bc09e7c88b1d9bcbee71443ce66}{cprocessing\-::\-F3}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089aacfdf52c18c1354fdbcbe2a0f4f5e048}{cprocessing\-::\-F4}, 
+\*
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a2c61d2d12c2b7a00484f68e108499688}{cprocessing\-::\-F5}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089ac42038afdcadd5f4461975b09e05565f}{cprocessing\-::\-F6}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a85107278dfe74d49abc2bccbc04585e7}{cprocessing\-::\-F7}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a7b07fee3749d9452ead7b2a23411de37}{cprocessing\-::\-F8}, 
+\*
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089ad9d95f070b6885b8981c60af698ff0c7}{cprocessing\-::\-F9}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a925549836ae900e28c870bd18249f08e}{cprocessing\-::\-F10}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a9c82aa3541b19eb10245465041e9d8bd}{cprocessing\-::\-F11}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089afd716e6c289b3023075e8eb05298a02b}{cprocessing\-::\-F12}, 
+\*
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089ae02d4c89601822af211b4a653b796e87}{cprocessing\-::\-U\-P}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a634a160faa669a319f7359165b4864c0}{cprocessing\-::\-D\-O\-W\-N}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089ac8df9c95ae0f6e4eafb5e419637d7603}{cprocessing\-::\-L\-E\-F\-T}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089ae7895293e38c69781a9c07356c76cbed}{cprocessing\-::\-R\-I\-G\-H\-T}, 
+\*
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a9b1216ce6402a756accfea27e1d5dd1c}{cprocessing\-::\-C\-E\-N\-T\-E\-R}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a7290733c4f0d1cd27ac990491d5e08a0}{cprocessing\-::\-P\-A\-G\-E\-U\-P}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089adc4ce9af436c0efd34d9cdf76febda18}{cprocessing\-::\-P\-A\-G\-E\-D\-O\-W\-N}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089af7e4c9e457b7c9494830ccc55b086cf8}{cprocessing\-::\-H\-O\-M\-E}, 
+\*
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a33b3021f105733b0fe5d619d1ba897e7}{cprocessing\-::\-E\-N\-D}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a0d3b57b7cb5674574ab91d16dcd8e26c}{cprocessing\-::\-I\-N\-S\-E\-R\-T}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a885196930a6c257c7777049ba5b253fb}{cprocessing\-::\-R\-A\-D\-I\-U\-S}, 
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a7feba059f0f9e839492b8917a63b3d34}{cprocessing\-::\-C\-O\-R\-N\-E\-R}, 
+\*
+\hyperlink{namespacecprocessing_a39d84f96f7411fee29eda510a17b1089a08d812580b19e35be269a1fd302df4ba}{cprocessing\-::\-C\-O\-R\-N\-E\-R\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Other constants. \end{DoxyCompactList}\item 
+enum \{ \hyperlink{namespacecprocessing_a8478adf68ba4c46fd83db0ce170e2bd7a09931e65f1593a3d50fae52dc558a7d8}{cprocessing\-::\-H\-A\-L\-F\-\_\-\-P\-I\-X\-E\-L\-\_\-\-S\-H\-I\-F\-T} =  1, 
+\hyperlink{namespacecprocessing_a8478adf68ba4c46fd83db0ce170e2bd7a811abeaa00dcfe9b93bb925727d49c24}{cprocessing\-::\-Y\-\_\-\-D\-O\-W\-N} =  1$<$$<$1, 
+\hyperlink{namespacecprocessing_a8478adf68ba4c46fd83db0ce170e2bd7a2819ac0826f666da0c6a3e484011f38e}{cprocessing\-::\-B\-A\-C\-K\-\_\-\-B\-U\-F\-F\-E\-R} =  1$<$$<$2
+ \}
+\begin{DoxyCompactList}\small\item\em \-Configuration flags. \end{DoxyCompactList}\item 
+enum \hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0c}{cprocessing\-::\-Shape\-Mode} \{ \*
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0ca3e86bde2050075ccf4e0c468edc8980f}{cprocessing\-::\-P\-O\-I\-N\-T\-S}, 
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0cafcfcf9f63a4bbebb38b1ab872db0be54}{cprocessing\-::\-L\-I\-N\-E\-S}, 
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0ca6bccefd20d2fb1fd8d978066306615c5}{cprocessing\-::\-L\-I\-N\-E\-\_\-\-L\-O\-O\-P}, 
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0ca949a14c9e346df73cf27e96c56a84a5e}{cprocessing\-::\-L\-I\-N\-E\-\_\-\-S\-T\-R\-I\-P}, 
+\*
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0ca14fa210112cb8c75acb6b3ec183b76fb}{cprocessing\-::\-T\-R\-I\-A\-N\-G\-L\-E\-S}, 
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0caabc8a5a48b21c675a357bad6ddf779d7}{cprocessing\-::\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-S\-T\-R\-I\-P}, 
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0ca13c88e2d578ad1509abed598eec0f56e}{cprocessing\-::\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-F\-A\-N}, 
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0ca5a883dcd8595f180da9df1e0944a117f}{cprocessing\-::\-Q\-U\-A\-D\-S}, 
+\*
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0ca43a71ddaa77c62104cb6ba49de71dc7d}{cprocessing\-::\-Q\-U\-A\-D\-\_\-\-S\-T\-R\-I\-P}, 
+\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0ca149dd8e5620ef53851035a9b39b47735}{cprocessing\-::\-P\-O\-L\-Y\-G\-O\-N}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Shape constants. \end{DoxyCompactList}\item 
+enum \hyperlink{namespacecprocessing_a36043bfddd24515bdaf0987869333293}{cprocessing\-::\-Shape\-Close} \{ \hyperlink{namespacecprocessing_a36043bfddd24515bdaf0987869333293a06badcdd1d10bb1cbb7db4f90a3e3aca}{cprocessing\-::\-O\-P\-E\-N} =  0, 
+\hyperlink{namespacecprocessing_a36043bfddd24515bdaf0987869333293ab4a66e300f7f1025e6cfebad41665070}{cprocessing\-::\-C\-L\-O\-S\-E} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-Parameter for the end\-Shape function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class C $>$ }\\\-C \hyperlink{namespacecprocessing_a240a51ca039c8fbd359e2fb8c2d583d9}{cprocessing\-::abs} (const \-C \&a)
+\item 
+{\footnotesize template$<$class C $>$ }\\\-C \hyperlink{namespacecprocessing_af95e692d22ac15bcca2320380e5835fe}{cprocessing\-::min} (const \-C \&a, const \-C \&b)
+\item 
+{\footnotesize template$<$class C $>$ }\\\-C \hyperlink{namespacecprocessing_ab4e75c25cbada0bb5a001658f44783e6}{cprocessing\-::max} (const \-C \&a, const \-C \&b)
+\item 
+{\footnotesize template$<$class C $>$ }\\\-C \hyperlink{namespacecprocessing_a8a241f2fab0a037ec7891f47c72a7b27}{cprocessing\-::min} (const \-C \&a, const \-C \&b, const \-C \&c)
+\item 
+{\footnotesize template$<$class C $>$ }\\\-C \hyperlink{namespacecprocessing_a6739cf85267bc8298c5fc87ad9a17c4e}{cprocessing\-::max} (const \-C \&a, const \-C \&b, const \-C \&c)
+\item 
+{\footnotesize template$<$class C $>$ }\\\-C \hyperlink{namespacecprocessing_a5f001d15dc5d3457f6d9b88c7eca54a9}{cprocessing\-::constrain} (const \-C \&a, const \-C \&minv, const \-C \&maxv)
+\item 
+double \hyperlink{namespacecprocessing_a2eebc33d41a8e243dd4f5bda43af75d5}{cprocessing\-::mag} (double a, double b)
+\item 
+double \hyperlink{namespacecprocessing_a2ac0d97a2d0825c780ccf9d178ea2904}{cprocessing\-::mag} (double a, double b, double c)
+\item 
+double \hyperlink{namespacecprocessing_aeae31092ccf4a4dc2553154be0945603}{cprocessing\-::dist} (double x1, double y1, double x2, double y2)
+\item 
+double \hyperlink{namespacecprocessing_a556b7ccc46527e951c0a0cf12f285fd1}{cprocessing\-::dist} (double x1, double y1, double z1, double x2, double y2, double z2)
+\item 
+double \hyperlink{namespacecprocessing_ad3e9bb8446fe8c867e5e90b33a451115}{cprocessing\-::lerp} (double value1, double value2, double amt)
+\item 
+double \hyperlink{namespacecprocessing_aff1e390b22ff2059099c0b9eadf05a51}{cprocessing\-::map} (double value, double low1, double high1, double low2, double high2)
+\item 
+double \hyperlink{namespacecprocessing_a9e4b103e9613fa8c7b6935fd68f59cdf}{cprocessing\-::norm} (double value, double low, double high)
+\item 
+int \hyperlink{namespacecprocessing_a37d82dab509470561df4e8ac40bdce71}{cprocessing\-::round} (double value)
+\item 
+double \hyperlink{namespacecprocessing_a5b9c7c8fe6eeabc902cac120592809c6}{cprocessing\-::sq} (double value)
+\item 
+double \hyperlink{namespacecprocessing_ab1ad6d58130b9a22ae19489920513d1f}{cprocessing\-::degrees} (double radians)
+\item 
+double \hyperlink{namespacecprocessing_a8e4f15390e12437ed626441da1cc767d}{cprocessing\-::radians} (double degrees)
+\item 
+void \hyperlink{namespacecprocessing_a764fa48b70712470f922b98463b77bf4}{cprocessing\-::delay} (unsigned long ms)
+\item 
+void \hyperlink{namespacecprocessing_af815879b404059ab470b9c33355d084f}{cprocessing\-::stroke} (const \hyperlink{classcprocessing_1_1color}{color} \&c)
+\begin{DoxyCompactList}\small\item\em \-Sets line color. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a7c1883da06a9fc2827b361d815e187ca}{cprocessing\-::stroke} (double r, double g, double b, double a=\hyperlink{color_8hpp_acd61a23b73083918e86cc349ed38c076}{\-M\-A\-X\-C\-O\-L\-O\-R})
+\item 
+void \hyperlink{namespacecprocessing_ad11d761eb5722c023b181750127da794}{cprocessing\-::stroke} (double gray, double a=\hyperlink{color_8hpp_acd61a23b73083918e86cc349ed38c076}{\-M\-A\-X\-C\-O\-L\-O\-R})
+\item 
+void \hyperlink{namespacecprocessing_a19914d41fcc0d755c4d754800b2f5147}{cprocessing\-::no\-Stroke} ()
+\item 
+void \hyperlink{namespacecprocessing_a0cdae921f6061ef2e6574ba2d3a08fe3}{cprocessing\-::fill} (const \hyperlink{classcprocessing_1_1color}{color} \&\hyperlink{classcprocessing_1_1color}{color})
+\begin{DoxyCompactList}\small\item\em \-Sets fill color. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a1d7a78063b1f888c9d8a02e3fb751691}{cprocessing\-::fill} (double r, double g, double b, double a=\hyperlink{color_8hpp_acd61a23b73083918e86cc349ed38c076}{\-M\-A\-X\-C\-O\-L\-O\-R})
+\item 
+void \hyperlink{namespacecprocessing_aabb2ff8c883f75ff0993842e65802e10}{cprocessing\-::fill} (double gray, double a=\hyperlink{color_8hpp_acd61a23b73083918e86cc349ed38c076}{\-M\-A\-X\-C\-O\-L\-O\-R})
+\item 
+void \hyperlink{namespacecprocessing_ae8ea8721096bb466fdbb304304ff9e1e}{cprocessing\-::no\-Fill} ()
+\item 
+void \hyperlink{namespacecprocessing_a80f508e91c571079b7632c808246e85f}{cprocessing\-::stroke\-Weight} (int weight)
+\begin{DoxyCompactList}\small\item\em \-Sets line / point width. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_ac8cb10897d638434fd395afe0da61e7e}{cprocessing\-::background} (const \hyperlink{classcprocessing_1_1color}{color} \&)
+\begin{DoxyCompactList}\small\item\em \-Draws background with given color. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_ae28ec65927b7f3edc953cacd9a67543a}{cprocessing\-::background} (double r, double g, double b, double a=\hyperlink{color_8hpp_acd61a23b73083918e86cc349ed38c076}{\-M\-A\-X\-C\-O\-L\-O\-R})
+\item 
+void \hyperlink{namespacecprocessing_a73406cb49ec7dad230a67ca56c19597a}{cprocessing\-::background} (double gray, double a=\hyperlink{color_8hpp_acd61a23b73083918e86cc349ed38c076}{\-M\-A\-X\-C\-O\-L\-O\-R})
+\item 
+void \hyperlink{namespacecprocessing_a3078c9359807ad49550d1d0961827f3d}{cprocessing\-::smooth} ()
+\begin{DoxyCompactList}\small\item\em \-Sets state so that lines are rendered antialiased. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a1e2a2adb15840df8dd16c8996863a905}{cprocessing\-::no\-Smooth} ()
+\begin{DoxyCompactList}\small\item\em \-Sets state so that lines are rendered quickly. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a22b5de4fc02daa5ad47f4f277465cc18}{cprocessing\-::line} (double x0, double y0, double z0, double x1, double y1, double z1)
+\item 
+void \hyperlink{namespacecprocessing_a199a958db5fcfb43dd16829e4342036f}{cprocessing\-::line} (double x0, double y0, double x1, double y1)
+\item 
+void \hyperlink{namespacecprocessing_af3cfb92d80a8efb01c014202a10f75f6}{cprocessing\-::triangle} (double x0, double y0, double z0, double x1, double y1, double z1, double x2, double y2, double z2)
+\item 
+void \hyperlink{namespacecprocessing_acaf82751989b6b6c5bf80f8f4f5a79a9}{cprocessing\-::triangle} (double x0, double y0, double x1, double y1, double x2, double y2)
+\item 
+void \hyperlink{namespacecprocessing_a0e705161c014a71dc629afb6237076cd}{cprocessing\-::quad} (double x0, double y0, double x1, double y1, double x2, double y2, double x3, double y3)
+\begin{DoxyCompactList}\small\item\em of its vertices. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a2620e23fb7246c11aec8053b799ca391}{cprocessing\-::point} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em \-Draws a point. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a26595ae3ade8670ae1bf29a3637fc284}{cprocessing\-::set} (int x, int y, \hyperlink{classcprocessing_1_1color}{color} c)
+\item 
+void \hyperlink{namespacecprocessing_aa095baf1d8906e76226793542e9ebcc4}{cprocessing\-::rect\-Mode} (unsigned mode)
+\item 
+void \hyperlink{namespacecprocessing_ae674c2ae8ba8fdf8859addfe239c90be}{cprocessing\-::rect} (double x, double y, double a, double b)
+\item 
+void \hyperlink{namespacecprocessing_a4647a1b4d440f504e7d2b52866f58c3a}{cprocessing\-::ellipse\-Detail} (unsigned n)
+\item 
+void \hyperlink{namespacecprocessing_a8b3c72101215d89722a6fd09036c090e}{cprocessing\-::ellipse\-Mode} (unsigned mode)
+\item 
+void \hyperlink{namespacecprocessing_a9341930ee0fb1ee76a95e311b74e3065}{cprocessing\-::ellipse} (double x, double y, double width, double height)
+\item 
+void \hyperlink{namespacecprocessing_a21596477875fca056596a315117f9913}{cprocessing\-::sphere\-Detail} (int ures, int vres)
+\item 
+void \hyperlink{namespacecprocessing_a2a78420636e3fcd21e96f87be4b74316}{cprocessing\-::sphere\-Detail} (int res)
+\item 
+void \hyperlink{namespacecprocessing_ad12fe2bf0a14c6759624d8f6b66f5bd0}{cprocessing\-::sphere} (double radius)
+\item 
+void \hyperlink{namespacecprocessing_a28f122c44889d93bb070076ff6aaab9d}{cprocessing\-::box} (double width, double height, double depth)
+\item 
+void \hyperlink{namespacecprocessing_acf30698a684da4beb34cee1ddbf37e60}{cprocessing\-::box} (double size)
+\item 
+void \hyperlink{namespacecprocessing_afac44ac31031e9f27d12973e074230ff}{cprocessing\-::begin\-Shape} (\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0c}{\-Shape\-Mode} mode)
+\begin{DoxyCompactList}\small\item\em \-Starts the definition of a shape. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a1f0b4b628bd9d68c9321327a6ac7daf5}{cprocessing\-::end\-Shape} ()
+\begin{DoxyCompactList}\small\item\em \-Finishes and renders the shape. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a790d9b7ae403d8cba72ae1c2f84f2fa7}{cprocessing\-::vertex} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em \-Adds a vertex to the shape. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a6d6f091f69de94483718a2a27d78f233}{cprocessing\-::normal} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em \-Specifies a normal for the next vertices. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_aab8885eae2719fac74c66473a6c49d33}{cprocessing\-::bezier\-Detail} (int n)
+\item 
+double \hyperlink{namespacecprocessing_aaa32b0ef424d3452942ee2b0c9700a07}{cprocessing\-::bezier\-Point} (double a, double b, double c, double d, double t)
+\item 
+double \hyperlink{namespacecprocessing_abbb2d5344f97242bed221f93567c3bd9}{cprocessing\-::bezier\-Tangent} (double a, double b, double c, double d, double t)
+\item 
+void \hyperlink{namespacecprocessing_abefd6e82adec560aeb65511d5c04ec62}{cprocessing\-::bezier\-Vertex} (double cx1, double cy1, double cz1, double cx2, double cy2, double cz2, double x, double y, double z)
+\item 
+void \hyperlink{namespacecprocessing_a36c29d340db4d37f305d06d8408ef22d}{cprocessing\-::bezier\-Vertex} (double cx1, double cy1, double cx2, double cy2, double x, double y)
+\begin{DoxyCompactList}\small\item\em 2\-D version of bezier\-Vertex \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_ab3bb61d1bd0741647c5f43163844e6a3}{cprocessing\-::bezier} (double x1, double y1, double z1, double cx1, double cy1, double cz1, double cx2, double cy2, double cz2, double x2, double y2, double z2)
+\begin{DoxyCompactList}\small\item\em \-Draws a cubic \-Bézier curve for the 4 control points. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a5ec53e4626a728b9525286cd281b4796}{cprocessing\-::bezier} (double x1, double y1, double cx1, double cy1, double cx2, double cy2, double x2, double y2)
+\begin{DoxyCompactList}\small\item\em 2\-D version of bezier \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a0e437a343ef6fb18eb0212c24ddbf7b2}{cprocessing\-::translate} (double dx, double dy, double dz)
+\begin{DoxyCompactList}\small\item\em \-Applies a translation transformation. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_ae482816a2ac74376fface1261abbe47e}{cprocessing\-::translate} (double dx, double dy)
+\item 
+void \hyperlink{namespacecprocessing_a57d46ddaf4025cdf290f5ccb82725530}{cprocessing\-::scale} (double dx, double dy, double dz)
+\begin{DoxyCompactList}\small\item\em \-Applies a scale transformation. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a9f393203e195c6843c3880c952432ec7}{cprocessing\-::scale} (double dx, double dy)
+\begin{DoxyCompactList}\small\item\em \-Applies a scale transformation. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a987be2f2fbe7386914a94dac7343801e}{cprocessing\-::scale} (double factor)
+\begin{DoxyCompactList}\small\item\em \-Applies a uniform scale. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_afa46f333138777dcaa09eeff125a9d39}{cprocessing\-::rotate} (double radians, double axisx, double axisy, double axisz)
+\begin{DoxyCompactList}\small\item\em \-Applies a rotation transformation. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_af0ade51f94b423933c31eafd92b96ab8}{cprocessing\-::rotate\-X} (double radians)
+\item 
+void \hyperlink{namespacecprocessing_ab42ccf131e68079e8333e209b5bbd70e}{cprocessing\-::rotate\-Y} (double radians)
+\item 
+void \hyperlink{namespacecprocessing_adb7051057100be20b837209c6a479fc6}{cprocessing\-::rotate\-Z} (double radians)
+\item 
+void \hyperlink{namespacecprocessing_a14fb0bc1e493f50d941da1f95cfaf227}{cprocessing\-::rotate} (double radians)
+\item 
+void \hyperlink{namespacecprocessing_af2d05683bc26cdc849748dbcc4fd9633}{cprocessing\-::reset\-Matrix} ()
+\begin{DoxyCompactList}\small\item\em \-Resets the transformation to none. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a239beab716293400201d76c2b161bf94}{cprocessing\-::get\-Matrix} (double matrix\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Fills matrix with the current transformation matrix. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_ab35dca9be506b14c4b7de3ac852d5761}{cprocessing\-::apply\-Matrix} (double matrix\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Multiplies given matrix by current transformation matrix. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a0a8c81bb468438c6fd94d702738c94e7}{cprocessing\-::push\-Matrix} ()
+\begin{DoxyCompactList}\small\item\em \-Duplicates the top of the matrix stack. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a447be31257a33fb4bb0e706e97f73637}{cprocessing\-::pop\-Matrix} ()
+\begin{DoxyCompactList}\small\item\em \-Discards the top of the matrix stack. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a979315d19d15f5f9bea05e156a3e1ad6}{cprocessing\-::camera} (double eye\-X, double eye\-Y, double eye\-Z, double center\-X, double center\-Y, double center\-Z, double up\-X, double up\-Y, double up\-Z)
+\item 
+void \hyperlink{namespacecprocessing_a6c73262dc98cfd96fe88c0ad16a0453c}{cprocessing\-::camera} ()
+\item 
+void \hyperlink{namespacecprocessing_af457187b10c596fab7fe6a808a13309b}{cprocessing\-::perspective} (double fov, double aspect, double znear, double zfar)
+\item 
+void \hyperlink{namespacecprocessing_a49747e26d8bdc34c207db022abc208ab}{cprocessing\-::perspective} ()
+\item 
+void \hyperlink{namespacecprocessing_a565047eb5fbb68d456da93adabf1dcf2}{cprocessing\-::ortho} (double left, double right, double bottom, double top, double near, double far)
+\item 
+void \hyperlink{namespacecprocessing_a2f38b0b3a95c2a5a42eff8b20f337606}{cprocessing\-::ortho} ()
+\item 
+void \hyperlink{namespacecprocessing_a6240bce03ad9a42c8d943a716cac33be}{cprocessing\-::screen\-X\-Y\-Z} (double ox, double oy, double oz, double \&sx, double \&sy, double \&sz)
+\begin{DoxyCompactList}\small\item\em \-Returns the projected space coordinates of object coordinates ox,oy,oz. \end{DoxyCompactList}\item 
+double \hyperlink{namespacecprocessing_a8ce792f437aceffc1eb7459593fd2cb0}{cprocessing\-::screen\-X} (double ox, double oy, double oz)
+\item 
+double \hyperlink{namespacecprocessing_a52d185d7ceeb94cffe6d9aed57a6aa4d}{cprocessing\-::screen\-Y} (double ox, double oy, double oz)
+\item 
+double \hyperlink{namespacecprocessing_a5dbe0a0bd7e63ae17bca9a0a82f1be88}{cprocessing\-::screen\-Z} (double ox, double oy, double oz)
+\item 
+void \hyperlink{namespacecprocessing_aa650015d05af290b6a9a84b91f469cfd}{cprocessing\-::directional\-Light} (double v1, double v2, double v3, double nx, double ny, double nz)
+\item 
+void \hyperlink{namespacecprocessing_ad96615723c2f0f36a6d2fbff1f136a23}{cprocessing\-::point\-Light} (double v1, double v2, double v3, double x, double y, double z)
+\item 
+void \hyperlink{namespacecprocessing_a424650181291261149d18e6422acbacc}{cprocessing\-::ambient\-Light} (double v1, double v2, double v3, double x=0, double y=0, double z=0)
+\item 
+void \hyperlink{namespacecprocessing_a73b8403f7fcd2ac084e22361404536ce}{cprocessing\-::spot\-Light} (double v1, double v2, double v3, double x, double y, double z, double nx, double ny, double nz, double angle, double concentration)
+\item 
+void \hyperlink{namespacecprocessing_a7c05adc9e787627af3f212ac9e70eed8}{cprocessing\-::light\-Specular} (double v1, double v2, double v3)
+\item 
+void \hyperlink{namespacecprocessing_a8d159e7189b41db79ab1b304a10fc8f4}{cprocessing\-::light\-Falloff} (double \hyperlink{lights_8cpp_a88de168fce6d89f37e5ceff0317b9f06}{constant}, double \hyperlink{lights_8cpp_aa7d568a84fe0f3179836f663743d6be2}{linear}, double \hyperlink{lights_8cpp_a5b54f49bd3fd03eee682575ba830cf99}{quadratic})
+\item 
+void \hyperlink{namespacecprocessing_ab1acc84389367328f202d254a91f757e}{cprocessing\-::lights} ()
+\begin{DoxyCompactList}\small\item\em \-Turns on the default lighting. \end{DoxyCompactList}\item 
+void \hyperlink{namespacecprocessing_a251e268f250938b938ceab16ff97b9a1}{cprocessing\-::no\-Lights} ()
+\item 
+{\footnotesize template$<$class C $>$ }\\void \hyperlink{namespacecprocessing_a2ce567d9c23f93c9de2ec5b5b362c750}{cprocessing\-::print} (const \-C \&a)
+\item 
+{\footnotesize template$<$class C $>$ }\\void \hyperlink{namespacecprocessing_adb24a9653ec0c180336385d1c006a658}{cprocessing\-::println} (const \-C \&a)
+\item 
+void \hyperlink{namespacecprocessing_aec8195139a88226bc60d3eddaa5d65b9}{cprocessing\-::no\-Loop} ()
+\item 
+void \hyperlink{namespacecprocessing_a66554fc7a3370552f74c563d0c5adcef}{cprocessing\-::loop} ()
+\item 
+void \hyperlink{namespacecprocessing_a09d66ead6ff18c18aa353ee6ed50bb78}{cprocessing\-::frame\-Rate} (int n)
+\item 
+\hyperlink{classcprocessing_1_1PImage}{\-P\-Image} \hyperlink{namespacecprocessing_a5e491b64f5f6c2485d3383035138c15b}{cprocessing\-::create\-Image} (int width, int height, int type)
+\item 
+void \hyperlink{namespacecprocessing_a9aa099fb5778d1a4bae8fae7f98abad0}{cprocessing\-::image} (\hyperlink{classcprocessing_1_1PImage}{\-P\-Image} img, int x, int y)
+\item 
+long \hyperlink{namespacecprocessing_ad302883a6ce30f331258927090bf924a}{cprocessing\-::millis} ()
+\item 
+int \hyperlink{namespacecprocessing_a66f0b80b6d8a63fcea448fda228a3bef}{cprocessing\-::second} ()
+\item 
+int \hyperlink{namespacecprocessing_a9382ebc0ea6d75f30a10c76e250363d3}{cprocessing\-::minute} ()
+\item 
+int \hyperlink{namespacecprocessing_a7cb939c2601830024528a43714e200dc}{cprocessing\-::hour} ()
+\item 
+int \hyperlink{namespacecprocessing_a23894b5b22c13abcae989418ba4b7043}{cprocessing\-::day} ()
+\item 
+int \hyperlink{namespacecprocessing_aecf7ffcc2511c4dd27779f25c1d5d0c9}{cprocessing\-::month} ()
+\item 
+int \hyperlink{namespacecprocessing_a37a2ca5a2132ec009826dc5d02c2bd0c}{cprocessing\-::year} ()
+\item 
+std\-::string \hyperlink{namespacecprocessing_a22f7836c5ee2ece827cb87f532b69bea}{cprocessing\-::trim} (std\-::string str)
+\item 
+void \hyperlink{namespacecprocessing_a71cb5d974435b9aff63bab3fd9e47b2c}{cprocessing\-::random\-Seed} (unsigned int random\-Seed)
+\item 
+double \hyperlink{namespacecprocessing_af80d5416f0be7b44024b66fdab375cf5}{cprocessing\-::random} (double howbig)
+\item 
+float \hyperlink{namespacecprocessing_a4254fb2e188dcbfc114392750df85469}{cprocessing\-::random} (float howbig)
+\item 
+float \hyperlink{namespacecprocessing_a874dc56fc0d6e65a1b13e40e2c88d367}{cprocessing\-::random} (int howbig)
+\item 
+double \hyperlink{namespacecprocessing_acbb34da5bbdcb90c835f747da782164a}{cprocessing\-::random} (double howsmall, double howbig)
+\item 
+float \hyperlink{namespacecprocessing_a4acf597a7eba6baff6bb2dfceb44e91b}{cprocessing\-::random} (float howsmall, float howbig)
+\item 
+float \hyperlink{namespacecprocessing_aff94df2ca686ab8cb8c29e06f06c41c8}{cprocessing\-::random} (int howsmall, int howbig)
+\item 
+const char $\ast$ \hyperlink{namespacecprocessing_a4874f805f42f926ed40ef576dac51201}{cprocessing\-::load\-Bytes} (const char $\ast$src)
+\item 
+void \hyperlink{namespacecprocessing_aefce387a356aa3e4937d4e08fc1b0b4c}{cprocessing\-::redraw} ()
+\item 
+void \hyperlink{namespacecprocessing_a7d4e83016b65fe24a4c5258de029d090}{cprocessing\-::push\-Style} ()
+\item 
+void \hyperlink{namespacecprocessing_a6a4b0f1cede3b31e1da5bfbb4812b479}{cprocessing\-::pop\-Style} ()
+\item 
+void \hyperlink{namespacecprocessing_ab33eba8fec733b7b3a1a14f1191499bc}{cprocessing\-::size} (unsigned width, unsigned height, const char $\ast$name)
+\item 
+void \hyperlink{namespacecprocessing_ab37eb8944511fff015ea51aa57755bad}{cprocessing\-::run} ()
+\begin{DoxyCompactList}\small\item\em \-Initializes and runs the application main event loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{namespacecprocessing_a445521f2b665e4744680faa4a6806676}{cprocessing\-::\-P\-I} = 3.\-14159265358979323846
+\item 
+const double \hyperlink{namespacecprocessing_aa9c16baaa88d39db100f54cb0bbca62f}{cprocessing\-::\-T\-W\-O\-\_\-\-P\-I} = 2$\ast$\-P\-I
+\item 
+const double \hyperlink{namespacecprocessing_a257bee644c97e92e9f9492c569ab863d}{cprocessing\-::\-H\-A\-L\-F\-\_\-\-P\-I} = \-P\-I/2
+\item 
+const double \hyperlink{namespacecprocessing_aa4fa2ff3538b68df8b95c6eba6c33a28}{cprocessing\-::\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I} = \-P\-I/4
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{cprocessing_8hpp_af29b166bf5fea7f0bbc07f7014a8c6b5}{\index{cprocessing.\-hpp@{cprocessing.\-hpp}!boolean@{boolean}}
+\index{boolean@{boolean}!cprocessing.hpp@{cprocessing.\-hpp}}
+\subsubsection[{boolean}]{\setlength{\rightskip}{0pt plus 5cm}typedef bool {\bf boolean}}}\label{cprocessing_8hpp_af29b166bf5fea7f0bbc07f7014a8c6b5}

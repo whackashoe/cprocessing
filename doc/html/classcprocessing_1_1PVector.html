@@ -30,7 +30,7 @@
    <div id="projectname">cprocessing
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   
+   <div id="projectbrief">Simpledrawing,andIOforcreativecodingandprototyping</div>
   </td>
   
   
@@ -47,7 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -69,9 +70,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><b>cprocessing</b>      </li>
+      <li class="navelem"><a class="el" href="namespacecprocessing.html">cprocessing</a>      </li>
       <li class="navelem"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>      </li>
     </ul>
   </div>
@@ -99,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">cprocessing::PVector Class Reference</div>  </div>
 </div><!--header-->
@@ -109,97 +110,711 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="classcprocessing_1_1PVector.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="pvector_8hpp_source.html">pvector.hpp</a>&gt;</code></p>
-
-<p><a href="classcprocessing_1_1PVector-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15b76552e4cd25913069e1e116fd754b"></a><!-- doxytag: member="cprocessing::PVector::PVector" ref="a15b76552e4cd25913069e1e116fd754b" args="(double thex=0, double they=0, double thez=0)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a15b76552e4cd25913069e1e116fd754b">PVector</a> (double thex=0, double they=0, double thez=0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac9b5ec71572685079ceadb3e3760c01"></a><!-- doxytag: member="cprocessing::PVector::set" ref="aac9b5ec71572685079ceadb3e3760c01" args="(double thex=0, double they=0, double thez=0)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#aac9b5ec71572685079ceadb3e3760c01">set</a> (double thex=0, double they=0, double thez=0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment from coordinates. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad98c990027c6e271ccb226555426c8da"></a><!-- doxytag: member="cprocessing::PVector::set" ref="ad98c990027c6e271ccb226555426c8da" args="(const PVector &amp;other)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#ad98c990027c6e271ccb226555426c8da">set</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment from another <a class="el" href="classcprocessing_1_1PVector.html" title="Represents a vector (or, sometimes, a point) in 3D.">PVector</a>. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8b3668b7e4cc1e70c21e2ed22e5275c"></a><!-- doxytag: member="cprocessing::PVector::set" ref="af8b3668b7e4cc1e70c21e2ed22e5275c" args="(const double other[])" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#af8b3668b7e4cc1e70c21e2ed22e5275c">set</a> (const double other[])</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment from an array of doubles. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af38e81bf00a54ebac621baa5472abc7b"></a><!-- doxytag: member="cprocessing::PVector::get" ref="af38e81bf00a54ebac621baa5472abc7b" args="()" -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#af38e81bf00a54ebac621baa5472abc7b">get</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy of the vector. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a719ca2d20894e00b176c055f442e9382"></a><!-- doxytag: member="cprocessing::PVector::operator+" ref="a719ca2d20894e00b176c055f442e9382" args="(const PVector &amp;other) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a719ca2d20894e00b176c055f442e9382">operator+</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea3be0f5e72856a3b65fbff1b7f7d112"></a><!-- doxytag: member="cprocessing::PVector::add" ref="aea3be0f5e72856a3b65fbff1b7f7d112" args="(const PVector &amp;other) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dd680fdc2225390d711e64d1c14a4d5"></a><!-- doxytag: member="cprocessing::PVector::operator&#45;" ref="a4dd680fdc2225390d711e64d1c14a4d5" args="(const PVector &amp;other) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a4dd680fdc2225390d711e64d1c14a4d5">operator-</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6777f7d22ac4f70c9e8cc3e34b80ed9"></a><!-- doxytag: member="cprocessing::PVector::sub" ref="ab6777f7d22ac4f70c9e8cc3e34b80ed9" args="(const PVector &amp;other) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sub</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a365c2898dfe362f4094258eac39f0134"></a><!-- doxytag: member="cprocessing::PVector::operator*" ref="a365c2898dfe362f4094258eac39f0134" args="(double s) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a365c2898dfe362f4094258eac39f0134">operator*</a> (double s) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply by scalar. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46d50c68b25c2d61f82533047d165019"></a><!-- doxytag: member="cprocessing::PVector::mult" ref="a46d50c68b25c2d61f82533047d165019" args="(double s) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mult</b> (double s) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7dac1f968bd8bb0415d4f78c6e9e2fb5"></a><!-- doxytag: member="cprocessing::PVector::operator/" ref="a7dac1f968bd8bb0415d4f78c6e9e2fb5" args="(double s) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a7dac1f968bd8bb0415d4f78c6e9e2fb5">operator/</a> (double s) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide by scalar. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae65adb6c978c1a498d071dc19656e8af"></a><!-- doxytag: member="cprocessing::PVector::div" ref="ae65adb6c978c1a498d071dc19656e8af" args="(double s) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>div</b> (double s) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75f71674d4bc6fac4c1f54f66238450d"></a><!-- doxytag: member="cprocessing::PVector::dot" ref="a75f71674d4bc6fac4c1f54f66238450d" args="(const PVector &amp;other) const " -->
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a75f71674d4bc6fac4c1f54f66238450d">dot</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dot product. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a445f3128b72f77a9c93a7b3755125c6b"></a><!-- doxytag: member="cprocessing::PVector::cross" ref="a445f3128b72f77a9c93a7b3755125c6b" args="(const PVector &amp;other) const " -->
-<a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cross</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9d951dc62610be214e933548224c191"></a><!-- doxytag: member="cprocessing::PVector::mag" ref="af9d951dc62610be214e933548224c191" args="() const " -->
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#af9d951dc62610be214e933548224c191">mag</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Magnitude. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd5125d0b45ddc5c4ffdb5a82d2644a5"></a><!-- doxytag: member="cprocessing::PVector::dist" ref="afd5125d0b45ddc5c4ffdb5a82d2644a5" args="(const PVector &amp;other) const " -->
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#afd5125d0b45ddc5c4ffdb5a82d2644a5">dist</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance between two points. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed64120e52ca58b21e910ca52b9afca0"></a><!-- doxytag: member="cprocessing::PVector::normalize" ref="aed64120e52ca58b21e910ca52b9afca0" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#aed64120e52ca58b21e910ca52b9afca0">normalize</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize (make unit length) <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbb61722faee9258fbb0bad9b47e0582"></a><!-- doxytag: member="cprocessing::PVector::limit" ref="acbb61722faee9258fbb0bad9b47e0582" args="(double max)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#acbb61722faee9258fbb0bad9b47e0582">limit</a> (double max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit the magnitude of this vector to the value used for the max parameter. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23aec6aff57e8528bf0322b8dcf024ec"></a><!-- doxytag: member="cprocessing::PVector::array" ref="a23aec6aff57e8528bf0322b8dcf024ec" args="()" -->
-double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a23aec6aff57e8528bf0322b8dcf024ec">array</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns vector coordinates as an array. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a15b76552e4cd25913069e1e116fd754b">PVector</a> (double thex=0, double they=0, double thez=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a15b76552e4cd25913069e1e116fd754b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#aac9b5ec71572685079ceadb3e3760c01">set</a> (double thex=0, double they=0, double thez=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment from coordinates.  <a href="#aac9b5ec71572685079ceadb3e3760c01"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#ad98c990027c6e271ccb226555426c8da">set</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment from another <a class="el" href="classcprocessing_1_1PVector.html" title="Represents a vector (or, sometimes, a point) in 3D.">PVector</a>.  <a href="#ad98c990027c6e271ccb226555426c8da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#af8b3668b7e4cc1e70c21e2ed22e5275c">set</a> (const double other[])</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment from an array of doubles.  <a href="#af8b3668b7e4cc1e70c21e2ed22e5275c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#af38e81bf00a54ebac621baa5472abc7b">get</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy of the vector.  <a href="#af38e81bf00a54ebac621baa5472abc7b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a719ca2d20894e00b176c055f442e9382">operator+</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add.  <a href="#a719ca2d20894e00b176c055f442e9382"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#aea3be0f5e72856a3b65fbff1b7f7d112">add</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a4dd680fdc2225390d711e64d1c14a4d5">operator-</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract.  <a href="#a4dd680fdc2225390d711e64d1c14a4d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#ab6777f7d22ac4f70c9e8cc3e34b80ed9">sub</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a365c2898dfe362f4094258eac39f0134">operator*</a> (double s) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply by scalar.  <a href="#a365c2898dfe362f4094258eac39f0134"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a46d50c68b25c2d61f82533047d165019">mult</a> (double s) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a7dac1f968bd8bb0415d4f78c6e9e2fb5">operator/</a> (double s) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide by scalar.  <a href="#a7dac1f968bd8bb0415d4f78c6e9e2fb5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#ae65adb6c978c1a498d071dc19656e8af">div</a> (double s) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a75f71674d4bc6fac4c1f54f66238450d">dot</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dot product.  <a href="#a75f71674d4bc6fac4c1f54f66238450d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a445f3128b72f77a9c93a7b3755125c6b">cross</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#af9d951dc62610be214e933548224c191">mag</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Magnitude.  <a href="#af9d951dc62610be214e933548224c191"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#afd5125d0b45ddc5c4ffdb5a82d2644a5">dist</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance between two points.  <a href="#afd5125d0b45ddc5c4ffdb5a82d2644a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#aed64120e52ca58b21e910ca52b9afca0">normalize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize (make unit length)  <a href="#aed64120e52ca58b21e910ca52b9afca0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#acbb61722faee9258fbb0bad9b47e0582">limit</a> (double <a class="el" href="namespacecprocessing.html#ab4e75c25cbada0bb5a001658f44783e6">max</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit the magnitude of this vector to the value used for the max parameter.  <a href="#acbb61722faee9258fbb0bad9b47e0582"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a23aec6aff57e8528bf0322b8dcf024ec">array</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns vector coordinates as an array.  <a href="#a23aec6aff57e8528bf0322b8dcf024ec"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4ebf8a429965aa4a8c1f4d1ed8b7741"></a><!-- doxytag: member="cprocessing::PVector::add" ref="ad4ebf8a429965aa4a8c1f4d1ed8b7741" args="(const PVector &amp;a, const PVector &amp;b)" -->
-static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3c69b57eaa9e543acf8b7337e7a7fac"></a><!-- doxytag: member="cprocessing::PVector::sub" ref="aa3c69b57eaa9e543acf8b7337e7a7fac" args="(const PVector &amp;a, const PVector &amp;b)" -->
-static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sub</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a624022e09cbc418b621f11896ed3b85f"></a><!-- doxytag: member="cprocessing::PVector::mult" ref="a624022e09cbc418b621f11896ed3b85f" args="(const PVector &amp;v, double s)" -->
-static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mult</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;v, double s)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3415b1002af5f0564156cebc01c2993d"></a><!-- doxytag: member="cprocessing::PVector::div" ref="a3415b1002af5f0564156cebc01c2993d" args="(const PVector &amp;v, double s)" -->
-static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>div</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;v, double s)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4335d077d5d19354d9231dbe74b3d57a"></a><!-- doxytag: member="cprocessing::PVector::dot" ref="a4335d077d5d19354d9231dbe74b3d57a" args="(const PVector &amp;a, const PVector &amp;b)" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>dot</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadc8604a3750eff9bbf481646768a7c3"></a><!-- doxytag: member="cprocessing::PVector::cross" ref="aadc8604a3750eff9bbf481646768a7c3" args="(const PVector &amp;v1, const PVector &amp;v2)" -->
-static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#aadc8604a3750eff9bbf481646768a7c3">cross</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;v1, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;v2)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cross product. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a2368018222928ef230c47582fe1b8c"></a><!-- doxytag: member="cprocessing::PVector::dist" ref="a2a2368018222928ef230c47582fe1b8c" args="(const PVector &amp;a, const PVector &amp;b)" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>dist</b> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49b52fe0b002b3e0846d12edbc21a4b4"></a><!-- doxytag: member="cprocessing::PVector::angleBetween" ref="a49b52fe0b002b3e0846d12edbc21a4b4" args="(const PVector &amp;a, const PVector &amp;b)" -->
-static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a49b52fe0b002b3e0846d12edbc21a4b4">angleBetween</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle between two vectors. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#ad4ebf8a429965aa4a8c1f4d1ed8b7741">add</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#aa3c69b57eaa9e543acf8b7337e7a7fac">sub</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a624022e09cbc418b621f11896ed3b85f">mult</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;v, double s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a3415b1002af5f0564156cebc01c2993d">div</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;v, double s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a4335d077d5d19354d9231dbe74b3d57a">dot</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#aadc8604a3750eff9bbf481646768a7c3">cross</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;v1, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;v2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cross product.  <a href="#aadc8604a3750eff9bbf481646768a7c3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a2a2368018222928ef230c47582fe1b8c">dist</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a49b52fe0b002b3e0846d12edbc21a4b4">angleBetween</a> (const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;a, const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle between two vectors.  <a href="#a49b52fe0b002b3e0846d12edbc21a4b4"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cde2eb83b92d0d7b21b335ff6fd62fe"></a><!-- doxytag: member="cprocessing::PVector::x" ref="a8cde2eb83b92d0d7b21b335ff6fd62fe" args="" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb08a1c7f21e21d2c1557d26722a9a02"></a><!-- doxytag: member="cprocessing::PVector::y" ref="abb08a1c7f21e21d2c1557d26722a9a02" args="" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+Data Fields</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a8cde2eb83b92d0d7b21b335ff6fd62fe">x</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#abb08a1c7f21e21d2c1557d26722a9a02">y</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html#a28310efbe3ee03e9d5c01e5869428f70">z</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Represents a vector (or, sometimes, a point) in 3D. </p>
-</div><hr/><h2>Member Data Documentation</h2>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a15b76552e4cd25913069e1e116fd754b"></a><!-- doxytag: member="cprocessing::PVector::PVector" ref="a15b76552e4cd25913069e1e116fd754b" args="(double thex=0, double they=0, double thez=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html#a15b76552e4cd25913069e1e116fd754b">cprocessing::PVector::PVector</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>thex</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>they</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>thez</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aea3be0f5e72856a3b65fbff1b7f7d112"></a><!-- doxytag: member="cprocessing::PVector::add" ref="aea3be0f5e72856a3b65fbff1b7f7d112" args="(const PVector &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#aea3be0f5e72856a3b65fbff1b7f7d112">cprocessing::PVector::add</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad4ebf8a429965aa4a8c1f4d1ed8b7741"></a><!-- doxytag: member="cprocessing::PVector::add" ref="ad4ebf8a429965aa4a8c1f4d1ed8b7741" args="(const PVector &amp;a, const PVector &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#aea3be0f5e72856a3b65fbff1b7f7d112">cprocessing::PVector::add</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a49b52fe0b002b3e0846d12edbc21a4b4"></a><!-- doxytag: member="cprocessing::PVector::angleBetween" ref="a49b52fe0b002b3e0846d12edbc21a4b4" args="(const PVector &amp;a, const PVector &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1PVector.html#a49b52fe0b002b3e0846d12edbc21a4b4">cprocessing::PVector::angleBetween</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Angle between two vectors. </p>
+
+</div>
+</div>
+<a class="anchor" id="a23aec6aff57e8528bf0322b8dcf024ec"></a><!-- doxytag: member="cprocessing::PVector::array" ref="a23aec6aff57e8528bf0322b8dcf024ec" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* <a class="el" href="classcprocessing_1_1PVector.html#a23aec6aff57e8528bf0322b8dcf024ec">cprocessing::PVector::array</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns vector coordinates as an array. </p>
+
+</div>
+</div>
+<a class="anchor" id="aadc8604a3750eff9bbf481646768a7c3"></a><!-- doxytag: member="cprocessing::PVector::cross" ref="aadc8604a3750eff9bbf481646768a7c3" args="(const PVector &amp;v1, const PVector &amp;v2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#aadc8604a3750eff9bbf481646768a7c3">cprocessing::PVector::cross</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cross product. </p>
+
+</div>
+</div>
+<a class="anchor" id="a445f3128b72f77a9c93a7b3755125c6b"></a><!-- doxytag: member="cprocessing::PVector::cross" ref="a445f3128b72f77a9c93a7b3755125c6b" args="(const PVector &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#aadc8604a3750eff9bbf481646768a7c3">cprocessing::PVector::cross</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd5125d0b45ddc5c4ffdb5a82d2644a5"></a><!-- doxytag: member="cprocessing::PVector::dist" ref="afd5125d0b45ddc5c4ffdb5a82d2644a5" args="(const PVector &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classcprocessing_1_1PVector.html#afd5125d0b45ddc5c4ffdb5a82d2644a5">cprocessing::PVector::dist</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Distance between two points. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2a2368018222928ef230c47582fe1b8c"></a><!-- doxytag: member="cprocessing::PVector::dist" ref="a2a2368018222928ef230c47582fe1b8c" args="(const PVector &amp;a, const PVector &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1PVector.html#afd5125d0b45ddc5c4ffdb5a82d2644a5">cprocessing::PVector::dist</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae65adb6c978c1a498d071dc19656e8af"></a><!-- doxytag: member="cprocessing::PVector::div" ref="ae65adb6c978c1a498d071dc19656e8af" args="(double s) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#ae65adb6c978c1a498d071dc19656e8af">cprocessing::PVector::div</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3415b1002af5f0564156cebc01c2993d"></a><!-- doxytag: member="cprocessing::PVector::div" ref="a3415b1002af5f0564156cebc01c2993d" args="(const PVector &amp;v, double s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#ae65adb6c978c1a498d071dc19656e8af">cprocessing::PVector::div</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a75f71674d4bc6fac4c1f54f66238450d"></a><!-- doxytag: member="cprocessing::PVector::dot" ref="a75f71674d4bc6fac4c1f54f66238450d" args="(const PVector &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classcprocessing_1_1PVector.html#a75f71674d4bc6fac4c1f54f66238450d">cprocessing::PVector::dot</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Dot product. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4335d077d5d19354d9231dbe74b3d57a"></a><!-- doxytag: member="cprocessing::PVector::dot" ref="a4335d077d5d19354d9231dbe74b3d57a" args="(const PVector &amp;a, const PVector &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="classcprocessing_1_1PVector.html#a75f71674d4bc6fac4c1f54f66238450d">cprocessing::PVector::dot</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af38e81bf00a54ebac621baa5472abc7b"></a><!-- doxytag: member="cprocessing::PVector::get" ref="af38e81bf00a54ebac621baa5472abc7b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#af38e81bf00a54ebac621baa5472abc7b">cprocessing::PVector::get</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy of the vector. </p>
+
+</div>
+</div>
+<a class="anchor" id="acbb61722faee9258fbb0bad9b47e0582"></a><!-- doxytag: member="cprocessing::PVector::limit" ref="acbb61722faee9258fbb0bad9b47e0582" args="(double max)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcprocessing_1_1PVector.html#acbb61722faee9258fbb0bad9b47e0582">cprocessing::PVector::limit</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Limit the magnitude of this vector to the value used for the max parameter. </p>
+
+</div>
+</div>
+<a class="anchor" id="af9d951dc62610be214e933548224c191"></a><!-- doxytag: member="cprocessing::PVector::mag" ref="af9d951dc62610be214e933548224c191" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classcprocessing_1_1PVector.html#af9d951dc62610be214e933548224c191">cprocessing::PVector::mag</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Magnitude. </p>
+
+</div>
+</div>
+<a class="anchor" id="a46d50c68b25c2d61f82533047d165019"></a><!-- doxytag: member="cprocessing::PVector::mult" ref="a46d50c68b25c2d61f82533047d165019" args="(double s) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#a46d50c68b25c2d61f82533047d165019">cprocessing::PVector::mult</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a624022e09cbc418b621f11896ed3b85f"></a><!-- doxytag: member="cprocessing::PVector::mult" ref="a624022e09cbc418b621f11896ed3b85f" args="(const PVector &amp;v, double s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#a46d50c68b25c2d61f82533047d165019">cprocessing::PVector::mult</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed64120e52ca58b21e910ca52b9afca0"></a><!-- doxytag: member="cprocessing::PVector::normalize" ref="aed64120e52ca58b21e910ca52b9afca0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcprocessing_1_1PVector.html#aed64120e52ca58b21e910ca52b9afca0">cprocessing::PVector::normalize</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Normalize (make unit length) </p>
+
+</div>
+</div>
+<a class="anchor" id="a365c2898dfe362f4094258eac39f0134"></a><!-- doxytag: member="cprocessing::PVector::operator*" ref="a365c2898dfe362f4094258eac39f0134" args="(double s) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> cprocessing::PVector::operator* </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Multiply by scalar. </p>
+
+</div>
+</div>
+<a class="anchor" id="a719ca2d20894e00b176c055f442e9382"></a><!-- doxytag: member="cprocessing::PVector::operator+" ref="a719ca2d20894e00b176c055f442e9382" args="(const PVector &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> cprocessing::PVector::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4dd680fdc2225390d711e64d1c14a4d5"></a><!-- doxytag: member="cprocessing::PVector::operator&#45;" ref="a4dd680fdc2225390d711e64d1c14a4d5" args="(const PVector &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> cprocessing::PVector::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Subtract. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7dac1f968bd8bb0415d4f78c6e9e2fb5"></a><!-- doxytag: member="cprocessing::PVector::operator/" ref="a7dac1f968bd8bb0415d4f78c6e9e2fb5" args="(double s) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> cprocessing::PVector::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Divide by scalar. </p>
+
+</div>
+</div>
+<a class="anchor" id="aac9b5ec71572685079ceadb3e3760c01"></a><!-- doxytag: member="cprocessing::PVector::set" ref="aac9b5ec71572685079ceadb3e3760c01" args="(double thex=0, double they=0, double thez=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcprocessing_1_1PVector.html#aac9b5ec71572685079ceadb3e3760c01">cprocessing::PVector::set</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>thex</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>they</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>thez</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment from coordinates. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad98c990027c6e271ccb226555426c8da"></a><!-- doxytag: member="cprocessing::PVector::set" ref="ad98c990027c6e271ccb226555426c8da" args="(const PVector &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcprocessing_1_1PVector.html#aac9b5ec71572685079ceadb3e3760c01">cprocessing::PVector::set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment from another <a class="el" href="classcprocessing_1_1PVector.html" title="Represents a vector (or, sometimes, a point) in 3D.">PVector</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="af8b3668b7e4cc1e70c21e2ed22e5275c"></a><!-- doxytag: member="cprocessing::PVector::set" ref="af8b3668b7e4cc1e70c21e2ed22e5275c" args="(const double other[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcprocessing_1_1PVector.html#aac9b5ec71572685079ceadb3e3760c01">cprocessing::PVector::set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>other</em>[]</td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignment from an array of doubles. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab6777f7d22ac4f70c9e8cc3e34b80ed9"></a><!-- doxytag: member="cprocessing::PVector::sub" ref="ab6777f7d22ac4f70c9e8cc3e34b80ed9" args="(const PVector &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#ab6777f7d22ac4f70c9e8cc3e34b80ed9">cprocessing::PVector::sub</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa3c69b57eaa9e543acf8b7337e7a7fac"></a><!-- doxytag: member="cprocessing::PVector::sub" ref="aa3c69b57eaa9e543acf8b7337e7a7fac" args="(const PVector &amp;a, const PVector &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> <a class="el" href="classcprocessing_1_1PVector.html#ab6777f7d22ac4f70c9e8cc3e34b80ed9">cprocessing::PVector::sub</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcprocessing_1_1PVector.html">PVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a8cde2eb83b92d0d7b21b335ff6fd62fe"></a><!-- doxytag: member="cprocessing::PVector::x" ref="a8cde2eb83b92d0d7b21b335ff6fd62fe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classcprocessing_1_1PVector.html#a8cde2eb83b92d0d7b21b335ff6fd62fe">cprocessing::PVector::x</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abb08a1c7f21e21d2c1557d26722a9a02"></a><!-- doxytag: member="cprocessing::PVector::y" ref="abb08a1c7f21e21d2c1557d26722a9a02" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classcprocessing_1_1PVector.html#abb08a1c7f21e21d2c1557d26722a9a02">cprocessing::PVector::y</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a28310efbe3ee03e9d5c01e5869428f70"></a><!-- doxytag: member="cprocessing::PVector::z" ref="a28310efbe3ee03e9d5c01e5869428f70" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +838,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -235,7 +850,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 2 2012 17:41:32 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 3 2012 03:01:07 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
