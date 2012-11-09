@@ -141,7 +141,7 @@ static void \hyperlink{namespacecprocessing_aedf10deb692c297efc2503be0912ed80}{i
 \item 
 static void \hyperlink{namespacecprocessing_af7b4aa3cb0e99e28bb594e3ae3902f7e}{display} ()
 \begin{DoxyCompactList}\small\item\em \-This is called for each frame. \end{DoxyCompactList}\item 
-static void \hyperlink{namespacecprocessing_abd5e7982fdc62b80db5019ea6ebf97a9}{reshape} (int wid, int hgt)
+static void \hyperlink{namespacecprocessing_a9e2516066ff21ddde9ccc8d64cf0455c}{reshape} (int w, int h)
 \item 
 static void \hyperlink{namespacecprocessing_a4edceb61c45d6bf384a38826469a5a48}{refresh} (int)
 \begin{DoxyCompactList}\small\item\em \-The refresh function is called periodically to redisplay. \end{DoxyCompactList}\item 
@@ -161,7 +161,7 @@ static void \hyperlink{namespacecprocessing_a1b66644ad17ec9a36ff2b304d55f4b27}{s
 \begin{DoxyCompactList}\small\item\em \-Called whenever a special key is pressed. \end{DoxyCompactList}\item 
 static void \hyperlink{namespacecprocessing_af02bc302506ac700a3a297172dcb15d6}{specialup} (int ch, int x, int y)
 \begin{DoxyCompactList}\small\item\em \-Called whenever a special key is released. \end{DoxyCompactList}\item 
-void \hyperlink{namespacecprocessing_ab33eba8fec733b7b3a1a14f1191499bc}{size} (unsigned \hyperlink{namespacecprocessing_a7af937eb8772235def57fcadd10fc82a}{width}, unsigned \hyperlink{namespacecprocessing_ac392753eef02e2ad4ad84f5a076919be}{height}, const char $\ast$name)
+void \hyperlink{namespacecprocessing_a4bbf578baacdd32fea5fab20517028ce}{size} (unsigned w, unsigned h, const char $\ast$name)
 \item 
 void \hyperlink{namespacecprocessing_af815879b404059ab470b9c33355d084f}{stroke} (const \hyperlink{classcprocessing_1_1color}{color} \&c)
 \begin{DoxyCompactList}\small\item\em \-Sets line color. \end{DoxyCompactList}\item 
@@ -287,7 +287,7 @@ void \hyperlink{namespacecprocessing_ad12fe2bf0a14c6759624d8f6b66f5bd0}{sphere} 
 \item 
 void \hyperlink{namespacecprocessing_a28f122c44889d93bb070076ff6aaab9d}{box} (double \hyperlink{namespacecprocessing_a7af937eb8772235def57fcadd10fc82a}{width}, double \hyperlink{namespacecprocessing_ac392753eef02e2ad4ad84f5a076919be}{height}, double depth)
 \item 
-void \hyperlink{namespacecprocessing_acf30698a684da4beb34cee1ddbf37e60}{box} (double \hyperlink{namespacecprocessing_ab33eba8fec733b7b3a1a14f1191499bc}{size})
+void \hyperlink{namespacecprocessing_acf30698a684da4beb34cee1ddbf37e60}{box} (double \hyperlink{namespacecprocessing_a4bbf578baacdd32fea5fab20517028ce}{size})
 \item 
 void \hyperlink{namespacecprocessing_afac44ac31031e9f27d12973e074230ff}{begin\-Shape} (\hyperlink{namespacecprocessing_a03538783321a3683ed8660f8bb23cd0c}{\-Shape\-Mode} mode)
 \begin{DoxyCompactList}\small\item\em \-Starts the definition of a shape. \end{DoxyCompactList}\item 
@@ -1965,19 +1965,19 @@ of its vertices.
 
 \-Resets the transformation to none. 
 
-\hypertarget{namespacecprocessing_abd5e7982fdc62b80db5019ea6ebf97a9}{\index{cprocessing@{cprocessing}!reshape@{reshape}}
+\hypertarget{namespacecprocessing_a9e2516066ff21ddde9ccc8d64cf0455c}{\index{cprocessing@{cprocessing}!reshape@{reshape}}
 \index{reshape@{reshape}!cprocessing@{cprocessing}}
 \subsubsection[{reshape}]{\setlength{\rightskip}{0pt plus 5cm}static void {\bf cprocessing\-::reshape} (
 \begin{DoxyParamCaption}
-\item[{int}]{wid, }
-\item[{int}]{hgt}
+\item[{int}]{w, }
+\item[{int}]{h}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{namespacecprocessing_abd5e7982fdc62b80db5019ea6ebf97a9}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{namespacecprocessing_a9e2516066ff21ddde9ccc8d64cf0455c}
 \-Called whenever window geometry is changed. 
 \begin{DoxyParams}{\-Parameters}
-{\em wid} & \-New width of the window. \\
+{\em w} & \-New width of the window. \\
 \hline
-{\em hgt} & \-New height of the window. \\
+{\em h} & \-New height of the window. \\
 \hline
 \end{DoxyParams}
 \hypertarget{namespacecprocessing_afa46f333138777dcaa09eeff125a9d39}{\index{cprocessing@{cprocessing}!rotate@{rotate}}
@@ -2155,20 +2155,20 @@ of its vertices.
 \item[{const {\bf color} \&}]{c}
 \end{DoxyParamCaption}
 )}}\label{namespacecprocessing_ab9901a77b5bce93f75353a9d43183b2c}
-\hypertarget{namespacecprocessing_ab33eba8fec733b7b3a1a14f1191499bc}{\index{cprocessing@{cprocessing}!size@{size}}
+\hypertarget{namespacecprocessing_a4bbf578baacdd32fea5fab20517028ce}{\index{cprocessing@{cprocessing}!size@{size}}
 \index{size@{size}!cprocessing@{cprocessing}}
 \subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::size} (
 \begin{DoxyParamCaption}
-\item[{unsigned}]{width, }
-\item[{unsigned}]{height, }
+\item[{unsigned}]{w, }
+\item[{unsigned}]{h, }
 \item[{const char $\ast$}]{name}
 \end{DoxyParamCaption}
-)}}\label{namespacecprocessing_ab33eba8fec733b7b3a1a14f1191499bc}
+)}}\label{namespacecprocessing_a4bbf578baacdd32fea5fab20517028ce}
 \-Sets up a window of the given size 
 \begin{DoxyParams}{\-Parameters}
-{\em width} & \-Desired window width in pixels. \\
+{\em w} & \-Desired window width in pixels. \\
 \hline
-{\em height} & \-Desired window height in pixels. \\
+{\em h} & \-Desired window height in pixels. \\
 \hline
 {\em name} & \-Desired window title. \\
 \hline

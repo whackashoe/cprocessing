@@ -727,11 +727,11 @@ namespace cprocessing {
 	//
 
     /// Sets up a window of the given size
-    /// @param width Desired window width in pixels.
-    /// @param height Desired window height in pixels.
+    /// @param w Desired window width in pixels.
+    /// @param h Desired window height in pixels.
     /// @param name Desired window title.
 
-    void size (unsigned width, unsigned height, const char* name = "cprocessing");
+    void size (unsigned w, unsigned h, const char* name = "cprocessing");
 
     /// Run the drawing application
     void run();

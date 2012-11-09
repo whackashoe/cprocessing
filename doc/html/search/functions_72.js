@@ -11,7 +11,7 @@ var searchData=
   ['refresh',['refresh',['../namespacecprocessing.html#a4edceb61c45d6bf384a38826469a5a48',1,'cprocessing']]],
   ['reseed',['reseed',['../classcprocessing_1_1perlinNoise.html#a882acdba45346139eb9560d911d87c50',1,'cprocessing::perlinNoise::reseed()'],['../classcprocessing_1_1perlinNoise.html#ae1fa46303805bdada3b7f0985c24f59b',1,'cprocessing::perlinNoise::reseed(unsigned int rSeed)']]],
   ['resetmatrix',['resetMatrix',['../namespacecprocessing.html#af2d05683bc26cdc849748dbcc4fd9633',1,'cprocessing']]],
-  ['reshape',['reshape',['../namespacecprocessing.html#abd5e7982fdc62b80db5019ea6ebf97a9',1,'cprocessing']]],
+  ['reshape',['reshape',['../namespacecprocessing.html#a9e2516066ff21ddde9ccc8d64cf0455c',1,'cprocessing']]],
   ['rgb_5fto_5fhsb',['rgb_to_hsb',['../color_8cpp.html#a569ca3d83a804304f7bdf531192b784f',1,'color.cpp']]],
   ['rotate',['rotate',['../namespacecprocessing.html#afa46f333138777dcaa09eeff125a9d39',1,'cprocessing::rotate(double radians, double axisx, double axisy, double axisz)'],['../namespacecprocessing.html#a14fb0bc1e493f50d941da1f95cfaf227',1,'cprocessing::rotate(double radians)']]],
   ['rotatex',['rotateX',['../namespacecprocessing.html#af0ade51f94b423933c31eafd92b96ab8',1,'cprocessing']]],

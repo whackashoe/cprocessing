@@ -132,9 +132,9 @@ Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
 </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html#aef39a293a2b400a890797662dde3f756">colorMode</a> (unsigned mode)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html#a90704ca9808897dedba2f18f8f41a434">colorMode</a> (unsigned mode, double range1, double range2, double range3, double range4)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html#afec9a418b6eb9afe82a8ee393f0c18e4">colorMode</a> (unsigned mode, double range)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html#a09b8b82d820ab12ac5e69fc776682069">colorMode</a> (unsigned mode, double range1, double range2, double range3)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html#a90704ca9808897dedba2f18f8f41a434">colorMode</a> (unsigned mode, double range1, double range2, double range3, double range4)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html#a4b8d104207883515b224550dd402db49">alpha</a> (const <a class="el" href="classcprocessing_1_1color.html">color</a> &amp;<a class="el" href="classcprocessing_1_1color.html">color</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html#a7d4c1cd5bcdc8cc62ff513e10c0ae9eb">red</a> (const <a class="el" href="classcprocessing_1_1color.html">color</a> &amp;<a class="el" href="classcprocessing_1_1color.html">color</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html#a359eeae13358f01e73db7aa5a40e1662">green</a> (const <a class="el" href="classcprocessing_1_1color.html">color</a> &amp;<a class="el" href="classcprocessing_1_1color.html">color</a>)</td></tr>
@@ -394,6 +394,62 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a90704ca9808897dedba2f18f8f41a434"></a><!-- doxytag: member="cprocessing::color::colorMode" ref="a90704ca9808897dedba2f18f8f41a434" args="(unsigned mode, double range1, double range2, double range3, double range4)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcprocessing_1_1color.html#aef39a293a2b400a890797662dde3f756">colorMode</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>range1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>range2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>range3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>range4</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [related]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Changes the way Processing interprets color data. The <a class="el" href="classcprocessing_1_1color.html#aef39a293a2b400a890797662dde3f756">colorMode()</a> function is used to change the numerical range used for specifying colors and to switch color systems. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>Either RGB or HSB, corresponding to Red/Green/Blue and Hue/Saturation/Brightness </td></tr>
+    <tr><td class="paramname">range1</td><td>range for the red or hue depending on the current color mode </td></tr>
+    <tr><td class="paramname">range2</td><td>range for the green or saturation depending on the current color mode </td></tr>
+    <tr><td class="paramname">range3</td><td>range for the blue or brightness depending on the current color mode </td></tr>
+    <tr><td class="paramname">range4</td><td>range for the alpha </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="afec9a418b6eb9afe82a8ee393f0c18e4"></a><!-- doxytag: member="cprocessing::color::colorMode" ref="afec9a418b6eb9afe82a8ee393f0c18e4" args="(unsigned mode, double range)" -->
 <div class="memitem">
 <div class="memproto">
@@ -472,62 +528,6 @@ Related Functions</h2></td></tr>
     <tr><td class="paramname">range1</td><td>range for the red or hue depending on the current color mode </td></tr>
     <tr><td class="paramname">range2</td><td>range for the green or saturation depending on the current color mode </td></tr>
     <tr><td class="paramname">range3</td><td>range for the blue or brightness depending on the current color mode </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a90704ca9808897dedba2f18f8f41a434"></a><!-- doxytag: member="cprocessing::color::colorMode" ref="a90704ca9808897dedba2f18f8f41a434" args="(unsigned mode, double range1, double range2, double range3, double range4)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcprocessing_1_1color.html#aef39a293a2b400a890797662dde3f756">colorMode</a> </td>
-          <td>(</td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>mode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>range1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>range2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>range3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>range4</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [related]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Changes the way Processing interprets color data. The <a class="el" href="classcprocessing_1_1color.html#aef39a293a2b400a890797662dde3f756">colorMode()</a> function is used to change the numerical range used for specifying colors and to switch color systems. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mode</td><td>Either RGB or HSB, corresponding to Red/Green/Blue and Hue/Saturation/Brightness </td></tr>
-    <tr><td class="paramname">range1</td><td>range for the red or hue depending on the current color mode </td></tr>
-    <tr><td class="paramname">range2</td><td>range for the green or saturation depending on the current color mode </td></tr>
-    <tr><td class="paramname">range3</td><td>range for the blue or brightness depending on the current color mode </td></tr>
-    <tr><td class="paramname">range4</td><td>range for the alpha </td></tr>
   </table>
   </dd>
 </dl>
@@ -713,7 +713,7 @@ Related Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 3 2012 03:01:07 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 9 2012 04:15:13 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

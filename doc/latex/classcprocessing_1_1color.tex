@@ -35,11 +35,11 @@ unsigned char \hyperlink{classcprocessing_1_1color_ad865cc84a545b713a1d09cd5f85f
 \item 
 void \hyperlink{classcprocessing_1_1color_aef39a293a2b400a890797662dde3f756}{color\-Mode} (unsigned mode)
 \item 
+void \hyperlink{classcprocessing_1_1color_a90704ca9808897dedba2f18f8f41a434}{color\-Mode} (unsigned mode, double range1, double range2, double range3, double range4)
+\item 
 void \hyperlink{classcprocessing_1_1color_afec9a418b6eb9afe82a8ee393f0c18e4}{color\-Mode} (unsigned mode, double range)
 \item 
 void \hyperlink{classcprocessing_1_1color_a09b8b82d820ab12ac5e69fc776682069}{color\-Mode} (unsigned mode, double range1, double range2, double range3)
-\item 
-void \hyperlink{classcprocessing_1_1color_a90704ca9808897dedba2f18f8f41a434}{color\-Mode} (unsigned mode, double range1, double range2, double range3, double range4)
 \item 
 double \hyperlink{classcprocessing_1_1color_a4b8d104207883515b224550dd402db49}{alpha} (const \hyperlink{classcprocessing_1_1color}{color} \&\hyperlink{classcprocessing_1_1color}{color})
 \item 
@@ -192,6 +192,30 @@ value between 0 and range of \hyperlink{classcprocessing_1_1color_aef39a293a2b40
 {\em mode} & \-Either \-R\-G\-B or \-H\-S\-B, corresponding to \-Red/\-Green/\-Blue and \-Hue/\-Saturation/\-Brightness \\
 \hline
 \end{DoxyParams}
+\hypertarget{classcprocessing_1_1color_a90704ca9808897dedba2f18f8f41a434}{\index{cprocessing\-::color@{cprocessing\-::color}!color\-Mode@{color\-Mode}}
+\index{color\-Mode@{color\-Mode}!cprocessing::color@{cprocessing\-::color}}
+\subsubsection[{color\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf color\-Mode} (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{mode, }
+\item[{double}]{range1, }
+\item[{double}]{range2, }
+\item[{double}]{range3, }
+\item[{double}]{range4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}\label{classcprocessing_1_1color_a90704ca9808897dedba2f18f8f41a434}
+\-Changes the way \-Processing interprets color data. \-The \hyperlink{classcprocessing_1_1color_aef39a293a2b400a890797662dde3f756}{color\-Mode()} function is used to change the numerical range used for specifying colors and to switch color systems. 
+\begin{DoxyParams}{\-Parameters}
+{\em mode} & \-Either \-R\-G\-B or \-H\-S\-B, corresponding to \-Red/\-Green/\-Blue and \-Hue/\-Saturation/\-Brightness \\
+\hline
+{\em range1} & range for the red or hue depending on the current color mode \\
+\hline
+{\em range2} & range for the green or saturation depending on the current color mode \\
+\hline
+{\em range3} & range for the blue or brightness depending on the current color mode \\
+\hline
+{\em range4} & range for the alpha \\
+\hline
+\end{DoxyParams}
 \hypertarget{classcprocessing_1_1color_afec9a418b6eb9afe82a8ee393f0c18e4}{\index{cprocessing\-::color@{cprocessing\-::color}!color\-Mode@{color\-Mode}}
 \index{color\-Mode@{color\-Mode}!cprocessing::color@{cprocessing\-::color}}
 \subsubsection[{color\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf color\-Mode} (
@@ -226,30 +250,6 @@ value between 0 and range of \hyperlink{classcprocessing_1_1color_aef39a293a2b40
 {\em range2} & range for the green or saturation depending on the current color mode \\
 \hline
 {\em range3} & range for the blue or brightness depending on the current color mode \\
-\hline
-\end{DoxyParams}
-\hypertarget{classcprocessing_1_1color_a90704ca9808897dedba2f18f8f41a434}{\index{cprocessing\-::color@{cprocessing\-::color}!color\-Mode@{color\-Mode}}
-\index{color\-Mode@{color\-Mode}!cprocessing::color@{cprocessing\-::color}}
-\subsubsection[{color\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf color\-Mode} (
-\begin{DoxyParamCaption}
-\item[{unsigned}]{mode, }
-\item[{double}]{range1, }
-\item[{double}]{range2, }
-\item[{double}]{range3, }
-\item[{double}]{range4}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}\label{classcprocessing_1_1color_a90704ca9808897dedba2f18f8f41a434}
-\-Changes the way \-Processing interprets color data. \-The \hyperlink{classcprocessing_1_1color_aef39a293a2b400a890797662dde3f756}{color\-Mode()} function is used to change the numerical range used for specifying colors and to switch color systems. 
-\begin{DoxyParams}{\-Parameters}
-{\em mode} & \-Either \-R\-G\-B or \-H\-S\-B, corresponding to \-Red/\-Green/\-Blue and \-Hue/\-Saturation/\-Brightness \\
-\hline
-{\em range1} & range for the red or hue depending on the current color mode \\
-\hline
-{\em range2} & range for the green or saturation depending on the current color mode \\
-\hline
-{\em range3} & range for the blue or brightness depending on the current color mode \\
-\hline
-{\em range4} & range for the alpha \\
 \hline
 \end{DoxyParams}
 \hypertarget{classcprocessing_1_1color_a359eeae13358f01e73db7aa5a40e1662}{\index{cprocessing\-::color@{cprocessing\-::color}!green@{green}}

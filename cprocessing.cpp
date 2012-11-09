@@ -128,21 +128,21 @@ namespace cprocessing {
         mouseRecordFlag = true;
 
 		// Refresh backing buffer if needed
-		//if (config&BACK_BUFFER) readbuffer();
+	    if (config&BACK_BUFFER) readbuffer();
 
         // End by swapping front and back buffers
         glutSwapBuffers() ;
     }
 
     /// Called whenever window geometry is changed.
-    /// @param wid New width of the window.
-    /// @param hgt New height of the window.
-    static void reshape (int wid, int hgt)
+    /// @param w New width of the window.
+    /// @param h New height of the window.
+    static void reshape (int w, int h)
     {
-        glViewport(0,0,wid,hgt);
+        glViewport(0,0,w,h);
 
-        width = wid;
-        height = hgt;
+        width = w;
+        height = h;
 
         // Default background is gray 70%
         background (200);
@@ -356,17 +356,17 @@ namespace cprocessing {
     }
 
     /// Sets up a window of the given size
-    /// @param width Desired window width in pixels.
-    /// @param height Desired window height in pixels.
+    /// @param w Desired window width in pixels.
+    /// @param h Desired window height in pixels.
     /// @param name Desired window title.
-    void size (unsigned width, unsigned height, const char* name) {
+    void size (unsigned w, unsigned h, const char* name) {
     	if (initialized) {
-    		glutReshapeWindow (wid, hgt);
+    		glutReshapeWindow (w, h);
     		glutSetWindowTitle (name);
     	} else {
-			glutInitWindowSize (wid, hgt);
-			width = wid;
-			height = hgt;
+			glutInitWindowSize (w, h);
+			width = w;
+			height = h;
 			glutCreateWindow (name);
 			glutReshapeFunc(reshape);
 			glutDisplayFunc(display);

@@ -13,7 +13,7 @@ var searchData=
   ['replace',['REPLACE',['../namespacecprocessing.html#aa210740653d5e2431db0bdc726242fb0ac2f30aa0c8a201be41a4fcb8329e1a83',1,'cprocessing']]],
   ['reseed',['reseed',['../classcprocessing_1_1perlinNoise.html#a882acdba45346139eb9560d911d87c50',1,'cprocessing::perlinNoise::reseed()'],['../classcprocessing_1_1perlinNoise.html#ae1fa46303805bdada3b7f0985c24f59b',1,'cprocessing::perlinNoise::reseed(unsigned int rSeed)']]],
   ['resetmatrix',['resetMatrix',['../namespacecprocessing.html#af2d05683bc26cdc849748dbcc4fd9633',1,'cprocessing']]],
-  ['reshape',['reshape',['../namespacecprocessing.html#abd5e7982fdc62b80db5019ea6ebf97a9',1,'cprocessing']]],
+  ['reshape',['reshape',['../namespacecprocessing.html#a9e2516066ff21ddde9ccc8d64cf0455c',1,'cprocessing']]],
   ['return',['RETURN',['../namespacecprocessing.html#accea6f128c16246ebc5d97249bef2798a6a68963b29cd9e0a434bdba83f718948',1,'cprocessing']]],
   ['rgb',['RGB',['../namespacecprocessing.html#a9b569822741b2c00fca52ba8514a19f3a4b4eae611ef3da1c82467b67ab76d5bc',1,'cprocessing']]],
   ['rgb_5fto_5fhsb',['rgb_to_hsb',['../color_8cpp.html#a569ca3d83a804304f7bdf531192b784f',1,'color.cpp']]],

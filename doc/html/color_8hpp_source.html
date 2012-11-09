@@ -107,43 +107,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 
 <a name="l00035"></a>00035         <span class="keywordtype">void</span> <a class="code" href="namespacecprocessing.html#aa2b11af6c6cb096d02a9fb39b6f5a54d">colorMode</a>(<span class="keywordtype">unsigned</span> mode);
 <a name="l00036"></a>00036 
-<a name="l00041"></a><a class="code" href="classcprocessing_1_1color.html#afec9a418b6eb9afe82a8ee393f0c18e4">00041</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classcprocessing_1_1color.html#afec9a418b6eb9afe82a8ee393f0c18e4">colorMode</a>(<span class="keywordtype">unsigned</span> mode, <span class="keywordtype">double</span> range){
-<a name="l00042"></a>00042                 <a class="code" href="namespacecprocessing.html#aa2b11af6c6cb096d02a9fb39b6f5a54d">colorMode</a>(mode, range, range, range, range);
-<a name="l00043"></a>00043         }
-<a name="l00044"></a>00044 
-<a name="l00051"></a><a class="code" href="classcprocessing_1_1color.html#a09b8b82d820ab12ac5e69fc776682069">00051</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classcprocessing_1_1color.html#a09b8b82d820ab12ac5e69fc776682069">colorMode</a>(<span class="keywordtype">unsigned</span> mode, <span class="keywordtype">double</span> range1, <span class="keywordtype">double</span> range2, <span class="keywordtype">double</span> range3){
-<a name="l00052"></a>00052                 <a class="code" href="namespacecprocessing.html#aa2b11af6c6cb096d02a9fb39b6f5a54d">colorMode</a>(mode, range1, range2, range3, <a class="code" href="color_8hpp.html#acd61a23b73083918e86cc349ed38c076">MAXCOLOR</a>);
-<a name="l00053"></a>00053         }
-<a name="l00054"></a>00054 
-<a name="l00062"></a>00062         <span class="keywordtype">void</span> <a class="code" href="namespacecprocessing.html#aa2b11af6c6cb096d02a9fb39b6f5a54d">colorMode</a>(<span class="keywordtype">unsigned</span> mode, <span class="keywordtype">double</span> range1, <span class="keywordtype">double</span> range2, <span class="keywordtype">double</span> range3, <span class="keywordtype">double</span> range4);
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 
-<a name="l00070"></a>00070         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#af2af90b15b409ef85811e5364eeedb8e" title="Extracts the alpha value from a color, scaled to match current colorMode()">alpha</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
-<a name="l00071"></a>00071         
-<a name="l00076"></a>00076         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#ac25244d45a769c97ee9df8caf13ca4d2" title="Extracts the red value from a color, scaled to match current colorMode()">red</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
-<a name="l00077"></a>00077         
-<a name="l00082"></a>00082         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#ad724cfb2cafe8f17b93ca77b2401ffb6" title="Extracts the green value from a color, scaled to match current colorMode()">green</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
-<a name="l00083"></a>00083         
-<a name="l00088"></a>00088         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#a84ba4ac0bae5ee7c4f3f3ded75359dfa" title="Extracts the blue value from a color, scaled to match current colorMode()">blue</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
-<a name="l00089"></a>00089         
-<a name="l00094"></a>00094         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#aac8de1d2f07f4736e63081ef536e8b67" title="Extracts the hue value from a color, scaled to match current colorMode()">hue</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
-<a name="l00095"></a>00095         
-<a name="l00100"></a>00100         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#af0da26f695cba41e019675886efab315" title="Extracts the saturation value from a color, scaled to match current colorMode()">saturation</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
-<a name="l00101"></a>00101         
-<a name="l00106"></a>00106         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#aed4f50cfde420a3f42922bbf2b7cbf99" title="Extracts the brightness value from a color, scaled to match current colorMode()">brightness</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108                 
-<a name="l00109"></a>00109     <span class="comment">/* ! \relates color</span>
-<a name="l00110"></a>00110 <span class="comment">    * Blends two colors together using one of the possible blending modes (REPLACE, BLEND, ADD, SUBTRACT, DARKEST, LIGHTEST, DIFFERENCE, EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN)</span>
-<a name="l00111"></a>00111 <span class="comment">        * @param a any color</span>
-<a name="l00112"></a>00112 <span class="comment">        * @param b any color</span>
-<a name="l00113"></a>00113 <span class="comment">        * @param mode blending mode</span>
-<a name="l00114"></a>00114 <span class="comment">    * @return new color*/</span>
-<a name="l00115"></a>00115     <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> <a class="code" href="namespacecprocessing.html#a516a53b120765fdff7ecfc9130161e4c">blendColor</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> a, <span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> b, <span class="keywordtype">unsigned</span> mode = <a class="code" href="namespacecprocessing.html#aa210740653d5e2431db0bdc726242fb0a3d9a0443c8bb0e322801ca6a30dc947c">BLEND</a>);
-<a name="l00122"></a>00122     <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> <a class="code" href="namespacecprocessing.html#a4deeb570d9a3cb7321300200161ab054">lerpColor</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> a, <span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> b, <span class="keywordtype">float</span> amt);
-<a name="l00123"></a>00123 }
-<a name="l00124"></a>00124 <span class="preprocessor">#endif</span>
+<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="namespacecprocessing.html#aa2b11af6c6cb096d02a9fb39b6f5a54d">colorMode</a>(<span class="keywordtype">unsigned</span> mode, <span class="keywordtype">double</span> range1, <span class="keywordtype">double</span> range2, <span class="keywordtype">double</span> range3, <span class="keywordtype">double</span> range4);
+<a name="l00045"></a>00045 
+<a name="l00050"></a><a class="code" href="classcprocessing_1_1color.html#afec9a418b6eb9afe82a8ee393f0c18e4">00050</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classcprocessing_1_1color.html#afec9a418b6eb9afe82a8ee393f0c18e4">colorMode</a>(<span class="keywordtype">unsigned</span> mode, <span class="keywordtype">double</span> range){
+<a name="l00051"></a>00051                 <a class="code" href="namespacecprocessing.html#aa2b11af6c6cb096d02a9fb39b6f5a54d">colorMode</a>(mode, range, range, range, range);
+<a name="l00052"></a>00052         }
+<a name="l00053"></a>00053 
+<a name="l00060"></a><a class="code" href="classcprocessing_1_1color.html#a09b8b82d820ab12ac5e69fc776682069">00060</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classcprocessing_1_1color.html#a09b8b82d820ab12ac5e69fc776682069">colorMode</a>(<span class="keywordtype">unsigned</span> mode, <span class="keywordtype">double</span> range1, <span class="keywordtype">double</span> range2, <span class="keywordtype">double</span> range3){
+<a name="l00061"></a>00061                 <a class="code" href="namespacecprocessing.html#aa2b11af6c6cb096d02a9fb39b6f5a54d">colorMode</a>(mode, range1, range2, range3, <a class="code" href="color_8hpp.html#acd61a23b73083918e86cc349ed38c076">MAXCOLOR</a>);
+<a name="l00062"></a>00062         }
+<a name="l00063"></a>00063         
+<a name="l00068"></a>00068         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#af2af90b15b409ef85811e5364eeedb8e" title="Extracts the alpha value from a color, scaled to match current colorMode()">alpha</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
+<a name="l00069"></a>00069         
+<a name="l00074"></a>00074         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#ac25244d45a769c97ee9df8caf13ca4d2" title="Extracts the red value from a color, scaled to match current colorMode()">red</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
+<a name="l00075"></a>00075         
+<a name="l00080"></a>00080         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#ad724cfb2cafe8f17b93ca77b2401ffb6" title="Extracts the green value from a color, scaled to match current colorMode()">green</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
+<a name="l00081"></a>00081         
+<a name="l00086"></a>00086         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#a84ba4ac0bae5ee7c4f3f3ded75359dfa" title="Extracts the blue value from a color, scaled to match current colorMode()">blue</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
+<a name="l00087"></a>00087         
+<a name="l00092"></a>00092         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#aac8de1d2f07f4736e63081ef536e8b67" title="Extracts the hue value from a color, scaled to match current colorMode()">hue</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
+<a name="l00093"></a>00093         
+<a name="l00098"></a>00098         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#af0da26f695cba41e019675886efab315" title="Extracts the saturation value from a color, scaled to match current colorMode()">saturation</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
+<a name="l00099"></a>00099         
+<a name="l00104"></a>00104         <span class="keywordtype">double</span> <a class="code" href="namespacecprocessing.html#aed4f50cfde420a3f42922bbf2b7cbf99" title="Extracts the brightness value from a color, scaled to match current colorMode()">brightness</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> &amp; <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a>);
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106                 
+<a name="l00107"></a>00107     <span class="comment">/* ! \relates color</span>
+<a name="l00108"></a>00108 <span class="comment">    * Blends two colors together using one of the possible blending modes (REPLACE, BLEND, ADD, SUBTRACT, DARKEST, LIGHTEST, DIFFERENCE, EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN)</span>
+<a name="l00109"></a>00109 <span class="comment">        * @param a any color</span>
+<a name="l00110"></a>00110 <span class="comment">        * @param b any color</span>
+<a name="l00111"></a>00111 <span class="comment">        * @param mode blending mode</span>
+<a name="l00112"></a>00112 <span class="comment">    * @return new color*/</span>
+<a name="l00113"></a>00113     <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> <a class="code" href="namespacecprocessing.html#a516a53b120765fdff7ecfc9130161e4c">blendColor</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> a, <span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> b, <span class="keywordtype">unsigned</span> mode = <a class="code" href="namespacecprocessing.html#aa210740653d5e2431db0bdc726242fb0a3d9a0443c8bb0e322801ca6a30dc947c">BLEND</a>);
+<a name="l00120"></a>00120     <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> <a class="code" href="namespacecprocessing.html#a4deeb570d9a3cb7321300200161ab054">lerpColor</a>(<span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> a, <span class="keyword">const</span> <a class="code" href="classcprocessing_1_1color.html" title="Color class.">color</a> b, <span class="keywordtype">float</span> amt);
+<a name="l00121"></a>00121 }
+<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -162,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 3 2012 03:01:06 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 9 2012 04:15:13 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

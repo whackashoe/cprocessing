@@ -34,6 +34,15 @@ namespace cprocessing {
 	* @param mode Either RGB or HSB, corresponding to Red/Green/Blue and Hue/Saturation/Brightness*/
 	void colorMode(unsigned mode);
 
+    /*! \relates color
+    * Changes the way Processing interprets color data. The colorMode() function is used to change the numerical range used for specifying colors and to switch color systems.    
+    * @param mode Either RGB or HSB, corresponding to Red/Green/Blue and Hue/Saturation/Brightness
+    * @param range1 range for the red or hue depending on the current color mode
+    * @param range2 range for the green or saturation depending on the current color mode
+    * @param range3 range for the blue or brightness depending on the current color mode
+    * @param range4 range for the alpha*/
+    void colorMode(unsigned mode, double range1, double range2, double range3, double range4);
+
 	/*! \relates color
 	* Changes the way Processing interprets color data. The colorMode() function is used to change the numerical range used for specifying colors and to switch color systems.
 	* @param mode Either RGB or HSB, corresponding to Red/Green/Blue and Hue/Saturation/Brightness
@@ -51,18 +60,7 @@ namespace cprocessing {
 	inline void colorMode(unsigned mode, double range1, double range2, double range3){
 		colorMode(mode, range1, range2, range3, MAXCOLOR);
 	}
-
-	/*! \relates color
-	* Changes the way Processing interprets color data. The colorMode() function is used to change the numerical range used for specifying colors and to switch color systems.
-	* @param mode Either RGB or HSB, corresponding to Red/Green/Blue and Hue/Saturation/Brightness
-	* @param range1 range for the red or hue depending on the current color mode
-	* @param range2 range for the green or saturation depending on the current color mode
-	* @param range3 range for the blue or brightness depending on the current color mode
-	* @param range4 range for the alpha*/
-	void colorMode(unsigned mode, double range1, double range2, double range3, double range4);
-
-
-
+	
 	/*! \relates color
 	* Extracts the alpha value from a color, scaled to match current colorMode()
 	* @param color any color
