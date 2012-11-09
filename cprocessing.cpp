@@ -97,7 +97,10 @@ namespace cprocessing {
         // Cope with scaling transformations
         //glEnable(GL_RESCALE_NORMAL);
         glEnable(GL_NORMALIZE);
-		
+	    
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
         // Disable the default additional ambient component
         float ambient [] = {0, 0, 0, 1};
         glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambient);
