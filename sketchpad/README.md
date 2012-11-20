@@ -19,9 +19,9 @@ Creating a New Sketch
 Running your Sketch
 ---
 
-1. Typing "make" will compile your sketch 
+1. Typing `make` will compile your sketch 
 
-2. If there are no errors you can run by typing "./sketch"
+2. If there are no errors you can run by typing `./sketch`
 
 3. Wala. 
 
