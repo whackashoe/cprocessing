@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['easecurve',['easeCurve',['../perlin_8cpp.html#a49d56e28b3862c5425acf66c0583a629',1,'perlin.cpp']]],
+  ['easecurve',['easeCurve',['../pnoise_8cpp.html#a49d56e28b3862c5425acf66c0583a629',1,'pnoise.cpp']]],
   ['ellipse',['ellipse',['../namespacecprocessing.html#a9341930ee0fb1ee76a95e311b74e3065',1,'cprocessing']]],
   ['ellipsedetail',['ellipseDetail',['../classcprocessing_1_1Style.html#ab57be3369f09dda4193bd28665776155',1,'cprocessing::Style::ellipseDetail()'],['../namespacecprocessing.html#a4647a1b4d440f504e7d2b52866f58c3a',1,'cprocessing::ellipseDetail()']]],
   ['ellipsemode',['ellipseMode',['../classcprocessing_1_1Style.html#ac45b66048241d2ecd1cc45f3d33ee1a9',1,'cprocessing::Style::ellipseMode()'],['../namespacecprocessing.html#a8b3c72101215d89722a6fd09036c090e',1,'cprocessing::ellipseMode()']]],

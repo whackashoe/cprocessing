@@ -12,8 +12,8 @@ var searchData=
   ['div',['div',['../classcprocessing_1_1PVector.html#ae65adb6c978c1a498d071dc19656e8af',1,'cprocessing::PVector::div(double s) const '],['../classcprocessing_1_1PVector.html#a3415b1002af5f0564156cebc01c2993d',1,'cprocessing::PVector::div(const PVector &amp;v, double s)']]],
   ['dodge',['DODGE',['../namespacecprocessing.html#aa210740653d5e2431db0bdc726242fb0a4074f2e04d31b9363ac0a1eb58277172',1,'cprocessing']]],
   ['dot',['dot',['../classcprocessing_1_1PVector.html#a75f71674d4bc6fac4c1f54f66238450d',1,'cprocessing::PVector::dot(const PVector &amp;other) const '],['../classcprocessing_1_1PVector.html#a4335d077d5d19354d9231dbe74b3d57a',1,'cprocessing::PVector::dot(const PVector &amp;a, const PVector &amp;b)']]],
-  ['dot2',['dot2',['../perlin_8cpp.html#a4cd3ae991149c8a7a2189117061aa1ef',1,'perlin.cpp']]],
-  ['dot3',['dot3',['../perlin_8cpp.html#a39689dbc0dd1c10a31af95c457e532dd',1,'perlin.cpp']]],
+  ['dot2',['dot2',['../pnoise_8cpp.html#a4cd3ae991149c8a7a2189117061aa1ef',1,'pnoise.cpp']]],
+  ['dot3',['dot3',['../pnoise_8cpp.html#a39689dbc0dd1c10a31af95c457e532dd',1,'pnoise.cpp']]],
   ['down',['DOWN',['../namespacecprocessing.html#a39d84f96f7411fee29eda510a17b1089a634a160faa669a319f7359165b4864c0',1,'cprocessing']]],
   ['draw',['draw',['../cprocessing_8cpp.html#a56c5cf8a568cff737ff95520cbe6b405',1,'draw():&#160;extfuncs.cpp'],['../extfuncs_8cpp.html#a56c5cf8a568cff737ff95520cbe6b405',1,'draw():&#160;extfuncs.cpp']]]
 ];

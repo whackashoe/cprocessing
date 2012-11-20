@@ -6,10 +6,12 @@
 \item 
 class \hyperlink{classcprocessing_1_1color}{color}
 \begin{DoxyCompactList}\small\item\em \-Color class. \end{DoxyCompactList}\item 
-class \hyperlink{classcprocessing_1_1perlinNoise}{perlin\-Noise}
-\item 
 class \hyperlink{classcprocessing_1_1PImage}{\-P\-Image}
 \begin{DoxyCompactList}\small\item\em \-Encapsulates a 2\-D \-R\-G\-B\-A image. \end{DoxyCompactList}\item 
+class \hyperlink{classcprocessing_1_1perlinNoise}{perlin\-Noise}
+\item 
+class \hyperlink{classcprocessing_1_1PShader}{\-P\-Shader}
+\item 
 class \hyperlink{classcprocessing_1_1PVector}{\-P\-Vector}
 \begin{DoxyCompactList}\small\item\em \-Represents a vector (or, sometimes, a point) in 3\-D. \end{DoxyCompactList}\item 
 class \hyperlink{classcprocessing_1_1SimplexNoise}{\-Simplex\-Noise}
@@ -147,7 +149,7 @@ static void \hyperlink{namespacecprocessing_a4edceb61c45d6bf384a38826469a5a48}{r
 \begin{DoxyCompactList}\small\item\em \-The refresh function is called periodically to redisplay. \end{DoxyCompactList}\item 
 void \hyperlink{namespacecprocessing_aefce387a356aa3e4937d4e08fc1b0b4c}{redraw} ()
 \item 
-\hyperlink{classcprocessing_1_1color}{color} \hyperlink{namespacecprocessing_a4deeb570d9a3cb7321300200161ab054}{lerp\-Color} (const \hyperlink{classcprocessing_1_1color}{color} a, const \hyperlink{classcprocessing_1_1color}{color} b, float amt)
+\hyperlink{classcprocessing_1_1color}{color} \hyperlink{namespacecprocessing_ab84606ef8070ac7560a44acd6942517b}{lerp\-Color} (const \hyperlink{classcprocessing_1_1color}{color} a, const \hyperlink{classcprocessing_1_1color}{color} b, double amt)
 \item 
 static void \hyperlink{namespacecprocessing_a9fc04981955baab92e7b528b6a0c7c34}{mousemotion} (int x, int y)
 \begin{DoxyCompactList}\small\item\em \-Called whenever mouse moves. \end{DoxyCompactList}\item 
@@ -162,6 +164,10 @@ static void \hyperlink{namespacecprocessing_a1b66644ad17ec9a36ff2b304d55f4b27}{s
 static void \hyperlink{namespacecprocessing_af02bc302506ac700a3a297172dcb15d6}{specialup} (int ch, int x, int y)
 \begin{DoxyCompactList}\small\item\em \-Called whenever a special key is released. \end{DoxyCompactList}\item 
 void \hyperlink{namespacecprocessing_a4bbf578baacdd32fea5fab20517028ce}{size} (unsigned w, unsigned h, const char $\ast$name)
+\item 
+void \hyperlink{namespacecprocessing_a3f943a28dd1ecc7804bc93a60e6d8e91}{no\-Back\-Buffer} ()
+\item 
+void \hyperlink{namespacecprocessing_a8ae4be814d783b05ef6be38d33de6cb6}{back\-Buffer} ()
 \item 
 void \hyperlink{namespacecprocessing_af815879b404059ab470b9c33355d084f}{stroke} (const \hyperlink{classcprocessing_1_1color}{color} \&c)
 \begin{DoxyCompactList}\small\item\em \-Sets line color. \end{DoxyCompactList}\item 
@@ -318,7 +324,7 @@ void \hyperlink{namespacecprocessing_ae482816a2ac74376fface1261abbe47e}{translat
 void \hyperlink{namespacecprocessing_a57d46ddaf4025cdf290f5ccb82725530}{scale} (double dx, double dy, double dz)
 \begin{DoxyCompactList}\small\item\em \-Applies a scale transformation. \end{DoxyCompactList}\item 
 void \hyperlink{namespacecprocessing_a9f393203e195c6843c3880c952432ec7}{scale} (double dx, double dy)
-\begin{DoxyCompactList}\small\item\em \-Applies a scale transformation. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{namespacecprocessing_a987be2f2fbe7386914a94dac7343801e}{scale} (double factor)
 \begin{DoxyCompactList}\small\item\em \-Applies a uniform scale. \end{DoxyCompactList}\item 
 void \hyperlink{namespacecprocessing_afa46f333138777dcaa09eeff125a9d39}{rotate} (double \hyperlink{namespacecprocessing_a8e4f15390e12437ed626441da1cc767d}{radians}, double axisx, double axisy, double axisz)
@@ -381,6 +387,8 @@ void \hyperlink{namespacecprocessing_a251e268f250938b938ceab16ff97b9a1}{no\-Ligh
 \item 
 {\footnotesize template$<$class C $>$ }\\void \hyperlink{namespacecprocessing_adb24a9653ec0c180336385d1c006a658}{println} (const \-C \&a)
 \item 
+{\footnotesize template$<$class C $>$ }\\void \hyperlink{namespacecprocessing_ab4318658947e0ca5be41534735735b9b}{printerr} (const \-C \&a)
+\item 
 void \hyperlink{namespacecprocessing_aec8195139a88226bc60d3eddaa5d65b9}{no\-Loop} ()
 \item 
 void \hyperlink{namespacecprocessing_a66554fc7a3370552f74c563d0c5adcef}{loop} ()
@@ -402,10 +410,6 @@ double \hyperlink{namespacecprocessing_acbb34da5bbdcb90c835f747da782164a}{random
 float \hyperlink{namespacecprocessing_a4acf597a7eba6baff6bb2dfceb44e91b}{random} (float howsmall, float howbig)
 \item 
 float \hyperlink{namespacecprocessing_aff94df2ca686ab8cb8c29e06f06c41c8}{random} (int howsmall, int howbig)
-\item 
-void \hyperlink{namespacecprocessing_a4eeb81f5fead851fd3a5fa23286b8b99}{noise\-Detail} (int octaves)
-\item 
-void \hyperlink{namespacecprocessing_ac2ffd86761a271d29697d6408a125e59}{noise\-Detail} (int octaves, double falloff)
 \item 
 void \hyperlink{namespacecprocessing_a018a4f19c47283bd51f6c0004bdbaa78}{noise\-Seed} (int n)
 \item 
@@ -467,6 +471,8 @@ const double \hyperlink{namespacecprocessing_aa9c16baaa88d39db100f54cb0bbca62f}{
 const double \hyperlink{namespacecprocessing_a257bee644c97e92e9f9492c569ab863d}{\-H\-A\-L\-F\-\_\-\-P\-I} = \hyperlink{namespacecprocessing_a445521f2b665e4744680faa4a6806676}{\-P\-I}/2
 \item 
 const double \hyperlink{namespacecprocessing_aa4fa2ff3538b68df8b95c6eba6c33a28}{\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I} = \hyperlink{namespacecprocessing_a445521f2b665e4744680faa4a6806676}{\-P\-I}/4
+\item 
+\hyperlink{classcprocessing_1_1perlinNoise}{perlin\-Noise} \hyperlink{namespacecprocessing_ae49abeea91d685f9a38c0b20b0de1977}{pnoise\-\_\-int}
 \item 
 \hyperlink{classcprocessing_1_1SimplexNoise}{\-Simplex\-Noise} \hyperlink{namespacecprocessing_aab81f757257f375ea414cd3a49483e4c}{snoiz\-\_\-int}
 \end{DoxyCompactItemize}
@@ -732,7 +738,14 @@ positive number
 
 \-Multiplies given matrix by current transformation matrix. 
 
-\-Multiplies current transformation matrix by given matrix. \hypertarget{namespacecprocessing_ae28ec65927b7f3edc953cacd9a67543a}{\index{cprocessing@{cprocessing}!background@{background}}
+\-Multiplies current transformation matrix by given matrix. \hypertarget{namespacecprocessing_a8ae4be814d783b05ef6be38d33de6cb6}{\index{cprocessing@{cprocessing}!back\-Buffer@{back\-Buffer}}
+\index{back\-Buffer@{back\-Buffer}!cprocessing@{cprocessing}}
+\subsubsection[{back\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::back\-Buffer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacecprocessing_a8ae4be814d783b05ef6be38d33de6cb6}
+\-Turns on back buffer for clearer drawing \-This is turned on by default \hypertarget{namespacecprocessing_ae28ec65927b7f3edc953cacd9a67543a}{\index{cprocessing@{cprocessing}!background@{background}}
 \index{background@{background}!cprocessing@{cprocessing}}
 \subsubsection[{background}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::background} (
 \begin{DoxyParamCaption}
@@ -1285,15 +1298,15 @@ distance between points
 \begin{DoxyReturn}{\-Returns}
 interpolated result 
 \end{DoxyReturn}
-\hypertarget{namespacecprocessing_a4deeb570d9a3cb7321300200161ab054}{\index{cprocessing@{cprocessing}!lerp\-Color@{lerp\-Color}}
+\hypertarget{namespacecprocessing_ab84606ef8070ac7560a44acd6942517b}{\index{cprocessing@{cprocessing}!lerp\-Color@{lerp\-Color}}
 \index{lerp\-Color@{lerp\-Color}!cprocessing@{cprocessing}}
 \subsubsection[{lerp\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf color} {\bf cprocessing\-::lerp\-Color} (
 \begin{DoxyParamCaption}
 \item[{const {\bf color}}]{a, }
 \item[{const {\bf color}}]{b, }
-\item[{float}]{amt}
+\item[{double}]{amt}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}\label{namespacecprocessing_a4deeb570d9a3cb7321300200161ab054}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}\label{namespacecprocessing_ab84606ef8070ac7560a44acd6942517b}
 \hypertarget{namespacecprocessing_a8d159e7189b41db79ab1b304a10fc8f4}{\index{cprocessing@{cprocessing}!light\-Falloff@{light\-Falloff}}
 \index{light\-Falloff@{light\-Falloff}!cprocessing@{cprocessing}}
 \subsubsection[{light\-Falloff}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::light\-Falloff} (
@@ -1579,7 +1592,14 @@ smallest of the three numbers
 
 \-Called whenever mouse moves. 
 
-\hypertarget{namespacecprocessing_ae8ea8721096bb466fdbb304304ff9e1e}{\index{cprocessing@{cprocessing}!no\-Fill@{no\-Fill}}
+\hypertarget{namespacecprocessing_a3f943a28dd1ecc7804bc93a60e6d8e91}{\index{cprocessing@{cprocessing}!no\-Back\-Buffer@{no\-Back\-Buffer}}
+\index{no\-Back\-Buffer@{no\-Back\-Buffer}!cprocessing@{cprocessing}}
+\subsubsection[{no\-Back\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::no\-Back\-Buffer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacecprocessing_a3f943a28dd1ecc7804bc93a60e6d8e91}
+\-Turns off back buffer to speed up program \hypertarget{namespacecprocessing_ae8ea8721096bb466fdbb304304ff9e1e}{\index{cprocessing@{cprocessing}!no\-Fill@{no\-Fill}}
 \index{no\-Fill@{no\-Fill}!cprocessing@{cprocessing}}
 \subsubsection[{no\-Fill}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::no\-Fill} (
 \begin{DoxyParamCaption}
@@ -1610,21 +1630,6 @@ smallest of the three numbers
 \item[{double}]{z}
 \end{DoxyParamCaption}
 )}}\label{namespacecprocessing_a12c5c480ee409902975902ee93e7f6f1}
-\hypertarget{namespacecprocessing_a4eeb81f5fead851fd3a5fa23286b8b99}{\index{cprocessing@{cprocessing}!noise\-Detail@{noise\-Detail}}
-\index{noise\-Detail@{noise\-Detail}!cprocessing@{cprocessing}}
-\subsubsection[{noise\-Detail}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::noise\-Detail} (
-\begin{DoxyParamCaption}
-\item[{int}]{octaves}
-\end{DoxyParamCaption}
-)}}\label{namespacecprocessing_a4eeb81f5fead851fd3a5fa23286b8b99}
-\hypertarget{namespacecprocessing_ac2ffd86761a271d29697d6408a125e59}{\index{cprocessing@{cprocessing}!noise\-Detail@{noise\-Detail}}
-\index{noise\-Detail@{noise\-Detail}!cprocessing@{cprocessing}}
-\subsubsection[{noise\-Detail}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::noise\-Detail} (
-\begin{DoxyParamCaption}
-\item[{int}]{octaves, }
-\item[{double}]{falloff}
-\end{DoxyParamCaption}
-)}}\label{namespacecprocessing_ac2ffd86761a271d29697d6408a125e59}
 \hypertarget{namespacecprocessing_a018a4f19c47283bd51f6c0004bdbaa78}{\index{cprocessing@{cprocessing}!noise\-Seed@{noise\-Seed}}
 \index{noise\-Seed@{noise\-Seed}!cprocessing@{cprocessing}}
 \subsubsection[{noise\-Seed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::noise\-Seed} (
@@ -1783,6 +1788,13 @@ smallest of the three numbers
 \item[{const \-C \&}]{a}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{namespacecprocessing_a2ce567d9c23f93c9de2ec5b5b362c750}
+\hypertarget{namespacecprocessing_ab4318658947e0ca5be41534735735b9b}{\index{cprocessing@{cprocessing}!printerr@{printerr}}
+\index{printerr@{printerr}!cprocessing@{cprocessing}}
+\subsubsection[{printerr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C $>$ void {\bf cprocessing\-::printerr} (
+\begin{DoxyParamCaption}
+\item[{const \-C \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{namespacecprocessing_ab4318658947e0ca5be41534735735b9b}
 \hypertarget{namespacecprocessing_adb24a9653ec0c180336385d1c006a658}{\index{cprocessing@{cprocessing}!println@{println}}
 \index{println@{println}!cprocessing@{cprocessing}}
 \subsubsection[{println}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C $>$ void {\bf cprocessing\-::println} (
@@ -2064,6 +2076,15 @@ of its vertices.
 
 \-Applies a scale transformation. 
 
+\-Applies a scale transformation in 3d (shrinks or grows all following objects of frame) 
+\begin{DoxyParams}{\-Parameters}
+{\em dx} & x amount of \char`\"{}width\char`\"{} \\
+\hline
+{\em dy} & y amount of \char`\"{}height\char`\"{} \\
+\hline
+{\em dz} & z amount of \char`\"{}depth\char`\"{} \\
+\hline
+\end{DoxyParams}
 \hypertarget{namespacecprocessing_a9f393203e195c6843c3880c952432ec7}{\index{cprocessing@{cprocessing}!scale@{scale}}
 \index{scale@{scale}!cprocessing@{cprocessing}}
 \subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::scale} (
@@ -2072,10 +2093,13 @@ of its vertices.
 \item[{double}]{dy}
 \end{DoxyParamCaption}
 )}}\label{namespacecprocessing_a9f393203e195c6843c3880c952432ec7}
-
-
-\-Applies a scale transformation. 
-
+\-Applies a scale transformation in 2d (shrinks or grows all following objects of frame) 
+\begin{DoxyParams}{\-Parameters}
+{\em dx} & x amount of \char`\"{}width\char`\"{} \\
+\hline
+{\em dy} & y amount of \char`\"{}height\char`\"{} \\
+\hline
+\end{DoxyParams}
 \hypertarget{namespacecprocessing_a987be2f2fbe7386914a94dac7343801e}{\index{cprocessing@{cprocessing}!scale@{scale}}
 \index{scale@{scale}!cprocessing@{cprocessing}}
 \subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::scale} (
@@ -2405,6 +2429,15 @@ value between -\/1 and 1
 
 \-Applies a translation transformation. 
 
+\-Applies a 3d translation transformation (moves the drawing pen for all following objects of frame) 
+\begin{DoxyParams}{\-Parameters}
+{\em dx} & x amount of movement \\
+\hline
+{\em dy} & y amount of movement \\
+\hline
+{\em dz} & z amount of movement \\
+\hline
+\end{DoxyParams}
 \hypertarget{namespacecprocessing_ae482816a2ac74376fface1261abbe47e}{\index{cprocessing@{cprocessing}!translate@{translate}}
 \index{translate@{translate}!cprocessing@{cprocessing}}
 \subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::translate} (
@@ -2413,6 +2446,13 @@ value between -\/1 and 1
 \item[{double}]{dy}
 \end{DoxyParamCaption}
 )}}\label{namespacecprocessing_ae482816a2ac74376fface1261abbe47e}
+\-Applies a 2d translation transformation (moves the drawing pen for all following objects of frame) 
+\begin{DoxyParams}{\-Parameters}
+{\em dx} & x amount of movement \\
+\hline
+{\em dy} & y amount of movement \\
+\hline
+\end{DoxyParams}
 \hypertarget{namespacecprocessing_af3cfb92d80a8efb01c014202a10f75f6}{\index{cprocessing@{cprocessing}!triangle@{triangle}}
 \index{triangle@{triangle}!cprocessing@{cprocessing}}
 \subsubsection[{triangle}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cprocessing\-::triangle} (
@@ -2611,7 +2651,10 @@ true makes display call itself \hypertarget{namespacecprocessing_ac291906023e774
 
 \-Previous mouse y coordinate. 
 
-\-Previous mouse y coordinate \hypertarget{namespacecprocessing_aa4fa2ff3538b68df8b95c6eba6c33a28}{\index{cprocessing@{cprocessing}!\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I@{\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I}}
+\-Previous mouse y coordinate \hypertarget{namespacecprocessing_ae49abeea91d685f9a38c0b20b0de1977}{\index{cprocessing@{cprocessing}!pnoise\-\_\-int@{pnoise\-\_\-int}}
+\index{pnoise\-\_\-int@{pnoise\-\_\-int}!cprocessing@{cprocessing}}
+\subsubsection[{pnoise\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf perlin\-Noise} {\bf cprocessing\-::pnoise\-\_\-int}}}\label{namespacecprocessing_ae49abeea91d685f9a38c0b20b0de1977}
+\hypertarget{namespacecprocessing_aa4fa2ff3538b68df8b95c6eba6c33a28}{\index{cprocessing@{cprocessing}!\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I@{\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I}}
 \index{\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I@{\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I}!cprocessing@{cprocessing}}
 \subsubsection[{\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cprocessing\-::\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-P\-I} = {\bf \-P\-I}/4}}\label{namespacecprocessing_aa4fa2ff3538b68df8b95c6eba6c33a28}
 \-P\-I/4 \hypertarget{namespacecprocessing_aab81f757257f375ea414cd3a49483e4c}{\index{cprocessing@{cprocessing}!snoiz\-\_\-int@{snoiz\-\_\-int}}

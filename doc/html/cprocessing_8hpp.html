@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>cprocessing: cprocessing.hpp File Reference</title>
+<title>cprocessing: src/cprocessing.hpp File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">cprocessing.hpp File Reference</div>  </div>
+<div class="title">src/cprocessing.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br/>
@@ -100,6 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="pimage_8hpp_source.html">pimage.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="pvector_8hpp_source.html">pvector.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="snoise_8hpp_source.html">snoise.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="pnoise_8hpp_source.html">pnoise.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="style_8hpp_source.html">style.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="ArrayList_8hpp_source.html">ArrayList.hpp</a>&quot;</code><br/>
 <code>#include &lt;unistd.h&gt;</code><br/>
@@ -187,6 +188,8 @@ Enumerations</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter for the endShape function.  <a href="namespacecprocessing.html#a36043bfddd24515bdaf0987869333293">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a3f943a28dd1ecc7804bc93a60e6d8e91">cprocessing::noBackBuffer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a8ae4be814d783b05ef6be38d33de6cb6">cprocessing::backBuffer</a> ()</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class C &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">C&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a240a51ca039c8fbd359e2fb8c2d583d9">cprocessing::abs</a> (const C &amp;a)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class C &gt; </td></tr>
@@ -274,7 +277,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a57d46ddaf4025cdf290f5ccb82725530">cprocessing::scale</a> (double dx, double dy, double dz)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a scale transformation.  <a href="#a57d46ddaf4025cdf290f5ccb82725530"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a9f393203e195c6843c3880c952432ec7">cprocessing::scale</a> (double dx, double dy)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a scale transformation.  <a href="#a9f393203e195c6843c3880c952432ec7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a987be2f2fbe7386914a94dac7343801e">cprocessing::scale</a> (double factor)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a uniform scale.  <a href="#a987be2f2fbe7386914a94dac7343801e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#afa46f333138777dcaa09eeff125a9d39">cprocessing::rotate</a> (double radians, double axisx, double axisy, double axisz)</td></tr>
@@ -317,6 +319,8 @@ Functions</h2></td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a2ce567d9c23f93c9de2ec5b5b362c750">cprocessing::print</a> (const C &amp;a)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class C &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#adb24a9653ec0c180336385d1c006a658">cprocessing::println</a> (const C &amp;a)</td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class C &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#ab4318658947e0ca5be41534735735b9b">cprocessing::printerr</a> (const C &amp;a)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#aec8195139a88226bc60d3eddaa5d65b9">cprocessing::noLoop</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a66554fc7a3370552f74c563d0c5adcef">cprocessing::loop</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a09d66ead6ff18c18aa353ee6ed50bb78">cprocessing::frameRate</a> (int n)</td></tr>
@@ -383,7 +387,7 @@ Variables</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 9 2012 04:15:13 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 20 2012 06:14:17 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

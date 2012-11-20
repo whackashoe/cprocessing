@@ -90,9 +90,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Data Structures</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1color.html">color</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Color class.  <a href="classcprocessing_1_1color.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html">perlinNoise</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PImage.html">PImage</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates a 2D RGBA image.  <a href="classcprocessing_1_1PImage.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1perlinNoise.html">perlinNoise</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PShader.html">PShader</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1PVector.html">PVector</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a vector (or, sometimes, a point) in 3D.  <a href="classcprocessing_1_1PVector.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcprocessing_1_1SimplexNoise.html">SimplexNoise</a></td></tr>
@@ -222,7 +223,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a4edceb61c45d6bf384a38826469a5a48">refresh</a> (int)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The refresh function is called periodically to redisplay.  <a href="#a4edceb61c45d6bf384a38826469a5a48"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#aefce387a356aa3e4937d4e08fc1b0b4c">redraw</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a4deeb570d9a3cb7321300200161ab054">lerpColor</a> (const <a class="el" href="classcprocessing_1_1color.html">color</a> a, const <a class="el" href="classcprocessing_1_1color.html">color</a> b, float amt)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#ab84606ef8070ac7560a44acd6942517b">lerpColor</a> (const <a class="el" href="classcprocessing_1_1color.html">color</a> a, const <a class="el" href="classcprocessing_1_1color.html">color</a> b, double amt)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a9fc04981955baab92e7b528b6a0c7c34">mousemotion</a> (int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called whenever mouse moves.  <a href="#a9fc04981955baab92e7b528b6a0c7c34"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#abac12fcdd0efbbd1491a14011c381241">mouse</a> (int button, int state, int x, int y)</td></tr>
@@ -236,6 +237,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#af02bc302506ac700a3a297172dcb15d6">specialup</a> (int ch, int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called whenever a special key is released.  <a href="#af02bc302506ac700a3a297172dcb15d6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a4bbf578baacdd32fea5fab20517028ce">size</a> (unsigned w, unsigned h, const char *name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a3f943a28dd1ecc7804bc93a60e6d8e91">noBackBuffer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a8ae4be814d783b05ef6be38d33de6cb6">backBuffer</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#af815879b404059ab470b9c33355d084f">stroke</a> (const <a class="el" href="classcprocessing_1_1color.html">color</a> &amp;c)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets line color.  <a href="#af815879b404059ab470b9c33355d084f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a0cdae921f6061ef2e6574ba2d3a08fe3">fill</a> (const <a class="el" href="classcprocessing_1_1color.html">color</a> &amp;<a class="el" href="classcprocessing_1_1color.html">color</a>)</td></tr>
@@ -338,7 +341,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a57d46ddaf4025cdf290f5ccb82725530">scale</a> (double dx, double dy, double dz)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a scale transformation.  <a href="#a57d46ddaf4025cdf290f5ccb82725530"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a9f393203e195c6843c3880c952432ec7">scale</a> (double dx, double dy)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a scale transformation.  <a href="#a9f393203e195c6843c3880c952432ec7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a987be2f2fbe7386914a94dac7343801e">scale</a> (double factor)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a uniform scale.  <a href="#a987be2f2fbe7386914a94dac7343801e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#afa46f333138777dcaa09eeff125a9d39">rotate</a> (double <a class="el" href="namespacecprocessing.html#a8e4f15390e12437ed626441da1cc767d">radians</a>, double axisx, double axisy, double axisz)</td></tr>
@@ -381,6 +383,8 @@ Functions</h2></td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a2ce567d9c23f93c9de2ec5b5b362c750">print</a> (const C &amp;a)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class C &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#adb24a9653ec0c180336385d1c006a658">println</a> (const C &amp;a)</td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class C &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#ab4318658947e0ca5be41534735735b9b">printerr</a> (const C &amp;a)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#aec8195139a88226bc60d3eddaa5d65b9">noLoop</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a66554fc7a3370552f74c563d0c5adcef">loop</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a09d66ead6ff18c18aa353ee6ed50bb78">frameRate</a> (int n)</td></tr>
@@ -392,8 +396,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#acbb34da5bbdcb90c835f747da782164a">random</a> (double howsmall, double howbig)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a4acf597a7eba6baff6bb2dfceb44e91b">random</a> (float howsmall, float howbig)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#aff94df2ca686ab8cb8c29e06f06c41c8">random</a> (int howsmall, int howbig)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a4eeb81f5fead851fd3a5fa23286b8b99">noiseDetail</a> (int octaves)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#ac2ffd86761a271d29697d6408a125e59">noiseDetail</a> (int octaves, double falloff)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a018a4f19c47283bd51f6c0004bdbaa78">noiseSeed</a> (int n)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a4289b302ccbd6bee448b7756854c7baf">noise</a> (double x)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a94c3501dd1ee3555f5af3884b11b8a04">noise</a> (double x, double y)</td></tr>
@@ -439,6 +441,7 @@ Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#aa9c16baaa88d39db100f54cb0bbca62f">TWO_PI</a> = 2*<a class="el" href="namespacecprocessing.html#a445521f2b665e4744680faa4a6806676">PI</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#a257bee644c97e92e9f9492c569ab863d">HALF_PI</a> = <a class="el" href="namespacecprocessing.html#a445521f2b665e4744680faa4a6806676">PI</a>/2</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#aa4fa2ff3538b68df8b95c6eba6c33a28">QUARTER_PI</a> = <a class="el" href="namespacecprocessing.html#a445521f2b665e4744680faa4a6806676">PI</a>/4</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1perlinNoise.html">perlinNoise</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#ae49abeea91d685f9a38c0b20b0de1977">pnoise_int</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcprocessing_1_1SimplexNoise.html">SimplexNoise</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecprocessing.html#aab81f757257f375ea414cd3a49483e4c">snoiz_int</a></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
@@ -821,6 +824,23 @@ template&lt;class C &gt; </div>
 
 <p>Multiplies given matrix by current transformation matrix. </p>
 <p>Multiplies current transformation matrix by given matrix. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8ae4be814d783b05ef6be38d33de6cb6"></a><!-- doxytag: member="cprocessing::backBuffer" ref="a8ae4be814d783b05ef6be38d33de6cb6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="namespacecprocessing.html#a8ae4be814d783b05ef6be38d33de6cb6">cprocessing::backBuffer</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Turns on back buffer for clearer drawing This is turned on by default </p>
 
 </div>
 </div>
@@ -2365,12 +2385,12 @@ template&lt;class C &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a4deeb570d9a3cb7321300200161ab054"></a><!-- doxytag: member="cprocessing::lerpColor" ref="a4deeb570d9a3cb7321300200161ab054" args="(const color a, const color b, float amt)" -->
+<a class="anchor" id="ab84606ef8070ac7560a44acd6942517b"></a><!-- doxytag: member="cprocessing::lerpColor" ref="ab84606ef8070ac7560a44acd6942517b" args="(const color a, const color b, double amt)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcprocessing_1_1color.html">color</a> <a class="el" href="namespacecprocessing.html#a4deeb570d9a3cb7321300200161ab054">cprocessing::lerpColor</a> </td>
+          <td class="memname"><a class="el" href="classcprocessing_1_1color.html">color</a> <a class="el" href="namespacecprocessing.html#ab84606ef8070ac7560a44acd6942517b">cprocessing::lerpColor</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcprocessing_1_1color.html">color</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -2384,7 +2404,7 @@ template&lt;class C &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>amt</em>&#160;</td>
         </tr>
         <tr>
@@ -3055,6 +3075,23 @@ template&lt;class C &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a3f943a28dd1ecc7804bc93a60e6d8e91"></a><!-- doxytag: member="cprocessing::noBackBuffer" ref="a3f943a28dd1ecc7804bc93a60e6d8e91" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="namespacecprocessing.html#a3f943a28dd1ecc7804bc93a60e6d8e91">cprocessing::noBackBuffer</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Turns off back buffer to speed up program </p>
+
+</div>
+</div>
 <a class="anchor" id="ae8ea8721096bb466fdbb304304ff9e1e"></a><!-- doxytag: member="cprocessing::noFill" ref="ae8ea8721096bb466fdbb304304ff9e1e" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -3136,50 +3173,6 @@ template&lt;class C &gt; </div>
           <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>z</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4eeb81f5fead851fd3a5fa23286b8b99"></a><!-- doxytag: member="cprocessing::noiseDetail" ref="a4eeb81f5fead851fd3a5fa23286b8b99" args="(int octaves)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="namespacecprocessing.html#a4eeb81f5fead851fd3a5fa23286b8b99">cprocessing::noiseDetail</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>octaves</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac2ffd86761a271d29697d6408a125e59"></a><!-- doxytag: member="cprocessing::noiseDetail" ref="ac2ffd86761a271d29697d6408a125e59" args="(int octaves, double falloff)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="namespacecprocessing.html#a4eeb81f5fead851fd3a5fa23286b8b99">cprocessing::noiseDetail</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>octaves</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>falloff</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3610,6 +3603,25 @@ template&lt;class C &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="namespacecprocessing.html#a2ce567d9c23f93c9de2ec5b5b362c750">cprocessing::print</a> </td>
+          <td>(</td>
+          <td class="paramtype">const C &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab4318658947e0ca5be41534735735b9b"></a><!-- doxytag: member="cprocessing::printerr" ref="ab4318658947e0ca5be41534735735b9b" args="(const C &amp;a)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class C &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="namespacecprocessing.html#ab4318658947e0ca5be41534735735b9b">cprocessing::printerr</a> </td>
           <td>(</td>
           <td class="paramtype">const C &amp;&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
@@ -4288,6 +4300,15 @@ template&lt;class C &gt; </div>
 <div class="memdoc">
 
 <p>Applies a scale transformation. </p>
+<p>Applies a scale transformation in 3d (shrinks or grows all following objects of frame) </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dx</td><td>x amount of "width" </td></tr>
+    <tr><td class="paramname">dy</td><td>y amount of "height" </td></tr>
+    <tr><td class="paramname">dz</td><td>z amount of "depth" </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -4315,8 +4336,14 @@ template&lt;class C &gt; </div>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Applies a scale transformation. </p>
+<p>Applies a scale transformation in 2d (shrinks or grows all following objects of frame) </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dx</td><td>x amount of "width" </td></tr>
+    <tr><td class="paramname">dy</td><td>y amount of "height" </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5184,6 +5211,15 @@ template&lt;class C &gt; </div>
 <div class="memdoc">
 
 <p>Applies a translation transformation. </p>
+<p>Applies a 3d translation transformation (moves the drawing pen for all following objects of frame) </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dx</td><td>x amount of movement </td></tr>
+    <tr><td class="paramname">dy</td><td>y amount of movement </td></tr>
+    <tr><td class="paramname">dz</td><td>z amount of movement </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5211,6 +5247,14 @@ template&lt;class C &gt; </div>
       </table>
 </div>
 <div class="memdoc">
+<p>Applies a 2d translation transformation (moves the drawing pen for all following objects of frame) </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dx</td><td>x amount of movement </td></tr>
+    <tr><td class="paramname">dy</td><td>y amount of movement </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5694,6 +5738,19 @@ template&lt;class C &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ae49abeea91d685f9a38c0b20b0de1977"></a><!-- doxytag: member="cprocessing::pnoise_int" ref="ae49abeea91d685f9a38c0b20b0de1977" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcprocessing_1_1perlinNoise.html">perlinNoise</a> <a class="el" href="namespacecprocessing.html#ae49abeea91d685f9a38c0b20b0de1977">cprocessing::pnoise_int</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aa4fa2ff3538b68df8b95c6eba6c33a28"></a><!-- doxytag: member="cprocessing::QUARTER_PI" ref="aa4fa2ff3538b68df8b95c6eba6c33a28" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -5782,7 +5839,7 @@ template&lt;class C &gt; </div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 9 2012 04:15:13 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 20 2012 06:14:17 for cprocessing by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

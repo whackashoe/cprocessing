@@ -1,7 +1,7 @@
 var searchData=
 [
   ['lerp',['lerp',['../namespacecprocessing.html#ad3e9bb8446fe8c867e5e90b33a451115',1,'cprocessing']]],
-  ['lerpcolor',['lerpColor',['../classcprocessing_1_1color.html#ae433bc669b4d8858d1e748be068406e5',1,'cprocessing::color::lerpColor()'],['../namespacecprocessing.html#a4deeb570d9a3cb7321300200161ab054',1,'cprocessing::lerpColor()']]],
+  ['lerpcolor',['lerpColor',['../classcprocessing_1_1color.html#ae7e8c29dd5328f007a722878ff19a72a',1,'cprocessing::color::lerpColor()'],['../namespacecprocessing.html#ab84606ef8070ac7560a44acd6942517b',1,'cprocessing::lerpColor()']]],
   ['lightfalloff',['lightFalloff',['../namespacecprocessing.html#a8d159e7189b41db79ab1b304a10fc8f4',1,'cprocessing']]],
   ['lights',['lights',['../namespacecprocessing.html#ab1acc84389367328f202d254a91f757e',1,'cprocessing']]],
   ['lightson',['lightsOn',['../lights_8cpp.html#a600ae614857334faaa77f9cb86ba5161',1,'lights.cpp']]],

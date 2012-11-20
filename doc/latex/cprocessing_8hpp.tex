@@ -1,5 +1,5 @@
-\hypertarget{cprocessing_8hpp}{\section{cprocessing.\-hpp \-File \-Reference}
-\label{cprocessing_8hpp}\index{cprocessing.\-hpp@{cprocessing.\-hpp}}
+\hypertarget{cprocessing_8hpp}{\section{src/cprocessing.hpp \-File \-Reference}
+\label{cprocessing_8hpp}\index{src/cprocessing.\-hpp@{src/cprocessing.\-hpp}}
 }
 {\ttfamily \#include $<$cmath$>$}\*
 {\ttfamily \#include $<$cassert$>$}\*
@@ -15,6 +15,7 @@
 {\ttfamily \#include \char`\"{}pimage.\-hpp\char`\"{}}\*
 {\ttfamily \#include \char`\"{}pvector.\-hpp\char`\"{}}\*
 {\ttfamily \#include \char`\"{}snoise.\-hpp\char`\"{}}\*
+{\ttfamily \#include \char`\"{}pnoise.\-hpp\char`\"{}}\*
 {\ttfamily \#include \char`\"{}style.\-hpp\char`\"{}}\*
 {\ttfamily \#include \char`\"{}\-Array\-List.\-hpp\char`\"{}}\*
 {\ttfamily \#include $<$unistd.\-h$>$}\*
@@ -101,6 +102,10 @@ enum \hyperlink{namespacecprocessing_a36043bfddd24515bdaf0987869333293}{cprocess
 \begin{DoxyCompactList}\small\item\em \-Parameter for the end\-Shape function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Functions}
 \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacecprocessing_a3f943a28dd1ecc7804bc93a60e6d8e91}{cprocessing\-::no\-Back\-Buffer} ()
+\item 
+void \hyperlink{namespacecprocessing_a8ae4be814d783b05ef6be38d33de6cb6}{cprocessing\-::back\-Buffer} ()
 \item 
 {\footnotesize template$<$class C $>$ }\\\-C \hyperlink{namespacecprocessing_a240a51ca039c8fbd359e2fb8c2d583d9}{cprocessing\-::abs} (const \-C \&a)
 \item 
@@ -229,7 +234,7 @@ void \hyperlink{namespacecprocessing_ae482816a2ac74376fface1261abbe47e}{cprocess
 void \hyperlink{namespacecprocessing_a57d46ddaf4025cdf290f5ccb82725530}{cprocessing\-::scale} (double dx, double dy, double dz)
 \begin{DoxyCompactList}\small\item\em \-Applies a scale transformation. \end{DoxyCompactList}\item 
 void \hyperlink{namespacecprocessing_a9f393203e195c6843c3880c952432ec7}{cprocessing\-::scale} (double dx, double dy)
-\begin{DoxyCompactList}\small\item\em \-Applies a scale transformation. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{namespacecprocessing_a987be2f2fbe7386914a94dac7343801e}{cprocessing\-::scale} (double factor)
 \begin{DoxyCompactList}\small\item\em \-Applies a uniform scale. \end{DoxyCompactList}\item 
 void \hyperlink{namespacecprocessing_afa46f333138777dcaa09eeff125a9d39}{cprocessing\-::rotate} (double radians, double axisx, double axisy, double axisz)
@@ -291,6 +296,8 @@ void \hyperlink{namespacecprocessing_a251e268f250938b938ceab16ff97b9a1}{cprocess
 {\footnotesize template$<$class C $>$ }\\void \hyperlink{namespacecprocessing_a2ce567d9c23f93c9de2ec5b5b362c750}{cprocessing\-::print} (const \-C \&a)
 \item 
 {\footnotesize template$<$class C $>$ }\\void \hyperlink{namespacecprocessing_adb24a9653ec0c180336385d1c006a658}{cprocessing\-::println} (const \-C \&a)
+\item 
+{\footnotesize template$<$class C $>$ }\\void \hyperlink{namespacecprocessing_ab4318658947e0ca5be41534735735b9b}{cprocessing\-::printerr} (const \-C \&a)
 \item 
 void \hyperlink{namespacecprocessing_aec8195139a88226bc60d3eddaa5d65b9}{cprocessing\-::no\-Loop} ()
 \item 

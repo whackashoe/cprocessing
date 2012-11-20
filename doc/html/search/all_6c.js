@@ -2,7 +2,7 @@ var searchData=
 [
   ['left',['LEFT',['../namespacecprocessing.html#a39d84f96f7411fee29eda510a17b1089ac8df9c95ae0f6e4eafb5e419637d7603',1,'cprocessing']]],
   ['lerp',['lerp',['../namespacecprocessing.html#ad3e9bb8446fe8c867e5e90b33a451115',1,'cprocessing']]],
-  ['lerpcolor',['lerpColor',['../classcprocessing_1_1color.html#ae433bc669b4d8858d1e748be068406e5',1,'cprocessing::color::lerpColor()'],['../namespacecprocessing.html#a4deeb570d9a3cb7321300200161ab054',1,'cprocessing::lerpColor()']]],
+  ['lerpcolor',['lerpColor',['../classcprocessing_1_1color.html#ae7e8c29dd5328f007a722878ff19a72a',1,'cprocessing::color::lerpColor()'],['../namespacecprocessing.html#ab84606ef8070ac7560a44acd6942517b',1,'cprocessing::lerpColor()']]],
   ['lightcount',['lightCount',['../lights_8cpp.html#ad9436ddb807e7aad9013a14382d4adbb',1,'lights.cpp']]],
   ['lightest',['LIGHTEST',['../namespacecprocessing.html#aa210740653d5e2431db0bdc726242fb0a34445226923fd482a6e799d768c3e7dc',1,'cprocessing']]],
   ['lightfalloff',['lightFalloff',['../namespacecprocessing.html#a8d159e7189b41db79ab1b304a10fc8f4',1,'cprocessing']]],
@@ -15,7 +15,7 @@ var searchData=
   ['line_5floop',['LINE_LOOP',['../namespacecprocessing.html#a03538783321a3683ed8660f8bb23cd0ca6bccefd20d2fb1fd8d978066306615c5',1,'cprocessing']]],
   ['line_5fstrip',['LINE_STRIP',['../namespacecprocessing.html#a03538783321a3683ed8660f8bb23cd0ca949a14c9e346df73cf27e96c56a84a5e',1,'cprocessing']]],
   ['linear',['linear',['../lights_8cpp.html#aa7d568a84fe0f3179836f663743d6be2',1,'lights.cpp']]],
-  ['linearinterp',['linearInterp',['../perlin_8cpp.html#a45f87876bf7e5d0cc6ecee14bc59922f',1,'perlin.cpp']]],
+  ['linearinterp',['linearInterp',['../pnoise_8cpp.html#a45f87876bf7e5d0cc6ecee14bc59922f',1,'pnoise.cpp']]],
   ['lines',['LINES',['../namespacecprocessing.html#a03538783321a3683ed8660f8bb23cd0cafcfcf9f63a4bbebb38b1ab872db0be54',1,'cprocessing']]],
   ['loadbytes',['loadBytes',['../namespacecprocessing.html#a4874f805f42f926ed40ef576dac51201',1,'cprocessing']]],
   ['loadimage',['loadImage',['../classcprocessing_1_1PImage.html#af890772e2644313f266f32ee322e52c2',1,'cprocessing::PImage']]],
