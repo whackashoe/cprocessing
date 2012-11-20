@@ -1,5 +1,13 @@
-calling noLoop at end of setup creates bugs
-not calling background in draw can cause bugs
+If you are looking for something to fix mosey over to the helpers folder and run todo.sh,
+it is more than full with various issues with examples that are not finished porting, reported bugs, and fixme's and todos in code
+in one nice friendly package, yay
+
+If you are looking for somethings to implement, here is a current list of features that I think would be nice
+I have some of these things partially done, be transparant and they will be completed faster (it will also get my butt in gear)
+
+All things must be cross platform, I realize the current state of cprocessing is mainly linux but that may change in the future, who knows
+
+
 
 implement general image loader
 
@@ -18,6 +26,7 @@ vim & sublime text 2 plugins for rapid development
 easy make:: modular architecture allowing for selection of which classes to load and graphical or nope
 
 test on windows
+test on mac
 
 fix transparency bug, i believe it was disabled due to opengl read textures shit
 
@@ -122,4 +131,3 @@ textSize()	N/A	 changes the current font size
 textWidth()	N/A	 returns the width of the received string rendered in the current font
 textAscent()	N/A	 returns the ascent of the current font
 textDescent()	N/A	 returns the descent of the current font
-

@@ -1,7 +1,7 @@
 #
 # Generic makefile for making an example program using the cprocessing library
 #
-CFLAGS = -g -fPIC
+CFLAGS = -g -fPIC 
 
 SOURCES= $(wildcard *.cpp)
 
@@ -10,10 +10,10 @@ OBJECTS=$(patsubst %.cpp, %.o, $(SOURCES))
 TARGET=$(lastword $(subst /, ,$(realpath .)))
 
 all: $(TARGET)
-	@echo $(TARGET) built
+	@echo sketch built
 
 $(TARGET): $(OBJECTS)
-	@g++ $(CFLAGS) -o $@ $(OBJECTS) -lcprocessing -lglut -lGL -lGLU
+	@g++ $(CFLAGS) -o sketch $(OBJECTS) -lcprocessing -lglut -lGL -lGLU -lGLEW
 
 clean:
 	rm -rf $(OBJECTS) $(TARGET)

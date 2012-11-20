@@ -5,7 +5,7 @@
  *      Author: esperanc
  */
 
-#include <cprocessing.hpp>
+#include <cprocessing/cprocessing.hpp>
 
 using namespace cprocessing;
 

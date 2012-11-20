@@ -1,7 +1,7 @@
 #
 # Generic makefile for making an example program using the cprocessing library
 #
-CFLAGS = -g -fPIC
+CFLAGS = -g -fPIC 
 
 SOURCES= $(wildcard *.cpp)
 
@@ -9,14 +9,11 @@ OBJECTS=$(patsubst %.cpp, %.o, $(SOURCES))
 
 TARGET=$(lastword $(subst /, ,$(realpath .)))
 
-LINKS= -lcprocessing -lglut -lGLU -lGL
-
 all: $(TARGET)
-	@echo $(TARGET) built
+	@echo sketch built
 
 $(TARGET): $(OBJECTS)
-    #@echo Magick++-config --cppflags --cxxflags --ldflags --libs
-	@g++ $(CFLAGS) $(LINKS) -o $@ $(OBJECTS) $(Magick++-config --cppflags --cxxflags --ldflags --libs)
+	@g++ $(CFLAGS) -o sketch $(OBJECTS) -lcprocessing -lglut -lGL -lGLU -lGLEW
 
 clean:
 	rm -rf $(OBJECTS) $(TARGET)

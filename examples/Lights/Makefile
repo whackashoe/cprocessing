@@ -1,22 +1,19 @@
-ALLEXAMPLES=$(filter-out Makefile,$(wildcard *))
-TARGETS=$(foreach dir,$(ALLEXAMPLES),$(dir)/$(dir))
+#
+# Generic makefile for making an example program using the cprocessing library
+#
+CFLAGS = -g -fPIC 
 
-# A recipe for making an example inside folder with the same name
-define EXAMPLE_rule
-$(1)/$(1): $(wildcard $(1)/*.cpp) -lcprocessing -lglut -lGLU -lGL
-	$(MAKE) -C $(1)
-endef
+SOURCES= $(wildcard *.cpp)
 
-# A recipe for cleaning an example
-define CLEAN_rule
-$(MAKE) -C $(1) clean;
-endef
-	
-all: $(TARGETS)
+OBJECTS=$(patsubst %.cpp, %.o, $(SOURCES))
+
+TARGET=$(lastword $(subst /, ,$(realpath .)))
+
+all: $(TARGET)
+	@echo sketch built
+
+$(TARGET): $(OBJECTS)
+	@g++ $(CFLAGS) -o sketch $(OBJECTS) -lcprocessing -lglut -lGL -lGLU -lGLEW
 
 clean:
-	$(foreach folder,$(ALLEXAMPLES),$(call CLEAN_rule,$(folder)))
-		
-$(foreach folder,$(ALLEXAMPLES),$(eval $(call EXAMPLE_rule,$(folder))))
-		
-
+	rm -rf $(OBJECTS) $(TARGET)

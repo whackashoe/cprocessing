@@ -15,7 +15,7 @@ Example
 ~~~~.c
 //Draw Alien
 
-#include <cprocessing.hpp>
+#include <cprocessing/cprocessing.hpp>
 using namespace cprocessing;
 
 void setup(){
@@ -47,9 +47,10 @@ Please make sure you have the following dependencies installed
 * libGLU
 * libglut
 * libmagic++
+* libGLEW
 
 
-1. On debian distributions: sudo apt-get install libglu1mesa-dev freeglut3-dev libmagic++-dev
+1. On debian distributions: sudo apt-get install libglu1mesa-dev freeglut3-dev libmagic++-dev libglew1.6-dev
     
 2. git clone https://github.com/whackashoe/cprocessing
 3. cd cprocessing
@@ -70,7 +71,7 @@ Please make sure you have the following dependencies installed
 9. Copy cprocessing.hpp to MinGW's include directory
 10. Copy libcprocessing.a to MinGW's lib directory
 11. cd to examples, choose an example and open its Makefile
-12. change "-lcprocessing -lglut -lGL -lGLU" to "-lcprocessing -lfreeglut -lglu32 -lopengl32"
+12. change "-lcprocessing -lglut -lGL -lGLU" to "-lcprocessing -lfreeglut -lglu32 -lopengl32 -lglew32"
 12. save the file then type "make" in that directory
 13. now type "./(examplename)" without parethesis to open program
 14. Your done! That was ridiculous wasn't it?
@@ -86,6 +87,8 @@ cd to myfirstsketch and type "make"
 Now type "./myfirstsketch" and watch the magic ...?
 You can edit main.cpp all you like, just type make to compile your changes
 (note that not all processing functions are available yet)
+You can now also type "./debug.sh" to help debug your script if it compiles yet crashes (required gdb)
+
 
 
 License
