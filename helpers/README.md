@@ -9,7 +9,13 @@ makeexamples.sh
 ---
 runs make on all examples
 
+
 propagatemakethroughexamples.sh  
+---
+copies Makefile into all subdirs of examples folder
+
+
+propagategitignorethroughexamples.sh  
 ---
 copies Makefile into all subdirs of examples folder
 
@@ -37,6 +43,7 @@ simple script to run sketch inside gdb quickly
 SketchMakefile.lin  
 ---
 default makefile for windows used in sketchpad and examples
+
 
 todo.sh
 ---
