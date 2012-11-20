@@ -1,1 +1,0 @@
-This folder is where object files go when compiling cprocessing.
