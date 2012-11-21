@@ -28,3 +28,4 @@ sudo ln libcprocessing.so.$version libcprocessing.so || { echo 'linking libcproc
 echo "processing ldconfig"
 sudo ldconfig || { echo 'running ldconfig failed'; exit 8; }
 echo "Done"
+

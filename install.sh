@@ -2,8 +2,6 @@
 
 cd src
 sh install.sh
-cd ..
-doxygen
-cd helpers
-sh makeexamples.sh
+cd ../helpers
+sh makectags.sh
 echo "done"

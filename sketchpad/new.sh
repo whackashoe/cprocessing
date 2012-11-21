@@ -32,6 +32,7 @@ fi
 	
 cp ../helpers/sketchmain.cpp $1/main.cpp
 cp ../helpers/sketchdebug.sh $1/debug.sh
+cp ../helpers/tags $1/tags
 
 unamestr=`uname`
 if [ "$unamestr" = "Linux" ]; then

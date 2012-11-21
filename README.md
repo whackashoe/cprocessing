@@ -63,18 +63,19 @@ Please make sure you have the following dependencies installed
 1. In order to run cprocessing you must first install MinGW, grab the gui from http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/
 2. Make sure you select the C++ compiler and the MinGW Developer ToolKit, keep install path space free(default works good)
 3. Download freeglut from here: http://files.transmissionzero.co.uk/software/development/GLUT/freeglut-MinGW.zip and unzip it to some directory. Copy freeglut.dll to C:\Windows\System32 or C:\Windows\SystemWOW64 depending on 32 or 64 bit windows.
-4. Copy the files from the include directory to MinGW's include directory(default is C:\MinGW\include)
-5. Copy the files from the lib directory to MinGW's lib directory(default is C:\MinGW\lib)
-6. Open MinGW by Start->Programs->MinGW->MinGW shell
-7. clone the repository and cd into it
-8. type "make"
-9. Copy cprocessing.hpp to MinGW's include directory
-10. Copy libcprocessing.a to MinGW's lib directory
-11. cd to examples, choose an example and open its Makefile
-12. change "-lcprocessing -lglut -lGL -lGLU" to "-lcprocessing -lfreeglut -lglu32 -lopengl32 -lglew32"
-12. save the file then type "make" in that directory
-13. now type "./(examplename)" without parethesis to open program
-14. Your done! That was ridiculous wasn't it?
+4. Download glew from here: http://glew.sourceforge.net/ and unzip it into some directory.
+5. Copy the files from the include directorys to MinGW's include directory(default is C:\MinGW\include)
+6. Copy the files from the lib directorys to MinGW's lib directory(default is C:\MinGW\lib)
+7. Open MinGW by Start->Programs->MinGW->MinGW shell
+8. clone the repository and cd into it
+9. type "make"
+10. Copy cprocessing.hpp to MinGW's include directory
+11. Copy libcprocessing.a to MinGW's lib directory
+12. cd to examples, choose an example and open its Makefile
+13. change "-lcprocessing -lglut -lGL -lGLU" to "-lcprocessing -lfreeglut -lglu32 -lopengl32 -lglew32"
+14. save the file then type "make" in that directory
+15. now type "./(examplename)" without parethesis to open program
+16. Your done! That was ridiculous wasn't it?
 
 
 

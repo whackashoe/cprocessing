@@ -1,0 +1,350 @@
+BlendFactor	style.hpp	9
+CPROCESSING_COLOR_	color.hpp	4
+CPROCESSING_HPP_	cprocessing.hpp	9
+CPROCESSING_PVECTOR_	pvector.hpp	2
+CPROCESSING_STYLE	style.hpp	2
+DELETE	cprocessing.hpp	34
+MAXCOLOR	color.hpp	5
+NOISE_LARGE_PWR2	pnoise.hpp	30
+NOISE_MOD_MASK	pnoise.hpp	25
+NOISE_WRAP_INDEX	pnoise.hpp	24
+PPath	shapes.cpp	19
+PPath::PPath	shapes.cpp	/^	PPath () {$/
+PPath::addVertex	shapes.cpp	/^	void addVertex(const PVector& p) {$/
+PPath::setAutoNormals	shapes.cpp	/^	void setAutoNormals (int vstart, int vstride, boo/
+PPath::setNormal	shapes.cpp	/^	void setNormal(const PVector& n) { curNormal = n;/
+PPath::setTexCoord	shapes.cpp	/^	void setTexCoord (const PVector& t) { curTexCoord/
+RADIUS	cprocessing.hpp	31
+SIMPLEXNOISE_HPP_	snoise.hpp	2
+Style::Style	style.cpp	/^Style::Style() {$/
+_NOISE_CLASS_H_	pnoise.hpp	13
+allocbuffer	cprocessing.cpp	/^static void allocbuffer() {$/
+backbuffer	cprocessing.cpp	28
+baseStyle	cprocessing.cpp	24
+boolean	cprocessing.hpp	38
+boxNrm	primitives.cpp	36
+boxVtx	primitives.cpp	28
+clamp	color.cpp	/^inline unsigned char clamp(double v) {$/
+constant	lights.cpp	14
+cprocessing	color.cpp	63
+cprocessing	cprocessing.cpp	52
+cprocessing	cprocessing.hpp	46
+cprocessing	lights.cpp	31
+cprocessing	pnoise.cpp	27
+cprocessing	pnoise.hpp	32
+cprocessing	primitives.cpp	44
+cprocessing	pvector.hpp	7
+cprocessing	shapes.cpp	92
+cprocessing	snoise.cpp	6
+cprocessing	snoise.hpp	4
+cprocessing	style.hpp	12
+cprocessing	transformations.cpp	18
+cprocessing::ADD	color.hpp	9
+cprocessing::BACK_BUFFER	cprocessing.hpp	68
+cprocessing::BLEND	color.hpp	9
+cprocessing::BURN	color.hpp	9
+cprocessing::BlendMode	color.hpp	10
+cprocessing::CENTER	cprocessing.hpp	60
+cprocessing::CLOSE	cprocessing.hpp	80
+cprocessing::CODED	cprocessing.hpp	54
+cprocessing::CORNER	cprocessing.hpp	61
+cprocessing::CORNERS	cprocessing.hpp	61
+cprocessing::DARKEST	color.hpp	9
+cprocessing::DELETE	cprocessing.hpp	55
+cprocessing::DIFFERENCE	color.hpp	9
+cprocessing::DODGE	color.hpp	9
+cprocessing::DOWN	cprocessing.hpp	60
+cprocessing::END	cprocessing.hpp	60
+cprocessing::ENTER	cprocessing.hpp	54
+cprocessing::ESC	cprocessing.hpp	55
+cprocessing::EXCLUSION	color.hpp	9
+cprocessing::F1	cprocessing.hpp	59
+cprocessing::F10	cprocessing.hpp	59
+cprocessing::F11	cprocessing.hpp	59
+cprocessing::F12	cprocessing.hpp	59
+cprocessing::F2	cprocessing.hpp	59
+cprocessing::F3	cprocessing.hpp	59
+cprocessing::F4	cprocessing.hpp	59
+cprocessing::F5	cprocessing.hpp	59
+cprocessing::F6	cprocessing.hpp	59
+cprocessing::F7	cprocessing.hpp	59
+cprocessing::F8	cprocessing.hpp	59
+cprocessing::F9	cprocessing.hpp	59
+cprocessing::HALF_PIXEL_SHIFT	cprocessing.hpp	66
+cprocessing::HARD_LIGHT	color.hpp	9
+cprocessing::HOME	cprocessing.hpp	60
+cprocessing::INSERT	cprocessing.hpp	60
+cprocessing::LEFT	cprocessing.hpp	60
+cprocessing::LIGHTEST	color.hpp	9
+cprocessing::LINES	cprocessing.hpp	74
+cprocessing::LINE_LOOP	cprocessing.hpp	74
+cprocessing::LINE_STRIP	cprocessing.hpp	74
+cprocessing::MULTIPLY	color.hpp	9
+cprocessing::OPEN	cprocessing.hpp	80
+cprocessing::OVERLAY	color.hpp	9
+cprocessing::PAGEDOWN	cprocessing.hpp	60
+cprocessing::PAGEUP	cprocessing.hpp	60
+cprocessing::POINTS	cprocessing.hpp	74
+cprocessing::POLYGON	cprocessing.hpp	74
+cprocessing::PVector	pvector.hpp	9
+cprocessing::PVector::PVector	pvector.hpp	/^		PVector (double thex = 0, double they = 0, doubl/
+cprocessing::PVector::add	pvector.hpp	/^		PVector add (const PVector& other) const { retur/
+cprocessing::PVector::add	pvector.hpp	/^		static PVector add (const PVector& a, const PVec/
+cprocessing::PVector::angleBetween	pvector.hpp	/^		static double angleBetween (const PVector& a, co/
+cprocessing::PVector::array	pvector.hpp	/^		double* array() { return (double*) this; \/* I KN/
+cprocessing::PVector::cross	pvector.hpp	/^		static PVector cross (const PVector& v1, const P/
+cprocessing::PVector::cross	pvector.hpp	/^		PVector cross (const PVector& other) const { ret/
+cprocessing::PVector::dist	pvector.hpp	/^		double dist (const PVector& other) const { retur/
+cprocessing::PVector::dist	pvector.hpp	/^		static double dist (const PVector& a, const PVec/
+cprocessing::PVector::div	pvector.hpp	/^		PVector div(double s) const { return *this\/s; }$/
+cprocessing::PVector::div	pvector.hpp	/^		static PVector div(const PVector& v, double s)  /
+cprocessing::PVector::dot	pvector.hpp	/^		double dot (const PVector& other) const { return/
+cprocessing::PVector::dot	pvector.hpp	/^		static double dot (const PVector& a, const PVect/
+cprocessing::PVector::get	pvector.hpp	/^		PVector get() { return *this; }$/
+cprocessing::PVector::limit	pvector.hpp	/^		void limit (double max) {$/
+cprocessing::PVector::mag	pvector.hpp	/^		double mag () const { return sqrt(this->dot(*thi/
+cprocessing::PVector::mult	pvector.hpp	/^		PVector mult(double s) const { return *this*s; }/
+cprocessing::PVector::mult	pvector.hpp	/^		static PVector mult(const PVector& v, double s) /
+cprocessing::PVector::normalize	pvector.hpp	/^		void normalize() {$/
+cprocessing::PVector::operator*	pvector.hpp	/^		PVector operator*(double s) const { return PVect/
+cprocessing::PVector::operator+	pvector.hpp	/^		PVector operator+(const PVector& other) const { /
+cprocessing::PVector::operator-	pvector.hpp	/^		PVector operator-(const PVector& other) const { /
+cprocessing::PVector::operator/	pvector.hpp	/^		PVector operator\/(double s) const { return *this/
+cprocessing::PVector::set	pvector.hpp	/^		void set (double thex = 0, double they = 0, doub/
+cprocessing::PVector::set	pvector.hpp	/^		void set (const PVector& other) { *this = other;/
+cprocessing::PVector::set	pvector.hpp	/^		void set (const double other[]) { x = other[0]; /
+cprocessing::PVector::sub	pvector.hpp	/^		PVector sub (const PVector& other) const { retur/
+cprocessing::PVector::sub	pvector.hpp	/^		static PVector sub (const PVector& a, const PVec/
+cprocessing::QUADS	cprocessing.hpp	74
+cprocessing::QUAD_STRIP	cprocessing.hpp	74
+cprocessing::RADIUS	cprocessing.hpp	61
+cprocessing::REPLACE	color.hpp	9
+cprocessing::RETURN	cprocessing.hpp	54
+cprocessing::RIGHT	cprocessing.hpp	60
+cprocessing::SCREEN	color.hpp	9
+cprocessing::SOFT_LIGHT	color.hpp	9
+cprocessing::SUBTRACT	color.hpp	9
+cprocessing::ShapeClose	cprocessing.hpp	81
+cprocessing::ShapeMode	cprocessing.hpp	75
+cprocessing::SimplexNoise	snoise.hpp	5
+cprocessing::SimplexNoise::SimplexNoise	snoise.cpp	/^    SimplexNoise::SimplexNoise() {$/
+cprocessing::SimplexNoise::dot	snoise.cpp	/^    inline double SimplexNoise::dot(int g[], doubl/
+cprocessing::SimplexNoise::dot	snoise.cpp	/^    inline double SimplexNoise::dot(int g[], doubl/
+cprocessing::SimplexNoise::dot	snoise.cpp	/^    inline double SimplexNoise::dot(int g[], doubl/
+cprocessing::SimplexNoise::fastfloor	snoise.cpp	/^    inline int SimplexNoise::fastfloor(double x) {/
+cprocessing::SimplexNoise::noise	snoise.cpp	/^    double SimplexNoise::noise(double x, double y)/
+cprocessing::SimplexNoise::noise	snoise.cpp	/^    double SimplexNoise::noise(double x, double y,/
+cprocessing::SimplexNoise::noise	snoise.cpp	/^    double SimplexNoise::noise(double x, double y,/
+cprocessing::Style	style.hpp	13
+cprocessing::TAB	cprocessing.hpp	55
+cprocessing::TRIANGLES	cprocessing.hpp	74
+cprocessing::TRIANGLE_FAN	cprocessing.hpp	74
+cprocessing::TRIANGLE_STRIP	cprocessing.hpp	74
+cprocessing::UP	cprocessing.hpp	60
+cprocessing::Y_DOWN	cprocessing.hpp	67
+cprocessing::abs	cprocessing.hpp	/^	inline C abs(const C& a) { return a<0 ? a*-1 : a;/
+cprocessing::alpha	color.cpp	/^    double alpha(const color & color){$/
+cprocessing::ambientLight	lights.cpp	/^    void ambientLight(double v1, double v2, double/
+cprocessing::applyMatrix	transformations.cpp	/^	void applyMatrix (double matrix [16]) {$/
+cprocessing::backBuffer	cprocessing.cpp	/^    void backBuffer() {$/
+cprocessing::background	cprocessing.cpp	/^    void background (const color& c) {$/
+cprocessing::background	cprocessing.hpp	/^	inline void background (double r, double g, doubl/
+cprocessing::background	cprocessing.hpp	/^	inline void background (double gray, double a = M/
+cprocessing::beginShape	shapes.cpp	/^	void beginShape(ShapeMode mode) {$/
+cprocessing::bezier	cprocessing.hpp	/^	inline void bezier(double x1, double y1, double c/
+cprocessing::bezier	shapes.cpp	/^	void bezier(double x1, double y1, double z1, doub/
+cprocessing::bezierDetail	shapes.cpp	/^	void bezierDetail(int n)$/
+cprocessing::bezierPoint	shapes.cpp	/^	double bezierPoint (double a, double b, double c,/
+cprocessing::bezierTangent	shapes.cpp	/^	double bezierTangent (double a,double b,double c,/
+cprocessing::bezierVertex	cprocessing.hpp	/^	inline void bezierVertex(double cx1,double cy1,do/
+cprocessing::bezierVertex	shapes.cpp	/^	void bezierVertex(double cx1, double cy1, double /
+cprocessing::blendColor	cprocessing.cpp	/^     color blendColor(const color a, const color b/
+cprocessing::blue	color.cpp	/^    double blue(const color & color){$/
+cprocessing::box	cprocessing.hpp	/^	inline void box(double size) { box(size,size,size/
+cprocessing::box	primitives.cpp	/^	void box(double width, double height, double dept/
+cprocessing::brightness	color.cpp	/^    double brightness(const color & color){$/
+cprocessing::camera	transformations.cpp	/^	void camera (double eyeX, double eyeY, double eye/
+cprocessing::camera	transformations.cpp	/^	void camera () {$/
+cprocessing::color	color.hpp	13
+cprocessing::color::color	color.cpp	/^    color::color(double val1, double val2, double /
+cprocessing::color::color	color.cpp	/^    color::color(double gray, double alpha) {$/
+cprocessing::color::color	color.cpp	/^    color::color(std::string) {$/
+cprocessing::color::color	color.hpp	/^		color () {}$/
+cprocessing::color::toDouble	color.cpp	/^    void color::toDouble(double a[]) {$/
+cprocessing::color::toFloat	color.cpp	/^    void color::toFloat(float a[]) {$/
+cprocessing::colorMode	color.cpp	/^    void colorMode(unsigned mode, double range1, d/
+cprocessing::colorMode	color.cpp	/^    void colorMode(unsigned mode) {$/
+cprocessing::colorMode	color.hpp	/^	inline void colorMode(unsigned mode, double range/
+cprocessing::colorMode	color.hpp	/^	inline void colorMode(unsigned mode, double range/
+cprocessing::constrain	cprocessing.hpp	/^	inline C constrain(const C& a, const C& minv, con/
+cprocessing::cprocessing	color.hpp	6
+cprocessing::createImage	cprocessing.cpp	/^    PImage createImage(int width, int height, int /
+cprocessing::day	cprocessing.cpp	/^    int day() {$/
+cprocessing::degrees	cprocessing.hpp	/^	inline double degrees(double radians) { return ra/
+cprocessing::delay	cprocessing.hpp	/^         inline void delay( unsigned long ms ) { S/
+cprocessing::delay	cprocessing.hpp	/^         inline void delay( unsigned long ms ) { u/
+cprocessing::directionalLight	lights.cpp	/^    void directionalLight(double v1, double v2, do/
+cprocessing::display	cprocessing.cpp	/^    static void display () {$/
+cprocessing::dist	cprocessing.hpp	/^	inline double dist (double x1, double y1, double /
+cprocessing::dist	cprocessing.hpp	/^	inline double dist (double x1, double y1, double /
+cprocessing::ellipse	primitives.cpp	/^	void ellipse (double x, double y, double width, d/
+cprocessing::ellipseDetail	primitives.cpp	/^	void ellipseDetail (unsigned n) {$/
+cprocessing::ellipseMode	primitives.cpp	/^	void ellipseMode (unsigned mode) {$/
+cprocessing::endShape	shapes.cpp	/^	void endShape() {$/
+cprocessing::fill	cprocessing.cpp	/^    void fill (const color& c) {$/
+cprocessing::fill	cprocessing.hpp	/^	inline void fill (double r, double g, double b, d/
+cprocessing::fill	cprocessing.hpp	/^	inline void fill (double gray, double a = MAXCOLO/
+cprocessing::frameRate	cprocessing.hpp	/^	inline void frameRate(int n) { framerate = n; }$/
+cprocessing::getMatrix	transformations.cpp	/^	void getMatrix (double matrix [16]) {$/
+cprocessing::green	color.cpp	/^    double green(const color & color){$/
+cprocessing::hour	cprocessing.cpp	/^    int hour() {$/
+cprocessing::hue	color.cpp	/^    double hue(const color & color){$/
+cprocessing::image	cprocessing.cpp	/^    void image(PImage img, int x, int y) {$/
+cprocessing::init	cprocessing.cpp	/^    static void init () {$/
+cprocessing::keyboard	cprocessing.cpp	/^    static void keyboard (unsigned char ch, int x,/
+cprocessing::keyboardup	cprocessing.cpp	/^    static void keyboardup (unsigned char ch, int /
+cprocessing::lerp	cprocessing.hpp	/^	inline double lerp (double value1, double value2,/
+cprocessing::lerpColor	cprocessing.cpp	/^    color lerpColor(const color a, const color b, /
+cprocessing::lightFalloff	lights.cpp	/^    void lightFalloff(double constant, double line/
+cprocessing::lightSpecular	lights.cpp	/^    void lightSpecular (double v1, double v2, doub/
+cprocessing::lights	lights.cpp	/^    void lights()$/
+cprocessing::line	cprocessing.hpp	/^	inline void line (double x0, double y0, double x1/
+cprocessing::line	primitives.cpp	/^	void line (double x0, double y0, double z0, doubl/
+cprocessing::loadBytes	cprocessing.cpp	/^    const char * loadBytes(const char * src) {$/
+cprocessing::loop	cprocessing.hpp	/^    inline void loop() { looping = true; }$/
+cprocessing::mag	cprocessing.hpp	/^	inline double mag (double a, double b) { return s/
+cprocessing::mag	cprocessing.hpp	/^	inline double mag (double a, double b, double c) /
+cprocessing::map	cprocessing.hpp	/^	inline double map(double value,double low1, doubl/
+cprocessing::max	cprocessing.hpp	/^	inline C max(const C& a, const C& b) { return a>b/
+cprocessing::max	cprocessing.hpp	/^	inline C max(const C& a, const C& b, const C& c) /
+cprocessing::millis	cprocessing.hpp	/^    inline long millis() { return (long) ((long do/
+cprocessing::min	cprocessing.hpp	/^	inline C min(const C& a, const C& b) { return a<b/
+cprocessing::min	cprocessing.hpp	/^	inline C min(const C& a, const C& b, const C& c) /
+cprocessing::minute	cprocessing.cpp	/^    int minute() {$/
+cprocessing::month	cprocessing.cpp	/^    int month() {$/
+cprocessing::mouse	cprocessing.cpp	/^    static void mouse (int button, int state, int /
+cprocessing::mousemotion	cprocessing.cpp	/^    static void mousemotion (int x, int y) {$/
+cprocessing::noBackBuffer	cprocessing.cpp	/^    void noBackBuffer() {$/
+cprocessing::noFill	cprocessing.hpp	/^	inline void noFill() {$/
+cprocessing::noLights	lights.cpp	/^    void noLights()$/
+cprocessing::noLoop	cprocessing.hpp	/^    inline void noLoop() { looping = false; }$/
+cprocessing::noSmooth	cprocessing.cpp	/^    void noSmooth() {$/
+cprocessing::noStroke	cprocessing.hpp	/^	inline void noStroke() {$/
+cprocessing::noise	pnoise.cpp	/^    double noise(double x) {$/
+cprocessing::noise	pnoise.cpp	/^    double noise(double x, double y) {$/
+cprocessing::noise	pnoise.cpp	/^    double noise(double x, double y, double z) {$/
+cprocessing::noiseSeed	pnoise.cpp	/^    void noiseSeed(int n) {$/
+cprocessing::norm	cprocessing.hpp	/^	inline double norm(double value,double low,double/
+cprocessing::normal	shapes.cpp	/^	void normal (double x, double y, double z) {$/
+cprocessing::ortho	transformations.cpp	/^	void ortho(double left, double right, double bott/
+cprocessing::ortho	transformations.cpp	/^	void ortho () {$/
+cprocessing::perlinNoise	pnoise.hpp	33
+cprocessing::perlinNoise::generateLookupTables	pnoise.cpp	/^	void perlinNoise::generateLookupTables() {$/
+cprocessing::perlinNoise::noise	pnoise.cpp	/^	double perlinNoise::noise(double x) { $/
+cprocessing::perlinNoise::noise	pnoise.cpp	/^	double perlinNoise::noise(double x, double y) { $/
+cprocessing::perlinNoise::noise	pnoise.cpp	/^	double perlinNoise::noise(double x, double y, dou/
+cprocessing::perlinNoise::noise1d	pnoise.cpp	/^	double perlinNoise::noise1d(double pos[1]) {$/
+cprocessing::perlinNoise::noise2d	pnoise.cpp	/^	double perlinNoise::noise2d(double pos[2]) {$/
+cprocessing::perlinNoise::noise3d	pnoise.cpp	/^	double perlinNoise::noise3d(double pos[2]) {$/
+cprocessing::perlinNoise::normalize2d	pnoise.cpp	/^	void perlinNoise::normalize2d(double vector[2]) {/
+cprocessing::perlinNoise::normalize3d	pnoise.cpp	/^	void perlinNoise::normalize3d(double vector[3]) {/
+cprocessing::perlinNoise::perlinNoise	pnoise.cpp	/^    perlinNoise::perlinNoise() {$/
+cprocessing::perlinNoise::randNoisedouble	pnoise.cpp	/^	inline double perlinNoise::randNoisedouble() { $/
+cprocessing::perlinNoise::reseed	pnoise.cpp	/^	void perlinNoise::reseed() {$/
+cprocessing::perlinNoise::reseed	pnoise.cpp	/^	void perlinNoise::reseed(unsigned int rSeed) {$/
+cprocessing::perspective	transformations.cpp	/^	void perspective(double fov, double aspect, doubl/
+cprocessing::perspective	transformations.cpp	/^    void perspective () {$/
+cprocessing::point	primitives.cpp	/^	void point (double x, double y, double z)$/
+cprocessing::pointLight	lights.cpp	/^    void pointLight(double v1, double v2, double v/
+cprocessing::popMatrix	transformations.cpp	/^	void popMatrix() {$/
+cprocessing::popStyle	cprocessing.cpp	/^    void popStyle() {$/
+cprocessing::print	cprocessing.hpp	/^	inline void print(const C& a) { std::cout << a; }/
+cprocessing::printerr	cprocessing.hpp	/^	inline void printerr(const C& a) { std::cerr << a/
+cprocessing::println	cprocessing.hpp	/^	inline void println(const C& a) { std::cout << a /
+cprocessing::pushMatrix	transformations.cpp	/^	void pushMatrix() {$/
+cprocessing::pushStyle	cprocessing.cpp	/^    void pushStyle() {$/
+cprocessing::quad	primitives.cpp	/^    void quad (double x0, double y0,$/
+cprocessing::radians	cprocessing.hpp	/^	inline double radians(double degrees) { return de/
+cprocessing::random	cprocessing.hpp	/^    inline double random(double howbig) {$/
+cprocessing::random	cprocessing.hpp	/^    inline float random(float howbig) {$/
+cprocessing::random	cprocessing.hpp	/^    inline float random(int howbig) {$/
+cprocessing::random	cprocessing.hpp	/^    inline double random(double howsmall, double h/
+cprocessing::random	cprocessing.hpp	/^    inline float random(float howsmall, float howb/
+cprocessing::random	cprocessing.hpp	/^    inline float random(int howsmall, int howbig) /
+cprocessing::randomSeed	cprocessing.hpp	/^    inline void randomSeed(unsigned int randomSeed/
+cprocessing::rect	primitives.cpp	/^	void rect (double x, double y, double a, double b/
+cprocessing::rectMode	primitives.cpp	/^	void rectMode (unsigned mode) {$/
+cprocessing::red	color.cpp	/^    double red(const color & color){$/
+cprocessing::redraw	cprocessing.cpp	/^    void redraw() {$/
+cprocessing::refresh	cprocessing.cpp	/^    static void refresh (int) {$/
+cprocessing::resetMatrix	transformations.cpp	/^	void resetMatrix() {$/
+cprocessing::reshape	cprocessing.cpp	/^    static void reshape (int w, int h)$/
+cprocessing::rotate	cprocessing.hpp	/^	inline void rotate (double radians) { rotateZ(rad/
+cprocessing::rotate	transformations.cpp	/^	void rotate (double radians, double axisx, double/
+cprocessing::rotateX	cprocessing.hpp	/^	inline void rotateX (double radians) { rotate(rad/
+cprocessing::rotateY	cprocessing.hpp	/^	inline void rotateY (double radians) { rotate(rad/
+cprocessing::rotateZ	cprocessing.hpp	/^	inline void rotateZ (double radians) { rotate(rad/
+cprocessing::round	cprocessing.hpp	/^	inline int round(double value) { return int(value/
+cprocessing::run	cprocessing.cpp	/^    void run() {$/
+cprocessing::saturation	color.cpp	/^    double saturation(const color & color){$/
+cprocessing::scale	cprocessing.hpp	/^    inline void scale (double factor) { scale (fac/
+cprocessing::scale	transformations.cpp	/^	void scale (double dx, double dy, double dz) {$/
+cprocessing::scale	transformations.cpp	/^	void scale (double dx, double dy) {$/
+cprocessing::screenX	cprocessing.hpp	/^	inline double screenX (double ox, double oy, doub/
+cprocessing::screenXYZ	transformations.cpp	/^	void screenXYZ (double ox, double oy, double oz,$/
+cprocessing::screenY	cprocessing.hpp	/^	inline double screenY (double ox, double oy, doub/
+cprocessing::screenZ	cprocessing.hpp	/^	inline double screenZ (double ox, double oy, doub/
+cprocessing::second	cprocessing.cpp	/^    int second() {$/
+cprocessing::set	cprocessing.cpp	/^	void set (int x, int y, const color& c) {$/
+cprocessing::size	cprocessing.cpp	/^    void size (unsigned w, unsigned h, const char*/
+cprocessing::smooth	cprocessing.cpp	/^    void smooth() {$/
+cprocessing::snoise	snoise.cpp	/^    double snoise(double x) {$/
+cprocessing::snoise	snoise.cpp	/^    double snoise(double x, double y) {$/
+cprocessing::snoise	snoise.cpp	/^    double snoise(double x, double y, double z) {$/
+cprocessing::snoise	snoise.cpp	/^    double snoise(double x, double y, double z, do/
+cprocessing::special	cprocessing.cpp	/^    static void special (int ch, int x, int y) {$/
+cprocessing::specialup	cprocessing.cpp	/^    static void specialup (int ch, int x, int y) {/
+cprocessing::sphere	primitives.cpp	/^	void sphere(double radius) {$/
+cprocessing::sphereDetail	cprocessing.hpp	/^	inline void sphereDetail (int res) { sphereDetail/
+cprocessing::sphereDetail	primitives.cpp	/^	void sphereDetail (int ur, int vr) {$/
+cprocessing::spotLight	lights.cpp	/^    void spotLight(double v1,   double v2,  double/
+cprocessing::sq	cprocessing.hpp	/^	inline double sq(double value) { return value*val/
+cprocessing::stroke	cprocessing.cpp	/^    void stroke (const color& c) {$/
+cprocessing::stroke	cprocessing.hpp	/^	inline void stroke (double r, double g, double b,/
+cprocessing::stroke	cprocessing.hpp	/^	inline void stroke (double gray, double a = MAXCO/
+cprocessing::strokeWeight	cprocessing.cpp	/^    void strokeWeight (int weight) {$/
+cprocessing::translate	transformations.cpp	/^	void translate (double dx, double dy, double dz) /
+cprocessing::translate	transformations.cpp	/^    void translate (double dx, double dy) {$/
+cprocessing::triangle	cprocessing.hpp	/^        inline void triangle (double x0, double y0/
+cprocessing::triangle	primitives.cpp	/^	void triangle (double x0, double y0, double z0,$/
+cprocessing::trim	cprocessing.cpp	/^    std::string trim(std::string str) {$/
+cprocessing::vertex	shapes.cpp	/^	void vertex (double x, double y, double z) {$/
+cprocessing::year	cprocessing.cpp	/^    int year() {$/
+dot2	pnoise.cpp	/^#define dot2(rx, ry, q)		( rx * q[0] + ry * q[1] )/
+dot3	pnoise.cpp	/^#define dot3(rx, ry, rz, q)     ( rx * q[0] + ry */
+draw	extfuncs.cpp	/^void draw()             { }$/
+easeCurve	pnoise.cpp	/^#define easeCurve(t)		( t * t * (3.0 - 2.0 * t) )$/
+exit	cprocessing.hpp	/^#define exit(); exit(EXIT_SUCCESS);$/
+far	transformations.cpp	15
+hsb_to_rgb	color.cpp	/^static void hsb_to_rgb (double h, double s, double/
+keyPressed	extfuncs.cpp	/^void keyPressed()       { }$/
+keyReleased	extfuncs.cpp	/^void keyReleased()      { }$/
+lightCount	lights.cpp	13
+lights	lights.cpp	12
+lightsOn	lights.cpp	/^static void lightsOn()$/
+linear	lights.cpp	15
+linearInterp	pnoise.cpp	/^#define linearInterp(t, a, b)	( a + t * (b - a) )$/
+mouseDragged	extfuncs.cpp	/^void mouseDragged()     { }$/
+mouseMoved	extfuncs.cpp	/^void mouseMoved()       { }$/
+mousePressed	extfuncs.cpp	/^void mousePressed()     { }$/
+mouseRecordFlag	cprocessing.cpp	26
+mouseReleased	extfuncs.cpp	/^void mouseReleased()    { }$/
+near	transformations.cpp	14
+quadratic	lights.cpp	16
+readbuffer	cprocessing.cpp	/^static void readbuffer() {$/
+rgb_to_hsb	color.cpp	/^static void rgb_to_hsb (double r, double g, double/
+setup	extfuncs.cpp	/^void setup() { size (100,100, "cprocessing"); }$/
+setupValues	pnoise.cpp	/^#define setupValues(t, axis, g0, g1, d0, d1, pos) /
+shape	shapes.cpp	86
+shapemode	shapes.cpp	87
+writebuffer	cprocessing.cpp	/^static void writebuffer() {$/
