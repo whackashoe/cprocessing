@@ -70,7 +70,7 @@ namespace cprocessing {
 	
 	bool looping = true;   ///redisplay if true
 
-	unsigned config = HALF_PIXEL_SHIFT | Y_DOWN | BACK_BUFFER; ///< Configuration flags
+	unsigned config = HALF_PIXEL_SHIFT | Y_DOWN; ///< Configuration flags
 
 	int framerate = 60; ///< Frames per second
   int frameCount = 0;
@@ -84,34 +84,33 @@ namespace cprocessing {
 	/// Global OpenGL initialization code. Should be called at least once when screen is established
 	///
     static void init () {
-    
-    	// Enable depth buffer
-    	glEnable(GL_DEPTH_TEST);
-    	
-    	// Make it possible to overwrite pixels
-        glDepthFunc(GL_LEQUAL);
-        
-        // Helps when drawing in 3D with wireframe superimposed on the filled faces
-        glPolygonOffset (1., -1.);
-        
-        // Cope with scaling transformations
-        //glEnable(GL_RESCALE_NORMAL);
-        glEnable(GL_NORMALIZE);
-	    
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+      // Enable depth buffer
+      glEnable(GL_DEPTH_TEST);
 
-        // Disable the default additional ambient component
-        float ambient [] = {0, 0, 0, 1};
-        glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambient);
- 
-		// By default, y is flipped, so front is clockwise
-		glFrontFace(GL_CW);
+      // Make it possible to overwrite pixels
+      glDepthFunc(GL_LEQUAL);
 
-    	// Make it possible to set material properties by using glcolor
-	    glEnable(GL_COLOR_MATERIAL);
-	    glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-    	glColorMaterial(GL_FRONT_AND_BACK, GL_SPECULAR);
+      // Helps when drawing in 3D with wireframe superimposed on the filled faces
+      glPolygonOffset (1., -1.);
+
+      // Cope with scaling transformations
+      //glEnable(GL_RESCALE_NORMAL);
+      glEnable(GL_NORMALIZE);
+
+      glEnable(GL_BLEND);
+      glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+      // Disable the default additional ambient component
+      float ambient [] = {0, 0, 0, 1};
+      glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambient);
+
+      // By default, y is flipped, so front is clockwise
+      glFrontFace(GL_CW);
+
+      // Make it possible to set material properties by using glcolor
+      glEnable(GL_COLOR_MATERIAL);
+      glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+      glColorMaterial(GL_FRONT_AND_BACK, GL_SPECULAR);
 	}    	
 
 
