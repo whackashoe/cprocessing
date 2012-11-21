@@ -1,29 +1,4 @@
-BlendFactor	style.hpp	9
-CPROCESSING_COLOR_	color.hpp	4
-CPROCESSING_HPP_	cprocessing.hpp	9
-CPROCESSING_PVECTOR_	pvector.hpp	2
-CPROCESSING_STYLE	style.hpp	2
-DELETE	cprocessing.hpp	34
-MAXCOLOR	color.hpp	5
-NOISE_LARGE_PWR2	pnoise.hpp	30
-NOISE_MOD_MASK	pnoise.hpp	25
-NOISE_WRAP_INDEX	pnoise.hpp	24
-PPath	shapes.cpp	19
-PPath::PPath	shapes.cpp	/^	PPath () {$/
-PPath::addVertex	shapes.cpp	/^	void addVertex(const PVector& p) {$/
-PPath::setAutoNormals	shapes.cpp	/^	void setAutoNormals (int vstart, int vstride, boo/
-PPath::setNormal	shapes.cpp	/^	void setNormal(const PVector& n) { curNormal = n;/
-PPath::setTexCoord	shapes.cpp	/^	void setTexCoord (const PVector& t) { curTexCoord/
-RADIUS	cprocessing.hpp	31
-SIMPLEXNOISE_HPP_	snoise.hpp	2
-Style::Style	style.cpp	/^Style::Style() {$/
-_NOISE_CLASS_H_	pnoise.hpp	13
-allocbuffer	cprocessing.cpp	/^static void allocbuffer() {$/
-backbuffer	cprocessing.cpp	28
-baseStyle	cprocessing.cpp	24
 boolean	cprocessing.hpp	38
-boxNrm	primitives.cpp	36
-boxVtx	primitives.cpp	28
 clamp	color.cpp	/^inline unsigned char clamp(double v) {$/
 constant	lights.cpp	14
 cprocessing	color.cpp	63
@@ -126,16 +101,6 @@ cprocessing::SOFT_LIGHT	color.hpp	9
 cprocessing::SUBTRACT	color.hpp	9
 cprocessing::ShapeClose	cprocessing.hpp	81
 cprocessing::ShapeMode	cprocessing.hpp	75
-cprocessing::SimplexNoise	snoise.hpp	5
-cprocessing::SimplexNoise::SimplexNoise	snoise.cpp	/^    SimplexNoise::SimplexNoise() {$/
-cprocessing::SimplexNoise::dot	snoise.cpp	/^    inline double SimplexNoise::dot(int g[], doubl/
-cprocessing::SimplexNoise::dot	snoise.cpp	/^    inline double SimplexNoise::dot(int g[], doubl/
-cprocessing::SimplexNoise::dot	snoise.cpp	/^    inline double SimplexNoise::dot(int g[], doubl/
-cprocessing::SimplexNoise::fastfloor	snoise.cpp	/^    inline int SimplexNoise::fastfloor(double x) {/
-cprocessing::SimplexNoise::noise	snoise.cpp	/^    double SimplexNoise::noise(double x, double y)/
-cprocessing::SimplexNoise::noise	snoise.cpp	/^    double SimplexNoise::noise(double x, double y,/
-cprocessing::SimplexNoise::noise	snoise.cpp	/^    double SimplexNoise::noise(double x, double y,/
-cprocessing::Style	style.hpp	13
 cprocessing::TAB	cprocessing.hpp	55
 cprocessing::TRIANGLES	cprocessing.hpp	74
 cprocessing::TRIANGLE_FAN	cprocessing.hpp	74
@@ -238,20 +203,6 @@ cprocessing::norm	cprocessing.hpp	/^	inline double norm(double value,double low,
 cprocessing::normal	shapes.cpp	/^	void normal (double x, double y, double z) {$/
 cprocessing::ortho	transformations.cpp	/^	void ortho(double left, double right, double bott/
 cprocessing::ortho	transformations.cpp	/^	void ortho () {$/
-cprocessing::perlinNoise	pnoise.hpp	33
-cprocessing::perlinNoise::generateLookupTables	pnoise.cpp	/^	void perlinNoise::generateLookupTables() {$/
-cprocessing::perlinNoise::noise	pnoise.cpp	/^	double perlinNoise::noise(double x) { $/
-cprocessing::perlinNoise::noise	pnoise.cpp	/^	double perlinNoise::noise(double x, double y) { $/
-cprocessing::perlinNoise::noise	pnoise.cpp	/^	double perlinNoise::noise(double x, double y, dou/
-cprocessing::perlinNoise::noise1d	pnoise.cpp	/^	double perlinNoise::noise1d(double pos[1]) {$/
-cprocessing::perlinNoise::noise2d	pnoise.cpp	/^	double perlinNoise::noise2d(double pos[2]) {$/
-cprocessing::perlinNoise::noise3d	pnoise.cpp	/^	double perlinNoise::noise3d(double pos[2]) {$/
-cprocessing::perlinNoise::normalize2d	pnoise.cpp	/^	void perlinNoise::normalize2d(double vector[2]) {/
-cprocessing::perlinNoise::normalize3d	pnoise.cpp	/^	void perlinNoise::normalize3d(double vector[3]) {/
-cprocessing::perlinNoise::perlinNoise	pnoise.cpp	/^    perlinNoise::perlinNoise() {$/
-cprocessing::perlinNoise::randNoisedouble	pnoise.cpp	/^	inline double perlinNoise::randNoisedouble() { $/
-cprocessing::perlinNoise::reseed	pnoise.cpp	/^	void perlinNoise::reseed() {$/
-cprocessing::perlinNoise::reseed	pnoise.cpp	/^	void perlinNoise::reseed(unsigned int rSeed) {$/
 cprocessing::perspective	transformations.cpp	/^	void perspective(double fov, double aspect, doubl/
 cprocessing::perspective	transformations.cpp	/^    void perspective () {$/
 cprocessing::point	primitives.cpp	/^	void point (double x, double y, double z)$/
@@ -285,7 +236,6 @@ cprocessing::rotateX	cprocessing.hpp	/^	inline void rotateX (double radians) { r
 cprocessing::rotateY	cprocessing.hpp	/^	inline void rotateY (double radians) { rotate(rad/
 cprocessing::rotateZ	cprocessing.hpp	/^	inline void rotateZ (double radians) { rotate(rad/
 cprocessing::round	cprocessing.hpp	/^	inline int round(double value) { return int(value/
-cprocessing::run	cprocessing.cpp	/^    void run() {$/
 cprocessing::saturation	color.cpp	/^    double saturation(const color & color){$/
 cprocessing::scale	cprocessing.hpp	/^    inline void scale (double factor) { scale (fac/
 cprocessing::scale	transformations.cpp	/^	void scale (double dx, double dy, double dz) {$/
@@ -320,10 +270,7 @@ cprocessing::triangle	primitives.cpp	/^	void triangle (double x0, double y0, dou
 cprocessing::trim	cprocessing.cpp	/^    std::string trim(std::string str) {$/
 cprocessing::vertex	shapes.cpp	/^	void vertex (double x, double y, double z) {$/
 cprocessing::year	cprocessing.cpp	/^    int year() {$/
-dot2	pnoise.cpp	/^#define dot2(rx, ry, q)		( rx * q[0] + ry * q[1] )/
-dot3	pnoise.cpp	/^#define dot3(rx, ry, rz, q)     ( rx * q[0] + ry */
 draw	extfuncs.cpp	/^void draw()             { }$/
-easeCurve	pnoise.cpp	/^#define easeCurve(t)		( t * t * (3.0 - 2.0 * t) )$/
 exit	cprocessing.hpp	/^#define exit(); exit(EXIT_SUCCESS);$/
 far	transformations.cpp	15
 hsb_to_rgb	color.cpp	/^static void hsb_to_rgb (double h, double s, double/
@@ -341,10 +288,5 @@ mouseRecordFlag	cprocessing.cpp	26
 mouseReleased	extfuncs.cpp	/^void mouseReleased()    { }$/
 near	transformations.cpp	14
 quadratic	lights.cpp	16
-readbuffer	cprocessing.cpp	/^static void readbuffer() {$/
 rgb_to_hsb	color.cpp	/^static void rgb_to_hsb (double r, double g, double/
 setup	extfuncs.cpp	/^void setup() { size (100,100, "cprocessing"); }$/
-setupValues	pnoise.cpp	/^#define setupValues(t, axis, g0, g1, d0, d1, pos) /
-shape	shapes.cpp	86
-shapemode	shapes.cpp	87
-writebuffer	cprocessing.cpp	/^static void writebuffer() {$/
