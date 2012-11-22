@@ -3,6 +3,11 @@
 #ifndef CPROCESSING_COLOR_
 #define CPROCESSING_COLOR_
 #define MAXCOLOR 1e10
+
+#ifdef DIFFERENCE
+#undef DIFFERENCE
+#endif
+
 namespace cprocessing {  
     //blend types
     typedef enum {

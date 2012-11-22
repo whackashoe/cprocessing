@@ -116,7 +116,7 @@ namespace cprocessing {
 			default: glBegin(GL_POLYGON);	break; 
 		}
 
-		for(uint i=0; i<shape.vtx.size(); i++) {
+		for(unsigned int i=0; i<shape.vtx.size(); i++) {
 			if(shape.fillC[i].rgba[3] > 0) {
 				glColor4ubv (shape.fillC[i].rgba);
 				glVertex3d(shape.vtx[i].x, shape.vtx[i].y, shape.vtx[i].z);
@@ -125,7 +125,7 @@ namespace cprocessing {
 		glEnd();
 
 		glBegin(GL_LINE_STRIP);
-		for(uint i=0; i<shape.vtx.size(); i++) {
+		for(unsigned int i=0; i<shape.vtx.size(); i++) {
 			if(shape.strokeC[i].rgba[3] > 0) {
 				glColor4ubv (shape.strokeC[i].rgba);
 				glVertex3d(shape.vtx[i].x, shape.vtx[i].y, shape.vtx[i].z);
