@@ -6,6 +6,8 @@
  */
 
 #include "cprocessing.hpp"
+#include "pixelcolorbuffer.hpp"
+
 //#include "ArrayList.hpp"
 
 /// This will link with the client's functions
@@ -21,38 +23,15 @@ extern void keyReleased();
 using namespace cprocessing;
 
 
-Style baseStyle;
-
-bool mouseRecordFlag = true; // When to record or not the mouse position
-/// Variables and functions to maintain a backup buffer
-char * backbuffer = 0;
-
-static void allocbuffer() {
-	if (backbuffer != 0) delete backbuffer;
-	backbuffer = new char [width*height*4]; 
-}
-
-static void readbuffer() {
-	if (backbuffer) {
-		glFlush();
-		glReadPixels (0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE , (void*) backbuffer);
-	}
-}
-
-static void writebuffer() {
-	if (backbuffer) {
-		glPushMatrix();
-		glLoadIdentity();
-		glRasterPos3f(0,0,0);
-		glDrawPixels (width, height, GL_RGBA, GL_UNSIGNED_BYTE , (void*) backbuffer);
-		glPopMatrix();
-	}
-}
-
 namespace cprocessing {
 
+  Style baseStyle;
+  bool mouseRecordFlag = true; // When to record or not the mouse position
+  /// Variables and functions to maintain a backup buffer for reading and drawing crap
+  char * backbuffer = 0;
+
 	//
-    // Global variables
+  // Global variables
 	//
 
 	int mouseX = 0;  ///< Mouse x coordinate
@@ -77,6 +56,7 @@ namespace cprocessing {
 	int initialized = false; 	///< Whether or not initialization of glut took place
 
   std::vector<Style> styles;
+  PixelColorBuffer pixels(backbuffer);
 	//color strokeColor (0,0,0);     ///< Line drawing color
 	//color fillColor   (255,255,255);   ///< Area drawing color
 
@@ -94,7 +74,7 @@ namespace cprocessing {
       glPolygonOffset (1., -1.);
 
       // Cope with scaling transformations
-      //glEnable(GL_RESCALE_NORMAL);
+      glEnable(GL_RESCALE_NORMAL);
       glEnable(GL_NORMALIZE);
 
       glEnable(GL_BLEND);
@@ -116,21 +96,12 @@ namespace cprocessing {
 
     /// This is called for each frame
     static void display () {
-
-		// Restore backing buffer if needed
-		if (config&BACK_BUFFER) writebuffer();
-        
         // Restore default state
         camera();
         perspective();
         noLights();
-
-        // Call external display function
         ::draw();
         mouseRecordFlag = true;
-
-		// Refresh backing buffer if needed
-	    if (config&BACK_BUFFER) readbuffer();
 
         // End by swapping front and back buffers
         glutSwapBuffers() ;
@@ -146,24 +117,15 @@ namespace cprocessing {
         width = w;
         height = h;
 
-        // Default background is gray 70%
-        background (200);
-        
         // Initialize OPENGL modes
         init();
-        
-        // Reset backup buffer if needed
-        if (config&BACK_BUFFER) {
-        	allocbuffer();
-        	readbuffer();
-        }
-       
+        allocbuffer();
     }
 
     /// The refresh function is called periodically to redisplay
     static void refresh (int) {
         if(looping) {
-            frameCount++;
+          frameCount++;
         	glutPostRedisplay();
         	glutTimerFunc (1000/framerate, refresh, 0);
         }
@@ -174,7 +136,144 @@ namespace cprocessing {
       display();
     }
 
-     color blendColor(const color a, const color b, unsigned mode) {
+    void allocbuffer() {
+      if (backbuffer != 0) delete backbuffer;
+      backbuffer = new char [width*height*4]; 
+    }
+
+    void loadPixels() {
+      if (!backbuffer) allocbuffer();
+      glFlush();
+      glReadPixels (0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE , (void*) backbuffer);
+    }
+
+    //FIXME:: I seem to work when tested via prints here, but when calling outside of lib I always return 0 :(
+    void loadPixels(int x, int y, int w, int h) {
+      if (!backbuffer) allocbuffer();
+      glFlush();
+
+      //we copy the section here into a temp buffer then move it into the main backbuffer accordingly
+      char tbuffer[w*h*4];
+      glReadPixels (x, y, w, h, GL_RGBA, GL_UNSIGNED_BYTE , tbuffer);
+
+      for(int i=0, cx=x, cy=y; i<w*h; i++) {
+        if(i % w == 0) {
+          cx = 0;
+          cy++;
+        }
+        backbuffer[(cy*width)+cx] = tbuffer[i];
+
+        cx++;
+      }
+    }
+
+    void updatePixels() {
+      if (backbuffer) {
+        glFlush();
+        glPushMatrix();
+        glLoadIdentity();
+        glRasterPos3f(0,height,0);
+        glDrawPixels (width, height, GL_RGBA, GL_UNSIGNED_BYTE , (void*) backbuffer);
+        glPopMatrix();
+      } else {
+        printerr("loadPixels must be called before updatePixels");
+      }
+    }
+
+    color get(int x, int y) {
+      if (backbuffer) {
+        if(((y*width)+x) < width*height || x < 0 || y < 0) {
+          return buffertocolor(backbuffer, (y*width)+x);
+        } else {
+          printerr("get called outside of window frame");
+          return color(0, 255);
+        }
+      } else {
+        printerr("loadPixels must be called before get");
+        return color(0, 255);
+      }
+    }
+
+    std::vector<color> get(int x, int y, int w, int h) {
+      std::vector<color> v;
+
+      if (backbuffer) {
+        for(int yc = y; yc<y+h; yc++) {
+          for(int xc = x; xc<x+h; xc++) {
+            if((((y+h)*width)+(x+w)) < width*height || x > 0 || y > 0) {
+              v.push_back(buffertocolor(backbuffer, (yc*width)+xc));
+            } else {
+              v.push_back(color(0, 255));
+            }
+          }
+        }
+      } else {
+        printerr("loadPixels must be called before get");
+        v.push_back(color(0, 255));
+      }
+
+      return v;
+    }
+
+    /*    //sets a point on the screen 
+  //TODO: make this draw ontop of screen instead of affected by transformations
+  void set (int x, int y, const color& c) {
+      if(c.rgba[3] > 0) {
+            if (config&Y_DOWN)  y = y + height; // invert y coordinate
+            glPushMatrix();
+            glRasterPos2i (x,y);                // set write position
+            glColor4ubv(c.rgba);
+        glBegin (GL_POINTS);
+        glVertex2d (0, 0);
+        glEnd();      
+            glPopMatrix();
+    }
+  }*/
+
+    void set(int x, int y, const color& c) {
+      if (backbuffer) {
+        if(((y*width)+x) < width*height && x > 0 && y > 0) {
+          colortobuffer(backbuffer, (y*width)+x, c);
+        } else {
+          printerr("set called outside of window frame");
+        }
+      } else {
+        printerr("loadPixels must be called before get");
+      }
+    }
+
+    void set(int x, int y, int w, int h, const color& c) {
+      if (backbuffer) {
+        for(int yc = y; yc<y+h; yc++) {
+          for(int xc = x; xc<x+h; xc++) {
+            if((((y+h)*width)+(x+w)) < width*height && x > 0 && y > 0) {
+              colortobuffer(backbuffer, (y*width)+x, c);
+            }
+          }
+        }
+      } else {
+        printerr("loadPixels must be called before get");
+      }
+    }
+
+    color buffertocolor(char * b, int n) {
+      color c(0, styles[styles.size()-1].maxA);
+      c.rgba[0]=b[(n*4)+0];
+      c.rgba[1]=b[(n*4)+1];
+      c.rgba[2]=b[(n*4)+2];
+      c.rgba[3]=b[(n*4)+3];
+      return c;
+    }
+
+    void colortobuffer(char * b, int n, const color& c) {
+      b[(n*4)+0] = c.rgba[0];
+      b[(n*4)+1] = c.rgba[1];
+      b[(n*4)+2] = c.rgba[2];
+      b[(n*4)+3] = c.rgba[3];
+    }
+
+
+     color blendColor(const color& a, const color& b, unsigned mode) {
         assert (mode == REPLACE || mode == BLEND || mode == ADD || mode == SUBTRACT || mode == DARKEST || mode == LIGHTEST || mode == DIFFERENCE || mode == EXCLUSION || mode == MULTIPLY || mode == SCREEN || mode == OVERLAY || mode == HARD_LIGHT || mode == SOFT_LIGHT || mode == DODGE || mode == BURN);
         //TODO:: finish blend modes
         switch(mode) {
@@ -228,7 +327,7 @@ namespace cprocessing {
         return color();
     }
 
-    color lerpColor(const color a, const color b, double amt) {
+    color lerpColor(const color& a, const color& b, double amt) {
       return color(lerp(a.rgba[0], b.rgba[0], amt), 
                    lerp(a.rgba[1], b.rgba[1], amt), 
                    lerp(a.rgba[2], b.rgba[2], amt), 
@@ -347,14 +446,8 @@ namespace cprocessing {
 
     /// Called whenever a special key is released
     static void specialup (int ch, int x, int y) {
-		// Restore backing buffer if needed
-		if (config&BACK_BUFFER) writebuffer();
-
     	keyPressed = false;
     	::keyReleased();
-
-		// Refresh backing buffer if needed
-		if (config&BACK_BUFFER) readbuffer();
     }
 
     /// Sets up a window of the given size
@@ -384,13 +477,6 @@ namespace cprocessing {
 
     }
 
-    void noBackBuffer() {
-        if(config&BACK_BUFFER) config ^= BACK_BUFFER;
-    }
-
-    void backBuffer() {
-        if(!config&BACK_BUFFER) config |= BACK_BUFFER;
-    }
     /// Sets line color
     /// @param c New line color
     void stroke (const color& c) {
@@ -436,21 +522,6 @@ namespace cprocessing {
         glDisable(GL_POINT_SMOOTH);
         glDisable(GL_POLYGON_SMOOTH);
     }
-
-    //sets a point on the screen 
-	//TODO: make this draw ontop of screen instead of affected by transformations
-	void set (int x, int y, const color& c) {
-	    if(c.rgba[3] > 0) {
-            if (config&Y_DOWN)  y = y + height; // invert y coordinate
-            glPushMatrix();
-            glRasterPos2i (x,y);                // set write position
-            glColor4ubv(c.rgba);
-		    glBegin (GL_POINTS);
-		    glVertex2d (0, 0);
-		    glEnd();      
-            glPopMatrix();
-		}
-	}
 
     PImage createImage(int width, int height, int type) { 
         return PImage(width, height, type);
@@ -533,7 +604,7 @@ namespace cprocessing {
 
     //TODO:: and tab, Unicode "nbsp" character. & carriage return
     //TODO:: make this accept string arrays as well!
-    std::string trim(std::string str) {
+    String trim(String str) {
       unsigned int i=0;
 
       //front pass

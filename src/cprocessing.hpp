@@ -25,6 +25,7 @@
 #include "pnoise.hpp"
 #include "style.hpp"
 #include "ArrayList.hpp"
+#include "pixelcolorbuffer.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS
@@ -34,8 +35,9 @@
 #undef DELETE
 #endif
 
-//JAVA TO C SUGAR BABY YAY
+//JAVA TO C++ SUGAR BABY YAY
 typedef bool boolean;
+typedef std::string String;
 
 
 //rewrite basic syntax
@@ -104,23 +106,76 @@ namespace cprocessing {
 	extern int framerate; 		/**< Frames per second*/
     extern int frameCount; 		/**< frames since start*/
 	extern std::vector<Style> styles; /**< Stack of of styles*/
+	extern PixelColorBuffer pixels; /**< virtual array of pixels to get and put from (operated thru backbuffer) */
+	extern char * backbuffer;	 /**< holds color buffer of screen for loadPixels() / updatePixels()*/
 
 
 	//===========================================================================
 	//
 	// Some math utility functions and constants
 	//
-	const double PI = 3.14159265358979323846;	/**< PI   */
+
+    const double PI = 3.14159265358979323846;	/**< PI   */
 	const double TWO_PI = 2*PI;					/**< PI*2 */
 	const double HALF_PI = PI/2;				/**< PI/2 */
 	const double QUARTER_PI = PI/4;				/**< PI/4 */
-	
-    /**Turns off back buffer to speed up program*/
-    void noBackBuffer(); 
 
-    /**Turns on back buffer for clearer drawing
-     * This is turned on by default*/
-    void backBuffer();
+	/**Called automatically when window size is changed, all pixels for loadPixels(), updatePixels(), get(), set(), and pixels[] pull from the buffer that this function creates */
+	void allocbuffer();
+
+	/**Updates pixels you have saved into buffer */
+	void updatePixels();
+
+	/**Loads all the pixels on the screen into buffer*/
+	void loadPixels();
+
+	/**Loads a group of colors from the screen from specific coordinate and width/height into buffer
+	 * @param x any number between 0 and width
+     * @param y any number between 0 and height
+     * @param w amount of pixels to grab to the right of x
+     * @param h amount of pixels to grab to the right of y*/
+	void loadPixels(int x, int y, int w, int h);
+
+	/**Grabs a color from the screen at a specific coordinate, must call loadPixels() first
+	 * @param x any number between 0 and width
+     * @param y any number between 0 and height
+     * @return color at that place*/
+	color get(int x, int y);
+
+	/**Grabs a group of colors from the screen from specific coordinate and width/height, must call loadPixels() first
+	 * @param x any number between 0 and width
+     * @param y any number between 0 and height
+     * @param w amount of pixels to grab to the right of x
+     * @param h amount of pixels to grab to the right of y
+     * @return vector of colors grabbed*/
+	std::vector<color> get(int x, int y, int w, int h);
+	
+	/**Sets a pixel at coordinates to specific color
+	 * @param x any number between 0 and width
+     * @param y any number between 0 and height
+     * @param c color to set*/
+	void set(int x, int y, const color& c);
+
+	/**Sets a group of pixels at coordinates to specific color
+	 * @param x any number between 0 and width
+     * @param y any number between 0 and height
+     * @param w amount of pixels to set to the right of x
+     * @param h amount of pixels to set to the right of y
+     * @param c color to set*/
+	void set(int x, int y, int w, int h, const color& c);
+
+	/**Converts a pixel from the buffer into the color
+	* @param b buffer to set into (backbuffer for now)
+	* @param n pixel ((y*width)+x)
+	* @return color*/
+	color buffertocolor(char * b, int n);
+
+	/**Converts a pixel from the buffer into the color
+	* @param b buffer to set into (backbuffer for now)
+	* @param n pixel ((y*width)+x)
+	* @param c color to put into buffer*/
+
+	void colortobuffer(char * b, int n, const color& c);
 
 	/**Calculates absolute value of a number
      * @param a any number
@@ -358,10 +413,10 @@ namespace cprocessing {
 	/// @param y2 The y coordinate of the third vertex
 	/// @param x3 The x coordinate of the third vertex
 	/// @param y3 The y coordinate of the third vertex
-     	void quad (double x0, double y0,
+     void quad (double x0, double y0,
     		    double x1, double y1,
-    	            double x2, double y2,
-    	            double x3, double y3);
+   	            double x2, double y2,
+   	            double x3, double y3);
 
 
     	/// Draws a point.
@@ -369,9 +424,7 @@ namespace cprocessing {
 	/// @param y The y coordinate of the point
 	/// @param z The z coordinate of the point
 	void point (double x, double y, double z = 0);
-	
-	//put point on screen
-	void set (int x, int y, color c);
+
 	
 	/// Configures the way the 'rect' function interprets its arguments
 	/// @arg mode: either CENTER, RADIUS, CORNER or CORNERS
@@ -669,8 +722,8 @@ namespace cprocessing {
 
 	//string functions
 	/*
-    std::string join(std::string str[], std::string separator) {
-    	std::string r = "";
+    Stringsz join(String str[], String separator) {
+    	String r = "";
     	for(int i=0; i<str.length-1; i++) {
     		r += str[i];
     		r += separator;
@@ -680,14 +733,14 @@ namespace cprocessing {
     	return r;
     }*/
 
-    std::string trim(std::string str);
+    String trim(String str);
 
     /*
-    std::string nf(int n) {
+    String nf(int n) {
 
     }
 
-    std::string nf(float n) {
+    String nf(float n) {
 
     }*/
 

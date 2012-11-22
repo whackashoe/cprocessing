@@ -110,13 +110,13 @@ namespace cprocessing {
 	* @param b any color
 	* @param mode blending mode
     * @return new color*/
-    color blendColor(const color a, const color b, unsigned mode = BLEND);
+    color blendColor(const color& a, const color& b, unsigned mode = BLEND);
     /*! \relates color
     * Calculates a color or colors between two color at a specific increment. The amt parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is halfway in between, etc. 
 	* @param a any color
 	* @param b any color
 	* @param amt amount to interpolate between 0.0 and 1.0
     * @return new color*/
-    color lerpColor(const color a, const color b, double amt);
+    color lerpColor(const color& a, const color& b, double amt);
 }
 #endif
