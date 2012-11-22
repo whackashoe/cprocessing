@@ -174,47 +174,51 @@ namespace cprocessing {
 	/**Calculates absolute value of a number
      * @param a any number
      * @return positive number*/
-	template<class C>
-	inline C abs(const C& a) { return a<0 ? a*-1 : a; }
+	template<class T>
+	inline T abs(const T& a) { return a<0 ? a*-1 : a; }
 	
+
+	//TODO::all of the templates return the type of double
+	//FIXME:: this is to prevent issues where a char and two doubles are put in with a char being the result
+	//this isn't ideal for ints however, so there should be a better way
 
 	/**Calculates minimum between two numbers
      * @param a any number
      * @param b any number
      * @return smaller of the two numbers*/
-	template<class C>
-	inline C min(const C& a, const C& b) { return a<b ? a : b; }
+	template<class T, class U>
+	inline double min(const T& a, const U& b) { return a<b ? a : b; }
 	
 	/**Calculates maximum between two numbers
      * @param a any number
      * @param b any number
      * @return larger of the two numbers*/
-	template<class C>
-	inline C max(const C& a, const C& b) { return a>b ? a : b; }
+	template<class T, class U>
+	inline double max(const T& a, const U& b) { return a>b ? a : b; }
 	
 	/**Calculates minimum between three numbers
      * @param a any number
      * @param b any number
      * @param c any number
      * @return smallest of the three numbers*/
-	template<class C>
-	inline C min(const C& a, const C& b, const C& c) { return a<b ? min(a,c) : min(b,c); }
+	template<class T, class U, class V>
+	inline double min(const T& a, const U& b, const V& c) { return a<b ? min(a,c) : min(b,c); }
 	
 	/**Calculates maximum between three numbers
      * @param a any number
      * @param b any number
      * @param c any number
      * @return largest of the three numbers*/
-	template<class C>
-	inline C max(const C& a, const C& b, const C& c) { return a>b ? max(a,c) : max(b,c); }
+	template<class T, class U, class V>
+	inline double max(const T& a, const U& b, const V& c) { return a>b ? max(a,c) : max(b,c); }
 	
 	/**Constrain value to a certain range
      * @param a any number
      * @param minv minimum
      * @param maxv maximum
      * @return a if a < c && a > b or b if a < b or c if a > c*/
-	template<class C>
-	inline C constrain(const C& a, const C& minv, const C& maxv) { return min(maxv,max(minv,a)); }
+	template<class T, class U, class V>
+	inline T constrain(const T& a, const U& minv, const V& maxv) { return min(maxv,max(minv,a)); }
 	
 	/**Calculates magnitude of 2d vector
      * @param a any number
@@ -768,7 +772,7 @@ namespace cprocessing {
     }
 
 
-    
+
 	/**Suppressed warnings for fread that size_t isn't used... well screw it we'll just trick it, from https://svn.boost.org/trac/boost/ticket/6118*/
 	inline void ignore_size(size_t s){};
     

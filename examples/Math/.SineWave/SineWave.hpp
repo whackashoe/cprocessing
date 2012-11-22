@@ -1,2 +1,0 @@
-void calcWave();
-void renderWave();
