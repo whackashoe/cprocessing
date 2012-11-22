@@ -16,6 +16,11 @@ namespace cprocessing {
     
 	/// Color class
 	class color {
+	private:
+		/**Converts hexadecimal digit to int
+		 * @param c character
+		 * @returns number between 0-16*/
+		int htoi(const char& c);
 	public:
 		unsigned char rgba[4];
 		/// Empty constructor

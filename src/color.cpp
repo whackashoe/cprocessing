@@ -109,11 +109,52 @@ namespace cprocessing {
     }
     
     //TODO::make this disseminate #aaaaaa or #aaa words or else throw error
-    color::color(std::string) {
-        rgba[0] = 0;
-        rgba[1] = 0;
-        rgba[2] = 0;
-        rgba[3] = styles[styles.size()-1].maxA;
+    color::color(std::string s) {
+        if(s.length() == 4) {
+            rgba[0] = htoi(s[1])*16;
+            rgba[1] = htoi(s[2])*16;
+            rgba[2] = htoi(s[3])*16;
+        } else if(s.length() == 7) {
+            rgba[0] = (htoi(s[1])*16)+htoi(s[2]);
+            rgba[1] = (htoi(s[3])*16)+htoi(s[4]);
+            rgba[2] = (htoi(s[5])*16)+htoi(s[6]);
+        } else {
+            rgba[0] = 0;
+            rgba[1] = 0;
+            rgba[2] = 0;
+            if(styles.size() > 0)   rgba[3] = styles[styles.size()-1].maxA;
+            else                    rgba[3] = 255;
+        }
+    }
+
+    int color::htoi(const char& c) {
+        switch(c) {
+            case '0': return 0;  break;
+            case '1': return 1;  break;
+            case '2': return 2;  break;
+            case '3': return 3;  break;
+            case '4': return 4;  break;
+            case '5': return 5;  break;
+            case '6': return 6;  break;
+            case '7': return 7;  break;
+            case '8': return 8;  break;
+            case '9': return 9;  break;
+            case 'a': return 10; break;
+            case 'A': return 10; break;
+            case 'b': return 11; break;
+            case 'B': return 11; break;
+            case 'c': return 12; break;
+            case 'C': return 12; break;
+            case 'd': return 13; break;
+            case 'D': return 13; break;
+            case 'e': return 14; break;
+            case 'E': return 14; break;
+            case 'f': return 15; break;
+            case 'F': return 15; break;
+            default:
+                printerr("error in hex to ascii");
+                return 0;
+        }
     }
 
 
