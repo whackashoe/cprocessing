@@ -124,6 +124,7 @@ namespace cprocessing {
 		}
 		glEnd();
 
+		//TODO:: ignore this if nostroke is set for speed
 		glBegin(GL_LINE_STRIP);
 		for(unsigned int i=0; i<shape.vtx.size(); i++) {
 			if(shape.strokeC[i].rgba[3] > 0) {

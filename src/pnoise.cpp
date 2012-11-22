@@ -42,11 +42,11 @@ namespace cprocessing {
 	/////////////////////////////////////////////////////////////////////
 	// initialize static variables
 
-	unsigned perlinNoise::initialized = 0;
-	unsigned perlinNoise::permutationTable[NOISE_WRAP_INDEX*2 + 2] = { 0 };
-	double    perlinNoise::gradientTable1d[NOISE_WRAP_INDEX*2 + 2] = { 0 };
-	double    perlinNoise::gradientTable2d[NOISE_WRAP_INDEX*2 + 2][2] = { 0 };
-	double    perlinNoise::gradientTable3d[NOISE_WRAP_INDEX*2 + 2][3] = { 0 };
+	unsigned perlinNoise::initialized 								 = 0;
+	unsigned perlinNoise::permutationTable[NOISE_WRAP_INDEX*2 + 2] 	 = { 0 };
+	double   perlinNoise::gradientTable1d[NOISE_WRAP_INDEX*2 + 2] 	 = { 0 };
+	double   perlinNoise::gradientTable2d[NOISE_WRAP_INDEX*2 + 2][2] = {{ 0 }};
+	double   perlinNoise::gradientTable3d[NOISE_WRAP_INDEX*2 + 2][3] = {{ 0 }};
 
 	
     perlinNoise::perlinNoise() {

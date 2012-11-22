@@ -7,7 +7,6 @@
 
 #ifndef CPROCESSING_HPP_
 #define CPROCESSING_HPP_
-//#include <Magick++.h>
 #include <cmath>
 #include <cassert>
 #include <iostream>
@@ -31,19 +30,14 @@
 #ifdef RADIUS
 #undef RADIUS
 #endif
+
 #ifdef DELETE
 #undef DELETE
 #endif
 
-//JAVA TO C++ SUGAR BABY YAY
+
 typedef bool boolean;
 typedef std::string String;
-
-
-//rewrite basic syntax
-#ifndef exit();
-#define exit(); exit(EXIT_SUCCESS);
-#endif
 
 namespace cprocessing {
 
@@ -775,6 +769,9 @@ namespace cprocessing {
 
 
     
+	/**Suppressed warnings for fread that size_t isn't used... well screw it we'll just trick it, from https://svn.boost.org/trac/boost/ticket/6118*/
+	inline void ignore_size(size_t s){};
+    
     const char * loadBytes(const char * src);
 
     void redraw();
@@ -799,4 +796,4 @@ namespace cprocessing {
     void run();
 }
 
-#endif /* CPROCESSING_HPP_ */
+#endif

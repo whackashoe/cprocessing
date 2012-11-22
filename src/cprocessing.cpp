@@ -608,13 +608,13 @@ namespace cprocessing {
       unsigned int i=0;
 
       //front pass
-      while(i < str.length()-1 && (str[i] == ' ' || str[i] == '\n' || str[i] == '\r\n')) i++;
+      while(i < str.length()-1 && (isspace(str[i]) || str[i] == '\n')) i++;
       str.erase(0, i);
 
       i = str.length()-1;
 
       //back pass
-      while(i > 0 && (str[i] == ' ' || str[i] == '\n' || str[i] == '\r\n')) i--;
+      while(i > 0 && (isspace(str[i]) || str[i] == '\n')) i--;
       str.erase(i, str.length()-i);
 
       return str;

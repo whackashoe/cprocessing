@@ -1,6 +1,6 @@
-CFLAGS = -Wall -g -fPIC -ggdb
+CFLAGS = -Wall -g -fPIC -ggdb -O3
 
-LINKS= `Magick++-config --cppflags --cxxflags --ldflags --libs` -lxml2
+LINKS= -lxml2
 
 OBJDIR= objects
 
@@ -17,6 +17,3 @@ clean:
 $(OBJDIR)/%.o: %.cpp cprocessing.hpp
 	@echo compiling $<
 	@g++ $(CFLAGS) -c $< -o $@ $(LINKS)
-
-examples:
-	$(MAKE) -C examples all

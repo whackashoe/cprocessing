@@ -1,12 +1,10 @@
 #include "cprocessing.hpp"
-//#include <Magick++.h>
 
 #ifndef CPROCESSING_PIMAGE_
 #define CPROCESSING_PIMAGE_
 
 
 using namespace cprocessing;
-//using namespace Magick;
 
 namespace cprocessing {     
     enum { ARGB, RGB, HSB, ALPHA };

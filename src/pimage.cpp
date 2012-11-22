@@ -14,7 +14,6 @@
 #include "pimage.hpp"
 
 using namespace cprocessing;
-//using namespace Magick;
 
 namespace cprocessing {
 
