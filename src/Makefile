@@ -1,4 +1,4 @@
-CFLAGS = -Wall -g -fPIC -ggdb -O3
+CFLAGS = -Wall -g -fPIC -ggdb -O3 
 
 LINKS= -lxml2
 

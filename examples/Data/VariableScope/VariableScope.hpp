@@ -1,2 +1,0 @@
-void drawAnotherLine();
-void drawYetAnotherLine();
