@@ -604,8 +604,9 @@ namespace cprocessing {
 
     //TODO:: and tab, Unicode "nbsp" character. & carriage return
     //TODO:: make this accept string arrays as well!
+    //FIXME
     String trim(String str) {
-      unsigned int i=0;
+      /*unsigned int i=0;
 
       //front pass
       while(i < str.length()-1 && (isspace(str[i]) || str[i] == '\n')) i++;
@@ -615,7 +616,7 @@ namespace cprocessing {
 
       //back pass
       while(i > 0 && (isspace(str[i]) || str[i] == '\n')) i--;
-      str.erase(i, str.length()-i);
+      str.erase(i, str.length()-i);*/
 
       return str;
     }

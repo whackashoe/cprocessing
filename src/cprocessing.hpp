@@ -13,6 +13,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -23,8 +24,9 @@
 #include "snoise.hpp"
 #include "pnoise.hpp"
 #include "style.hpp"
-#include "ArrayList.hpp"
+#include "arraylist.hpp"
 #include "pixelcolorbuffer.hpp"
+#include "string.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS
@@ -37,7 +39,6 @@
 
 
 typedef bool boolean;
-typedef std::string String;
 
 namespace cprocessing {
 
@@ -667,6 +668,8 @@ namespace cprocessing {
 	
     template<class C>
 	inline void println(const C& a) { std::cout << a << std::endl; }
+	template<>
+	inline void println(const String& a) { std::cout << a.self << std::endl; }
 
 	template<class C>
 	inline void printerr(const C& a) { std::cerr << a << std::endl; }
