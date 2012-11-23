@@ -43,7 +43,7 @@ namespace cprocessing {
 
         /**Removes all elements from ArrayList*/
         void clear() {
-            self.erase();
+            self.clear();
         }
 
         /**Copies ArrayList for your pleasure
