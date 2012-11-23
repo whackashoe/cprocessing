@@ -3,7 +3,6 @@
 using namespace cprocessing;
 
 Style::Style() {
-	std::cout << styles.size() << std::endl;
 	if(styles.size() > 0) {
 		/*strokeColor.rgba[0] = styles[styles.size()-1].strokeColor.rgba[0];     ///< Line drawing color
 		strokeColor.rgba[1] = styles[styles.size()-1].strokeColor.rgba[1];
