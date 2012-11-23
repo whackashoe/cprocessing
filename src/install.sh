@@ -6,7 +6,7 @@ version="0.1"   #increment this if testing to spot regressions
 libDest="/usr/local/lib"
 incDest="/usr/local/include"
 
-make || { echo 'make failed' ; exit 1; }
+make -j6 || { echo 'make failed' ; exit 1; }
 
 sudo cp *hpp $incDest/cprocessing || { echo 'copying headers to $incDest/cprocessing failed'; exit 2; }
 
