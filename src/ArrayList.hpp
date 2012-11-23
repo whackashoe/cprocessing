@@ -61,8 +61,8 @@ namespace cprocessing {
 
         //void ensureCapacity(int n);
 
-        T get(int index) {
-            return self[index];
+        T * get(int index) {
+            return &self[index];
         }
 
         int indexOf(T e) {
