@@ -39,6 +39,7 @@ namespace cprocessing {
 	    //PImage get (int x, int y, int w, int h); //TODO
         void loadImage(const char * src);
 	    void loadImage(String src) { loadImage(src.toCharArray()); }
+	    void updatePixels();
         //void mask(const int& maskarray); //TODO
         //void mask(const PImage& img);		//TODO
         void put (int x, int y, int w, int h);

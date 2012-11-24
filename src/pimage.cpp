@@ -50,10 +50,12 @@ namespace cprocessing {
     }
 
     color PImage::get(int x, int y) {
+        assert(x >= 0 && y >= 0 && x < w && y < h);
         return pixels.buffertocolor(((h-y)*w)+x);
     }
 
     void PImage::set(int x, int y, const color& c) {
+        assert(x >= 0 && y >= 0 && x < w && y < h);
         pixels.colortobuffer(((h-y)*w)+x, c);
     }
 
@@ -108,9 +110,8 @@ namespace cprocessing {
 
         glGenTextures(1, &textureID);
         glBindTexture(GL_TEXTURE_2D, textureID);
-        gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGBA, GL_UNSIGNED_BYTE, texturebuffer);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*)texturebuffer);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        
+        updatePixels();
 
         this->pixels.setBuffer(texturebuffer);
     }
@@ -131,6 +132,12 @@ namespace cprocessing {
 
         FreeImage_Save(FIF_PNG, bitmap, out, 0);
         FreeImage_Unload(bitmap);
+    }
+
+    void PImage::updatePixels() {
+        gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGBA, GL_UNSIGNED_BYTE, texturebuffer);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*)texturebuffer);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     }
 }
 
