@@ -70,7 +70,7 @@ namespace cprocessing {
     color::color(double gray, double alpha) {
         unsigned char val;
 
-        if(styles.size() > 0) { //FIXME::this is shit hack because creating a color with set digits before setup is called causes segfault
+        if(initialized) {
             if (alpha == MAXCOLOR) alpha = styles[styles.size()-1].maxA;
             val = clamp(gray/styles[styles.size()-1].max1*255);
         } else {
@@ -87,7 +87,7 @@ namespace cprocessing {
 
     color::color(double val1, double val2, double val3, double valA) {
 		//scale the values to a range of 255
-        if(styles.size() > 0) { //FIXME::this is shit hack because creating a color with set digits before setup is called causes segfault
+        if(initialized) {
     		val1 = val1/styles[styles.size()-1].max1; 
     		val2 = val2/styles[styles.size()-1].max2;
     		val3 = val3/styles[styles.size()-1].max3;
