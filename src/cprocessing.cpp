@@ -28,7 +28,7 @@ namespace cprocessing {
   Style baseStyle;
   bool mouseRecordFlag = true; // When to record or not the mouse position
   /// Variables and functions to maintain a backup buffer for reading and drawing crap
-  char * backbuffer = 0;
+  unsigned char * backbuffer = 0;
 
 	//
   // Global variables
@@ -56,7 +56,7 @@ namespace cprocessing {
 	int initialized = false; 	///< Whether or not initialization of glut took place
 
   std::vector<Style> styles;
-  PixelColorBuffer pixels(backbuffer);
+  PixelColorBuffer pixels;
 	//color strokeColor (0,0,0);     ///< Line drawing color
 	//color fillColor   (255,255,255);   ///< Area drawing color
 
@@ -69,6 +69,10 @@ namespace cprocessing {
 
       // Make it possible to overwrite pixels
       glDepthFunc(GL_LEQUAL);
+
+      glShadeModel(GL_SMOOTH);
+
+      glEnable(GL_MULTISAMPLE_ARB);
 
       // Helps when drawing in 3D with wireframe superimposed on the filled faces
       glPolygonOffset (1., -1.);
@@ -138,7 +142,7 @@ namespace cprocessing {
 
     void allocbuffer() {
       if (backbuffer != 0) delete backbuffer;
-      backbuffer = new char [width*height*4]; 
+      backbuffer = new unsigned char [width*height*4]; 
     }
 
     void loadPixels() {
@@ -183,7 +187,7 @@ namespace cprocessing {
     color get(int x, int y) {
       if (backbuffer) {
         if(((y*width)+x) < width*height || x < 0 || y < 0) {
-          return buffertocolor(backbuffer, (y*width)+x);
+          return pixels.buffertocolor((y*width)+x);
         } else {
           printerr("get called outside of window frame");
           return color(0, 255);
@@ -201,7 +205,7 @@ namespace cprocessing {
         for(int yc = y; yc<y+h; yc++) {
           for(int xc = x; xc<x+h; xc++) {
             if((((y+h)*width)+(x+w)) < width*height || x > 0 || y > 0) {
-              v.push_back(buffertocolor(backbuffer, (yc*width)+xc));
+              v.push_back(pixels.buffertocolor((yc*width)+xc));
             } else {
               v.push_back(color(0, 255));
             }
@@ -233,7 +237,7 @@ namespace cprocessing {
     void set(int x, int y, const color& c) {
       if (backbuffer) {
         if(((y*width)+x) < width*height && x > 0 && y > 0) {
-          colortobuffer(backbuffer, (y*width)+x, c);
+          pixels.colortobuffer((y*width)+x, c);
         } else {
           printerr("set called outside of window frame");
         }
@@ -247,7 +251,7 @@ namespace cprocessing {
         for(int yc = y; yc<y+h; yc++) {
           for(int xc = x; xc<x+h; xc++) {
             if((((y+h)*width)+(x+w)) < width*height && x > 0 && y > 0) {
-              colortobuffer(backbuffer, (y*width)+x, c);
+              pixels.colortobuffer((y*width)+x, c);
             }
           }
         }
@@ -255,23 +259,6 @@ namespace cprocessing {
         printerr("loadPixels must be called before get");
       }
     }
-
-    color buffertocolor(char * b, int n) {
-      color c(0, styles[styles.size()-1].maxA);
-      c.rgba[0]=b[(n*4)+0];
-      c.rgba[1]=b[(n*4)+1];
-      c.rgba[2]=b[(n*4)+2];
-      c.rgba[3]=b[(n*4)+3];
-      return c;
-    }
-
-    void colortobuffer(char * b, int n, const color& c) {
-      b[(n*4)+0] = c.rgba[0];
-      b[(n*4)+1] = c.rgba[1];
-      b[(n*4)+2] = c.rgba[2];
-      b[(n*4)+3] = c.rgba[3];
-    }
-
 
      color blendColor(const color& a, const color& b, unsigned mode) {
         assert (mode == REPLACE || mode == BLEND || mode == ADD || mode == SUBTRACT || mode == DARKEST || mode == LIGHTEST || mode == DIFFERENCE || mode == EXCLUSION || mode == MULTIPLY || mode == SCREEN || mode == OVERLAY || mode == HARD_LIGHT || mode == SOFT_LIGHT || mode == DODGE || mode == BURN);
@@ -527,18 +514,6 @@ namespace cprocessing {
         return PImage(width, height, type);
     }
 
-    void image(PImage img, int x, int y) {
-        //TODO
-       /* switch(img.type) {
-            case ARGB:  glDrawPixels(width, height, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*) img.pixels);  break;
-            case RGB:   glDrawPixels(width, height, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*) img.pixels);  break;
-            case ALPHA: glDrawPixels(width, height, GL_ALPHA, GL_UNSIGNED_BYTE, (GLvoid*) img.pixels); break;
-            //case HSB:   glDrawPixels(width, height, GL_HSB, GL_UNSIGNED_BYTE, (GLvoid*) img.pixels);   break;
-        }*/
-
-        img.put(x, y);
-    }
-
     int second() {
       time_t rawtime;
       struct tm * timeinfo;
@@ -682,7 +657,7 @@ namespace cprocessing {
 		  int argc = 0;
 		  char **argv = 0;
       glutInit(&argc, argv);
-	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH | GLUT_MULTISAMPLE);
 	    glutTimerFunc (1000/framerate, refresh, 0);
       styles.push_back(baseStyle);
       bezierDetail(50);
@@ -695,6 +670,8 @@ namespace cprocessing {
       colorMode(RGB);
       rectMode(CORNER);
       ellipseMode(CENTER);
+
+      pixels.setBuffer(backbuffer);
 
     	::setup();
       glutMainLoop();
