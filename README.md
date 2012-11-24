@@ -48,16 +48,21 @@ Please make sure you have the following dependencies installed
 * libglut
 * libmagic++
 * libGLEW
+* libFreeImage
 
 
-1. On debian distributions: sudo apt-get install libglu1mesa-dev freeglut3-dev libmagic++-dev libglew1.6-dev
-    
+1. On ubuntu distributions: sudo apt-get install libglu1mesa-dev freeglut3-dev libmagic++-dev libglew1.6-dev libfreeimage-dev
 2. git clone https://github.com/whackashoe/cprocessing
 3. cd cprocessing
 4. ./install.sh
 
 
 ## Windows:
+
+(WINDOWS COMPILATION AND WORKABILITY IS UNKNOWN)
+The following directions may no longer be correct. Well, actually they definitely aren't. I need to find a windows machine
+to test on and make sure cprocessing compiles and runs. If you know what you are doing it shouldn't be too hard- if you don't I suggest you 
+file multiple reports to motivate me.
 
 
 1. In order to run cprocessing you must first install MinGW, grab the gui from http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/
