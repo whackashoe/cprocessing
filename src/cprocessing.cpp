@@ -6,9 +6,7 @@
  */
 
 #include "cprocessing.hpp"
-#include "pixelcolorbuffer.hpp"
 
-//#include "ArrayList.hpp"
 
 /// This will link with the client's functions
 extern void draw();
@@ -218,21 +216,6 @@ namespace cprocessing {
 
       return v;
     }
-
-    /*    //sets a point on the screen 
-  //TODO: make this draw ontop of screen instead of affected by transformations
-  void set (int x, int y, const color& c) {
-      if(c.rgba[3] > 0) {
-            if (config&Y_DOWN)  y = y + height; // invert y coordinate
-            glPushMatrix();
-            glRasterPos2i (x,y);                // set write position
-            glColor4ubv(c.rgba);
-        glBegin (GL_POINTS);
-        glVertex2d (0, 0);
-        glEnd();      
-            glPopMatrix();
-    }
-  }*/
 
     void set(int x, int y, const color& c) {
       if (backbuffer) {
@@ -495,6 +478,18 @@ namespace cprocessing {
         glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
+    /// Clear the window with a background image
+    /// @param img: background image
+    void background (PImage& img) {
+        background(color(0));
+        image(img, 0, 0, width, height);
+    }
+
+    void background (PImage * img) {
+        background(color(0));
+        image(img, 0, 0, width, height);
+    }
+
     /// Sets state so that lines are rendered antialiased.
     void smooth() {
         glEnable(GL_LINE_SMOOTH);
@@ -577,70 +572,36 @@ namespace cprocessing {
       return atoi(buffer);
     }
 
-    //TODO:: and tab, Unicode "nbsp" character. & carriage return
-    //TODO:: make this accept string arrays as well!
-    //FIXME
-    String trim(String str) {
-      /*unsigned int i=0;
-
-      //front pass
-      while(i < str.length()-1 && (isspace(str[i]) || str[i] == '\n')) i++;
-      str.erase(0, i);
-
-      i = str.length()-1;
-
-      //back pass
-      while(i > 0 && (isspace(str[i]) || str[i] == '\n')) i--;
-      str.erase(i, str.length()-i);*/
-
-      return str;
-    }
-
-    //TODO
-    //fix this beast
     const char * loadBytes(const char * src) {
       int length;
       char * buffer;
 
       std::ifstream is;
       is.open(src, std::ios::binary);
-
-      // get length of file:
       is.seekg (0, std::ios::end);
       length = is.tellg();
       is.seekg (0, std::ios::beg);
-
-      // allocate memory:
       buffer = new char [length];
-
-      // read data as a block:
       is.read (buffer,length);
       is.close();
 
       return buffer;
     }
 
-    /*const char * loadStrings(const char * src) {
-      int length;
-      char * buffer;
+    ArrayList<String> loadStrings(const char * src) {
+      std::ifstream f(src);
+      std::string line;
+      ArrayList<String> strings;
 
-      std::ifstream is;
-      is.open(src, std::ios::in);
+      while(std::getline(f, line)) {
+          strings.add(String(line));
+      }
 
-      // get length of file:
-      is.seekg (0, std::ios::end);
-      length = is.tellg();
-      is.seekg (0, std::ios::beg);
+      return strings;
+    }
+    ArrayList<String> loadStrings(String src) { return loadStrings(src.toCharArray()); }
 
-      // allocate memory:
-      buffer = new char [length];
 
-      // read data as a block:
-      is.read (buffer,length);
-      is.close();
-
-      return buffer;
-    }*/
     
     void pushStyle() {
       Style * newStyle = new Style;
@@ -649,7 +610,7 @@ namespace cprocessing {
 
     void popStyle() {
       if(styles.size() > 1) styles.pop_back();
-      else                  std::cerr << "cannot have more popStyles() than pushStyles()" << std::endl;
+      else                  printerr("cannot have more popStyles() than pushStyles()");
     }
 
     /// Initializes and runs the application main event loop

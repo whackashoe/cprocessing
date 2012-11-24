@@ -65,8 +65,28 @@ namespace cprocessing {
     // Attributes
     //
     /// Constructor for the color class
+
+    // Constructor from a gray value
+    color::color(double gray, double alpha) {
+        unsigned char val;
+
+        if(styles.size() > 0) { //FIXME::this is shit hack because creating a color with set digits before setup is called causes segfault
+            if (alpha == MAXCOLOR) alpha = styles[styles.size()-1].maxA;
+            val = clamp(gray/styles[styles.size()-1].max1*255);
+        } else {
+            if (alpha == MAXCOLOR) alpha = 1.0;
+            val = clamp(gray/255*255);
+        }
+
+        rgba[0] = val;
+        rgba[1] = val;
+        rgba[2] = val;
+        rgba[3] = clamp(alpha*255);
+    }  
+
+
     color::color(double val1, double val2, double val3, double valA) {
-		//SCale the values to a range of 255
+		//scale the values to a range of 255
         if(styles.size() > 0) { //FIXME::this is shit hack because creating a color with set digits before setup is called causes segfault
     		val1 = val1/styles[styles.size()-1].max1; 
     		val2 = val2/styles[styles.size()-1].max2;
@@ -90,25 +110,6 @@ namespace cprocessing {
 		rgba[3] = clamp(valA*255);
     };
 
-    // Constructor from a gray value
-    color::color(double gray, double alpha) {
-        unsigned char val;
-
-        if(styles.size() > 0) { //FIXME::this is shit hack because creating a color with set digits before setup is called causes segfault
-    	    if (alpha == MAXCOLOR) alpha = styles[styles.size()-1].maxA;
-    	    val = clamp(gray/styles[styles.size()-1].max1*255);
-        } else {
-            if (alpha == MAXCOLOR) alpha = 1.0;
-            val = clamp(gray/255*255);
-        }
-
-	    rgba[0] = val;
-	    rgba[1] = val;
-	    rgba[2] = val;
-	    rgba[3] = clamp(alpha/styles[styles.size()-1].maxA*255);
-    }
-    
-    //TODO::make this disseminate #aaaaaa or #aaa words or else throw error
     color::color(std::string s) {
         if(s.length() == 4) {
             rgba[0] = htoi(s[1])*16;

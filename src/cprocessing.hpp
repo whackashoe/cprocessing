@@ -323,7 +323,10 @@ namespace cprocessing {
 	void strokeWeight (int weight);
 
 	/// Draws background with given color
-	void background (const color&);
+	void background (const color& c);
+
+	void background(PImage * img);
+	void background(PImage& img);
 
 	inline void background (double r, double g, double b, double a = MAXCOLOR) {
 		background (color (r,g,b,a));
@@ -656,14 +659,16 @@ namespace cprocessing {
     //text to console    
     template<class C>
 	inline void print(const C& a) { std::cout << a; }
-	
-    template<class C>
+	inline void print(String * a) { std::cout << (*a).self; }
+
+	template<class C>
 	inline void println(const C& a) { std::cout << a << std::endl; }
-	template<>
-	inline void println(const String& a) { std::cout << a.self << std::endl; }
+	inline void println(String * a) { std::cout << (*a).self << std::endl; }
 
 	template<class C>
 	inline void printerr(const C& a) { std::cerr << a << std::endl; }
+	inline void printerr(String * a) { std::cerr << (*a).self << std::endl; }
+
 
     //turns draw loop on or off
     inline void noLoop() { looping = false; }
@@ -676,6 +681,9 @@ namespace cprocessing {
 
     void image(PImage& img, int x, int y);
     void image(PImage& img, int x, int y, int w, int h);
+
+    void image(PImage * img, int x, int y);
+    void image(PImage * img, int x, int y, int w, int h);
 
     /**Configures the way the image function positions image
 	 * @param mode either CENTER, CORNER or CORNERS*/
@@ -782,8 +790,10 @@ namespace cprocessing {
     void pushStyle();
     void popStyle();
 
-    //const char * loadStrings(const char * src);
+    ArrayList<String> loadStrings(String src);
+    ArrayList<String> loadStrings(const char * src);
     
+
     //
 	// Initialization (file cprocessing.cpp)
 	//

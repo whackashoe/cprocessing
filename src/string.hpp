@@ -1,9 +1,10 @@
-#include "cprocessing.hpp"
 #include <string>
-#include <cprocessing/cprocessing.hpp>
+#include "cprocessing.hpp"
 
 #ifndef CPROCESSING_STRING_
 #define CPROCESSING_STRING_
+
+typedef bool boolean;
 
 using namespace cprocessing;
 
@@ -20,7 +21,7 @@ namespace cprocessing {
         String& operator= (const String& str);
         String& operator= (const std::string& str);
         String& operator= (const char* s);
-        String& operator= (char c);
+        String& operator= (const char c);
 
         /**Grab the character at index
          * @param index between 0-length
@@ -57,6 +58,10 @@ namespace cprocessing {
 
         /**Converts String to upper case*/
         void toUpperCase();
+
+        /**Converts String to char * 
+         * @returns char array*/
+        const char * toCharArray();
     };
 }
 

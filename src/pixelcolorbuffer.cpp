@@ -1,7 +1,6 @@
 #include "cprocessing.hpp"
 #include "pixelcolorbuffer.hpp"
 #include "style.hpp"
-#include "color.hpp"
 
 
 PixelColorBuffer::PixelColorBuffer() {
@@ -13,7 +12,7 @@ void PixelColorBuffer::setBuffer(unsigned char *& b) {
 }
 
 color PixelColorBuffer::buffertocolor(int n) {
-	color c(0, styles[styles.size()-1].maxA);
+	color c(0);
 	c.rgba[0]=(*b)[(n*4)+0];
 	c.rgba[1]=(*b)[(n*4)+1];
 	c.rgba[2]=(*b)[(n*4)+2];

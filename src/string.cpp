@@ -15,7 +15,7 @@ String::String(std::string s) {
 }
 
 String& String::operator= (const String& str) {
-	(*this) = str;
+	this->self = str.self;
 	return (*this);
 }
 
@@ -29,7 +29,7 @@ String& String::operator= (const char* s) {
 	return (*this);
 }
 
-String& String::operator= (char c) {
+String& String::operator= (const char c) {
 	this->self = c;
 	return (*this);
 }
@@ -69,4 +69,8 @@ void String::toLowerCase() {
 
 void String::toUpperCase() {
 	std::transform(self.begin(), self.end(), self.begin(), ::toupper);
+}
+
+const char * String::toCharArray() {
+	return self.c_str();
 }

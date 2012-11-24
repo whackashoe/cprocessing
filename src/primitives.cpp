@@ -266,6 +266,14 @@ namespace cprocessing {
 		}
     }
 
+    void image(PImage * img, int x, int y) {
+    	image(*img, x, y);
+    }
+
+    void image(PImage * img, int x, int y, int w, int h) {
+    	image(*img, x, y, w, h);
+    }
+
 
 	/// Controls the detail used to render a sphere by adjusting the number 
 	/// of vertices of the sphere mesh. The default resolution is 30, which creates 

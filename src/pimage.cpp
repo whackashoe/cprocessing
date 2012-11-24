@@ -24,7 +24,6 @@ namespace cprocessing {
         this->height = 0;
         this->type = ARGB;
         this->texturebuffer = 0;
-        //this->pixels = new PixelColorBuffer((unsigned char *) texturebuffer);
     }
 
     PImage::PImage (int width, int height, unsigned type) {
@@ -36,11 +35,14 @@ namespace cprocessing {
         this->height = height;
         this->type = type;
         this->texturebuffer = 0;
-        //this->pixels = new PixelColorBuffer((unsigned char *) texturebuffer);
     }
     
     /// Destructor
-    PImage::~PImage () {}
+    //TODO
+    PImage::~PImage () {
+        glDeleteTextures(1, &textureID);
+        if(texturebuffer) delete texturebuffer;
+    }
 
     
     PImage& PImage::get() {
@@ -48,38 +50,45 @@ namespace cprocessing {
     }
 
     color PImage::get(int x, int y) {
-        return pixels.buffertocolor((y*w)+x);
+        return pixels.buffertocolor(((h-y)*w)+x);
+    }
+
+    void PImage::set(int x, int y, const color& c) {
+        pixels.colortobuffer(((h-y)*w)+x, c);
     }
 
 
     /// Draws the image at position (x, y) of the screen
     void PImage::put (int x, int y, int w, int h) {
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, textureID);
-        glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA, w, h, 0, GL_RGBA,GL_UNSIGNED_BYTE,(GLvoid*)texturebuffer);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+        GLdouble vertices[] = { 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0 };
+        GLdouble texture[]  = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
+
+        // activate and specify pointer to vertex array
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+        glVertexPointer(2, GL_DOUBLE, 0, vertices);
+        glTexCoordPointer(2, GL_DOUBLE, 0, texture);
+
+
         glPushMatrix();
         glTranslatef(x, y, 0.0);
         glScalef(w, h, 1.0);
-        glBegin(GL_QUADS);
-            glTexCoord2f(0.0, 1.0);
-            glVertex3f(0.0, 0.0, 0.0);
-            glTexCoord2f(1.0, 1.0);
-            glVertex3f(1.0, 0.0, 0.0);
-            glTexCoord2f(1.0, 0.0);
-            glVertex3f(1.0, 1.0, 0.0);
-            glTexCoord2f(0.0, 0.0);
-            glVertex3f(0.0, 1.0, 0.0);
-        glEnd();
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        glColor4ubv (styles[styles.size()-1].fillColor.rgba);
+        glDrawArrays(GL_QUADS,0,4);
         glPopMatrix();
+
+        glDisableClientState(GL_VERTEX_ARRAY);
+        glDisableClientState(GL_TEXTURE_COORD_ARRAY);
         glDisable(GL_TEXTURE_2D);
     }
 
     void PImage::loadImage(const char * src) {
-        format = FreeImage_GetFileType(src,0);
-        imagen = FreeImage_Load(format, src);
- 
-        temp = imagen;
+        FREE_IMAGE_FORMAT format = FreeImage_GetFileType(src,0);
+        FIBITMAP * imagen = FreeImage_Load(format, src);
+        FIBITMAP * temp = imagen;
         imagen = FreeImage_ConvertTo32Bits(imagen);
         FreeImage_Unload(temp);
      
@@ -98,8 +107,30 @@ namespace cprocessing {
         }
 
         glGenTextures(1, &textureID);
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGBA, GL_UNSIGNED_BYTE, texturebuffer);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*)texturebuffer);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
         this->pixels.setBuffer(texturebuffer);
+    }
+
+    void PImage::save(const char * out) {
+        FIBITMAP *bitmap = FreeImage_Allocate(w, h, 24);
+        RGBQUAD c;
+        if (!bitmap) exit(1);
+
+        for(int y=0; y<h; y++) {
+            for(int x=0; x<w; x++) {
+                c.rgbRed    = texturebuffer[(((y*w)+x)*4)+0];
+                c.rgbGreen  = texturebuffer[(((y*w)+x)*4)+1];
+                c.rgbBlue   = texturebuffer[(((y*w)+x)*4)+2];
+                FreeImage_SetPixelColor(bitmap, x, y, &c);
+            }
+        }
+
+        FreeImage_Save(FIF_PNG, bitmap, out, 0);
+        FreeImage_Unload(bitmap);
     }
 }
 

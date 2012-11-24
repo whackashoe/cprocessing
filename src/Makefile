@@ -1,7 +1,5 @@
 CFLAGS = -Wall -g -fPIC -ggdb -O3 
 
-LINKS= -lxml2
-
 OBJDIR= objects
 
 SOURCES= $(wildcard *.cpp)
@@ -16,4 +14,4 @@ clean:
 
 $(OBJDIR)/%.o: %.cpp cprocessing.hpp
 	@echo compiling $<
-	@g++ $(CFLAGS) -c $< -o $@ $(LINKS)
+	@g++ $(CFLAGS) -c $< -o $@
