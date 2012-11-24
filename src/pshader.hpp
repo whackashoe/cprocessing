@@ -13,12 +13,11 @@ namespace cprocessing {
         int maxLength;
         GLint IsCompiled_FS;
         GLint IsCompiled_VS;
-
+        
         void init();
-        char * filetobuf(char * src);
     public:
-        char * vertSrc;
-        char * fragSrc;
+        const char * vertSrc;
+        const char * fragSrc;
         bool isbound;
 
         void release();
@@ -30,10 +29,10 @@ namespace cprocessing {
         GLuint glFragment;
         
         PShader();
-        PShader(char * vertSrc, char * fragSrc);
+        PShader(const char * vertSrc, const char * fragSrc);
 
-        void setVertexShader(char * src);
-        void setFragmentShader(char * src);
+        void setVertexShader(const char * src);
+        void setFragmentShader(const char * src);
         bool compileVertexShader();
         bool compileFragmentShader(); 
         void bind();
