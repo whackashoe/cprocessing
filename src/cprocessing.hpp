@@ -20,6 +20,7 @@
 
 #include <GL/gl.h>
 #include <GL/glut.h>
+#include <GL/glu.h>
 #include <FreeImage.h>
 
 #include "color.hpp"
@@ -31,6 +32,7 @@
 #include "style.hpp"
 #include "arraylist.hpp"
 #include "string.hpp"
+#include "pshader.hpp"
 
 //guard, if these are defined they will break windows compilation
 #ifdef RADIUS
@@ -104,9 +106,10 @@ namespace cprocessing {
 	extern unsigned config; 	/**< configuration flags*/
 	extern int framerate; 		/**< Frames per second*/
     extern int frameCount; 		/**< frames since start*/
-	extern std::vector<Style> styles; /**< Stack of of styles*/
+	extern std::vector<Style> styles; /**< Stack of styles*/
 	extern PixelColorBuffer pixels; /**< virtual array of pixels to get and put from (operated thru backbuffer) */
-	extern unsigned char * backbuffer;	 /**< holds color buffer of screen for loadPixels() / updatePixels()*/
+	extern PImage screenBuffer; // ^^
+	extern int initialized; 	//glut initialized yet
 
 
 	//===========================================================================
@@ -118,9 +121,6 @@ namespace cprocessing {
 	const double TWO_PI = 2*PI;					/**< PI*2 */
 	const double HALF_PI = PI/2;				/**< PI/2 */
 	const double QUARTER_PI = PI/4;				/**< PI/4 */
-
-	/**Called automatically when window size is changed, all pixels for loadPixels(), updatePixels(), get(), set(), and pixels[] pull from the buffer that this function creates */
-	void allocbuffer();
 
 	/**Updates pixels you have saved into buffer */
 	void updatePixels();
@@ -147,7 +147,7 @@ namespace cprocessing {
      * @param w amount of pixels to grab to the right of x
      * @param h amount of pixels to grab to the right of y
      * @return vector of colors grabbed*/
-	std::vector<color> get(int x, int y, int w, int h);
+	ArrayList<color> get(int x, int y, int w, int h);
 	
 	/**Sets a pixel at coordinates to specific color
 	 * @param x any number between 0 and width

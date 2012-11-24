@@ -4,7 +4,7 @@
  *  Created on: Apr 28, 2011
  *      Author: esperanc
  */
-
+#include <GL/glew.h>
 #include "cprocessing.hpp"
 
 
@@ -25,9 +25,6 @@ namespace cprocessing {
 
   Style baseStyle;
   bool mouseRecordFlag = true; // When to record or not the mouse position
-  /// Variables and functions to maintain a backup buffer for reading and drawing crap
-  unsigned char * backbuffer = 0;
-
 	//
   // Global variables
 	//
@@ -55,6 +52,7 @@ namespace cprocessing {
 
   std::vector<Style> styles;
   PixelColorBuffer pixels;
+  PImage screenBuffer;
 	//color strokeColor (0,0,0);     ///< Line drawing color
 	//color fillColor   (255,255,255);   ///< Area drawing color
 
@@ -121,7 +119,7 @@ namespace cprocessing {
 
         // Initialize OPENGL modes
         init();
-        allocbuffer();
+        loadPixels();
     }
 
     /// The refresh function is called periodically to redisplay
@@ -138,20 +136,19 @@ namespace cprocessing {
       display();
     }
 
-    void allocbuffer() {
-      if (backbuffer != 0) delete backbuffer;
-      backbuffer = new unsigned char [width*height*4]; 
-    }
-
     void loadPixels() {
-      if (!backbuffer) allocbuffer();
       glFlush();
-      glReadPixels (0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE , (void*) backbuffer);
+      if(screenBuffer.texturebuffer) delete screenBuffer.texturebuffer;
+      screenBuffer.texturebuffer = new unsigned char[width*height*4];
+      glReadPixels (0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE , (void*) screenBuffer.texturebuffer);
+      screenBuffer.w = width;
+      screenBuffer.h = height;
+      screenBuffer.updatePixels();
     }
 
     //FIXME:: I seem to work when tested via prints here, but when calling outside of lib I always return 0 :(
     void loadPixels(int x, int y, int w, int h) {
-      if (!backbuffer) allocbuffer();
+      /*if (!backbuffer) allocbuffer();
       glFlush();
 
       //we copy the section here into a temp buffer then move it into the main backbuffer accordingly
@@ -167,79 +164,39 @@ namespace cprocessing {
 
         cx++;
       }
+
+      screenBuffer.loadPixels();*/
     }
 
     void updatePixels() {
-      if (backbuffer) {
-        glFlush();
-        glPushMatrix();
-        glLoadIdentity();
-        glRasterPos3f(0,height,0);
-        glDrawPixels (width, height, GL_RGBA, GL_UNSIGNED_BYTE , (void*) backbuffer);
-        glPopMatrix();
-      } else {
-        printerr("loadPixels must be called before updatePixels");
-      }
+      image(screenBuffer, 0, 0, width, height);
     }
 
     color get(int x, int y) {
-      if (backbuffer) {
-        if(((y*width)+x) < width*height || x < 0 || y < 0) {
-          return pixels.buffertocolor((y*width)+x);
-        } else {
-          printerr("get called outside of window frame");
-          return color(0, 255);
-        }
-      } else {
-        printerr("loadPixels must be called before get");
-        return color(0, 255);
-      }
+      return screenBuffer.get(x, y);
     }
 
-    std::vector<color> get(int x, int y, int w, int h) {
-      std::vector<color> v;
+    ArrayList<color> get(int x, int y, int w, int h) {
+      ArrayList<color> v;
 
-      if (backbuffer) {
-        for(int yc = y; yc<y+h; yc++) {
-          for(int xc = x; xc<x+h; xc++) {
-            if((((y+h)*width)+(x+w)) < width*height || x > 0 || y > 0) {
-              v.push_back(pixels.buffertocolor((yc*width)+xc));
-            } else {
-              v.push_back(color(0, 255));
-            }
-          }
+      for(int yc = y; yc<y+h; yc++) {
+        for(int xc = x; xc<x+h; xc++) {
+          v.add(screenBuffer.get(x, y));
         }
-      } else {
-        printerr("loadPixels must be called before get");
-        v.push_back(color(0, 255));
       }
 
       return v;
     }
 
     void set(int x, int y, const color& c) {
-      if (backbuffer) {
-        if(((y*width)+x) < width*height && x > 0 && y > 0) {
-          pixels.colortobuffer((y*width)+x, c);
-        } else {
-          printerr("set called outside of window frame");
-        }
-      } else {
-        printerr("loadPixels must be called before get");
-      }
+      screenBuffer.set(x, y, c);
     }
 
     void set(int x, int y, int w, int h, const color& c) {
-      if (backbuffer) {
-        for(int yc = y; yc<y+h; yc++) {
-          for(int xc = x; xc<x+h; xc++) {
-            if((((y+h)*width)+(x+w)) < width*height && x > 0 && y > 0) {
-              pixels.colortobuffer((y*width)+x, c);
-            }
-          }
+      for(int yc = y; yc<y+h; yc++) {
+        for(int xc = x; xc<x+h; xc++) {
+          screenBuffer.set(x, y, c);
         }
-      } else {
-        printerr("loadPixels must be called before get");
       }
     }
 
@@ -443,6 +400,7 @@ namespace cprocessing {
 			glutSpecialFunc(special);
 			glutSpecialUpFunc(specialup);
 			initialized = true;
+      glewInit();
     	}
 
     }
@@ -618,7 +576,7 @@ namespace cprocessing {
 		  int argc = 0;
 		  char **argv = 0;
       glutInit(&argc, argv);
-	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH | GLUT_MULTISAMPLE);
+	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);
 	    glutTimerFunc (1000/framerate, refresh, 0);
       styles.push_back(baseStyle);
       bezierDetail(50);
@@ -632,7 +590,7 @@ namespace cprocessing {
       rectMode(CORNER);
       ellipseMode(CENTER);
 
-      pixels.setBuffer(backbuffer);
+      pixels.setBuffer(screenBuffer.texturebuffer);
 
     	::setup();
       glutMainLoop();
