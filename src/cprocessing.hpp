@@ -17,15 +17,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+#include <GL/gl.h>
 #include <GL/glut.h>
+#include <FreeImage.h>
+
 #include "color.hpp"
+#include "pixelcolorbuffer.hpp"
 #include "pimage.hpp"
 #include "pvector.hpp"
 #include "snoise.hpp"
 #include "pnoise.hpp"
 #include "style.hpp"
 #include "arraylist.hpp"
-#include "pixelcolorbuffer.hpp"
 #include "string.hpp"
 
 //guard, if these are defined they will break windows compilation
@@ -102,7 +106,7 @@ namespace cprocessing {
     extern int frameCount; 		/**< frames since start*/
 	extern std::vector<Style> styles; /**< Stack of of styles*/
 	extern PixelColorBuffer pixels; /**< virtual array of pixels to get and put from (operated thru backbuffer) */
-	extern char * backbuffer;	 /**< holds color buffer of screen for loadPixels() / updatePixels()*/
+	extern unsigned char * backbuffer;	 /**< holds color buffer of screen for loadPixels() / updatePixels()*/
 
 
 	//===========================================================================
@@ -158,19 +162,6 @@ namespace cprocessing {
      * @param h amount of pixels to set to the right of y
      * @param c color to set*/
 	void set(int x, int y, int w, int h, const color& c);
-
-	/**Converts a pixel from the buffer into the color
-	* @param b buffer to set into (backbuffer for now)
-	* @param n pixel ((y*width)+x)
-	* @return color*/
-	color buffertocolor(char * b, int n);
-
-	/**Converts a pixel from the buffer into the color
-	* @param b buffer to set into (backbuffer for now)
-	* @param n pixel ((y*width)+x)
-	* @param c color to put into buffer*/
-
-	void colortobuffer(char * b, int n, const color& c);
 
 	/**Calculates absolute value of a number
      * @param a any number
@@ -683,7 +674,12 @@ namespace cprocessing {
 
     PImage createImage(int width, int height, int type);
 
-    void image(PImage img, int x, int y);
+    void image(PImage& img, int x, int y);
+    void image(PImage& img, int x, int y, int w, int h);
+
+    /**Configures the way the image function positions image
+	 * @param mode either CENTER, CORNER or CORNERS*/
+    void imageMode(unsigned mode);
 
     //time functions
     inline long millis() { return (long) ((long double) (clock()/(CLOCKS_PER_SEC/1000))); }

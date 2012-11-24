@@ -239,6 +239,33 @@ namespace cprocessing {
     	glPopMatrix();
     }
 
+    void imageMode(unsigned mode) {
+      assert(mode == CORNER || mode == CORNERS || mode == CENTER);
+      ::styles[styles.size()-1].imageMode = mode;
+    }
+
+    void image(PImage& img, int x, int y) {
+      if(img.width == 0) {
+        image(img, x, y, img.w, img.h);
+      } else {
+        image(img, x, y, img.width, img.height);
+      }
+    }
+
+    void image(PImage& img, int x, int y, int w, int h) {
+    	switch (::styles[styles.size()-1].imageMode) {
+			case CORNER:
+				img.put(x, y, w, h);
+				break;
+			case CENTER:
+				img.put(x-w/2, y-h/2, w, h);
+	        	break;
+			case CORNERS:
+				img.put(x, y, x-w, y-h);
+			   	break;
+		}
+    }
+
 
 	/// Controls the detail used to render a sphere by adjusting the number 
 	/// of vertices of the sphere mesh. The default resolution is 30, which creates 

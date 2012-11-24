@@ -1,14 +1,33 @@
 #include "cprocessing.hpp"
-#include "color.hpp"
 #include "pixelcolorbuffer.hpp"
+#include "style.hpp"
+#include "color.hpp"
 
-using namespace cprocessing;
 
-PixelColorBuffer::PixelColorBuffer(char * b) {
-	this->b = b;
+PixelColorBuffer::PixelColorBuffer() {
+	this->b = 0;
 }
 
-//FIXME:: this should call from b and not backbuffer
+void PixelColorBuffer::setBuffer(unsigned char *& b) {
+	this->b = &b;
+}
+
+color PixelColorBuffer::buffertocolor(int n) {
+	color c(0, styles[styles.size()-1].maxA);
+	c.rgba[0]=(*b)[(n*4)+0];
+	c.rgba[1]=(*b)[(n*4)+1];
+	c.rgba[2]=(*b)[(n*4)+2];
+	c.rgba[3]=(*b)[(n*4)+3];
+	return c;
+}
+
+void PixelColorBuffer::colortobuffer(int n, const color& c) {
+	(*b)[(n*4)+0] = c.rgba[0];
+	(*b)[(n*4)+1] = c.rgba[1];
+	(*b)[(n*4)+2] = c.rgba[2];
+	(*b)[(n*4)+3] = c.rgba[3];
+}
+
 color PixelColorBuffer::operator[] (int x) {
-	return buffertocolor(backbuffer, x);
+	return this->buffertocolor(x);
 }

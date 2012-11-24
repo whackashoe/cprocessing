@@ -1,4 +1,8 @@
+#include <FreeImage.h>
 #include "cprocessing.hpp"
+#include "color.hpp"
+#include "pixelcolorbuffer.hpp"
+
 
 #ifndef CPROCESSING_PIMAGE_
 #define CPROCESSING_PIMAGE_
@@ -12,11 +16,20 @@ namespace cprocessing {
     /// Encapsulates a 2D RGBA image
 	class PImage {
 	public:
-	    color * pixels;  ///< Where the pixels are actually stored. Stored row by row
-	                     /// from top (row 0) to bottom
-        //Image * img;
-	    int width;       ///< width of the image (size of row)
-	    int height;      ///< height of the image (number of rows)
+		int w;	//width of actual image
+	    int h; //height of actual image
+
+	    GLubyte * texturebuffer; //holds rgba bytes here
+	    GLuint textureID; //opengls id for the texture of image
+
+	    FREE_IMAGE_FORMAT format;
+	    FIBITMAP * imagen;
+	    FIBITMAP * temp;
+
+	    PixelColorBuffer pixels;
+
+	    int width;       ///< width of the PImage (size of row)
+	    int height;      ///< height of the PImage (number of rows)
         unsigned type;
 
 
@@ -26,32 +39,21 @@ namespace cprocessing {
 	    /// @arg height vertical size
 	    /// @arg type ARGB, RGB or ALPHA
 	    PImage (int w, int h, unsigned type = ARGB);
-	    
-	    /// Destructor
 	    ~PImage ();
 	    
-	    /// Returns a copy of this image
-	    PImage get(); 
-	    
-	    /// Returns a copy of a subrectangle of this image
-	    PImage get (int x, int y, int w, int h);
-
-        void loadImage(std::string src);
-            
-	    /// Returns the pixel at coordinate (x,y) 
-	    inline color get(int x, int y) {
-	        assert(x >=0 && x < width && y >= 0 && y < height && pixels!=0);
-	        return pixels[y*width+x];
-	    }	    
-
-        //sets a pixel to a color
+	    PImage& get();
+	    color get(int x, int y);
+	    //PImage get (int x, int y, int w, int h);
+        void loadImage(const char * src);
+        void loadPixels();
+        void mask(const int& maskarray);
+        void mask(const PImage& img);
+        void put (int x, int y, int w, int h);
+        void resize(int w, int h);
+        //void save(String s);
         void set(int x, int y, const color& c);
-	    
-	    /// Draws the image at position (x, y) of the screen
-	    void put (int x, int y);
-	    
-	    /// Draws the image at position (x, y) of the screen with the given width and height
-	    void put (int x, int y, int w, int h);	    
+        void updatePixels();
+        void updatePixels(int x, int y, int w, int h);
 	};
 }
 
