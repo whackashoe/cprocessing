@@ -1,10 +1,12 @@
-CFLAGS = -Wall -g -fPIC -ggdb -O3 
+CXXFLAGS=-Wall -g -fPIC -ggdb -O3 -std=c++0x
 
-OBJDIR= objects
+OBJDIR=objects
 
 SOURCES= $(wildcard *.cpp)
 
 OBJECTS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SOURCES))
+
+CC=g++
 
 $(OBJDIR)/libcprocessing.a: $(OBJECTS)
 	ar -r $@ $(OBJECTS) 
@@ -14,4 +16,4 @@ clean:
 
 $(OBJDIR)/%.o: %.cpp cprocessing.hpp
 	@echo compiling $<
-	@g++ $(CFLAGS) -c $< -o $@
+	@$(CC) $(CXXFLAGS) -c $< -o $@
