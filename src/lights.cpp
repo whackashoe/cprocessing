@@ -33,8 +33,8 @@ namespace cprocessing {
     /// Defines a new directional light.
     /// @arg v1, v2, v3: color components.
     /// @arg nx, ny, nz: direction vector.
-    void directionalLight(double v1, double v2, double v3,
-                          double nx, double ny, double nz)
+    void directionalLight(float v1, float v2, float v3,
+                          float nx, float ny, float nz)
     {
         ::lightsOn();
         color c (v1,v2,v3);
@@ -61,7 +61,7 @@ namespace cprocessing {
     /// Defines a new directional light.
     /// @arg v1, v2, v3: color components.
     /// @arg x, y, z: position coordinates.
-    void pointLight(double v1, double v2, double v3, double x, double y, double z)
+    void pointLight(float v1, float v2, float v3, float x, float y, float z)
     {
         ::lightsOn();
         color c (v1,v2,v3);
@@ -87,7 +87,7 @@ namespace cprocessing {
     /// Defines a new ambient light.
     /// @arg v1, v2, v3: color components.
     /// @arg x, y, z: position coordinates.
-    void ambientLight(double v1, double v2, double v3, double x, double y, double z)
+    void ambientLight(float v1, float v2, float v3, float x, float y, float z)
     {
         ::lightsOn();
         color c (v1,v2,v3);
@@ -120,10 +120,10 @@ namespace cprocessing {
     /// @arg nx, ny, nz: direction vector.
     /// @arg angle: angle in radians of spot aperture.
     /// @arg concentration: exponent which determines preference for spot axis.
-    void spotLight(double v1,   double v2,  double v3,
-                   double x,    double y,   double z,
-                   double nx,   double ny,  double nz,
-                   double angle, double concentration)
+    void spotLight(float v1,   float v2,  float v3,
+                   float x,    float y,   float z,
+                   float nx,   float ny,  float nz,
+                   float angle, float concentration)
     {
         ::lightsOn();
         color c (v1,v2,v3);
@@ -156,7 +156,7 @@ namespace cprocessing {
 
     /// Defines a specular coefficients of new light sources.
     /// @arg v1, v2, v3: color components.
-    void lightSpecular (double v1, double v2, double v3)
+    void lightSpecular (float v1, float v2, float v3)
     {
     	color c (v1,v2,v3);
     	c.toFloat(styles[styles.size()-1].specular);
@@ -164,7 +164,7 @@ namespace cprocessing {
 
     /// Defines light attenuation factors
     /// @arg constant, linear, quadratic: coefficients of quadratic polynomial.
-    void lightFalloff(double constant, double linear, double quadratic)
+    void lightFalloff(float constant, float linear, float quadratic)
     {
         ::constant = constant;
         ::linear = linear;
