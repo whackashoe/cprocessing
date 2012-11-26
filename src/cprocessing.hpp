@@ -31,6 +31,7 @@
 #include "pnoise.hpp"
 #include "style.hpp"
 #include "arraylist.hpp"
+#include "hashmap.hpp"
 #include "string.hpp"
 #include "pshader.hpp"
 
@@ -66,7 +67,7 @@ namespace cprocessing {
 
 	/// Configuration flags
 	enum {
-		HALF_PIXEL_SHIFT = 1,    // Whether to shift vertex coordinates by half a pixel (true by default).
+		HALF_PIXEL_SHIFT = 0,    // Whether to shift vertex coordinates by half a pixel (false by default, true makes images slide).
 		Y_DOWN           = 1<<1, // Whether to flip the y axis so it points down, rather than up (true by default).
 		BACK_BUFFER		 = 1<<2  // Whether to use a backup buffer which is copied every frame in order to effect a stable drawing
 		                         // canvas which is maintained between frames (true by default, but should be disabled for speed).
@@ -332,8 +333,12 @@ namespace cprocessing {
 		background (color (r,g,b,a));
 	}
 
-	inline void background (double gray, double a = MAXCOLOR) {
+	inline void background (double gray, double a) {
 		background (color (gray,a));
+	}
+
+	inline void background(int gray) {
+		background(color(gray, MAXCOLOR));
 	}
 
 	// Line smoothing
@@ -618,18 +623,18 @@ namespace cprocessing {
     /// Defines a new directional light.
     /// @arg v1, v2, v3: color components.
     /// @arg nx, ny, nz: direction vector.
-    void directionalLight(double v1, double v2, double v3,
-                          double nx, double ny, double nz);
+    void directionalLight(float v1, float v2, float v3,
+                          float nx, float ny, float nz);
 
     /// Defines a new directional light.
     /// @arg v1, v2, v3: color components.
     /// @arg x, y, z: position coordinates.
-    void pointLight(double  v1,double  v2,double  v3,double  x,double  y,double  z);
+    void pointLight(float  v1,float  v2,float  v3,float  x,float  y,float  z);
 
     /// Defines a new ambient light.
     /// @arg v1, v2, v3: color components.
     /// @arg x, y, z: position coordinates.
-    void ambientLight(double  v1,double  v2,double  v3, double  x=0, double  y=0, double  z=0);
+    void ambientLight(float  v1,float  v2,float  v3, float  x=0, float  y=0, float  z=0);
 
     /// Defines a new spot light.
     /// @arg v1, v2, v3: color components.
@@ -637,18 +642,18 @@ namespace cprocessing {
     /// @arg nx, ny, nz: direction vector.
     /// @arg angle: angle in radians of spot aperture.
     /// @arg concentration: exponent which determines preference for spot axis.
-    void spotLight(double v1, double  v2, double  v3,
-                   double  x, double  y, double  z,
-                   double  nx, double ny,double  nz,
-                   double  angle, double  concentration);
+    void spotLight(float v1, float  v2, float  v3,
+                   float  x, float  y, float  z,
+                   float  nx, float ny,float  nz,
+                   float  angle, float  concentration);
 
     /// Defines a specular coefficients of new light sources.
     /// @arg v1, v2, v3: color components.
-    void lightSpecular (double v1,double  v2,double  v3);
+    void lightSpecular (float v1,float  v2,float  v3);
 
     /// Defines light attenuation factors
     /// @arg constant, linear, quadratic: coefficients of quadratic polynomial.
-    void lightFalloff(double  constant,double  linear,double  quadratic);
+    void lightFalloff(float  constant,float  linear,float  quadratic);
 
     /// Turns on the default lighting
     void lights();
@@ -658,16 +663,16 @@ namespace cprocessing {
     
     //text to console    
     template<class C>
-	inline void print(const C& a) { std::cout << a; }
-	inline void print(String * a) { std::cout << (*a).self; }
+	inline void print(const C& a) 			{ std::cout << a; }
+	inline void print(const String * a) 	{ std::cout << (*a).self; }
 
 	template<class C>
-	inline void println(const C& a) { std::cout << a << std::endl; }
-	inline void println(String * a) { std::cout << (*a).self << std::endl; }
+	inline void println(const C& a)			{ std::cout << a << std::endl; }
+	inline void println(const String * a) 	{ std::cout << (*a).self << std::endl; }
 
 	template<class C>
-	inline void printerr(const C& a) { std::cerr << a << std::endl; }
-	inline void printerr(String * a) { std::cerr << (*a).self << std::endl; }
+	inline void printerr(const C& a) 		{ std::cerr << a << std::endl; }
+	inline void printerr(const String * a) 	{ std::cerr << (*a).self << std::endl; }
 
 
     //turns draw loop on or off
