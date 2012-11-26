@@ -21,6 +21,7 @@ namespace cprocessing {
         ArrayList() {}
 
         ArrayList(int size) { 
+            self.reserve(size);
             maxSize = size;
         }
 

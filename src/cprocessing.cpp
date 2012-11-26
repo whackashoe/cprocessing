@@ -141,8 +141,8 @@ namespace cprocessing {
       if(screenBuffer.texturebuffer) delete screenBuffer.texturebuffer;
       screenBuffer.texturebuffer = new unsigned char[width*height*4];
       glReadPixels (0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE , (void*) screenBuffer.texturebuffer);
-      screenBuffer.w = width;
-      screenBuffer.h = height;
+      screenBuffer.width = width;
+      screenBuffer.height = height;
       screenBuffer.updatePixels();
     }
 
@@ -205,13 +205,22 @@ namespace cprocessing {
         //TODO:: finish blend modes
         switch(mode) {
             case REPLACE:
-                return color(b.rgba[0], b.rgba[1], b.rgba[2], b.rgba[3]);
+                return color(b.rgba[0], 
+                             b.rgba[1], 
+                             b.rgba[2], 
+                             b.rgba[3]);
                 break;
             case BLEND:
-                return color((a.rgba[0]+b.rgba[0])/2, (a.rgba[1]+b.rgba[1])/2, (a.rgba[2]+b.rgba[2])/2, (a.rgba[3]+b.rgba[3])/2);
+                return color((a.rgba[0]+b.rgba[0])/2, 
+                             (a.rgba[1]+b.rgba[1])/2, 
+                             (a.rgba[2]+b.rgba[2])/2, 
+                             (a.rgba[3]+b.rgba[3])/2);
                 break;
             case ADD:
-                return color(min(a.rgba[0]+b.rgba[0], 255), min(a.rgba[1]+b.rgba[1], 255), min(a.rgba[2]+b.rgba[2], 255), min(a.rgba[3]+b.rgba[3], 255));
+                return color(min(a.rgba[0]+b.rgba[0], 255),
+                             min(a.rgba[1]+b.rgba[1], 255), 
+                             min(a.rgba[2]+b.rgba[2], 255), 
+                             min(a.rgba[3]+b.rgba[3], 255));
                 break;
             case SUBTRACT:
                 return color(0, 0, 0, 255);
