@@ -44,19 +44,35 @@ namespace cprocessing {
         if(texturebuffer) delete texturebuffer;
     }
 
+    PImage& PImage::operator= (const PImage& p) {
+        this->width = p.width;
+        this->height = p.height;
+        this->type = p.type;
+        this->textureID = 0;
+        this->texturebuffer = new GLubyte[width*height*4];
+        for(int i=0; i<width*height*4; i++) {
+            this->texturebuffer[i] = p.texturebuffer[i];
+        }
+        glGenTextures(1, &textureID);
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        updatePixels();
+        this->pixels.setBuffer(texturebuffer);
+
+        return (*this);
+    }
     
     PImage& PImage::get() {
         return (*this);
     }
 
     color PImage::get(int x, int y) {
-        assert(x >= 0 && y >= 0 && x < w && y < h);
-        return pixels.buffertocolor(((h-y)*w)+x);
+        assert(x >= 0 && y >= 0 && x < width && y < height);
+        return pixels.buffertocolor(((height-y)*width)+x);
     }
 
     void PImage::set(int x, int y, const color& c) {
-        assert(x >= 0 && y >= 0 && x < w && y < h);
-        pixels.colortobuffer(((h-y)*w)+x, c);
+        assert(x >= 0 && y >= 0 && x < width && y < height);
+        pixels.colortobuffer(((height-y)*width)+x, c);
     }
 
 
@@ -94,14 +110,15 @@ namespace cprocessing {
         imagen = FreeImage_ConvertTo32Bits(imagen);
         FreeImage_Unload(temp);
      
-        w = FreeImage_GetWidth(imagen);
-        h = FreeImage_GetHeight(imagen);
+        width = FreeImage_GetWidth(imagen);
+        height = FreeImage_GetHeight(imagen);
      
-        texturebuffer = new GLubyte[4*w*h];
+        if(texturebuffer) delete texturebuffer;
+        texturebuffer = new GLubyte[4*width*height];
         char * tempbuffer = (char*)FreeImage_GetBits(imagen);
 
         //FreeImage loads in BGR format, so you need to swap some bytes(Or use GL_BGR).
-        for(int j= 0; j<w*h; j++){
+        for(int j= 0; j<width*height; j++){
             texturebuffer[j*4+0]= tempbuffer[j*4+2];
             texturebuffer[j*4+1]= tempbuffer[j*4+1];
             texturebuffer[j*4+2]= tempbuffer[j*4+0];
@@ -117,15 +134,15 @@ namespace cprocessing {
     }
 
     void PImage::save(const char * out) {
-        FIBITMAP *bitmap = FreeImage_Allocate(w, h, 24);
+        FIBITMAP *bitmap = FreeImage_Allocate(width, height, 24);
         RGBQUAD c;
         if (!bitmap) exit(1);
 
-        for(int y=0; y<h; y++) {
-            for(int x=0; x<w; x++) {
-                c.rgbRed    = texturebuffer[(((y*w)+x)*4)+0];
-                c.rgbGreen  = texturebuffer[(((y*w)+x)*4)+1];
-                c.rgbBlue   = texturebuffer[(((y*w)+x)*4)+2];
+        for(int y=0; y<height; y++) {
+            for(int x=0; x<width; x++) {
+                c.rgbRed    = texturebuffer[(((y*width)+x)*4)+0];
+                c.rgbGreen  = texturebuffer[(((y*width)+x)*4)+1];
+                c.rgbBlue   = texturebuffer[(((y*width)+x)*4)+2];
                 FreeImage_SetPixelColor(bitmap, x, y, &c);
             }
         }
@@ -136,7 +153,7 @@ namespace cprocessing {
 
     void PImage::updatePixels() {
         gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGBA, GL_UNSIGNED_BYTE, texturebuffer);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*)texturebuffer);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*)texturebuffer);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     }
 }

@@ -275,8 +275,8 @@ namespace cprocessing {
       if (mouseRecordFlag){
          pmouseX = mouseX;
          pmouseY = mouseY;
-         mouseX = x;
-         mouseY = y;
+         mouseX = ((x < 0) ? 0 : x);
+         mouseY = ((y < 0) ? 0 : y);
          mouseRecordFlag = false;
       }
       ::mouseMoved();
