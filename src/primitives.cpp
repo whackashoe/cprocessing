@@ -245,11 +245,7 @@ namespace cprocessing {
     }
 
     void image(PImage& img, int x, int y) {
-      if(img.width == 0) {
-        image(img, x, y, img.w, img.h);
-      } else {
         image(img, x, y, img.width, img.height);
-      }
     }
 
     void image(PImage& img, int x, int y, int w, int h) {
