@@ -1,7 +1,7 @@
 #
 # Generic makefile for making an example program using the cprocessing library
 #
-CXXFLAGS=-O3 -std=c++0x -D_DEBUG -Wall
+CXXFLAGS=-O3 -std=c++0x -D_DEBUG -Wall -g
 
 SOURCES= $(wildcard *.cpp)
 
