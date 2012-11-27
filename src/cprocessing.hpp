@@ -16,6 +16,7 @@
 #include <algorithm>
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits>
 #include <time.h>
 
 #include <GL/gl.h>
@@ -315,6 +316,10 @@ namespace cprocessing {
 	inline void fill (double gray, double a = MAXCOLOR) {
 		fill (color (gray,a));
 	}
+
+    inline void fill (const color c, double a) {
+        fill (color (c.rgba[0], c.rgba[1], c.rgba[2], a));
+    }
 
 	inline void noFill() {
 		fill (color(0,0,0,0));
@@ -664,15 +669,15 @@ namespace cprocessing {
     //text to console    
     template<class C>
 	inline void print(const C& a) 			{ std::cout << a; }
-	inline void print(const String * a) 	{ std::cout << (*a).self; }
+	inline void print(const String a)   	{ std::cout << a.self; }
 
 	template<class C>
 	inline void println(const C& a)			{ std::cout << a << std::endl; }
-	inline void println(const String * a) 	{ std::cout << (*a).self << std::endl; }
+	inline void println(const String a) 	{ std::cout << a.self << std::endl; }
 
 	template<class C>
 	inline void printerr(const C& a) 		{ std::cerr << a << std::endl; }
-	inline void printerr(const String * a) 	{ std::cerr << (*a).self << std::endl; }
+	inline void printerr(const String a) 	{ std::cerr << a.self << std::endl; }
 
 
     //turns draw loop on or off
@@ -745,11 +750,10 @@ namespace cprocessing {
 
     String trim(String str);
 
+    
+    String nf(int n, int d);
+
     /*
-    String nf(int n) {
-
-    }
-
     String nf(float n) {
 
     }*/
