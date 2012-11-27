@@ -14,6 +14,10 @@ String::String(std::string s) {
 	self = s;
 }
 
+String::String(const char * s) {
+	self = s;
+}
+
 String& String::operator= (const String& str) {
 	this->self = str.self;
 	return (*this);
@@ -31,6 +35,26 @@ String& String::operator= (const char* s) {
 
 String& String::operator= (const char c) {
 	this->self = c;
+	return (*this);
+}
+
+String& String::operator+= (const String str) {
+	this->self += str.self;
+	return (*this);
+}
+
+String& String::operator+= (const std::string& str) {
+	this->self += str;
+	return (*this);
+}
+
+String& String::operator+= (const char* s) {
+	this->self += s;
+	return (*this);
+}
+
+String& String::operator+= (const char c) {
+	this->self += c;
 	return (*this);
 }
 

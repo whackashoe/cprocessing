@@ -16,12 +16,24 @@ namespace cprocessing {
         
         String();
         String(const String& s);
+        String(const char * s);
         String(std::string s);
 
         String& operator= (const String& str);
         String& operator= (const std::string& str);
         String& operator= (const char* s);
         String& operator= (const char c);
+        
+        String operator+ (const String& str)        const { String ss(this->self+str.self);  return ss; }
+        String operator+ (const std::string& str)   const { String ss(this->self+str);       return ss; }
+        String operator+ (const char* s)            const { String ss(this->self+s);         return ss; }
+        String operator+ (const char c)             const { String ss(this->self+c);         return ss; }
+
+        String& operator+= (const String str);
+        String& operator+= (const std::string& str);
+        String& operator+= (const char* s);
+        String& operator+= (const char c);
+
 
         /**Grab the character at index
          * @param index between 0-length
