@@ -12,7 +12,7 @@ using namespace cprocessing;
 
 namespace cprocessing {
 
-    template <class T>
+    template <typename T>
     class ArrayList {
     public:
         std::vector<T> self;
@@ -136,7 +136,68 @@ namespace cprocessing {
 
             return r;
         }
-        //void trimToSize();
+        
+        //void trimToSize(); //TODO
+
+        /**Applies a function to all elements in ArrayList
+         * @param *fp name of function to apply
+         * @returns pointer to this ArrayList */
+        ArrayList<T> * map(T (*fp)(T)) {
+            for(int i=0; i<this->size(); i++)
+                this->set(i, ((*fp)(*(this->get(i)))));
+            return this;
+        }
+
+        /**Removes elements from ArrayList who do not meet condition of function
+         * @param *fp name of function to compare elements to(boolean)
+         * @returns pointer to this ArrayList */
+        ArrayList<T> * filter(boolean (*fp)(T)) {
+            ArrayList<T> out;
+            for(int i=0; i<this->size(); i++)
+                if(((*fp)(*(this->get(i))))) out.add(*(this->get(i)));
+            this->self = out.self;
+            return this;
+        }
+
+        /**Populates ArrayList by calling function from 0 -> n
+         * @param *fp name of function to apply
+         * @param n amount to add (usually int)
+         * @returns pointer to this ArrayList */
+        template <typename U>
+        ArrayList<T> * populate(T (*fp)(U), U n) {
+            assert(n >= 0);
+            for(U i=0; i<n; i++)
+                this->add(((*fp)(i)));
+            return this;
+        }
+
+        /**Calls function with element as parameter
+         * @param *fp name of function to call
+         * @returns pointer to this ArrayList */
+        template <typename U>
+        ArrayList<T> * foreach(U (*fp)(T)) {
+            for(int i=0; i<this->size(); i++)
+                ((*fp)(*(this->get(i))));
+            return this;
+        }
+
+        /**Calls function without breaking chain
+         * @param *fp name of function to call
+         * @returns pointer to this ArrayList */
+        template <typename U>
+        ArrayList<T> * call(U (*fp)()) {
+            (*fp);
+            return this;
+        }
+
+        /**Calls function without breaking chain, sends pointer of ArrayList to it
+         * @param *fp name of function to call
+         * @returns pointer to this ArrayList */
+        template <typename U, typename V>
+        ArrayList<T> * callback(U (*fp)(V)) {
+            (*fp)(this);
+            return this;
+        }
     };
 }
 
