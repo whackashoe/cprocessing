@@ -580,6 +580,26 @@ namespace cprocessing {
       else                  printerr("cannot have more popStyles() than pushStyles()");
     }
 
+
+    String nf(int n, int d) {
+      char * buf = new char[d];
+      sprintf(buf,"%d",n);
+      String t(buf);
+      String b = "";
+
+      if(t.length() > d) {
+        //FIXME: cut off end e.g. make 124567 with d=4 1245
+      }
+
+      for(int i=t.length(); i < d; i++) {
+        b += "0";
+      }
+
+      String r = b + t;
+      return r;
+    }
+
+
     /// Initializes and runs the application main event loop
     void run() {
 		  int argc = 0;
