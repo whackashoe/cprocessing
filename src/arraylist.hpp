@@ -29,6 +29,35 @@ namespace cprocessing {
             self.clear();
         }
 
+        ArrayList<T>& operator= (const ArrayList<T>& a) {
+            this->a = a.self;
+            return (*this);
+        }
+
+        bool operator== (const ArrayList<T>& a)      { 
+            return ((this->self == a.self) ? true : false);
+        }
+
+        bool operator!= (const ArrayList<T>& a)      { 
+            return ((this->self != a.self) ? true : false);
+        }
+
+        ArrayList<T>& operator+ (const ArrayList<T>& a) {
+            ArrayList<T> temp;
+            temp = *(this);
+            for(int i=0; i<a.size(); i++) {
+                temp->add(*(a.get(i)));
+            }
+            return (*temp);
+        }
+
+        ArrayList<T>& operator+= (const ArrayList<T>& a) {
+            for(int i=0; i<a.size(); i++) {
+                this->add(*(a.get(i)));
+            }
+            return (*this);
+        }
+
         /**Adds element to ArrayList
          * @param e Element to add to end of ArrayList*/
         void add(T e) { 
@@ -197,6 +226,74 @@ namespace cprocessing {
         ArrayList<T> * callback(U (*fp)(V)) {
             (*fp)(this);
             return this;
+        }
+
+        T * head() {
+            assert(size() > 0);
+            return &get(0);
+        }
+
+        T * last() {
+            assert(size() > 0);
+            return &get(size()-1);
+        }
+
+        /*T * minimum() {   //TODO
+            assert(size() > 0);
+        }*/
+
+        /*T * maximum() {   //TODO
+            assert(size() > 0);
+            return &get(size()-1);
+        }*/
+
+        T sum() {
+            assert(size() > 0);
+            T r = *(this->get(0));
+            for(int i=1; i<this->size(); i++) r = r+*(this->get(i));
+            return r;
+        }
+
+        T product() {
+            assert(size() > 0);
+            T r = *(this->get(0));
+            for(int i=1; i<this->size(); i++) r = r*(*(this->get(i)));
+            return r;
+        }
+
+        ArrayList<T> tail() {
+            ArrayList<T> out(((this->size() > 0) ? (this->size()-1) : 0));
+            for(int i=1; i<this->size(); i++) out.add(*(this->get(i)));
+
+            return out;
+        }
+
+        ArrayList<T> init() {
+            ArrayList<T> out(((this->size() > 0) ? (this->size()-1) : 0));
+            for(int i=0; i<this->size()-1; i++) out.add(*(this->get(i)));
+
+            return out;
+        }
+
+        ArrayList<T> reverse() {
+            ArrayList<T> out(this->size());
+            for(int i=this->size(); i>0; i--) out.add(*(this->get(i)));
+
+            return out;
+        }
+
+        ArrayList<T> take(int n) {
+            ArrayList<T> out(n);
+            for(int i=0; i<n; i++) out.add(*(this->get(i)));
+
+            return out;
+        }
+
+        ArrayList<T> drop(int n) {
+            ArrayList<T> out(this->size() - n);
+            for(int i=n; i<this->size(); i++) out.add(*(this->get(i)));
+
+            return out;
         }
     };
 }
