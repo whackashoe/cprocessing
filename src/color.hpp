@@ -31,7 +31,10 @@ namespace cprocessing {
 		color (double gray, double alpha = MAXCOLOR);
 		//constructor for hex values
 		color (std::string);
-		
+
+		//bool operator== (const color& c);
+		//bool operator!= (const color& c);
+
 		/// Fills a float array with color values scaled for the interval 0..1
 		void toFloat(float a[]);
 		/// Fills a double array with color values scaled for the interval 0..1

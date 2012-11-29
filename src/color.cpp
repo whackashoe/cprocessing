@@ -84,7 +84,6 @@ namespace cprocessing {
         rgba[3] = clamp(alpha*255);
     }  
 
-
     color::color(double val1, double val2, double val3, double valA) {
 		//scale the values to a range of 255
         if(initialized) {
@@ -127,6 +126,24 @@ namespace cprocessing {
             else                    rgba[3] = 255;
         }
     }
+
+    /*bool operator== (const color& c) {
+        if(rgba[0] != c.rgba[0] ||
+           rgba[0] != c.rgba[0] ||
+           rgba[0] != c.rgba[0] ||
+           rgba[0] != c.rgba[0]) return false;
+
+        return true;
+    }
+
+    bool operator!= (const color& c) {
+        if(rgba[0] != c.rgba[0] ||
+           rgba[0] != c.rgba[0] ||
+           rgba[0] != c.rgba[0] ||
+           rgba[0] != c.rgba[0]) return true;
+
+        return false;
+    }*/
 
     int color::htoi(const char& c) {
         switch(c) {

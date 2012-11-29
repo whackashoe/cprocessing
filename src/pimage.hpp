@@ -28,10 +28,16 @@ namespace cprocessing {
 
 
         PImage();
+        PImage(const char * src);
+        inline PImage(String& src) { PImage(src.toCharArray()); }
 	    PImage (int w, int h, unsigned type = ARGB);
+	    PImage (const char * src, int w, int h, unsigned type = ARGB);
+	    inline PImage(String& src, int w, int h, unsigned type = ARGB) { PImage(src.toCharArray(), w, h, type); }
 	    ~PImage ();
 
 	    PImage& operator= (const PImage& p);
+	    //bool operator== (const PImage& p);
+	    //bool operator!= (const PImage& p);
 	    
 	    PImage& get();
 	    color get(int x, int y);

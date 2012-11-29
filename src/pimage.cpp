@@ -26,6 +26,15 @@ namespace cprocessing {
         this->texturebuffer = 0;
     }
 
+    PImage::PImage(const char * src) {
+        this->width = 0;
+        this->height = 0;
+        this->type = ARGB;
+        this->texturebuffer = 0;
+
+        loadImage(src);
+    }
+
     PImage::PImage (int width, int height, unsigned type) {
         assert (width>=0 && height>=0 && 
                 width < 1e6 && height < 1e6 && 
@@ -35,6 +44,19 @@ namespace cprocessing {
         this->height = height;
         this->type = type;
         this->texturebuffer = 0;
+    }
+
+    PImage::PImage (const char * src, int width, int height, unsigned type) {
+        assert (width>=0 && height>=0 && 
+                width < 1e6 && height < 1e6 && 
+               (type == ARGB || type == RGB || type == ALPHA));
+
+        this->width = width;
+        this->height = height;
+        this->type = type;
+        this->texturebuffer = 0;
+
+        loadImage(src);
     }
     
     /// Destructor
@@ -106,13 +128,17 @@ namespace cprocessing {
     void PImage::loadImage(const char * src) {
         FREE_IMAGE_FORMAT format = FreeImage_GetFileType(src,0);
         FIBITMAP * imagen = FreeImage_Load(format, src);
+        if(!imagen) {
+            printerr("The following image was not found:");
+            printerr(src);
+        }
         FIBITMAP * temp = imagen;
         imagen = FreeImage_ConvertTo32Bits(imagen);
         FreeImage_Unload(temp);
-     
+
         width = FreeImage_GetWidth(imagen);
         height = FreeImage_GetHeight(imagen);
-     
+
         if(texturebuffer) delete texturebuffer;
         texturebuffer = new GLubyte[4*width*height];
         char * tempbuffer = (char*)FreeImage_GetBits(imagen);
@@ -127,7 +153,7 @@ namespace cprocessing {
 
         glGenTextures(1, &textureID);
         glBindTexture(GL_TEXTURE_2D, textureID);
-        
+
         updatePixels();
 
         this->pixels.setBuffer(texturebuffer);
@@ -157,4 +183,3 @@ namespace cprocessing {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     }
 }
-
