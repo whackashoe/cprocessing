@@ -26,7 +26,12 @@ namespace cprocessing {
 
 		/// Add
 		PVector operator+(const PVector& other) const { return PVector(x+other.x, y+other.y, z+other.z); }
-		PVector add (const PVector& other) const { return *this+other; }
+		PVector add (const PVector& other) {
+			x += other.x;
+			y += other.y;
+			z += other.y; 
+			return *this;
+		}
 		static PVector add (const PVector& a, const PVector& b) { return a+b; }
 
 		/// Subtract
