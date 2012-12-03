@@ -4,7 +4,6 @@
  *  Created on: Apr 28, 2011
  *      Author: esperanc
  */
-#include <GL/glew.h>
 #include "cprocessing.hpp"
 
 
