@@ -9,41 +9,21 @@ All things must be cross platform, I realize the current state of cprocessing is
 
 make windows installation nicer
 
-implement general image loader
-
-hashmap, arraylist, xml loading, svg
-
-shaders
+xml loading, svg
 
 make compliant w/ new 2.0 syntax
 
-create bugs folder with example of each bug
-
 port to fresher opengl version
-
-vim & sublime text 2 plugins for rapid development
 
 easy make:: modular architecture allowing for selection of which classes to load and graphical or nope
 
 test on windows
 test on mac
 
-fix transparency bug, i believe it was disabled due to opengl read textures shit
-
-chrome native client export?? 
+look into chrome native client 
 
 PSound implementation
 
-
-
-
-TO COMPILE:
-g++ -lcprocessing -lglut -lGLU -lGL `Magick++-config --cppflags --cxxflags --ldflags --libs` Spot.cpp -o Spot
-
-magick has broken makefiles... well I have since I am still learning about them.
-you must use the preceeding line to compile programs 
-
-images in general are fucked
 
 
 
@@ -112,12 +92,6 @@ Image
 Processing	cprocessing	Description
 createImage()	N/A	 creates an empty PImage object
 filter()	N/A	 applies a filter to the display window
-image()	N/A	 displays a PImage object
-imageMode()	N/A	 changes the semantics of the arguments of image()
-loadImage()	N/A	 loads an image into a PImage object
-loadPixels()	N/A	 loads the current canvas data into screen.pixels
-updatePixels()	N/A	 displays the data from screen.pixels
-get()	N/A	 returns a copy, a part of a pixel of the screen
 
 
 Text
