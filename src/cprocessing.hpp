@@ -14,16 +14,20 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <unordered_map>
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits>
 #include <time.h>
 
+#include <GL/glew.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <FreeImage.h>
 
+#include "init.hpp"
+#include "string.hpp"
 #include "color.hpp"
 #include "pixelcolorbuffer.hpp"
 #include "pimage.hpp"
@@ -33,17 +37,7 @@
 #include "style.hpp"
 #include "arraylist.hpp"
 #include "hashmap.hpp"
-#include "string.hpp"
 #include "pshader.hpp"
-
-//guard, if these are defined they will break windows compilation
-#ifdef RADIUS
-#undef RADIUS
-#endif
-
-#ifdef DELETE
-#undef DELETE
-#endif
 
 
 typedef bool boolean;
