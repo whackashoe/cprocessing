@@ -1,9 +1,4 @@
-#include <unordered_map>
-#include <string>
-#include <cassert>
-
-#include "string.hpp"
-#include "arraylist.hpp"
+#include "cprocessing.hpp"
 
 #ifndef CPROCESSING_HASHMAP_
 #define CPROCESSING_HASHMAP_
@@ -13,6 +8,7 @@ class HashMap {
 public:
     std::unordered_map<const char *, T> hm;
     HashMap() {}
+    
     HashMap(int initialCapacity) {
         hm.reserve(initialCapacity);
     }
