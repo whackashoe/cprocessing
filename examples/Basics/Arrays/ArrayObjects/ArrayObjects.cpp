@@ -1,3 +1,5 @@
+#include <cprocessing/cprocessing.hpp>
+#include "Module.hpp"
 /**
  * Array Objects. 
  * 
@@ -8,7 +10,7 @@
 
 int unit = 40;
 int count;
-Module[] mods;
+Module * mods;
 
 void setup() {
   size(640, 360);
@@ -22,7 +24,7 @@ void setup() {
   int index = 0;
   for (int y = 0; y < highCount; y++) {
     for (int x = 0; x < wideCount; x++) {
-      mods[index++] = new Module(x*unit, y*unit, unit/2, unit/2, random(0.05, 0.8), unit);
+      mods[index++] = Module(x*unit, y*unit, unit/2, unit/2, random(0.05, 0.8), unit);
     }
   }
 }
