@@ -12,6 +12,16 @@ namespace cprocessing {
 		/// Constructor
 		PVector (double thex = 0, double they = 0, double thez = 0) : x(thex), y(they), z(thez) {}
 
+		PVector operator+(const PVector& other) const { return PVector(x+other.x, y+other.y, z+other.z); }
+		PVector operator-(const PVector& other) const { return PVector(x-other.x, y-other.y, z-other.z); }
+		PVector operator*(double s) const { return PVector(s*x, s*y, s*z); }
+		PVector operator/(double s) const { return *this * (1/s); }
+		bool operator==(const PVector& other) const { return ((x != other.x || y != other.y || z != other.z) ? false : true); }
+		bool operator!=(const PVector& other) const { return !(*this == other); }
+
+
+
+
 		/// Assignment from coordinates
 		void set (double thex = 0, double they = 0, double thez = 0) { x=thex; y=they; z=thez; }
 
@@ -25,7 +35,6 @@ namespace cprocessing {
 		PVector get() { return *this; }
 
 		/// Add
-		PVector operator+(const PVector& other) const { return PVector(x+other.x, y+other.y, z+other.z); }
 		PVector add (const PVector& other) {
 			x += other.x;
 			y += other.y;
@@ -35,17 +44,14 @@ namespace cprocessing {
 		static PVector add (const PVector& a, const PVector& b) { return a+b; }
 
 		/// Subtract
-		PVector operator-(const PVector& other) const { return PVector(x-other.x, y-other.y, z-other.z); }
 		PVector sub (const PVector& other) const { return *this-other; }
 		static PVector sub (const PVector& a, const PVector& b) { return a-b; }
 
 		/// Multiply by scalar
-		PVector operator*(double s) const { return PVector(s*x, s*y, s*z); }
 		PVector mult(double s) const { return *this*s; }
 		static PVector mult(const PVector& v, double s)  { return v*s; }
 
 		/// Divide by scalar
-		PVector operator/(double s) const { return *this * (1/s); }
 		PVector div(double s) const { return *this/s; }
 		static PVector div(const PVector& v, double s)  { return v/s; }
 
