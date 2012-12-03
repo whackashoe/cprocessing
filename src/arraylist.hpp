@@ -1,6 +1,3 @@
-#include <vector>
-#include <cassert>
-
 #include "cprocessing.hpp"
 
 typedef bool boolean;
