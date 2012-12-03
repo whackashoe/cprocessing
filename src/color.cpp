@@ -1,6 +1,4 @@
 #include "cprocessing.hpp"
-#include "color.hpp"
-
 
 using namespace cprocessing;
 
@@ -127,23 +125,18 @@ namespace cprocessing {
         }
     }
 
-    /*bool operator== (const color& c) {
-        if(rgba[0] != c.rgba[0] ||
-           rgba[0] != c.rgba[0] ||
-           rgba[0] != c.rgba[0] ||
-           rgba[0] != c.rgba[0]) return false;
+    bool operator== (const color& c_l, const color& c_r) {
+        if(c_l.rgba[0] != c_r.rgba[0] ||
+           c_l.rgba[0] != c_r.rgba[0] ||
+           c_l.rgba[0] != c_r.rgba[0] ||
+           c_l.rgba[0] != c_r.rgba[0]) return false;
 
         return true;
     }
 
-    bool operator!= (const color& c) {
-        if(rgba[0] != c.rgba[0] ||
-           rgba[0] != c.rgba[0] ||
-           rgba[0] != c.rgba[0] ||
-           rgba[0] != c.rgba[0]) return true;
-
-        return false;
-    }*/
+    bool operator!= (const color& c_l, const color& c_r) {
+        return !(c_l == c_r);
+    }
 
     int color::htoi(const char& c) {
         switch(c) {

@@ -32,8 +32,8 @@ namespace cprocessing {
 		//constructor for hex values
 		color (std::string);
 
-		//bool operator== (const color& c);
-		//bool operator!= (const color& c);
+		bool operator== (const color& c_r);
+		bool operator!= (const color& c);
 
 		/// Fills a float array with color values scaled for the interval 0..1
 		void toFloat(float a[]);
