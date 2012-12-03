@@ -2,7 +2,6 @@
 #define CPROCESSING_STYLE
 
 #include "cprocessing.hpp"
-#include "color.hpp"
 
 using namespace cprocessing;
 

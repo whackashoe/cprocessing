@@ -1,4 +1,3 @@
-#include <string>
 #include "cprocessing.hpp"
 
 #ifndef CPROCESSING_STRING_
@@ -24,20 +23,18 @@ namespace cprocessing {
         String& operator= (const char* s);
         String& operator= (const char c);
 
-        /*bool operator== (const String& str)      { return ((this->self == str.self) ? true : false); }
-        bool operator== (const std::string& str) { return ((this->self == str) ? true : false); }
-        bool operator== (const char* s)          { return ((this->self == s) ? true : false); }
-        //bool operator== (const char c)           { return ((this->self == ct) ? true : false); }
+        bool operator== (const String& str);
+        bool operator== (const std::string& str); 
+        bool operator== (const char* s);          
 
-        bool operator!= (const String& str)      { return ((this->self != str.self) ? true : false); }
-        bool operator!= (const std::string& str) { return ((this->self != str) ? true : false); }
-        bool operator!= (const char* s)          { return ((this->self != s) ? true : false); }
-        //bool operator!= (const char c)           { return ((this->self == c) ? true : false); }*/
-        
-        String operator+ (const String& str)        const { String ss(this->self+str.self);  return ss; }
-        String operator+ (const std::string& str)   const { String ss(this->self+str);       return ss; }
-        String operator+ (const char* s)            const { String ss(this->self+s);         return ss; }
-        String operator+ (const char c)             const { String ss(this->self+c);         return ss; }
+        bool operator!= (const String& str);
+        bool operator!= (const std::string& str); 
+        bool operator!= (const char* s);          
+
+        String operator+ (const String& str);
+        String operator+ (const std::string& str);
+        String operator+ (const char* s);
+        String operator+ (const char c);
 
         String& operator+= (const String str);
         String& operator+= (const std::string& str);

@@ -7,12 +7,7 @@
  *  Functions for drawing basic primitives
  */
 
-#include <GL/glut.h>
-#include <vector>
-#include <cassert>
-#include <iostream>
 #include "cprocessing.hpp"
-#include "pvector.hpp"
 
 using namespace cprocessing;
 

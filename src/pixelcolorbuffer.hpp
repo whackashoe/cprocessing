@@ -1,5 +1,4 @@
 #include "cprocessing.hpp"
-#include "color.hpp"
 
 
 #ifndef CPROCESSING_PIXELCOLORBUFFER_
@@ -12,7 +11,7 @@ namespace cprocessing {
 	
 	class PixelColorBuffer {	
 	public:
-		unsigned char ** b;
+        unsigned char ** b;
 		
 		PixelColorBuffer();
 		void setBuffer(unsigned char *& b);

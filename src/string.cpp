@@ -1,6 +1,4 @@
-#include <string>
-#include <algorithm>
-#include "string.hpp"
+#include "cprocessing.hpp"
 
 String::String() {
 	self = "";
@@ -36,6 +34,52 @@ String& String::operator= (const char* s) {
 String& String::operator= (const char c) {
 	this->self = c;
 	return (*this);
+}
+
+
+bool String::operator== (const String& str) {
+	return ((this->self == str.self) ? true : false);
+}
+
+bool String::operator== (const std::string& str) {
+	return ((this->self == str) ? true : false);
+}
+
+bool String::operator== (const char* s) { 
+	return ((this->self == s) ? true : false);
+}
+
+bool String::operator!= (const String& str) { 
+	return ((this->self != str.self) ? true : false);
+}
+
+bool String::operator!= (const std::string& str) { 
+	return ((this->self != str) ? true : false);
+}
+
+bool String::operator!= (const char* s) { 
+	return ((this->self != s) ? true : false);
+
+}
+
+String String::operator+ (const String& str) { 
+	String ss(this->self+str.self);
+	return ss;
+}
+
+String String::operator+ (const std::string& str) { 
+	String ss(this->self+str);
+	return ss;
+}
+
+String String::operator+ (const char* s) {
+	String ss(this->self+s);
+	return ss;
+}
+
+String String::operator+ (const char c) {
+	String ss(this->self+c);
+	return ss;
 }
 
 String& String::operator+= (const String str) {

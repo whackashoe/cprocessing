@@ -12,9 +12,6 @@
 #ifndef _NOISE_CLASS_H_
 #define _NOISE_CLASS_H_
 
-#include <stdlib.h>
-
-
 // It must be true that (x % NOISE_WRAP_INDEX) == (x & NOISE_MOD_MASK)
 // so NOISE_WRAP_INDEX must be a power of two, and NOISE_MOD_MASK must be
 // that power of 2 - 1.  as indices are implemented, as unsigned chars,

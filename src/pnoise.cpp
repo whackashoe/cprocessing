@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <time.h>
-#include <cmath>
-#include "pnoise.hpp"
+#include "cprocessing.hpp"
 
 // TODO: change these preprocessor macros into inline functions
 

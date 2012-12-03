@@ -5,10 +5,6 @@
  *      Author: claudio
  */
 
-
-#include <GL/glut.h>
-#include <vector>
-#include <cassert>
 #include "cprocessing.hpp"
 
 using namespace cprocessing;

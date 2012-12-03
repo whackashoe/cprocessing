@@ -6,8 +6,6 @@
  */
 
 #include "cprocessing.hpp"
-#include <GL/glut.h>
-#include <iostream>
 
 static bool lights = false; ///< Whether lighting is turned on or off
 static int lightCount = 0;  ///< How many light sources were defined

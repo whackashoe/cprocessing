@@ -7,12 +7,7 @@
  *  Contains functions which deal with affine transformations
  */
 
-#include <GL/glut.h>
-#include <cmath>
 #include "cprocessing.hpp"
-
-#undef near
-#undef far
 
 
 namespace cprocessing {

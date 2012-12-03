@@ -1,9 +1,4 @@
-#include <GL/glew.h>
-#include <string>
-#include <stdlib.h>
-#include <stdio.h>
 #include "cprocessing.hpp"
-#include "pshader.hpp"
 
 PShader::PShader() {
     assert(initialized);

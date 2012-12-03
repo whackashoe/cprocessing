@@ -7,12 +7,7 @@
  *  Image support
  */
 
-#include <GL/glut.h>
-#include <FreeImage.h>
-#include <cassert>
-#include <iostream>
 #include "cprocessing.hpp"
-#include "pimage.hpp"
 
 using namespace cprocessing;
 
@@ -72,6 +67,8 @@ namespace cprocessing {
         this->type = p.type;
         this->textureID = 0;
         this->texturebuffer = new GLubyte[width*height*4];
+        //this->texturebuffer = p.texturebuffer;
+
         for(int i=0; i<width*height*4; i++) {
             this->texturebuffer[i] = p.texturebuffer[i];
         }
@@ -145,10 +142,15 @@ namespace cprocessing {
 
         //FreeImage loads in BGR format, so you need to swap some bytes(Or use GL_BGR).
         for(int j= 0; j<width*height; j++){
-            texturebuffer[j*4+0]= tempbuffer[j*4+2];
-            texturebuffer[j*4+1]= tempbuffer[j*4+1];
-            texturebuffer[j*4+2]= tempbuffer[j*4+0];
-            texturebuffer[j*4+3]= tempbuffer[j*4+3];
+           texturebuffer[j*4+0]= tempbuffer[j*4+2];
+           texturebuffer[j*4+1]= tempbuffer[j*4+1];
+           texturebuffer[j*4+2]= tempbuffer[j*4+0];
+           texturebuffer[j*4+3]= tempbuffer[j*4+3];
+           //texturebuffer.push_back(tempbuffer[j*4+2]);
+           //texturebuffer.push_back(tempbuffer[j*4+1]);
+           //texturebuffer.push_back(tempbuffer[j*4+0]);
+           //texturebuffer.push_back(tempbuffer[j*4+3]);
+           
         }
 
         glGenTextures(1, &textureID);

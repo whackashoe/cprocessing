@@ -1,6 +1,4 @@
 #include "cprocessing.hpp"
-#include "pixelcolorbuffer.hpp"
-#include "style.hpp"
 
 
 PixelColorBuffer::PixelColorBuffer() {

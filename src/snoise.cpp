@@ -1,5 +1,4 @@
-#include <cmath>
-#include "snoise.hpp"
+#include "cprocessing.hpp"
 
 using namespace cprocessing;
 

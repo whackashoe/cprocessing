@@ -1,5 +1,3 @@
-#include <GL/glut.h>
-#include <string>
 #include "cprocessing.hpp"
 
 
