@@ -79,7 +79,7 @@ file multiple reports to motivate me.
 12. cd to examples, choose an example and open its Makefile
 13. change "-lcprocessing -lglut -lGL -lGLU" to "-lcprocessing -lfreeglut -lglu32 -lopengl32 -lglew32"
 14. save the file then type "make" in that directory
-15. now type "./(examplename)" without parethesis to open program
+15. now type `./(examplename)` to open program
 16. Your done! That was ridiculous wasn't it?
 
 
@@ -87,25 +87,9 @@ file multiple reports to motivate me.
 Creating a Sketch
 -----------------
 
-cd to sketchbook and then type "./new.sh myfirstsketch" 
-This will create a new folder in your sketchbook with a main.cpp file and a Makefile
-cd to myfirstsketch and type "make"
-Now type "./myfirstsketch" and watch the magic ...?
-You can edit main.cpp all you like, just type make to compile your changes
-(note that not all processing functions are available yet)
-You can now also type "./debug.sh" to help debug your script if it compiles yet crashes (required gdb)
-
-
-
-License
--------
-
-The BSD 2-Clause License
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+1. cd to sketchpad
+2. then type `./new.sh myfirstsketch`, this will create a new folder in your sketchpad
+3. cd to myfirstsketch and type `make`. If this doesn't work you need to fix your installation.
+4. Now type `./sketch` and watch the magic ...? If everything is working correctly a blank window will open
+5. You can edit main.cpp all you like, just type make to compile your changes
+6. You can also type "./debug.sh" to help debug your script if it compiles yet crashes when it runs (requires GNU Debugger or GDB)
