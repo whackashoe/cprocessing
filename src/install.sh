@@ -2,7 +2,7 @@
 
 #libcprocessing linux install script
 
-version="0.1"   #increment this if testing to spot regressions
+version="0.2"   #increment this if testing to spot regressions
 libDest="/usr/local/lib"
 incDest="/usr/local/include"
 
