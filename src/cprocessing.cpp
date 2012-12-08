@@ -608,8 +608,8 @@ namespace cprocessing {
       glutInit(&argc, argv);
 	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);
 	    glutTimerFunc (1000/framerate, refresh, 0);
-      screenWidth = GLUT_SCREEN_WIDTH;
-      screenHeight = GLUT_SCREEN_HEIGHT;
+      screenWidth = GLUT_SCREEN_WIDTH;  //FIXME (returns 200??)
+      screenHeight = GLUT_SCREEN_HEIGHT;  //FIXME (returns 201??)
 
       styles.push_back(baseStyle);
       bezierDetail(50);
