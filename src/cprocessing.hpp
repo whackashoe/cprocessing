@@ -98,6 +98,8 @@ namespace cprocessing {
 	extern int keyCode; 		/**< Code for the last pressed key*/
 	extern int width;		 	/**< window width*/
 	extern int height; 			/**< window height*/
+	extern int screenWidth;		/**< window width*/
+	extern int screenHeight; 	/**< window height*/
 	extern bool looping;    	/**< true makes display call itself*/
 	extern unsigned config; 	/**< configuration flags*/
 	extern int framerate; 		/**< Frames per second*/

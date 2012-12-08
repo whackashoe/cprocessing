@@ -40,6 +40,8 @@ namespace cprocessing {
 
 	int width;     ///< window width
 	int height;    ///< window height
+  int screenWidth;
+  int screenHeight;
 	
 	bool looping = true;   ///redisplay if true
 
@@ -606,6 +608,9 @@ namespace cprocessing {
       glutInit(&argc, argv);
 	    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);
 	    glutTimerFunc (1000/framerate, refresh, 0);
+      screenWidth = GLUT_SCREEN_WIDTH;
+      screenHeight = GLUT_SCREEN_HEIGHT;
+
       styles.push_back(baseStyle);
       bezierDetail(50);
       ellipseDetail(50);
