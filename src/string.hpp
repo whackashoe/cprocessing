@@ -82,6 +82,42 @@ namespace cprocessing {
          * @returns char array*/
         const char * toCharArray();
     };
+
+
+    /**Combines an array of Strings into one String, 
+     * each separated by the character(s) used for the separator parameter. 
+     * To join arrays of ints or floats, it's necessary to first convert them to Strings using nf() or nfs().
+     * @param list ArrayList of Strings
+     * @param separator String to be placed between each item
+     * @returns String*/
+    String join(ArrayList<String> list, String separator);
+
+    /**This function is used to apply a regular expression to a piece of text, and return matching groups (elements found inside parentheses) as a String array. If there are no matches, a null value will be returned. If no groups are specified in the regular expression, but the sequence matches, an array of length 1 (with the matched text as the first element of the array) will be returned.
+     * @param str the String to be searched
+     * @param regexp the regexp to be used for matching
+     * @returns String ArrayList of matches*/
+    ArrayList<String> match(String str, String regexp);
+
+
+    /**This function is used to apply a regular expression to a piece of text, and return a list of matching groups (elements found inside parentheses) as a two-dimensional String array. If there are no matches, a null value will be returned. If no groups are specified in the regular expression, but the sequence matches, a two dimensional array is still returned, but the second dimension is only of length one.
+     * @param str the String to be searched
+     * @param regexp the regexp to be used for matching
+     * @returns String ArrayList of matches*/
+    ArrayList<String> matchAll(String str, String regexp);
+
+    //nf()  //TODO
+    //nfc() //TODO
+    //nfp() //TODO
+    //nfs() //TODO
+
+    /**The split() function breaks a String into pieces using a character or string as the delimiter. The delim parameter specifies the character or characters that mark the boundaries between each piece. A String ArrayList is returned that contains each of the pieces. 
+     * @param value the String to be split
+     * @param delim the character or String used to separate the data
+     * @returns ArrayList<String>*/
+    ArrayList<String> split(String value, String delim);
+    
+    //splitTokens()
+    //trim()
 }
 
 #endif
