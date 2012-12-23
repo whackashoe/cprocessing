@@ -105,7 +105,7 @@ namespace cprocessing {
 		rgba[1] = clamp(val2*255);
 		rgba[2] = clamp(val3*255);
 		rgba[3] = clamp(valA*255);
-    };
+    }
 
     color::color(std::string s) {
         if(s.length() == 4) {
@@ -202,7 +202,7 @@ namespace cprocessing {
     void colorMode(unsigned mode) {
         assert(mode == RGB || mode == HSB);
         styles[styles.size()-1].globColorMode = mode;
-     }
+    }
 	
 	/// Extracts the alpha value from a color, scaled to match current colorMode()
     double alpha(const color & color){

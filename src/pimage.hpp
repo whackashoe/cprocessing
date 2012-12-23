@@ -7,9 +7,7 @@
 
 using namespace cprocessing;
 
-namespace cprocessing {     
-    enum { ARGB, RGB, HSB, ALPHA };
-    
+namespace cprocessing {         
     /// Encapsulates a 2D RGBA image
 	class PImage {
 	public:

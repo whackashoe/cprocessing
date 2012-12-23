@@ -9,11 +9,6 @@
 #endif
 
 namespace cprocessing {  
-    //blend types
-    typedef enum {
-        REPLACE, BLEND, ADD, SUBTRACT, DARKEST, LIGHTEST, DIFFERENCE, EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN
-    } BlendMode;
-    
 	/// Color class
 	class color {
 	private:

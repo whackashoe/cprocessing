@@ -1,5 +1,7 @@
 #include "cprocessing.hpp"
 
+using namespace cprocessing;
+
 // TODO: change these preprocessor macros into inline functions
 
 // S curve is (3x^2 - 2x^3) because it's quick to calculate
@@ -11,15 +13,12 @@
 #define dot3(rx, ry, rz, q)     ( rx * q[0] + ry * q[1] + rz * q[2] )
 
 #define setupValues(t, axis, g0, g1, d0, d1, pos) \
-        t = pos[axis] + NOISE_LARGE_PWR2; \
-        g0 = ((int)t) & NOISE_MOD_MASK; \
-        g1 = (g0 + 1) & NOISE_MOD_MASK; \
-        d0 = t - (int)t; \
-        d1 = d0 - 1.0; \
-
-
-
-using namespace cprocessing;
+    t = pos[axis] + NOISE_LARGE_PWR2; \
+    g0 = ((int)t) & NOISE_MOD_MASK; \
+    g1 = (g0 + 1) & NOISE_MOD_MASK; \
+    d0 = t - (int)t; \
+    d1 = d0 - 1.0; 
+	
 
 namespace cprocessing {
 

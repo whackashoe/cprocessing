@@ -33,6 +33,7 @@
 #include <FreeImage.h>
 
 #include "init.hpp"
+#include "pconstant.hpp"
 #include "arraylist.hpp"
 #include "string.hpp"
 #include "color.hpp"
@@ -45,51 +46,11 @@
 #include "hashmap.hpp"
 #include "pshader.hpp"
 #include "pthread.hpp"
-
+#include "pcamera.hpp"
 
 typedef bool boolean;
 
 namespace cprocessing {
-
-	//
-	// Global types
-	//
-
-	/// Used to test keys
-	
-	enum { CODED = 255, RETURN = '\r', ENTER = '\n',
-		   ESC = 27, TAB = '\t', DELETE = 127
-	};
-
-	/// Other constants
-	enum { F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
-		   UP, DOWN, LEFT, RIGHT, CENTER, PAGEUP, PAGEDOWN, HOME, END, INSERT,
-		   RADIUS, CORNER, CORNERS
-	};
-
-	/// Configuration flags
-	enum {
-		HALF_PIXEL_SHIFT = 0,    // Whether to shift vertex coordinates by half a pixel (false by default, true makes images slide).
-		Y_DOWN           = 1<<1, // Whether to flip the y axis so it points down, rather than up (true by default).
-		BACK_BUFFER		 = 1<<2  // Whether to use a backup buffer which is copied every frame in order to effect a stable drawing
-		                         // canvas which is maintained between frames (true by default, but should be disabled for speed).
-	};
-
-	/// Shape constants
-	typedef enum {
-		POINTS, LINES, LINE_LOOP, LINE_STRIP, TRIANGLES, TRIANGLE_STRIP, TRIANGLE_FAN, QUADS, QUAD_STRIP, POLYGON
-	} ShapeMode;
-
-
-	/// Parameter for the endShape function
-	typedef enum {
-		OPEN = 0, CLOSE = 1
-	} ShapeClose;
-	
-
-	
-
-
 	//============================================================================
 	//
 	// Global variables (defined in file cprocessing.cpp)
@@ -116,16 +77,6 @@ namespace cprocessing {
 	extern PImage screenBuffer; // ^^
 	extern int initialized; 	//glut initialized yet
 
-
-	//===========================================================================
-	//
-	// Some math utility functions and constants
-	//
-
-    const double PI = 3.14159265358979323846;	/**< PI   */
-	const double TWO_PI = 2*PI;					/**< PI*2 */
-	const double HALF_PI = PI/2;				/**< PI/2 */
-	const double QUARTER_PI = PI/4;				/**< PI/4 */
 
 	/**Updates pixels you have saved into buffer */
 	void updatePixels();
