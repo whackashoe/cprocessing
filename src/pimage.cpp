@@ -18,14 +18,14 @@ namespace cprocessing {
         this->width = 0;
         this->height = 0;
         this->type = ARGB;
-        this->texturebuffer = 0;
+        this->texturebuffer = NULL;
     }
 
     PImage::PImage(const char * src) {
         this->width = 0;
         this->height = 0;
         this->type = ARGB;
-        this->texturebuffer = 0;
+        this->texturebuffer = NULL;
 
         loadImage(src);
     }
@@ -38,7 +38,7 @@ namespace cprocessing {
         this->width = width;
         this->height = height;
         this->type = type;
-        this->texturebuffer = 0;
+        this->texturebuffer = NULL;
     }
 
     PImage::PImage (const char * src, int width, int height, unsigned type) {
@@ -49,16 +49,17 @@ namespace cprocessing {
         this->width = width;
         this->height = height;
         this->type = type;
-        this->texturebuffer = 0;
+        this->texturebuffer = NULL;
 
         loadImage(src);
     }
     
     /// Destructor
     //TODO
+    //FIXME: this causes crash
     PImage::~PImage () {
-        glDeleteTextures(1, &textureID);
-        if(texturebuffer) delete texturebuffer;
+        //glDeleteTextures(1, &textureID);
+        //if(texturebuffer) delete texturebuffer;
     }
 
     PImage& PImage::operator= (const PImage& p) {
@@ -98,6 +99,7 @@ namespace cprocessing {
     /// Draws the image at position (x, y) of the screen
     void PImage::put (int x, int y, int w, int h) {
         glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, textureID);
 
         GLdouble vertices[] = { 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0 };
         GLdouble texture[]  = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
@@ -125,38 +127,44 @@ namespace cprocessing {
     void PImage::loadImage(const char * src) {
         FREE_IMAGE_FORMAT format = FreeImage_GetFileType(src,0);
         FIBITMAP * imagen = FreeImage_Load(format, src);
+        if(texturebuffer) delete texturebuffer;
+
         if(!imagen) {
             printerr("The following image was not found:");
             printerr(src);
+            width = 1;
+            height = 1;
+            texturebuffer = new GLubyte[4];
+            texturebuffer[0] = 255;
+            texturebuffer[0] = 255;
+            texturebuffer[0] = 255;
+            texturebuffer[0] = 0;
+        } else {
+            FIBITMAP * temp = imagen;
+            imagen = FreeImage_ConvertTo32Bits(imagen);
+            FreeImage_Unload(temp);
+
+            width = FreeImage_GetWidth(imagen);
+            height = FreeImage_GetHeight(imagen);
+
+            char * tempbuffer = (char*)FreeImage_GetBits(imagen);
+
+            texturebuffer = new GLubyte[4*width*height];
+            //FreeImage loads in BGR format, so you need to swap some bytes(Or use GL_BGR).
+            for(int j= 0; j<width*height; j++){
+                texturebuffer[j*4+0]= tempbuffer[j*4+2];
+                texturebuffer[j*4+1]= tempbuffer[j*4+1];
+                texturebuffer[j*4+2]= tempbuffer[j*4+0];
+                texturebuffer[j*4+3]= tempbuffer[j*4+3];
+            }
         }
-        FIBITMAP * temp = imagen;
-        imagen = FreeImage_ConvertTo32Bits(imagen);
-        FreeImage_Unload(temp);
 
-        width = FreeImage_GetWidth(imagen);
-        height = FreeImage_GetHeight(imagen);
 
-        if(texturebuffer) delete texturebuffer;
-        texturebuffer = new GLubyte[4*width*height];
-        char * tempbuffer = (char*)FreeImage_GetBits(imagen);
-
-        //FreeImage loads in BGR format, so you need to swap some bytes(Or use GL_BGR).
-        for(int j= 0; j<width*height; j++){
-           texturebuffer[j*4+0]= tempbuffer[j*4+2];
-           texturebuffer[j*4+1]= tempbuffer[j*4+1];
-           texturebuffer[j*4+2]= tempbuffer[j*4+0];
-           texturebuffer[j*4+3]= tempbuffer[j*4+3];
-           //texturebuffer.push_back(tempbuffer[j*4+2]);
-           //texturebuffer.push_back(tempbuffer[j*4+1]);
-           //texturebuffer.push_back(tempbuffer[j*4+0]);
-           //texturebuffer.push_back(tempbuffer[j*4+3]);
-           
-        }
 
         glGenTextures(1, &textureID);
         glBindTexture(GL_TEXTURE_2D, textureID);
 
-        updatePixels();
+        this->updatePixels();
 
         this->pixels.setBuffer(texturebuffer);
     }

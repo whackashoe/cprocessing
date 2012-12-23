@@ -7,6 +7,7 @@
 
 #ifndef CPROCESSING_HPP_
 #define CPROCESSING_HPP_
+
 #include <cmath>
 #include <cassert>
 #include <iostream>
@@ -15,6 +16,11 @@
 #include <string>
 #include <algorithm>
 #include <unordered_map>
+#include <thread>
+#include <chrono>
+#include <functional>
+#include <atomic>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits>
@@ -27,6 +33,7 @@
 #include <FreeImage.h>
 
 #include "init.hpp"
+#include "arraylist.hpp"
 #include "string.hpp"
 #include "color.hpp"
 #include "pixelcolorbuffer.hpp"
@@ -35,9 +42,9 @@
 #include "snoise.hpp"
 #include "pnoise.hpp"
 #include "style.hpp"
-#include "arraylist.hpp"
 #include "hashmap.hpp"
 #include "pshader.hpp"
+#include "pthread.hpp"
 
 
 typedef bool boolean;
