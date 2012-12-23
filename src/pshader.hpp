@@ -8,6 +8,7 @@ namespace cprocessing {
 
     class PShader {
     private:
+        bool isbound;
         int maxLength;
         GLint IsCompiled_FS;
         GLint IsCompiled_VS;
@@ -16,11 +17,11 @@ namespace cprocessing {
     public:
         const char * vertSrc;
         const char * fragSrc;
-        bool isbound;
 
         void release();
         void bindTextures();
         void unbindTextures();
+        void setUniform(const char * name, float value);
 
         GLuint glProgram;
         GLuint glVertex;
@@ -28,6 +29,7 @@ namespace cprocessing {
         
         PShader();
         PShader(const char * vertSrc, const char * fragSrc);
+        ~PShader();
 
         void setVertexShader(const char * src);
         void setFragmentShader(const char * src);

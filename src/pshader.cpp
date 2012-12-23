@@ -12,6 +12,11 @@ PShader::PShader(const char * vertSrc, const char * fragSrc) {
     this->setFragmentShader(fragSrc);
 }
 
+PShader::~PShader() {
+    glDeleteProgram(glProgram);
+    if(IsCompiled_VS) glDeleteShader(glVertex);
+    if(IsCompiled_VS) glDeleteShader(glFragment);
+}
 
 void PShader::init() {
     maxLength = 4096;
@@ -42,6 +47,10 @@ void PShader::bind() {
 void PShader::unbind() {
     glUseProgram(0);
     isbound = false;
+}
+
+void PShader::setUniform(const char * name, float value) {
+    glUniform1f(glGetUniformLocation(glProgram, name), value);
 }
 
 bool PShader::bound() {
