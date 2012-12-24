@@ -2,8 +2,6 @@
 #define CPROCESSING_PCONSTANT_
 
 using namespace cprocessing;
-
-
 namespace cprocessing {
 
 	const double PI 			= 3.14159265358979323846264338327950288;	/**< PI   */
