@@ -4,27 +4,25 @@
 #ifndef CPROCESSING_PTHREAD_
 #define CPROCESSING_PTHREAD_
 
-/*
-using namespace cprocessing;
 
-namespace cprocessing {         
-    /// Encapsulates a 2D RGBA image
+using namespace cprocessing;
+/*
+namespace cprocessing {
+    template<typename T>
 	class PThread {
 	public:
-		template <typename... Ts>
-	    std::thread 
+		std::thread self;
 
+		PThread();
+		void callable_method(int x);
+		void thread_wrapper(T callable) {
+			callable();
+		}
 
-        PImage();
-        PImage();
-	    ~PImage ();
-
-	    PImage& operator= (const PImage& p);
-	    bool operator== (const PImage& p);
-	    bool operator!= (const PImage& p);
-	    
-	    void update();
-	};
-}
+		std::thread make_thread_wrapper(T callable) {
+			return std::thread(&thread_wrapper<T>, std::forward<T>(callable));
+		}
+};
 */
+
 #endif
