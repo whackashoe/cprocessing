@@ -51,7 +51,7 @@ Please make sure you have the following dependencies installed
 * libFreeImage
 
 
-1. On ubuntu distributions: sudo apt-get install libglu1mesa-dev freeglut3-dev libmagic++-dev libglew1.6-dev libfreeimage-dev
+1. On ubuntu distributions: sudo apt-get install libglu1-mesa-dev freeglut3-dev libmagic++-dev libglew1.6-dev libfreeimage-dev
 2. git clone https://github.com/whackashoe/cprocessing
 3. cd cprocessing
 4. ./install.sh
