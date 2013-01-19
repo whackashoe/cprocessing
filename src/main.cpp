@@ -12,5 +12,8 @@ using namespace cprocessing;
 
 int main (int argc,char **argv) {
 	srand(time(NULL));
+	for(int i=0; i<argc; i++) {
+		args.add(std::string(argv[i]));
+	}
 	run();
 }

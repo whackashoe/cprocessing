@@ -20,11 +20,20 @@
 #include <chrono>
 #include <functional>
 #include <atomic>
+#include <limits>
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits>
 #include <time.h>
+#include <stdio.h>
+#ifdef WINDOWS
+    #include <direct.h>
+    #define GetCurrentDir _getcwd
+#else
+    #include <unistd.h>
+    #define GetCurrentDir getcwd
+ #endif
+
 
 #include <GL/glew.h>
 #include <GL/gl.h>
@@ -55,6 +64,7 @@ namespace cprocessing {
 	//
 	// Global variables (defined in file cprocessing.cpp)
 	//
+	extern ArrayList<std::string> args;
 	extern int mouseX;  		/**< Mouse x coordinate*/
 	extern int mouseY;  		/**< Mouse y coordinate*/
 	extern int pmouseX; 		/**< Previous mouse x coordinate*/
@@ -622,16 +632,17 @@ namespace cprocessing {
     
     //text to console    
     template<class C>
-	inline void print(const C& a) 			{ std::cout << a; }
-	inline void print(const String a)   	{ std::cout << a.self; }
+	inline void print(const C& a) 			 { std::cout << a; }
+	inline void print(const String a)   	 { std::cout << a.self; }
 
 	template<class C>
-	inline void println(const C& a)			{ std::cout << a << std::endl; }
-	inline void println(const String a) 	{ std::cout << a.self << std::endl; }
+	inline void println(const C& a)				{ std::cout << a << std::endl; }
+	inline void println(const String a) 		{ std::cout << a.self << std::endl; }
 
 	template<class C>
-	inline void printerr(const C& a) 		{ std::cerr << a << std::endl; }
-	inline void printerr(const String a) 	{ std::cerr << a.self << std::endl; }
+	inline void printerr(const C& a) 			{ std::cerr << a << std::endl; }
+	inline void printerr(const String a) 		{ std::cerr << a.self << std::endl; }
+
 
 
     //turns draw loop on or off
@@ -756,6 +767,8 @@ namespace cprocessing {
     ArrayList<String> loadStrings(String src);
     ArrayList<String> loadStrings(const char * src);
     
+    String currentPath();
+    String fullPath();
 
     //
 	// Initialization (file cprocessing.cpp)

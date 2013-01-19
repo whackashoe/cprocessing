@@ -27,7 +27,7 @@ namespace cprocessing {
 	//
   // Global variables
 	//
-
+  ArrayList<std::string> args;
 	int mouseX = 0;  ///< Mouse x coordinate
 	int mouseY = 0;  ///< Mouse y coordinate
 	int pmouseX = 0;  ///< Previous mouse x coordinate
@@ -600,6 +600,22 @@ namespace cprocessing {
       return r;
     }
 
+    String currentPath() {
+      char cCurrentPath[FILENAME_MAX];
+      if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath))) {
+        printerr("An error occurred reading current directory:");
+        printerr(errno);
+        return NULL;
+      }
+      return String(cCurrentPath);
+    }
+
+    String fullPath() {
+      String a = currentPath();
+      String b = *args.get(0);
+
+      return a+b;
+    }
 
     /// Initializes and runs the application main event loop
     void run() {
