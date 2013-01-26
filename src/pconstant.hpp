@@ -15,14 +15,13 @@ namespace cprocessing {
 
 	/// Used to test keys
 	enum { CODED = 255, RETURN = '\r', ENTER = '\n',
-		   ESC = 27, TAB = '\t', DELETE = 127
+		   ESC = 27, TAB = '\t', DELETE = 127, 
+		   F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
+		   UP, DOWN, LEFT, RIGHT, CENTER, PAGEUP, PAGEDOWN, HOME, END, INSERT
 	};
 
 	/// Other constants
-	enum { F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
-		   UP, DOWN, LEFT, RIGHT, CENTER, PAGEUP, PAGEDOWN, HOME, END, INSERT,
-		   RADIUS, CORNER, CORNERS
-	};
+	enum { RADIUS, CORNER, CORNERS };
 
 	/// Configuration flags
 	enum {

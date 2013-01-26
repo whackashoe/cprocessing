@@ -1,4 +1,4 @@
-CXXFLAGS=-Wall -g -fPIC -ggdb -O3 -std=c++0x
+CXXFLAGS=-g -fPIC -ggdb -O3 -std=c++0x -Wall -Weffc++ -pedantic 
 
 OBJDIR=objects
 

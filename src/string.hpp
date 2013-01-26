@@ -117,7 +117,9 @@ namespace cprocessing {
     ArrayList<String> split(String value, String delim);
     
     //splitTokens()
-    //trim()
+
+    String trim(String str);
+    String nf(int n, int d);
 }
 
 #endif

@@ -57,47 +57,47 @@ namespace cprocessing {
 
         /**Moves the position of the camera eye along the x axis some amount
 		 * @param amnt any positive or negative number*/
-	    inline void moveX(double amnt);
+	    void moveX(double amnt);
 	    /**Moves the position of the camera eye along the y axis some amount
 		 * @param amnt any positive or negative number*/
-	    inline void moveY(double amnt);
+	    void moveY(double amnt);
 	    /**Moves the position of the camera eye along the z axis some amount
 		 * @param amnt any positive or negative number*/
-	    inline void moveZ(double amnt);
+	    void moveZ(double amnt);
 
 	    /**Changes where the position of the camera is looking some amount along the x axis
 		 * @param amnt any positive or negative number*/
-	    inline void lookX(double amnt);
+	    void lookX(double amnt);
 
 	    /**Changes where the position of the camera is looking some amount along the y axis
 		 * @param amnt any positive or negative number*/
-	    inline void lookY(double amnt);
+	    void lookY(double amnt);
 
 	    /**Changes where the position of the camera is looking some amount along the z axis
 		 * @param amnt any positive or negative number*/
-	    inline void lookZ(double amnt);
+	    void lookZ(double amnt);
 
 	    /**Changes where the position of the camera eye is to a set position
 		 * @param x any number - for the x axis
 		 * @param y any number - for the y axis
 		 * @param z any number - for the z axis*/
-	    inline void setEye(double x, double y, double z=0.0);
+	    void setEye(double x, double y, double z=0.0);
 
 	    /**Changes where the position of the camera is looking to a set position
 		 * @param x any number - for the x axis
 		 * @param y any number - for the y axis
 		 * @param z any number - for the z axis*/
-	    inline void setCenter(double x, double y, double z=0.0);
+	    void setCenter(double x, double y, double z=0.0);
 
 	    /**Changes the orientation of the camera (which side is "up")
 		 * @param x any number - for the x axis (usually -1.0, 0.0, or 1.0)
 		 * @param y any number - for the y axis (usually -1.0, 0.0, or 1.0)
 		 * @param z any number - for the z axis (usually -1.0, 0.0, or 1.0)*/
-	    inline void setUp(double x, double y, double z=0.0);
+	    void setUp(double x, double y, double z=0.0);
 
 	    /**Makes the camera view what it is looking at, which in turn updates your screen
 	     * This internally is a call to camera(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ);*/
-	    inline void view();
+	    void view();
 	};
 }
 

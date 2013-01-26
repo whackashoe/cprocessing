@@ -12,7 +12,9 @@
 using namespace cprocessing;
 
 namespace cprocessing {
-
+    PImage createImage(int width, int height, int type) { 
+      return PImage(width, height, type);
+    }
 
     PImage::PImage() {
         this->width = 0;

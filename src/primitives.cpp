@@ -376,6 +376,3 @@ namespace cprocessing {
     	glPopMatrix();		
 	}
 } // namespace cprocessing
-
-
-

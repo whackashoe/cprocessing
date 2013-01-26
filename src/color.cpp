@@ -59,12 +59,10 @@ static void rgb_to_hsb (double r, double g, double b,
 
 
 namespace cprocessing {
-    //
-    // Attributes
-    //
     /// Constructor for the color class
 
     // Constructor from a gray value
+
     color::color(double gray, double alpha) {
         unsigned char val;
 
@@ -243,5 +241,75 @@ namespace cprocessing {
         double h, s, v;
         rgb_to_hsb(color.rgba[0]/255.0,color.rgba[1]/255.0,color.rgba[2]/255.0,h,s,v);
         return v*styles[styles.size()-1].max3;
+    }
+
+    color blendColor(const color& a, const color& b, unsigned mode) {
+        assert (mode == REPLACE || mode == BLEND || mode == ADD || mode == SUBTRACT || mode == DARKEST || mode == LIGHTEST || mode == DIFFERENCE || mode == EXCLUSION || mode == MULTIPLY || mode == SCREEN || mode == OVERLAY || mode == HARD_LIGHT || mode == SOFT_LIGHT || mode == DODGE || mode == BURN);
+        //TODO:: finish blend modes
+        switch(mode) {
+            case REPLACE:
+                return color(b.rgba[0], 
+                             b.rgba[1], 
+                             b.rgba[2], 
+                             b.rgba[3]);
+                break;
+            case BLEND:
+                return color((a.rgba[0]+b.rgba[0])/2, 
+                             (a.rgba[1]+b.rgba[1])/2, 
+                             (a.rgba[2]+b.rgba[2])/2, 
+                             (a.rgba[3]+b.rgba[3])/2);
+                break;
+            case ADD:
+                return color(min(a.rgba[0]+b.rgba[0], 255),
+                             min(a.rgba[1]+b.rgba[1], 255), 
+                             min(a.rgba[2]+b.rgba[2], 255), 
+                             min(a.rgba[3]+b.rgba[3], 255));
+                break;
+            case SUBTRACT:
+                return color(0, 0, 0, 255);
+                break;
+            case DARKEST:
+                return color(0, 0, 0, 255);
+                break;
+            case LIGHTEST:
+                return color(0, 0, 0, 255);
+                break;
+            case DIFFERENCE:
+                return color(0, 0, 0, 255);
+                break;
+            case EXCLUSION:
+                return color(0, 0, 0, 255);
+                break;
+            case MULTIPLY:
+                return color(0, 0, 0, 255);
+                break;   
+            case SCREEN:
+                return color(0, 0, 0, 255);
+                break;
+            case OVERLAY:
+                return color(0, 0, 0, 255);
+                break;
+            case HARD_LIGHT:
+                return color(0, 0, 0, 255);
+                break;
+            case SOFT_LIGHT:
+                return color(0, 0, 0, 255);
+                break;
+            case DODGE:
+                return color(0, 0, 0, 255);
+                break;
+            case BURN:
+                return color(0, 0, 0, 255);
+                break;
+        }
+
+        return color();
+    }
+
+    color lerpColor(const color& a, const color& b, double amt) {
+      return color(lerp(a.rgba[0], b.rgba[0], amt), 
+                   lerp(a.rgba[1], b.rgba[1], amt), 
+                   lerp(a.rgba[2], b.rgba[2], amt), 
+                   lerp(a.rgba[3], b.rgba[3], amt));
     }
 }

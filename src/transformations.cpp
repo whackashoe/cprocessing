@@ -92,7 +92,8 @@ namespace cprocessing {
 
 	void camera () {
         camera (width/2.0, height/2.0, (height/2.0) / tan(M_PI*60.0 / 360.0),
-                   width/2.0, height/2.0, 0, 0, 1, 0);
+                width/2.0, height/2.0, 0, 
+                0, 1, 0);
 	}
 
 	/// Loads a perspective projection matrix, where

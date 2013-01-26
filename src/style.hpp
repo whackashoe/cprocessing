@@ -48,6 +48,9 @@ namespace cprocessing {
         Style();
         //~Style();
     };
+
+    void pushStyle();
+    void popStyle();
 }
 
 #endif

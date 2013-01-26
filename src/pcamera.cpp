@@ -32,8 +32,8 @@ namespace cprocessing {
     	this->upZ = 0.0;
     }
 
-    PCamera::PCamera(double eyeX, double eyeY, double eyeZ, 
-    		double centerX, double centerY, double centerZ) {
+    PCamera::PCamera( double eyeX, double eyeY, double eyeZ, 
+    		          double centerX, double centerY, double centerZ) {
     	this->eyeX = eyeX;
     	this->eyeY = eyeY;
     	this->eyeZ = eyeZ;
@@ -48,8 +48,8 @@ namespace cprocessing {
     }
 
     PCamera::PCamera(double eyeX, double eyeY, double eyeZ, 
-    		double centerX, double centerY, double centerZ, 
-    		double upX, double upY, double upZ) {
+            	     double centerX, double centerY, double centerZ, 
+            		 double upX, double upY, double upZ) {
     	this->eyeX = eyeX;
     	this->eyeY = eyeY;
     	this->eyeZ = eyeZ;
@@ -64,33 +64,33 @@ namespace cprocessing {
     }
 
 
-    inline void PCamera::moveX(double amnt) { eyeX += amnt; }
-    inline void PCamera::moveY(double amnt) { eyeY += amnt; }
-    inline void PCamera::moveZ(double amnt) { eyeZ += amnt; }
+    void PCamera::moveX(double amnt) { eyeX += amnt; }
+    void PCamera::moveY(double amnt) { eyeY += amnt; }
+    void PCamera::moveZ(double amnt) { eyeZ += amnt; }
 
-    inline void PCamera::lookX(double amnt) { centerX += amnt; }
-    inline void PCamera::lookY(double amnt) { centerY += amnt; }
-    inline void PCamera::lookZ(double amnt) { centerZ += amnt; }
+    void PCamera::lookX(double amnt) { centerX += amnt; }
+    void PCamera::lookY(double amnt) { centerY += amnt; }
+    void PCamera::lookZ(double amnt) { centerZ += amnt; }
 
-    inline void PCamera::setEye(double x, double y, double z) { 
+    void PCamera::setEye(double x, double y, double z) { 
     	eyeX = x; 
     	eyeY = y; 
     	eyeZ = z;
     }
 
-    inline void PCamera::setCenter(double x, double y, double z) { 
+    void PCamera::setCenter(double x, double y, double z) { 
     	centerX = x; 
     	centerY = y; 
     	centerZ = z;
     }
 
-    inline void PCamera::setUp(double x, double y, double z) {
+    void PCamera::setUp(double x, double y, double z) {
     	upX = x; 
     	upY = y; 
     	upZ = z;
     }
 
-    inline void PCamera::view() { 
+    void PCamera::view() { 
     	camera(eyeX, eyeY, eyeZ, 
     		   centerX, centerY, centerZ, 
     		   upX, upY, upZ);

@@ -7,7 +7,7 @@
 
 using namespace cprocessing;
 
-namespace cprocessing {         
+namespace cprocessing {
     /// Encapsulates a 2D RGBA image
 	class PImage {
 	public:
@@ -48,6 +48,8 @@ namespace cprocessing {
         //inline void save(String out) { save(out.toCharArray()); }
         void set(int x, int y, const color& c);
 	};
+
+	PImage createImage(int width, int height, int type);
 }
 
 #endif
