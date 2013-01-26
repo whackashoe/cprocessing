@@ -1,2 +1,2 @@
 #!/bin/sh
-find ../examples/ -type d -exec cp Makefile {} \;
+find ../examples/ -type d -exec cp sketchMakefile.lin {} \;

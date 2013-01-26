@@ -9,7 +9,7 @@ OBJECTS=$(patsubst %.cpp, %.o, $(SOURCES))
 
 TARGET=$(lastword $(subst /, ,$(realpath .)))
 
-LINKS=-lcprocessing -lglut -lGL -lGLU -lGLEW -lfreeimage
+LINKS=-lcprocessing -lglfw -lGL -lGLU -lGLEW -lfreeimage
 
 CC=g++
 
