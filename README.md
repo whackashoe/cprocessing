@@ -46,11 +46,10 @@ Please make sure you have the following dependencies installed
 * libGL
 * libGLU
 * libglfw
-* libmagic++
 * libGLEW
 * libFreeImage
 
-1. On ubuntu distributions: sudo apt-get install libglu1-mesa-dev libglfw-dev libglew1.6-dev libfreeimage-dev
+1. On ubuntu distributions: `sudo apt-get install libglu1-mesa-dev libglfw-dev libglew1.6-dev libfreeimage-dev`
 2. git clone https://github.com/whackashoe/cprocessing
 3. cd cprocessing
 4. ./install.sh
