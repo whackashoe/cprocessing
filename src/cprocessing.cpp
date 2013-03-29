@@ -235,6 +235,29 @@ namespace cprocessing {
         glfwSetWindowSize(width, height);
         glfwSetWindowTitle(name);
       } else {
+        if(!glfwInit()){
+          fprintf(stderr, "Failed to initialize GLFW\n");
+          exit(EXIT_FAILURE);
+        }
+
+        GLFWvidmode screenMode;
+        glfwGetDesktopMode(&screenMode);
+        screenWidth = screenMode.Width;  //FIXME (returns 200??)
+        screenHeight = screenMode.Height;  //FIXME (returns 201??)
+
+        styles.push_back(baseStyle);
+        bezierDetail(50);
+        ellipseDetail(50);
+        sphereDetail(30,30);
+        stroke(0);
+        fill(255);
+
+        strokeWeight(1);
+        colorMode(RGB);
+        rectMode(CORNER);
+        ellipseMode(CENTER);
+        pixels.setBuffer(screenBuffer.texturebuffer);
+
         glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
         glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 2);
         glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 1);
@@ -263,51 +286,31 @@ namespace cprocessing {
 
     /// Initializes and runs the application main event loop
     void run() {
-      if(!glfwInit()){
-        fprintf(stderr, "Failed to initialize GLFW\n");
-        exit(EXIT_FAILURE);
-      }
-
-      GLFWvidmode screenMode;
-      glfwGetDesktopMode(&screenMode);
-      screenWidth = screenMode.Width;  //FIXME (returns 200??)
-      screenHeight = screenMode.Height;  //FIXME (returns 201??)
-
-      styles.push_back(baseStyle);
-      bezierDetail(50);
-      ellipseDetail(50);
-    	sphereDetail(30,30);
-      stroke(0);
-      fill(255);
-
-      strokeWeight(1);
-      colorMode(RGB);
-      rectMode(CORNER);
-      ellipseMode(CENTER);
-
-      pixels.setBuffer(screenBuffer.texturebuffer);
-
     	::setup();
 
-      framedelay = (1000.0f/(float)framerate);
-      double pre_time = glfwGetTime();
-      do {
-        double cur_time = glfwGetTime();
-        if((redrawflag) || (looping && cur_time - pre_time >= -framedelay)) {
-          pre_time = glfwGetTime();
-          frameCount++;
-          camera();
-          perspective();
-          noLights();
-          ::draw();
-          mouseRecordFlag = true;
-          redrawflag = false;
-          glfwSwapBuffers();
-        }
-      } while(glfwGetKey( GLFW_KEY_ESC ) != GLFW_PRESS);
-
-      // Close OpenGL window and terminate GLFW
-      glfwTerminate();
+      if(initialized) {
+        framedelay = (1000.0f/(float)framerate);
+        double pre_time = glfwGetTime();
+        do {
+          double cur_time = glfwGetTime();
+          if((redrawflag) || (looping && cur_time - pre_time >= -framedelay)) {
+            pre_time = glfwGetTime();
+            frameCount++;
+            camera();
+            perspective();
+            noLights();
+            ::draw();
+            mouseRecordFlag = true;
+            redrawflag = false;
+            glfwSwapBuffers();
+          }
+        } while(glfwGetKey( GLFW_KEY_ESC ) != GLFW_PRESS);
+          // Close OpenGL window and terminate GLFW
+          glfwTerminate();
+      } else {
+        ::draw();
+      }
+      
       exit(EXIT_SUCCESS);
     }
 }

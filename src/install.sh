@@ -6,7 +6,7 @@ version="0.2"   #increment this if testing to spot regressions
 libDest="/usr/local/lib"
 incDest="/usr/local/include"
 
-make -j6 || { echo 'make failed' ; exit 1; }
+make -j12 || { echo 'make failed' ; exit 1; }
 
 if [ ! -d "$incDest/cprocessing" ]; then
 	sudo mkdir /usr/local/include/cprocessing || { echo 'creating /usr/local/include/cprocessing failed'; exit 2; }

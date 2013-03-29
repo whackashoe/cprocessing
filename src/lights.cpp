@@ -95,7 +95,7 @@ namespace cprocessing {
         float position[] = {x, y, z,0};
         float difuse[] = {0,0,0};
         
-        delete styles[styles.size()-1].specular;
+        delete [] styles[styles.size()-1].specular;
         styles[styles.size()-1].specular = new float[3];
         styles[styles.size()-1].specular[0] = 0;
         styles[styles.size()-1].specular[1] = 0;
@@ -133,7 +133,7 @@ namespace cprocessing {
         float direction[] = {nx, ny, nz};
         float ambient[] = {0,0,0};
         
-        delete styles[styles.size()-1].specular;
+        delete [] styles[styles.size()-1].specular;
         styles[styles.size()-1].specular = new float[3];
         styles[styles.size()-1].specular[0] = 0;
         styles[styles.size()-1].specular[1] = 0;

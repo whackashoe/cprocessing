@@ -1,7 +1,7 @@
 #include "cprocessing.hpp"
 
-#ifndef CPROCESSING_PLIGHTS_
-#define CPROCESSING_PLIGHTS_
+#ifndef CPROCESSING_RANDOM_
+#define CPROCESSING_RANDOM_
 
 using namespace cprocessing;
 namespace cprocessing {
