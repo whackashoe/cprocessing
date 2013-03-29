@@ -289,12 +289,15 @@ namespace cprocessing {
     	::setup();
 
       if(initialized) {
-        framedelay = (1000.0f/(float)framerate);
-        double pre_time = glfwGetTime();
-        do {
-          double cur_time = glfwGetTime();
-          if((redrawflag) || (looping && cur_time - pre_time >= -framedelay)) {
-            pre_time = glfwGetTime();
+        double frameTime = 0;
+        double lastTime  = 0;
+        while(initialized) {
+          framedelay = (1.0f/(float)framerate);
+          double elapsedTime = glfwGetTime();
+          frameTime += (elapsedTime-lastTime);
+
+          lastTime = elapsedTime;
+          if((frameCount == 0 && looping) || (redrawflag) || (looping && frameTime > framedelay)) {
             frameCount++;
             camera();
             perspective();
@@ -303,10 +306,12 @@ namespace cprocessing {
             mouseRecordFlag = true;
             redrawflag = false;
             glfwSwapBuffers();
+
+            frameTime -= framedelay;
           }
-        } while(glfwGetKey( GLFW_KEY_ESC ) != GLFW_PRESS);
-          // Close OpenGL window and terminate GLFW
-          glfwTerminate();
+
+          if(glfwGetKey(GLFW_KEY_ESC) == GLFW_PRESS) glfwTerminate();
+        }
       } else {
         ::draw();
       }
